@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Cano -->
+  <rect x="55" y="38" width="32" height="8" rx="2" fill="#8a8a8a"/>
+  <!-- Corpo -->
+  <rect x="30" y="35" width="30" height="18" rx="3" fill="#6a6a6a"/>
+  <!-- Tambor -->
+  <circle cx="45" cy="44" r="10" fill="#555" stroke="#888" stroke-width="1.5"/>
+  <circle cx="45" cy="44" r="3" fill="#333"/>
+  <circle cx="45" cy="37" r="2" fill="#777"/>
+  <circle cx="45" cy="51" r="2" fill="#777"/>
+  <circle cx="38" cy="44" r="2" fill="#777"/>
+  <circle cx="52" cy="44" r="2" fill="#777"/>
+  <!-- Cabo -->
+  <path d="M30 53 L38 53 L35 72 L24 72 Z" fill="#5a3a1a"/>
+  <rect x="24" y="68" width="13" height="4" rx="2" fill="#4a2a0a"/>
+  <!-- Gatilho -->
+  <path d="M36 53 L40 53 L38 62 L34 62 Z" fill="#888"/>
+  <!-- Guarda -->
+  <path d="M33 53 Q30 58 34 62 Q38 62 40 53 Z" fill="none" stroke="#888" stroke-width="1.5"/>
+  <!-- Brilho no cano -->
+  <rect x="57" y="39" width="28" height="2" rx="1" fill="#bbb" opacity="0.4"/>
+</svg>
