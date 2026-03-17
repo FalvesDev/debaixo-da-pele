@@ -3,6 +3,8 @@
 // Call of Cthulhu 7e | Foundry VTT v11/v12
 // ============================================================
 
+import "./aurora-system.js";
+
 const MODULE_ID = "debaixo-da-pele";
 
 // ─── SETTINGS ───────────────────────────────────────────────
