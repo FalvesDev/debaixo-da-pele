@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Seringa (estilo epi-pen / adrenalina) -->
+  <!-- Corpo laranja/amarelo -->
+  <rect x="28" y="35" width="48" height="14" rx="5" fill="#e87020"/>
+  <!-- Listras de alerta -->
+  <rect x="48" y="35" width="8" height="14" fill="#ffcc00" opacity="0.7"/>
+  <!-- Agulha -->
+  <path d="M76 40 L92 42 L76 44 Z" fill="#d0d0d0"/>
+  <!-- Cap laranja -->
+  <rect x="76" y="36" width="8" height="12" rx="3" fill="#aa4400" opacity="0.6"/>
+  <!-- Êmbolo -->
+  <rect x="20" y="37" width="10" height="10" rx="2" fill="#cc5500"/>
+  <rect x="16" y="35" width="6" height="14" rx="1" fill="#aa4400"/>
+  <!-- Label -->
+  <rect x="30" y="39" width="34" height="6" rx="1" fill="#c05010"/>
+  <text x="47" y="44" text-anchor="middle" font-family="sans-serif" font-size="5.5" font-weight="bold" fill="white">EPINEFRINA</text>
+  <!-- Raio (símbolo de adrenalina) -->
+  <text x="50" y="68" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#ffcc00" opacity="0.8">⚡</text>
+</svg>
