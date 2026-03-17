@@ -116,3 +116,340 @@
   border-top: 1px solid #333;
   margin: 10px 0;
 }
+
+/* ============================================================
+   PAINEL DE AURORA — Integrado na ficha do personagem CoC7
+   ============================================================ */
+
+/* ─── Container principal ───────────────────────────────────── */
+.ddp-aurora-panel {
+  margin: 6px 4px 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #0e0e1e;
+  overflow: hidden;
+  font-family: "Signika", sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.ddp-aurora-panel:hover {
+  box-shadow: 0 0 8px rgba(160, 100, 0, 0.2);
+}
+
+/* ─── Cabeçalho / toggle ────────────────────────────────────── */
+.ddp-aurora-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: #12121e;
+  border-bottom: 2px solid var(--fase-cor, #555);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ddp-aurora-header:hover {
+  background: #181828;
+}
+
+.ddp-aurora-icone {
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.ddp-aurora-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ddp-aurora-title {
+  font-size: 0.72em;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ddp-aurora-fase-label {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.ddp-aurora-level-badge {
+  width: 44px;
+  height: 36px;
+  border: 2px solid;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: #0a0a14;
+  flex-shrink: 0;
+}
+
+.ddp-chevron {
+  color: #555;
+  font-size: 0.75em;
+  transition: transform 0.25s;
+}
+
+/* ─── Corpo (expansível) ────────────────────────────────────── */
+.ddp-aurora-body {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.ddp-aurora-panel.ddp-collapsed .ddp-aurora-body {
+  display: none;
+}
+
+/* ─── Barra de progresso ────────────────────────────────────── */
+.ddp-aurora-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ddp-aurora-bar-bg {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  overflow: visible;
+}
+
+.ddp-aurora-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease, background-color 0.4s ease;
+  position: relative;
+}
+
+.ddp-aurora-bar-marker {
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 18px;
+  background: #333;
+  pointer-events: none;
+}
+
+.ddp-aurora-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65em;
+  color: #555;
+  padding: 0 2px;
+}
+
+/* ─── Descrição ─────────────────────────────────────────────── */
+.ddp-aurora-desc {
+  font-size: 0.8em;
+  color: #999;
+  font-style: italic;
+  margin: 0;
+  padding: 4px 6px;
+  border-left: 2px solid #2a2a3a;
+  background: #0a0a14;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ─── Efeitos ───────────────────────────────────────────────── */
+.ddp-section-label {
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.ddp-aurora-efeitos-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ddp-aurora-efeitos {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 0.78em;
+  color: #aaa;
+}
+
+.ddp-aurora-efeitos li {
+  margin: 2px 0;
+}
+
+/* ─── Badges de penalidade/bonus ────────────────────────────── */
+.ddp-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.ddp-badge {
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 0.72em;
+  font-weight: bold;
+}
+
+.ddp-badge-neg {
+  background: #3a1a1a;
+  color: #ff8888;
+  border: 1px solid #5a2a2a;
+}
+
+.ddp-badge-pos {
+  background: #1a3a1a;
+  color: #88ff88;
+  border: 1px solid #2a5a2a;
+}
+
+/* ─── Aviso de rolagem ──────────────────────────────────────── */
+.ddp-roll-warn {
+  font-size: 0.78em;
+  color: #cc8844;
+  background: #1e1208;
+  border: 1px solid #3a2a10;
+  border-radius: 4px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ddp-roll-warn i {
+  color: #ffb347;
+  flex-shrink: 0;
+}
+
+/* ─── Proteção / Máscara ────────────────────────────────────── */
+.ddp-mascara-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ddp-mascara-badge {
+  font-size: 0.78em;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 2px 9px;
+  background: #0a0a14;
+}
+
+/* ─── Controles ─────────────────────────────────────────────── */
+.ddp-aurora-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 4px;
+  border-top: 1px solid #1e1e2e;
+  margin-top: 2px;
+}
+
+.ddp-aurora-adj-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ddp-adj-btn {
+  width: 34px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: #1e1e2e;
+  color: #ff8888;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: bold;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.ddp-adj-btn:hover {
+  background: #2e1e1e;
+  border-color: #ff6b6b;
+}
+
+.ddp-adj-btn.ddp-adj-add {
+  color: #88ff88;
+}
+
+.ddp-adj-btn.ddp-adj-add:hover {
+  background: #1e2e1e;
+  border-color: #a0ffa0;
+}
+
+.ddp-aurora-input {
+  flex: 1;
+  height: 28px;
+  text-align: center;
+  background: #12121e;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #eee;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.ddp-aurora-btns-row {
+  display: flex;
+  gap: 4px;
+}
+
+.ddp-action-btn {
+  flex: 1;
+  height: 26px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #1a1a2a;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.72em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: background 0.15s, color 0.15s;
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+.ddp-action-btn:hover {
+  background: #252535;
+  color: #fff;
+  border-color: #555;
+}
+
+.ddp-action-btn i {
+  font-size: 0.9em;
+}
+
+/* ─── Fase 4 — animação de perigo ────────────────────────────── */
+.ddp-aurora-panel[data-fase="4"] .ddp-aurora-header {
+  animation: ddp-perigo 2s ease-in-out infinite;
+}
+
+@keyframes ddp-perigo {
+  0%, 100% { border-bottom-color: #cc0000; }
+  50%       { border-bottom-color: #ff4444; box-shadow: 0 0 12px rgba(200,0,0,0.4); }
+}
+
+/* ─── Chat messages Aurora ──────────────────────────────────── */
+.ddp-aurora-chat .message-content {
+  border-left: 3px solid #cc4400;
+}
