@@ -238,5 +238,154 @@
         "notas": "Não ocupa slot na mochila se empilhada com outros documentos."
       }
     }
+  },
+  {
+    "name": "Bandagem Hemostática",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/bandagem.svg",
+    "system": {
+      "description": {
+        "value": "<p>Bandagem especial que estanca hemorragias graves automaticamente, sem necessidade de rolagem. <b>Não recupera PV</b> — apenas interrompe o sangramento. Personagem com hemorragia perde 1 PV/rodada até estancado.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "macro": "09-bandagem-hemostatica",
+        "notas": "Automático, sem rolagem. Remove Active Effect de hemorragia."
+      }
+    }
+  },
+  {
+    "name": "Analgésico Forte — Codeína 30mg",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/codeina.svg",
+    "system": {
+      "description": {
+        "value": "<p>Cartela com 6 comprimidos de codeína 30mg. Remove penalidade de dor (PV ≤ metade do máximo) por 4 horas. <b>Não recupera PV.</b> Uso repetido no mesmo dia: segundo comprimido sem efeito adicional, terceiro exige rolagem de CON ou náusea (−20% extra).</p>"
+      },
+      "quantity": 6,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "usos": 6,
+        "categoria": "medico",
+        "macro": "10-codeina",
+        "notas": "Máx. 2 por dia sem risco. Cria Active Effect de 4h."
+      }
+    }
+  },
+  {
+    "name": "Adrenalina (Seringa Auto-injetável)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/adrenalina.svg",
+    "system": {
+      "description": {
+        "value": "<p>Seringa auto-injetável de epinefrina (adrenalina). Se inconsciente: permite agir por 1D4 rodadas. Se consciente: +10% físicas por 2 rodadas, depois −10% por 1 hora (crash). <b>Não recupera PV.</b> Não pode ser auto-aplicado se inconsciente.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "macro": "12-adrenalina",
+        "notas": "Efeito depende do estado do personagem."
+      }
+    }
+  },
+  {
+    "name": "Máscara Cirúrgica",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/mascara-cirurgica.svg",
+    "system": {
+      "description": {
+        "value": "<p>Máscara descartável cirúrgica azul. Em B2 reduz exposição Aurora de +0,5/h para +0,25/h. Sem efeito em B3 ou B4. Satura após 4 horas de uso contínuo. 0 slots quando equipada no rosto.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.25,
+        "macro": "13-mascara-toggle",
+        "notas": "B2: −50% Aurora. Sem efeito B3+. Dura 4h."
+      }
+    }
+  },
+  {
+    "name": "Respirador N95",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/respirador-n95.svg",
+    "system": {
+      "description": {
+        "value": "<p>Respirador N95 com válvula expiratória. Reduz exposição Aurora em B2: +0,5/h → +0,1/h. Em B3: +1/h → +0,4/h. Sem efeito em B4 ou contra exposição direta. Perde eficácia após 8h contínuas. 0 slots quando equipado.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.6,
+        "macro": "13-mascara-toggle",
+        "notas": "B2: −80% | B3: −60%. Dura 8h."
+      }
+    }
+  },
+  {
+    "name": "Barra de Energia",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/barra-energia.svg",
+    "system": {
+      "description": {
+        "value": "<p>Barra de cereais compacta. Remove penalidade de fome (−10% todas as perícias) por 6 horas. Personagem sem comer por 12h+ sofre penalidade acumulativa. Não recupera PV.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Remove penalidade de fome por 6h."
+      }
+    }
+  },
+  {
+    "name": "Garrafa de Água (500ml)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/garrafa-agua.svg",
+    "system": {
+      "description": {
+        "value": "<p>Garrafa de água potável de 500ml. Necessária para recuperação natural de PV (1 PV/dia requer hidratação). Sem água por 8h+: −10% em perícias físicas e mentais (acumulativo). <b>Atenção:</b> água de torneiras em B2+ contém traços de Aurora (+0,1 por uso).</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Necessária para recuperação natural de PV."
+      }
+    }
   }
 ]

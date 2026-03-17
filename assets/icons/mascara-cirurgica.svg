@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Máscara base -->
+  <path d="M20 38 Q50 30 80 38 L80 62 Q50 72 20 62 Z" fill="#88aacc"/>
+  <path d="M20 38 Q50 30 80 38 L80 62 Q50 72 20 62 Z" fill="none" stroke="#6688aa" stroke-width="1.5"/>
+  <!-- Pregas horizontais -->
+  <path d="M20 45 Q50 37 80 45" fill="none" stroke="#6688aa" stroke-width="1"/>
+  <path d="M20 52 Q50 44 80 52" fill="none" stroke="#6688aa" stroke-width="1"/>
+  <path d="M20 59 Q50 51 80 59" fill="none" stroke="#6688aa" stroke-width="1"/>
+  <!-- Clip nasal (metal) -->
+  <rect x="35" y="33" width="30" height="4" rx="2" fill="#aaa"/>
+  <!-- Elásticos das orelhas -->
+  <line x1="20" y1="42" x2="8" y2="38" stroke="#88aacc" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="20" y1="58" x2="8" y2="62" stroke="#88aacc" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="80" y1="42" x2="92" y2="38" stroke="#88aacc" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="80" y1="58" x2="92" y2="62" stroke="#88aacc" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Gradiente de profundidade -->
+  <path d="M20 38 Q50 30 80 38 L80 46 Q50 38 20 46 Z" fill="white" opacity="0.12"/>
+  <!-- Tarja de tipo -->
+  <rect x="32" y="52" width="36" height="8" rx="3" fill="#225588" opacity="0.6"/>
+  <text x="50" y="58" text-anchor="middle" font-family="sans-serif" font-size="6" fill="white">CIRÚRGICA</text>
+</svg>
