@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Kit de Primeiros Socorros Básico",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-pa-basico.svg",
+    "system": {
+      "description": {
+        "value": "<p>Kit básico com gazes, esparadrapo, antisséptico e tesoura. Permite testes de Primeiros Socorros para estabilizar e curar 1D3 HP. Uso único por ferimento.</p>"
+      },
+      "quantity": 3,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "usos": 3,
+        "categoria": "medico",
+        "notas": "Cura: 1D3 HP por uso (teste Primeiros Socorros). Não trata envenenamento ou Aurora."
+      }
+    }
+  },
+  {
+    "name": "Kit de Primeiros Socorros Avançado",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-pa-avancado.svg",
+    "system": {
+      "description": {
+        "value": "<p>Kit profissional com material cirúrgico básico, soro, luvas cirúrgicas e medicamentos. Permite testes de Medicina além de Primeiros Socorros. Cura mais significativa.</p>"
+      },
+      "quantity": 5,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 3,
+        "usos": 5,
+        "categoria": "medico",
+        "notas": "Cura: 1D6 HP por uso (teste Medicina) ou 1D3 HP (Primeiros Socorros). Pode tratar infecções."
+      }
+    }
+  },
+  {
+    "name": "Lanterna (LED)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/lanterna.svg",
+    "system": {
+      "description": {
+        "value": "<p>Lanterna tática LED de mão. Iluminação cone de 10m. Requer pilhas AA (duração ~8h). Ocupa uma mão quando em uso.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "iluminacao",
+        "equipavel": false,
+        "notas": "Ocupa 1 mão quando ativa. Requer pilhas AA."
+      }
+    }
+  },
+  {
+    "name": "Lanterna de Cabeça",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/lanterna-cabeca.svg",
+    "system": {
+      "description": {
+        "value": "<p>Lanterna fixada à cabeça por elástico. Deixa ambas as mãos livres. Iluminação menor que a de mão (5m), mas prática para trabalho manual.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "iluminacao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "notas": "Quando equipada na cabeça: não ocupa slots. Iluminação 5m."
+      }
+    }
+  },
+  {
+    "name": "Máscara de Gás Civil",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/mascara-gas-civil.svg",
+    "system": {
+      "description": {
+        "value": "<p>Máscara de gás civil com filtro combinado (gás + partículas). Proteção padrão contra agentes químicos comuns. NÃO protege contra o Composto Aurora concentrado.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.5,
+        "notas": "Reduz exposição Aurora em 50% (ambientes com Aurora diluída). Ineficaz em concentrações altas (Lab A)."
+      }
+    }
+  },
+  {
+    "name": "Máscara de Gás Especial (Lab)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/mascara-gas-especial.svg",
+    "system": {
+      "description": {
+        "value": "<p>Máscara de gás de grau laboratorial com filtro HEPA triplo e vedação total. Projetada especificamente para trabalho com o Composto Aurora. Encontrada apenas nos Labs B2/B3.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 1.0,
+        "notas": "Exposição Aurora = 0 quando equipada. Filtra 100% do composto."
+      }
+    }
+  },
+  {
+    "name": "Morfina (Seringa)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/morfina.svg",
+    "system": {
+      "description": {
+        "value": "<p>Ampola pré-carregada de morfina. Analgésico potente — elimina penalidade de dor por ferimentos graves por 1D4 horas. Viciante com uso repetido.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Elimina penalidade de dor (ferimento grave) por 1D4h. Uso repetido (3+): teste Constituição ou dependência."
+      }
+    }
+  },
+  {
+    "name": "Corda 15m",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/corda.svg",
+    "system": {
+      "description": {
+        "value": "<p>Corda de nylon trançado, 15 metros. Suporta até 300kg. Útil para escaladas, amarrar, criar improvisações.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 3,
+        "categoria": "ferramenta",
+        "notas": "Resistência: 300kg. Pode ser cortada com faca (1D4 rodadas)."
+      }
+    }
+  },
+  {
+    "name": "Walkie-Talkie",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/walkie-talkie.svg",
+    "system": {
+      "description": {
+        "value": "<p>Rádio comunicador de curto alcance. Alcance: ~500m em ambientes fechados, 2km a céu aberto. Canal fixo (sem criptografia). Bateria: 8h de uso ativo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "comunicacao",
+        "notas": "Interceptável. Sinal pode ser bloqueado em B3/B4 (blindagem EM)."
+      }
+    }
+  },
+  {
+    "name": "Pilhas AA (4x)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/pilhas.svg",
+    "system": {
+      "description": {
+        "value": "<p>Pacote com 4 pilhas AA alcalinas. Para recarregar lanternas, walkie-talkies e outros eletrônicos portáteis.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 0.5,
+        "categoria": "suprimento",
+        "notas": "Carrega: 1 lanterna (8h) ou 2 cargas de walkie-talkie."
+      }
+    }
+  },
+  {
+    "name": "Isqueiro",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/isqueiro.svg",
+    "system": {
+      "description": {
+        "value": "<p>Isqueiro descartável. Fonte de luz de emergência (visibilidade 1m). Pode incendiar materiais combustíveis.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 0.5,
+        "categoria": "suprimento",
+        "notas": "Luz de emergência fraca. Dura ~100 acendimentos."
+      }
+    }
+  },
+  {
+    "name": "Porta-documentos (Pasta)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/pasta-documentos.svg",
+    "system": {
+      "description": {
+        "value": "<p>Pasta de couro com fechamento magnético. Contém documentos confidenciais da instalação (conteúdo a ser preenchido pelo GM).</p>"
+      },
+      "quantity": 1,
+      "properties": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 1,
+        "categoria": "documento",
+        "notas": "Não ocupa slot na mochila se empilhada com outros documentos."
+      }
+    }
+  }
+]

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Cano -->
+  <rect x="52" y="36" width="34" height="9" rx="2" fill="#8a8a8a"/>
+  <!-- Corpo / slide -->
+  <rect x="28" y="33" width="30" height="15" rx="3" fill="#6a6a6a"/>
+  <!-- Detalhe slide -->
+  <rect x="32" y="34" width="20" height="5" rx="1" fill="#7a7a7a"/>
+  <!-- Mira traseira -->
+  <rect x="28" y="33" width="5" height="3" rx="1" fill="#555"/>
+  <!-- Mira dianteira -->
+  <rect x="76" y="36" width="3" height="4" rx="1" fill="#555"/>
+  <!-- Cabo -->
+  <path d="M28 48 L38 48 L34 72 L22 72 Z" fill="#3a2a1a"/>
+  <rect x="22" y="68" width="13" height="5" rx="2" fill="#2a1a0a"/>
+  <!-- Entalhes no cabo -->
+  <line x1="24" y1="54" x2="36" y2="54" stroke="#555" stroke-width="1"/>
+  <line x1="24" y1="58" x2="36" y2="58" stroke="#555" stroke-width="1"/>
+  <line x1="24" y1="62" x2="36" y2="62" stroke="#555" stroke-width="1"/>
+  <!-- Gatilho -->
+  <path d="M35 48 L39 48 L37 60 L33 60 Z" fill="#888"/>
+  <path d="M32 48 Q29 55 33 60 Q37 60 39 48 Z" fill="none" stroke="#888" stroke-width="1.5"/>
+  <!-- Brilho -->
+  <rect x="54" y="37" width="30" height="2" rx="1" fill="#ccc" opacity="0.3"/>
+</svg>

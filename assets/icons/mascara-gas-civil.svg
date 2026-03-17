@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Rosto/máscara base -->
+  <ellipse cx="50" cy="52" rx="30" ry="34" fill="#3a3a2a"/>
+  <!-- Viseira -->
+  <ellipse cx="50" cy="40" rx="22" ry="14" fill="#2a4a3a"/>
+  <ellipse cx="50" cy="40" rx="20" ry="12" fill="#1a3a2a"/>
+  <ellipse cx="50" cy="40" rx="18" ry="10" fill="#0a2a1a" opacity="0.8"/>
+  <!-- Reflexo na viseira -->
+  <ellipse cx="43" cy="36" rx="6" ry="4" fill="white" opacity="0.08"/>
+  <!-- Filtro central (snout) -->
+  <ellipse cx="50" cy="62" rx="10" ry="8" fill="#555"/>
+  <ellipse cx="50" cy="62" rx="8" ry="6" fill="#4a4a3a"/>
+  <!-- Filtros laterais -->
+  <ellipse cx="30" cy="60" rx="7" ry="5" fill="#555"/>
+  <ellipse cx="30" cy="60" rx="5" ry="3.5" fill="#4a4a3a"/>
+  <ellipse cx="70" cy="60" rx="7" ry="5" fill="#555"/>
+  <ellipse cx="70" cy="60" rx="5" ry="3.5" fill="#4a4a3a"/>
+  <!-- Presilhas laterais -->
+  <line x1="20" y1="40" x2="10" y2="50" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80" y1="40" x2="90" y2="50" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <!-- Grelha no filtro central -->
+  <line x1="44" y1="62" x2="56" y2="62" stroke="#333" stroke-width="1.5"/>
+  <line x1="50" y1="56" x2="50" y2="68" stroke="#333" stroke-width="1.5"/>
+  <circle cx="50" cy="62" r="2" fill="#333"/>
+</svg>

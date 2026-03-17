@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Fundo escuro -->
+  <rect width="400" height="200" fill="#0a0a1a"/>
+  <!-- Grade de fundo (estilo planta arquitetônica) -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a1a3a" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="200" fill="url(#grid)"/>
+  <!-- Gradiente lateral -->
+  <defs>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#cc0000;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#cc0000;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#fade)"/>
+  <!-- Linha de alerta vermelha -->
+  <rect x="0" y="0" width="6" height="200" fill="#cc0000"/>
+  <!-- Stripes de alerta -->
+  <rect x="0" y="0" width="6" height="200" fill="#cc0000" opacity="0.8"/>
+  <line x1="6" y1="0" x2="6" y2="200" stroke="#ff4444" stroke-width="1"/>
+  <!-- Símbolo de biohazard (simplificado) -->
+  <g transform="translate(60, 100)">
+    <circle cx="0" cy="0" r="35" fill="none" stroke="#cc0000" stroke-width="3" opacity="0.6"/>
+    <circle cx="0" cy="-20" r="10" fill="none" stroke="#cc0000" stroke-width="3" opacity="0.6"/>
+    <circle cx="17" cy="10" r="10" fill="none" stroke="#cc0000" stroke-width="3" opacity="0.6"/>
+    <circle cx="-17" cy="10" r="10" fill="none" stroke="#cc0000" stroke-width="3" opacity="0.6"/>
+    <circle cx="0" cy="0" r="6" fill="#cc0000" opacity="0.5"/>
+  </g>
+  <!-- Título principal -->
+  <text x="130" y="75" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#cc2222" letter-spacing="2">DEBAIXO</text>
+  <text x="130" y="110" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="#cc2222" letter-spacing="2">DA PELE</text>
+  <!-- Subtítulo -->
+  <text x="130" y="135" font-family="monospace" font-size="11" fill="#666666" letter-spacing="3">CALL OF CTHULHU 7e</text>
+  <!-- Linha separadora -->
+  <line x1="130" y1="145" x2="360" y2="145" stroke="#333" stroke-width="1"/>
+  <!-- Tags -->
+  <text x="130" y="162" font-family="monospace" font-size="9" fill="#444">Survival Horror  ·  Brasil 2010  ·  Foundry v11/v12</text>
+  <!-- Nível de perigo (barra de exposição Aurora) -->
+  <rect x="130" y="172" width="230" height="6" rx="3" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <rect x="130" y="172" width="180" height="6" rx="3" fill="#cc0000" opacity="0.7"/>
+  <text x="130" y="190" font-family="monospace" font-size="8" fill="#660000">NÍVEL DE EXPOSIÇÃO: CRÍTICO</text>
+</svg>

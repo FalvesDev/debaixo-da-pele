@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Caixa -->
+  <rect x="15" y="28" width="70" height="50" rx="6" fill="#cc2222"/>
+  <rect x="15" y="28" width="70" height="50" rx="6" fill="none" stroke="#991111" stroke-width="2"/>
+  <!-- Tampa / dobradiça -->
+  <rect x="15" y="28" width="70" height="24" rx="6" fill="#dd3333"/>
+  <rect x="15" y="49" width="70" height="3" fill="#bb1111"/>
+  <!-- Alça -->
+  <path d="M35 28 Q50 18 65 28" fill="none" stroke="#aa1111" stroke-width="5" stroke-linecap="round"/>
+  <!-- Cruz branca -->
+  <rect x="43" y="40" width="14" height="5" rx="2" fill="white"/>
+  <rect x="47" y="36" width="6" height="13" rx="2" fill="white"/>
+  <!-- Fecho -->
+  <rect x="44" y="49" width="12" height="5" rx="2" fill="#881111"/>
+  <circle cx="50" cy="51" r="2" fill="#cc4444"/>
+</svg>

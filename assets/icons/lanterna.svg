@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Feixe de luz -->
+  <path d="M55 45 L85 25 L88 55 L55 55 Z" fill="#fffaa0" opacity="0.3"/>
+  <path d="M55 50 L82 35 L85 65 L55 55 Z" fill="#fffaa0" opacity="0.2"/>
+  <!-- Corpo da lanterna -->
+  <rect x="22" y="40" width="38" height="20" rx="4" fill="#5a5a6a"/>
+  <!-- Cabeça (frente) -->
+  <ellipse cx="60" cy="50" rx="7" ry="12" fill="#4a4a5a"/>
+  <!-- Lente -->
+  <ellipse cx="62" cy="50" rx="5" ry="9" fill="#fffaa0"/>
+  <ellipse cx="62" cy="50" rx="3" ry="6" fill="#ffee44"/>
+  <!-- Reflexo da lente -->
+  <ellipse cx="60" cy="44" rx="1.5" ry="2" fill="white" opacity="0.6"/>
+  <!-- Detalhes do corpo -->
+  <rect x="26" y="43" width="30" height="3" rx="1" fill="#3a3a4a"/>
+  <rect x="26" y="54" width="30" height="3" rx="1" fill="#3a3a4a"/>
+  <!-- Traseira / cap de baterias -->
+  <ellipse cx="22" cy="50" rx="4" ry="10" fill="#3a3a4a"/>
+  <!-- Botão liga/desliga -->
+  <circle cx="35" cy="50" r="4" fill="#cc4444"/>
+  <circle cx="35" cy="50" r="2" fill="#ff6666"/>
+</svg>

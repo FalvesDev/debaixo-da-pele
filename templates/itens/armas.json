@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Revólver .38 Taurus",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-revolver.svg",
+    "system": {
+      "description": {
+        "value": "<p>Revólver calibre .38 de fabricação nacional. Confiável e robusto, mas com recarga lenta (6 tiros). Modelo comum em equipes de segurança privada no Brasil.</p>"
+      },
+      "skill": "Armas de Fogo (Pistola)",
+      "damage": "1D10",
+      "range": "15",
+      "ammo": 6,
+      "malfunction": 100,
+      "properties": {
+        "improv": false
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 3,
+        "categoria": "arma",
+        "notas": "Recarga: 2 ações. Sem modo semiautomático."
+      }
+    }
+  },
+  {
+    "name": "Pistola 9mm PT92",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+    "system": {
+      "description": {
+        "value": "<p>Pistola semiautomática Taurus PT92, calibre 9mm. 17 cartuchos no pente + 1 na câmara. Padrão de seguranças e policiais brasileiros. Mais versátil que o revólver.</p>"
+      },
+      "skill": "Armas de Fogo (Pistola)",
+      "damage": "1D10",
+      "range": "15",
+      "ammo": 17,
+      "malfunction": 100,
+      "properties": {
+        "improv": false
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 3,
+        "categoria": "arma",
+        "notas": "Recarga: 1 ação (pente). Disparo simples ou rápido."
+      }
+    }
+  },
+  {
+    "name": "Espingarda 12 Pump",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda.svg",
+    "system": {
+      "description": {
+        "value": "<p>Espingarda calibre 12, ação pump (bomba). Alta capacidade de parar alvos em curta distância. Ruído elevado — atrairá atenção. Tubular com 5+1 cartuchos.</p>"
+      },
+      "skill": "Armas de Fogo (Espingarda)",
+      "damage": "4D6",
+      "range": "10",
+      "ammo": 6,
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 6,
+        "categoria": "arma",
+        "notas": "Bônus: aplica Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação."
+      }
+    }
+  },
+  {
+    "name": "Faca Tática",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-faca.svg",
+    "system": {
+      "description": {
+        "value": "<p>Faca de combate com lâmina de 15cm e cabo antiderrapante. Silenciosa e sem limitação de munição. Arma de último recurso ou ataque sorrateiro.</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D6",
+      "range": "cc",
+      "ammo": 0,
+      "malfunction": 100,
+      "properties": {
+        "improv": false
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 2,
+        "categoria": "arma",
+        "notas": "Silenciosa. Ataque pelas costas: +bônus de dados. Não pode ser desarmado facilmente."
+      }
+    }
+  },
+  {
+    "name": "Pé de Cabra",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-pe-de-cabra.svg",
+    "system": {
+      "description": {
+        "value": "<p>Ferramenta de aço usada para arrombar portas e caixas. Funciona como arma improvisada pesada. Também útil para destravar portas forçadas (teste de Mecânica ou Força).</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D6+2",
+      "range": "cc",
+      "ammo": 0,
+      "malfunction": 100,
+      "properties": {
+        "improv": true
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "slots": 3,
+        "categoria": "ferramenta-arma",
+        "notas": "Uso duplo: arma e ferramenta. Bônus de +20% em testes de arrombar portas."
+      }
+    }
+  }
+]

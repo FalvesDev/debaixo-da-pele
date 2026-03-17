@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Refinado Básico",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 80 },
+        "con": { "value": 70 },
+        "siz": { "value": 65 },
+        "dex": { "value": 50 },
+        "int": { "value": 20 },
+        "pow": { "value": 30 },
+        "app": { "value": 5 },
+        "edu": { "value": 0 }
+      },
+      "attribs": {
+        "hp":  { "value": 14, "max": 14 },
+        "mp":  { "value": 6,  "max": 6 }
+      },
+      "description": {
+        "biography": "<p>Ex-funcionário submetido ao Processo de Refinamento do Composto Aurora. Mantém forma humanoide mas perdeu a maioria das capacidades cognitivas superiores. Age por instinto e territorialidade. Textura da pele como couro endurecido. Olhos sem pupila discernível.</p><p><b>Tática:</b> Avança diretamente. Sem noção de auto-preservação.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "tipo": "refinado-basico",
+        "armadura": 2,
+        "ataques": [
+          { "nome": "Garras", "dano": "1D6+1D4", "alcance": "toque", "especial": "" },
+          { "nome": "Mordida", "dano": "1D4+1D4", "alcance": "toque", "especial": "20% chance: +3 pontos de Exposição Aurora" }
+        ],
+        "pericias": {
+          "briga": 60,
+          "esquivar": 25,
+          "furtividade": 45,
+          "ouvir": 70,
+          "rastrear": 50
+        },
+        "comportamento": "Agressivo. Ataca qualquer ser não-refinado. Não recua.",
+        "pontosSAN": "1D6 (primeiro encontro) / 1D3 (posteriores)"
+      }
+    }
+  },
+  {
+    "name": "Refinado Pesado (\"Patrícia\")",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 100 },
+        "con": { "value": 90 },
+        "siz": { "value": 80 },
+        "dex": { "value": 30 },
+        "int": { "value": 10 },
+        "pow": { "value": 25 },
+        "app": { "value": 2 },
+        "edu": { "value": 0 }
+      },
+      "attribs": {
+        "hp":  { "value": 18, "max": 18 },
+        "mp":  { "value": 5,  "max": 5 }
+      },
+      "description": {
+        "biography": "<p>Resultado de Refinamento avançado (Fase III). Musculatura hipertrofiada, coluna deformada, mãos fundidas em 'maças' ósseas. Se move lentamente mas com força devastadora. Identificada pelos PJs como Patrícia Santos (ex-supervisora de turno).</p><p><b>Tática:</b> Força o caminho por obstáculos. Arremessa objetos pesados. Ignora dor até 0 HP.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "tipo": "refinado-pesado",
+        "armadura": 4,
+        "ataques": [
+          { "nome": "Impacto (Maça Óssea)", "dano": "2D6+1D6", "alcance": "toque", "especial": "Knockback automático em criaturas de SIZ ≤70" },
+          { "nome": "Arremesso", "dano": "1D6", "alcance": "5m", "especial": "Pode arremessar objetos ou criaturas menores" }
+        ],
+        "pericias": {
+          "briga": 75,
+          "esquivar": 10,
+          "furtividade": 5,
+          "ouvir": 50
+        },
+        "comportamento": "Patrulha B3. Reage a barulho. Pode derrubar portas sem teste.",
+        "pontosSAN": "1D8 (primeiro encontro) / 1D4 (posteriores)",
+        "especial": "Imune a intimidação. Não pode ser acalmada."
+      }
+    }
+  },
+  {
+    "name": "Espécime Canino",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 60 },
+        "con": { "value": 50 },
+        "siz": { "value": 40 },
+        "dex": { "value": 75 },
+        "int": { "value": 15 },
+        "pow": { "value": 20 },
+        "app": { "value": 3 },
+        "edu": { "value": 0 }
+      },
+      "attribs": {
+        "hp":  { "value": 9, "max": 9 },
+        "mp":  { "value": 4, "max": 4 }
+      },
+      "description": {
+        "biography": "<p>Cão de guarda submetido ao Processo Aurora como experimento de Fase I em animais. Pelagem parcialmente ausente, membros alongados de forma não-natural. Move-se em quatro patas mas pode se erguer brevemente. Saliva com traços do Composto.</p><p><b>Tática:</b> Ágil, ataca em grupo quando possível. Prioriza membros feridos.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "tipo": "especime-canino",
+        "armadura": 0,
+        "ataques": [
+          { "nome": "Mordida", "dano": "1D6+1D4", "alcance": "toque", "especial": "20% chance: +3 pontos de Exposição Aurora" }
+        ],
+        "pericias": {
+          "briga": 55,
+          "esquivar": 60,
+          "furtividade": 65,
+          "ouvir": 90,
+          "farejar": 95,
+          "rastrear": 80
+        },
+        "comportamento": "Caça em matilha. Evita luz intensa. Farejar rastros de Refinados (aliados).",
+        "pontosSAN": "1D4 (primeiro encontro)"
+      }
+    }
+  },
+  {
+    "name": "Dr. Castilho",
+    "type": "npc",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 55 },
+        "con": { "value": 60 },
+        "siz": { "value": 60 },
+        "dex": { "value": 55 },
+        "int": { "value": 85 },
+        "pow": { "value": 70 },
+        "app": { "value": 50 },
+        "edu": { "value": 90 }
+      },
+      "attribs": {
+        "hp":  { "value": 12, "max": 12 },
+        "mp":  { "value": 14, "max": 14 },
+        "san": { "value": 15, "max": 70 }
+      },
+      "description": {
+        "biography": "<p>Cientista-chefe do Projeto Aurora. Aparência de médico corporativo normal, mas olhos calculistas revelam alguém que cruzou linhas éticas há muito tempo. Carrega uma pistola e não hesita em usá-la. Acredita genuinamente que o Aurora é 'evolução necessária'.</p><p><b>Tática:</b> Usa subordinados refinados como escudo. Prefere diálogo se os PJs parecerem úteis.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "tipo": "antagonista-humano",
+        "aurora": 3.5,
+        "armadura": 0,
+        "ataques": [
+          { "nome": "Pistola .40", "dano": "1D10+2", "alcance": "20", "especial": "" },
+          { "nome": "Seringa Aurora", "dano": "0", "alcance": "toque", "especial": "Injeção direta: +5 Exposição Aurora imediata" }
+        ],
+        "pericias": {
+          "pistola": 55,
+          "persuasao": 80,
+          "intimidacao": 70,
+          "medicina": 90,
+          "ciencia_biologia": 95,
+          "esquivar": 40
+        },
+        "comportamento": "Patrulha B3. Comanda Refinados via sinais sonoros. Tem acesso a todas as áreas.",
+        "pontosSAN": "0 (humano, não gera choque)"
+      }
+    }
+  }
+]

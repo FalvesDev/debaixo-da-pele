@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="8" fill="#1a1a2e"/>
+  <!-- Antena -->
+  <rect x="60" y="8" width="4" height="25" rx="2" fill="#555"/>
+  <rect x="59" y="8" width="6" height="3" rx="1" fill="#777"/>
+  <!-- Corpo -->
+  <rect x="28" y="25" width="38" height="60" rx="6" fill="#3a3a4a"/>
+  <rect x="28" y="25" width="38" height="60" rx="6" fill="none" stroke="#555" stroke-width="1.5"/>
+  <!-- Clipe lateral -->
+  <rect x="22" y="30" width="7" height="30" rx="3" fill="#444"/>
+  <rect x="22" y="35" width="7" height="3" rx="1" fill="#666"/>
+  <rect x="22" y="52" width="7" height="3" rx="1" fill="#666"/>
+  <!-- Alto-falante / grade -->
+  <rect x="33" y="30" width="28" height="16" rx="3" fill="#222"/>
+  <line x1="35" y1="33" x2="59" y2="33" stroke="#444" stroke-width="1.5"/>
+  <line x1="35" y1="37" x2="59" y2="37" stroke="#444" stroke-width="1.5"/>
+  <line x1="35" y1="41" x2="59" y2="41" stroke="#444" stroke-width="1.5"/>
+  <!-- Display LED -->
+  <rect x="33" y="50" width="28" height="12" rx="2" fill="#0a1a0a"/>
+  <text x="47" y="59" text-anchor="middle" font-family="monospace" font-size="8" fill="#00cc44">CH 04</text>
+  <!-- Botão PTT (push-to-talk) -->
+  <rect x="62" y="48" width="6" height="16" rx="3" fill="#cc4422"/>
+  <!-- Botões laterais -->
+  <rect x="33" y="67" width="12" height="8" rx="2" fill="#555"/>
+  <rect x="49" y="67" width="12" height="8" rx="2" fill="#555"/>
+  <!-- Conector na base -->
+  <rect x="43" y="82" width="8" height="5" rx="2" fill="#222"/>
+  <!-- LED de status -->
+  <circle cx="56" cy="28" r="3" fill="#00cc44"/>
+  <circle cx="56" cy="28" r="1.5" fill="#88ff88"/>
+</svg>

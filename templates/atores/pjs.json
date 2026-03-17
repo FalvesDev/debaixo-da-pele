@@ -1,0 +1,197 @@
+[
+  {
+    "name": "Antônio Figueiredo",
+    "type": "character",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 65 },
+        "con": { "value": 60 },
+        "siz": { "value": 70 },
+        "dex": { "value": 55 },
+        "app": { "value": 50 },
+        "int": { "value": 75 },
+        "pow": { "value": 65 },
+        "edu": { "value": 80 }
+      },
+      "attribs": {
+        "hp":  { "value": 13, "max": 13 },
+        "mp":  { "value": 13, "max": 13 },
+        "san": { "value": 65, "max": 65 },
+        "lck": { "value": 65 }
+      },
+      "description": {
+        "occupation": "Engenheiro de Segurança",
+        "biography": "<p>Engenheiro de segurança patrimonial contratado pela Hexacor para auditar os sistemas da instalação. Especialista em protocolos de contenção e sistemas de acesso. Cético por natureza, mas curioso demais para seu próprio bem.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "aurora": 0,
+        "slots_bolsos": 0,
+        "slots_mochila": 0,
+        "max_mochila": 16,
+        "mochila_nome": "Mochila 30L",
+        "vestindo_epi": false,
+        "ocupacao": "Engenheiro de Segurança",
+        "conexoes": "Hexacor (empregador), sindicato de engenheiros"
+      }
+    }
+  },
+  {
+    "name": "Carolina Melo",
+    "type": "character",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 45 },
+        "con": { "value": 65 },
+        "siz": { "value": 55 },
+        "dex": { "value": 70 },
+        "app": { "value": 65 },
+        "int": { "value": 85 },
+        "pow": { "value": 70 },
+        "edu": { "value": 90 }
+      },
+      "attribs": {
+        "hp":  { "value": 12, "max": 12 },
+        "mp":  { "value": 14, "max": 14 },
+        "san": { "value": 70, "max": 70 },
+        "lck": { "value": 70 }
+      },
+      "description": {
+        "occupation": "Médica",
+        "biography": "<p>Médica clínica geral com especialização em medicina do trabalho. Enviada para avaliar condições de saúde dos funcionários da instalação após relatórios anônimos sobre 'acidentes de trabalho incomuns'.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "aurora": 0,
+        "slots_bolsos": 0,
+        "slots_mochila": 0,
+        "max_mochila": 12,
+        "mochila_nome": "Mochila 20L",
+        "vestindo_epi": false,
+        "ocupacao": "Médica",
+        "conexoes": "CRM, Ministério da Saúde (contato), Isabela Voss (colega de faculdade)"
+      }
+    }
+  },
+  {
+    "name": "Sérgio Dantas",
+    "type": "character",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 70 },
+        "con": { "value": 65 },
+        "siz": { "value": 75 },
+        "dex": { "value": 50 },
+        "app": { "value": 60 },
+        "int": { "value": 70 },
+        "pow": { "value": 55 },
+        "edu": { "value": 70 }
+      },
+      "attribs": {
+        "hp":  { "value": 14, "max": 14 },
+        "mp":  { "value": 11, "max": 11 },
+        "san": { "value": 55, "max": 55 },
+        "lck": { "value": 55 }
+      },
+      "description": {
+        "occupation": "Gerente de Operações",
+        "biography": "<p>Gerente de operações da Hexacor com 8 anos na empresa. Conhece a instalação melhor que ninguém. Pragmático e focado em resultados, mas começa a questionar o que realmente acontece nos andares inferiores.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "aurora": 0,
+        "slots_bolsos": 0,
+        "slots_mochila": 0,
+        "max_mochila": 16,
+        "mochila_nome": "Mochila 30L",
+        "vestindo_epi": false,
+        "ocupacao": "Gerente de Operações",
+        "conexoes": "Hexacor (liderança), Marcos Heleno (subordinado), fornecedores"
+      }
+    }
+  },
+  {
+    "name": "Beatriz Fontes",
+    "type": "character",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 40 },
+        "con": { "value": 55 },
+        "siz": { "value": 50 },
+        "dex": { "value": 65 },
+        "app": { "value": 75 },
+        "int": { "value": 90 },
+        "pow": { "value": 75 },
+        "edu": { "value": 95 }
+      },
+      "attribs": {
+        "hp":  { "value": 11, "max": 11 },
+        "mp":  { "value": 15, "max": 15 },
+        "san": { "value": 75, "max": 75 },
+        "lck": { "value": 75 }
+      },
+      "description": {
+        "occupation": "Advogada Corporativa",
+        "biography": "<p>Advogada especializada em direito corporativo e compliance. Foi enviada para revisar contratos e proteger os interesses legais da Hexacor — mas algo nos documentos não bate. Sua mente analítica é sua principal arma.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "aurora": 0,
+        "slots_bolsos": 0,
+        "slots_mochila": 0,
+        "max_mochila": 8,
+        "mochila_nome": "Bolsa de campo",
+        "vestindo_epi": false,
+        "ocupacao": "Advogada Corporativa",
+        "conexoes": "OAB, escritório de advocacia, ANVISA (contato indireto)"
+      }
+    }
+  },
+  {
+    "name": "Tiago Araújo",
+    "type": "character",
+    "img": "icons/svg/mystery-man.svg",
+    "system": {
+      "characteristics": {
+        "str": { "value": 55 },
+        "con": { "value": 60 },
+        "siz": { "value": 60 },
+        "dex": { "value": 80 },
+        "app": { "value": 70 },
+        "int": { "value": 75 },
+        "pow": { "value": 65 },
+        "edu": { "value": 65 }
+      },
+      "attribs": {
+        "hp":  { "value": 12, "max": 12 },
+        "mp":  { "value": 13, "max": 13 },
+        "san": { "value": 65, "max": 65 },
+        "lck": { "value": 65 }
+      },
+      "description": {
+        "occupation": "Fotógrafo",
+        "biography": "<p>Fotógrafo jornalístico contratado para documentar as instalações para um relatório corporativo. Olho aguçado para detalhes e instinto apurado para quando algo está errado. Sua câmera pode ser a única prova do que acontece aqui.</p>"
+      }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "aurora": 0,
+        "slots_bolsos": 0,
+        "slots_mochila": 0,
+        "max_mochila": 12,
+        "mochila_nome": "Mochila 20L",
+        "vestindo_epi": false,
+        "ocupacao": "Fotógrafo",
+        "conexoes": "Revista/Jornal (contratante), agência de imagens"
+      }
+    }
+  }
+]

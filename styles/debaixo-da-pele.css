@@ -1,0 +1,118 @@
+/* ============================================================
+   DEBAIXO DA PELE — Estilos do Módulo
+   Call of Cthulhu 7e | Foundry VTT v11/v12
+   ============================================================ */
+
+/* ─── Dialog base do módulo ─────────────────────────────────── */
+.ddp-dialog {
+  font-family: "Signika", serif;
+  color: #ddd;
+}
+
+.ddp-dialog h2 {
+  color: #c0392b;
+  border-bottom: 1px solid #444;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+/* ─── Inventário — Grid de Slots ────────────────────────────── */
+.ddp-inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 32px);
+  gap: 3px;
+  margin: 8px 0;
+}
+
+.ddp-slot {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: #1e1e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #888;
+  cursor: default;
+}
+
+.ddp-slot.usado {
+  background: #2d4a2d;
+  border-color: #4a7c4a;
+  color: #a0ffa0;
+}
+
+.ddp-slot.sobrecarga {
+  background: #4a2d2d;
+  border-color: #7c4a4a;
+  color: #ffa0a0;
+}
+
+/* ─── Barra de Aurora ───────────────────────────────────────── */
+.ddp-aurora-bar {
+  width: 100%;
+  height: 16px;
+  background: #1a1a2e;
+  border: 1px solid #555;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+
+.ddp-aurora-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+/* ─── Status coloridos ──────────────────────────────────────── */
+.ddp-status-ok    { color: #a0ffa0; font-weight: bold; }
+.ddp-status-warn  { color: #ffffa0; font-weight: bold; }
+.ddp-status-alert { color: #ffb347; font-weight: bold; }
+.ddp-status-crit  { color: #ff6b6b; font-weight: bold; }
+.ddp-status-doom  { color: #ff0000; font-weight: bold; animation: pulsar 1s infinite; }
+
+@keyframes pulsar {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ─── Formulário padrão dos dialogs ─────────────────────────── */
+.ddp-form .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  gap: 8px;
+}
+
+.ddp-form label {
+  color: #bbb;
+  flex: 1;
+}
+
+.ddp-form input[type="number"],
+.ddp-form input[type="text"],
+.ddp-form select {
+  background: #1e1e2e;
+  border: 1px solid #555;
+  color: #eee;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 120px;
+}
+
+.ddp-form .hint {
+  font-size: 0.8em;
+  color: #888;
+  font-style: italic;
+  margin-top: -4px;
+}
+
+.ddp-separator {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 10px 0;
+}
