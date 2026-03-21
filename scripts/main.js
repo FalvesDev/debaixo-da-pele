@@ -51,6 +51,12 @@ Hooks.once("init", () => {
     scope: "world", config: false, type: Boolean, default: false
   });
 
+  // Controle de setup
+  game.settings.register(MODULE_ID, "macrosImportadas", {
+    name: "Macros DDP importadas",
+    scope: "world", config: false, type: Boolean, default: false
+  });
+
   // Preferências de cliente
   game.settings.register(MODULE_ID, "partyFrameVisible", {
     name: "Painel de Investigadores — Visível",
@@ -107,7 +113,7 @@ async function _handleSocket(data) {
 
 // ─── READY ──────────────────────────────────────────────────
 Hooks.once("ready", () => {
-  console.log(`${MODULE_ID} | Debaixo da Pele v1.4.1 pronto.`);
+  console.log(`${MODULE_ID} | Debaixo da Pele v1.5.0 pronto.`);
 
   if (game.user.isGM) {
     const dias = game.settings.get(MODULE_ID, "geradorDias");
@@ -120,7 +126,50 @@ Hooks.once("ready", () => {
 
   window.DebaixoDaPele = {
     MODULE_ID,
-    version: "1.4.0",
+    version: "1.5.0",
     emitSocket: (data) => game.socket?.emit(`module.${MODULE_ID}`, data)
   };
+
+  // ── Prompt de importação de macros (primeira vez) ──
+  if (game.user.isGM) {
+    const jaImportadas = game.settings.get(MODULE_ID, "macrosImportadas");
+    const pack = game.packs.get(`${MODULE_ID}.macros`);
+    if (!jaImportadas && pack) {
+      setTimeout(() => {
+        new Dialog({
+          title: "📦 Debaixo da Pele — Configuração Inicial",
+          content: `
+            <div style="padding:12px; font-family:'Signika',serif">
+              <p style="margin-bottom:8px">As <b>13 macros da campanha</b> (SAN, Aurora, Override, Inventário, Itens utilizáveis...) estão disponíveis no compêndio do módulo.</p>
+              <p style="color:#aaa; font-style:italic; font-size:0.9em">Deseja importá-las para sua world agora?</p>
+            </div>
+          `,
+          buttons: {
+            sim: {
+              icon: '<i class="fas fa-download"></i>',
+              label: "Sim, importar macros",
+              callback: async () => {
+                const docs = await pack.getDocuments();
+                let criadas = 0;
+                for (const doc of docs) {
+                  if (!game.macros.find(m => m.name === doc.name)) {
+                    await Macro.create({ name: doc.name, type: doc.type, command: doc.command, img: doc.img });
+                    criadas++;
+                  }
+                }
+                await game.settings.set(MODULE_ID, "macrosImportadas", true);
+                ui.notifications.info(`✅ ${criadas} macro(s) DDP importada(s) com sucesso!`);
+              }
+            },
+            depois: {
+              icon: '<i class="fas fa-clock"></i>',
+              label: "Depois",
+              callback: () => {}
+            }
+          },
+          default: "sim"
+        }).render(true);
+      }, 1500);
+    }
+  }
 });
