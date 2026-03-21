@@ -94,28 +94,38 @@ function _drawHUD(token) {
   const data = _getData(token);
   if (!data) return;
 
+  // Visibilidade condicional para jogadores
+  const isGM           = game.user.isGM;
+  const hpSanVisivel   = isGM || game.settings.get(MODULE_ID, "hpSanVisivelJogadores");
+  const auroraVisivel  = isGM || game.settings.get(MODULE_ID, "auroraVisivelJogadores");
+  if (!hpSanVisivel && !auroraVisivel) return; // Nada para mostrar
+
   const container = new PIXI.Container();
   container.name  = HUD_KEY;
 
   const W = token.w || canvas.grid?.size || 100;
 
-  // ── HP bar (mais próxima do token) ──
-  const hpY  = -(STEP * 1);
-  container.addChild(_drawBar(0, hpY, W, data.hpPct, data.hpColor));
-  // Valor HP (direita)
-  container.addChild(_drawLabel(`${data.hp.value}`, W - 14, hpY - 1));
+  let barSlot = 1;
+
+  // ── HP bar ──
+  if (hpSanVisivel) {
+    const hpY = -(STEP * barSlot++);
+    container.addChild(_drawBar(0, hpY, W, data.hpPct, data.hpColor));
+    container.addChild(_drawLabel(`${data.hp.value}`, W - 14, hpY - 1));
+  }
 
   // ── SAN bar ──
-  const sanY = -(STEP * 2);
-  container.addChild(_drawBar(0, sanY, W, data.sanPct, data.sanColor));
-  container.addChild(_drawLabel(`${data.san.value}`, W - 18, sanY - 1));
+  if (hpSanVisivel) {
+    const sanY = -(STEP * barSlot++);
+    container.addChild(_drawBar(0, sanY, W, data.sanPct, data.sanColor));
+    container.addChild(_drawLabel(`${data.san.value}`, W - 18, sanY - 1));
+  }
 
-  // ── Aurora mini-bar ──
-  const aurY = -(STEP * 3);
-  container.addChild(_drawBar(0, aurY, W, data.aurPct, data.aurColor));
-  // Label de aurora só se > 0
-  if (data.aurora > 0) {
-    container.addChild(_drawLabel(`A${data.aurora}`, W - 20, aurY - 1));
+  // ── Aurora mini-bar (só se revelado) ──
+  if (auroraVisivel) {
+    const aurY = -(STEP * barSlot++);
+    container.addChild(_drawBar(0, aurY, W, data.aurPct, data.aurColor));
+    if (data.aurora > 0) container.addChild(_drawLabel(`A${data.aurora}`, W - 20, aurY - 1));
   }
 
   // Labels fixos (esquerda) — HP / SAN / A

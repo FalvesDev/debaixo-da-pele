@@ -1,0 +1,239 @@
+<div class="ddp-gm-wrap">
+
+  <!-- ══ Navegação ══ -->
+  <nav class="ddp-gm-nav">
+    <a class="ddp-gm-nav-item active" data-tab="sessao">⚙️ Sessão</a>
+    <a class="ddp-gm-nav-item" data-tab="investigadores">🧍 PJs</a>
+    <a class="ddp-gm-nav-item" data-tab="revelacoes">🔒 Revelações</a>
+    <a class="ddp-gm-nav-item" data-tab="acoes">⚡ Ações</a>
+  </nav>
+
+  <!-- ══ ABA: Sessão ══ -->
+  <div class="ddp-gm-tab active" id="ddp-tab-sessao">
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Estado da Instalação</span>
+
+      <div class="ddp-gm-row">
+        <span class="ddp-gm-lbl">📅 Dia da Campanha</span>
+        <div class="ddp-gm-ctrl">
+          <button class="ddp-gm-adj" data-setting="diaCampanha" data-delta="-1">−</button>
+          <span class="ddp-gm-val" id="val-dia">{{diaCampanha}}</span>
+          <button class="ddp-gm-adj" data-setting="diaCampanha" data-delta="1">+</button>
+        </div>
+      </div>
+
+      <div class="ddp-gm-row">
+        <span class="ddp-gm-lbl {{geradorClass}}">⚡ Combustível (dias)</span>
+        <div class="ddp-gm-ctrl">
+          <button class="ddp-gm-adj" data-setting="geradorDias" data-delta="-1">−</button>
+          <span class="ddp-gm-val {{geradorClass}}" id="val-gerador">{{geradorDias}}</span>
+          <button class="ddp-gm-adj" data-setting="geradorDias" data-delta="1">+</button>
+        </div>
+      </div>
+
+      <div class="ddp-gm-row">
+        <span class="ddp-gm-lbl">🔓 Override Sistema</span>
+        <button class="ddp-gm-toggle {{#if overrideAtivo}}ddp-toggle-on{{else}}ddp-toggle-off{{/if}}"
+                id="btn-override" data-setting="overrideAtivo">
+          {{#if overrideAtivo}}● ATIVO{{else}}○ INATIVO{{/if}}
+        </button>
+      </div>
+    </div>
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Resumo da Mesa</span>
+      <div class="ddp-gm-stat-grid">
+        <div class="ddp-gm-stat">
+          <span class="ddp-gm-stat-val">{{totalPJs}}</span>
+          <span class="ddp-gm-stat-lbl">PJs ativos</span>
+        </div>
+        <div class="ddp-gm-stat">
+          <span class="ddp-gm-stat-val {{#if temHemorragia}}ddp-crit{{/if}}">{{totalHemorragias}}</span>
+          <span class="ddp-gm-stat-lbl">Hemorragias</span>
+        </div>
+        <div class="ddp-gm-stat">
+          <span class="ddp-gm-stat-val {{#if temInconsciente}}ddp-crit{{/if}}">{{totalInconscientes}}</span>
+          <span class="ddp-gm-stat-lbl">Inconscientes</span>
+        </div>
+        <div class="ddp-gm-stat">
+          <span class="ddp-gm-stat-val">{{auroraMedia}}</span>
+          <span class="ddp-gm-stat-lbl">Aurora média</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ ABA: Investigadores ══ -->
+  <div class="ddp-gm-tab" id="ddp-tab-investigadores">
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Status dos Personagens</span>
+
+      {{#each investigadores}}
+      <div class="ddp-gm-pj-row" data-actor-id="{{id}}">
+        <div class="ddp-gm-pj-nome">
+          <span class="ddp-aurora-pip-sm" style="background:{{faseCor}}" title="{{faseLabel}}"></span>
+          <b>{{nome}}</b>
+        </div>
+        <div class="ddp-gm-pj-stats">
+          <span class="ddp-gm-stat-badge ddp-hp-badge {{hpClass}}">HP {{hp.value}}/{{hp.max}}</span>
+          <span class="ddp-gm-stat-badge ddp-san-badge {{sanClass}}">SAN {{san.value}}</span>
+          <span class="ddp-gm-stat-badge ddp-aur-badge" style="border-color:{{faseCor}}; color:{{faseCor}}">
+            ☣ {{aurora}}
+          </span>
+        </div>
+        <div class="ddp-gm-pj-ctrl">
+          <button class="ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-1" title="Aurora −1">−1</button>
+          <button class="ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-0.5" title="Aurora −½">−½</button>
+          <button class="ddp-gm-aurora-adj ddp-adj-add" data-actor="{{id}}" data-delta="0.5" title="Aurora +½">+½</button>
+          <button class="ddp-gm-aurora-adj ddp-adj-add" data-actor="{{id}}" data-delta="1" title="Aurora +1">+1</button>
+        </div>
+        <div class="ddp-gm-pj-flags">
+          {{#if hemorragia}}<span class="ddp-flag ddp-flag-hemo" title="Hemorragia ativa">🩸</span>{{/if}}
+          {{#if inconsciente}}<span class="ddp-flag" title="Inconsciente">💤</span>{{/if}}
+          {{#if mascaraAtiva}}<span class="ddp-flag" title="{{mascaraLabel}}">🛡️</span>{{/if}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Exposição em Massa</span>
+      <div class="ddp-gm-row-wrap">
+        <button class="ddp-gm-mass-btn" data-delta="0.5">☣ +½ Aurora (todos)</button>
+        <button class="ddp-gm-mass-btn" data-delta="1">☣ +1 Aurora (todos)</button>
+        <button class="ddp-gm-mass-btn ddp-btn-remove" data-delta="-1">↓ −1 Aurora (todos)</button>
+      </div>
+      <div class="ddp-gm-hint">Simula 1 hora de exposição em B2 (+0.5) ou B3 (+1).</div>
+    </div>
+  </div>
+
+  <!-- ══ ABA: Revelações ══ -->
+  <div class="ddp-gm-tab" id="ddp-tab-revelacoes">
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">O que os jogadores veem</span>
+
+      <div class="ddp-gm-revelation-row">
+        <div class="ddp-gm-rev-info">
+          <b>HP e SAN</b>
+          <span>Barras de vida e sanidade nos tokens e painel</span>
+        </div>
+        <button class="ddp-gm-toggle {{#if hpSanVisivel}}ddp-toggle-on{{else}}ddp-toggle-off{{/if}}"
+                data-setting="hpSanVisivelJogadores">
+          {{#if hpSanVisivel}}✅ Visível{{else}}🚫 Oculto{{/if}}
+        </button>
+      </div>
+
+      <div class="ddp-gm-revelation-row {{#unless auroraRevelado}}ddp-rev-locked{{/unless}}">
+        <div class="ddp-gm-rev-info">
+          <b>Composto Aurora</b>
+          <span>Nível, fase e efeitos na ficha, token e painel</span>
+        </div>
+        <button class="ddp-gm-toggle {{#if auroraVisivel}}ddp-toggle-on{{else}}ddp-toggle-off{{/if}}"
+                data-setting="auroraVisivelJogadores" {{#unless auroraRevelado}}disabled{{/unless}}>
+          {{#if auroraVisivel}}✅ Visível{{else}}🚫 Oculto{{/if}}
+        </button>
+      </div>
+    </div>
+
+    {{#unless auroraRevelado}}
+    <div class="ddp-gm-section ddp-reveal-box">
+      <span class="ddp-gm-section-label">Revelar — Composto Aurora</span>
+      <p class="ddp-gm-hint">
+        O painel Aurora está oculto para os jogadores. Use o botão abaixo
+        para revelar narrativamente que eles foram expostos ao Composto.
+      </p>
+      <div class="ddp-gm-form-group">
+        <label>Título da revelação</label>
+        <input type="text" id="reveal-titulo"
+               value="O Composto Aurora"
+               placeholder="Título dramático..."/>
+      </div>
+      <div class="ddp-gm-form-group">
+        <label>Texto enviado às telas</label>
+        <textarea id="reveal-texto" rows="3"
+                  placeholder="Texto narrativo que aparece para todos os jogadores...">Análises do laboratório revelaram traços do Composto Aurora no seu organismo. Os efeitos ainda são desconhecidos.</textarea>
+      </div>
+      <button class="ddp-gm-reveal-btn" id="btn-revelar-aurora">
+        🔬 Revelar Aurora a todos os jogadores
+      </button>
+    </div>
+    {{/unless}}
+
+    {{#if auroraRevelado}}
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Aurora já revelado ✅</span>
+      <p class="ddp-gm-hint">Os jogadores já sabem sobre o Composto. Você pode ocultar novamente pela toggle acima.</p>
+      <button class="ddp-gm-btn-secondary" id="btn-ocultar-aurora">
+        🔒 Ocultar Aurora novamente
+      </button>
+    </div>
+    {{/if}}
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Empurrar Documento para Jogadores</span>
+      <div class="ddp-gm-form-group">
+        <label>Diário / Item</label>
+        <select id="doc-select" class="ddp-gm-select">
+          <option value="">— selecionar —</option>
+          {{#each journals}}
+          <option value="JournalEntry:{{id}}">📖 {{name}}</option>
+          {{/each}}
+          {{#each items}}
+          <option value="Item:{{id}}">📦 {{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <button class="ddp-gm-btn-secondary" id="btn-mostrar-doc">
+        ▶ Abrir na tela de todos
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ══ ABA: Ações Rápidas ══ -->
+  <div class="ddp-gm-tab" id="ddp-tab-acoes">
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Sanidade</span>
+      <div class="ddp-gm-row-wrap">
+        <button class="ddp-gm-action-btn" data-macro="01" data-label="01 SAN">🧠 Teste SAN (token selecionado)</button>
+        <button class="ddp-gm-action-btn" id="btn-san-todos">🧠 Teste SAN (todos os PJs)</button>
+      </div>
+    </div>
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Hemorragia</span>
+      <div class="ddp-gm-form-group">
+        <label>Personagem</label>
+        <select id="hemo-select" class="ddp-gm-select">
+          {{#each investigadores}}
+          <option value="{{id}}">{{nome}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="ddp-gm-row-wrap">
+        <button class="ddp-gm-action-btn ddp-btn-danger" id="btn-hemo-add">🩸 Aplicar Hemorragia</button>
+        <button class="ddp-gm-action-btn" id="btn-hemo-rem">🩹 Remover Hemorragia</button>
+      </div>
+    </div>
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Override do Sistema</span>
+      <div class="ddp-gm-row-wrap">
+        <button class="ddp-gm-action-btn" data-macro="03" data-label="Override">🔓 Timer de Override</button>
+      </div>
+    </div>
+
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">Mensagem Narrativa</span>
+      <textarea id="msg-narrativa" rows="2" class="ddp-gm-textarea"
+                placeholder="Descreva o que acontece..."></textarea>
+      <button class="ddp-gm-btn-secondary" id="btn-enviar-msg">📢 Enviar ao chat</button>
+    </div>
+
+  </div>
+
+</div>
