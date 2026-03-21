@@ -453,3 +453,233 @@
 .ddp-aurora-chat .message-content {
   border-left: 3px solid #cc4400;
 }
+
+/* ============================================================
+   PARTY FRAME — Painel persistente de investigadores
+   ============================================================ */
+
+#ddp-party-frame {
+  position: fixed;
+  bottom: 100px;
+  left: 10px;
+  z-index: 65;
+  width: 210px;
+  background: rgba(10, 10, 20, 0.92);
+  border: 1px solid #2a2a3a;
+  border-radius: 7px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  font-family: "Signika", sans-serif;
+  color: #ccc;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  transition: height 0.25s ease;
+}
+
+/* ─── Cabeçalho ─────────────────────────────────────────────── */
+.ddp-pf-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  background: #0d0d1c;
+  border-bottom: 1px solid #222233;
+  cursor: default;
+  user-select: none;
+}
+
+.ddp-pf-header i.fa-skull {
+  color: #c0392b;
+  font-size: 0.85em;
+}
+
+.ddp-pf-title {
+  flex: 1;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.ddp-pf-btn-toggle {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  padding: 0 2px;
+  font-size: 0.7em;
+  transition: color 0.15s;
+  line-height: 1;
+}
+.ddp-pf-btn-toggle:hover { color: #aaa; }
+
+/* ─── Estado minimizado ─────────────────────────────────────── */
+.ddp-pf-minimized .ddp-pf-body {
+  display: none;
+}
+
+/* ─── Body ──────────────────────────────────────────────────── */
+.ddp-pf-body {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+
+/* ─── Card do personagem ────────────────────────────────────── */
+.ddp-pf-char {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid #111122;
+}
+
+.ddp-pf-char:last-child { border-bottom: none; }
+.ddp-pf-char:hover       { background: rgba(255,255,255,0.04); }
+
+/* HP crítico */
+.ddp-pf-char.ddp-pf-crit {
+  background: rgba(180, 0, 0, 0.08);
+  animation: ddp-pf-pulse 2s ease-in-out infinite;
+}
+/* KO */
+.ddp-pf-char.ddp-pf-ko {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.65;
+}
+
+@keyframes ddp-pf-pulse {
+  0%, 100% { background: rgba(180,0,0,0.08); }
+  50%       { background: rgba(180,0,0,0.18); }
+}
+
+/* ─── Avatar ────────────────────────────────────────────────── */
+.ddp-pf-avatar-col {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ddp-pf-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid #333;
+  display: block;
+}
+
+.ddp-pf-aurora-pip {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  transition: background 0.4s;
+}
+
+/* ─── Barras ────────────────────────────────────────────────── */
+.ddp-pf-bars-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ddp-pf-name {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #ddd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1px;
+}
+
+.ddp-pf-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ddp-pf-lbl {
+  font-size: 0.6em;
+  color: #666;
+  width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.ddp-pf-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: #111;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #222;
+}
+
+.ddp-pf-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.4s ease;
+  min-width: 2px;
+}
+
+.ddp-pf-val {
+  font-size: 0.65em;
+  color: #888;
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.ddp-pf-val.ddp-val-warn { color: #ffaa00; font-weight: bold; }
+.ddp-pf-val.ddp-val-crit { color: #ff4444; font-weight: bold; animation: ddp-val-blink 1s infinite; }
+
+@keyframes ddp-val-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ─── Coluna de status (direita) ────────────────────────────── */
+.ddp-pf-status-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  width: 18px;
+}
+
+.ddp-pf-status-icon {
+  font-size: 0.8em;
+  line-height: 1;
+  cursor: default;
+}
+
+.ddp-pf-hemorragia {
+  animation: ddp-hemo-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes ddp-hemo-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ─── Estado vazio ──────────────────────────────────────────── */
+.ddp-pf-empty {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.75em;
+  color: #444;
+  font-style: italic;
+}
