@@ -7,6 +7,59 @@ import { getFaseAurora } from "./aurora-system.js";
 
 const MODULE_ID = "debaixo-da-pele";
 
+// ─── Helpers de macro ────────────────────────────────────────
+/**
+ * Encontra uma macro pelo número DDP (ex: "01") ou por termos do label.
+ * Tenta múltiplas convenções de nome para máxima compatibilidade.
+ */
+function _encontrarMacro(num, label = "") {
+  const termos = [
+    `${num} —`,          // "01 — Teste de Sanidade"
+    `${num} -`,          // "01 - SAN"
+    `0${parseInt(num)}`, // "01" → "01" (já coberto) ou sem zero
+  ];
+  const labelLc = label.toLowerCase();
+
+  return game.macros.find(m => {
+    const nome = m.name;
+    const nomeLc = nome.toLowerCase();
+    return (
+      termos.some(t => nome.startsWith(t)) ||
+      (labelLc && nomeLc.includes(labelLc)) ||
+      nomeLc.includes(`ddp-macro-${num}`)
+    );
+  }) ?? null;
+}
+
+/**
+ * Importa todas as macros do compêndio DDP para a world (se não existirem já).
+ */
+async function _importarMacrosCompendium() {
+  const pack = game.packs.get(`${MODULE_ID}.macros`);
+  if (!pack) {
+    ui.notifications.error("Compêndio de macros DDP não encontrado. Verifique a instalação do módulo.");
+    return;
+  }
+
+  const docs = await pack.getDocuments();
+  let criadas = 0;
+  let ja_existem = 0;
+
+  for (const doc of docs) {
+    const jaExiste = game.macros.find(m => m.name === doc.name);
+    if (jaExiste) { ja_existem++; continue; }
+    await Macro.create({ name: doc.name, type: doc.type, command: doc.command, img: doc.img });
+    criadas++;
+  }
+
+  const msg = criadas > 0
+    ? `✅ ${criadas} macro(s) importada(s) para a world.${ja_existem > 0 ? ` (${ja_existem} já existiam)` : ""}`
+    : `ℹ️ Todas as ${ja_existem} macros já estavam importadas.`;
+
+  ui.notifications.info(msg);
+  ChatMessage.create({ content: `<b>DDP — Macros importadas:</b> ${msg}`, whisper: [game.user.id] });
+}
+
 // ─── Application ────────────────────────────────────────────
 class DDPGMPanel extends Application {
   constructor(options = {}) {
@@ -21,9 +74,9 @@ class DDPGMPanel extends Application {
       template:  "modules/debaixo-da-pele/templates/gm-panel.html",
       classes:   ["ddp-gm-panel"],
       popOut:    true,
-      width:     400,
-      height:    "auto",
-      resizable: false
+      width:     420,
+      height:    580,
+      resizable: true
     });
   }
 
@@ -219,12 +272,16 @@ class DDPGMPanel extends Application {
 
     // ── Botões de macro ──
     html.find(".ddp-gm-action-btn[data-macro]").on("click", (e) => {
+      const num   = e.currentTarget.dataset.macro; // "01", "03", etc.
       const label = e.currentTarget.dataset.label ?? "";
-      const macro = game.macros.find(m =>
-        m.name.startsWith(e.currentTarget.dataset.macro) ||
-        m.name.toLowerCase().includes(label.toLowerCase())
-      );
-      macro ? macro.execute() : ui.notifications.warn(`Macro "${label}" não encontrada.`);
+      const macro = _encontrarMacro(num, label);
+      if (macro) {
+        macro.execute();
+      } else {
+        ui.notifications.warn(
+          `Macro "${label}" não encontrada. Importe as macros via aba Ações → Importar Macros do Compêndio.`
+        );
+      }
     });
 
     // ── Mensagem narrativa ──
@@ -243,14 +300,20 @@ class DDPGMPanel extends Application {
 
     // ── Teste SAN todos ──
     html.find("#btn-san-todos").on("click", async () => {
-      const macro = game.macros.find(m => m.name.includes("SAN") || m.name.startsWith("01"));
-      if (!macro) return ui.notifications.warn("Macro de SAN não encontrada.");
+      const macro = _encontrarMacro("01", "SAN");
+      if (!macro) return ui.notifications.warn("Macro de SAN não encontrada. Importe as macros do Compêndio.");
       const atores = game.actors.filter(a => a.type === "character" && a.hasPlayerOwner);
       for (const ator of atores) {
         const token = canvas.tokens?.placeables.find(t => t.actor?.id === ator.id);
         if (token) { token.control({ releaseOthers: false }); }
       }
       macro.execute();
+    });
+
+    // ── Importar macros do compêndio ──
+    html.find("#btn-import-macros").on("click", async () => {
+      await _importarMacrosCompendium();
+      this.render(false);
     });
   }
 }
