@@ -834,26 +834,27 @@
 
 /* ─── Toggle botões ─────────────────────────────────────────── */
 .ddp-gm-toggle {
-  padding: 3px 10px;
+  padding: 3px 12px;
   border-radius: 10px;
   border: 1px solid;
   cursor: pointer;
-  font-size: 0.72em;
+  font-size: 0.7em;
   font-weight: bold;
   transition: all 0.2s;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .ddp-toggle-on  {
   background: #1a3a1a; color: #88ff88;
   border-color: #2a5a2a;
 }
 .ddp-toggle-off {
-  background: #2a1a1a; color: #888;
-  border-color: #3a2a2a;
+  background: #1e1e1e; color: #666;
+  border-color: #333;
 }
-.ddp-toggle-off:hover  { background: #2e1e1e; color: #aaa; }
+.ddp-toggle-off:hover  { background: #2a2a2a; color: #aaa; }
 .ddp-toggle-on:hover   { background: #1e3e1e; }
-.ddp-gm-toggle[disabled] { opacity: 0.4; cursor: not-allowed; }
+.ddp-gm-toggle[disabled] { opacity: 0.35; cursor: not-allowed; }
 
 /* ─── Grid de estatísticas ──────────────────────────────────── */
 .ddp-gm-stat-grid {
@@ -1057,13 +1058,13 @@
 }
 .ddp-gm-btn-secondary:hover { background: #141428; color: #ccc; border-color: #555; }
 
-/* ─── Linha de revelação ────────────────────────────────────── */
+/* ─── Linha de revelação (legado) ───────────────────────────── */
 .ddp-gm-revelation-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 6px 0;
+  gap: 8px;
+  padding: 5px 0;
   border-bottom: 1px solid #111;
 }
 .ddp-gm-revelation-row:last-child { border-bottom: none; }
@@ -1071,11 +1072,11 @@
 .ddp-gm-rev-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   flex: 1;
 }
-.ddp-gm-rev-info b { font-size: 0.82em; color: #ccc; }
-.ddp-gm-rev-info span { font-size: 0.68em; color: #555; }
+.ddp-gm-rev-info b { font-size: 0.8em; color: #ccc; }
+.ddp-gm-rev-info span { font-size: 0.65em; color: #555; }
 
 .ddp-rev-locked { opacity: 0.5; }
 

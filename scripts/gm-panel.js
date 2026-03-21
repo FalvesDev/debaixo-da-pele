@@ -64,7 +64,7 @@ async function _importarMacrosCompendium() {
 class DDPGMPanel extends Application {
   constructor(options = {}) {
     super(options);
-    this._tabAtiva = "sessao";
+    this._tabAtiva = "sessao"; // sessao | investigadores | controle
   }
 
   static get defaultOptions() {
@@ -82,7 +82,7 @@ class DDPGMPanel extends Application {
 
   // ─── Dados ────────────────────────────────────────────────
   getData() {
-    const atores = game.actors.filter(a => a.type === "character" && a.hasPlayerOwner);
+    const atores = game.actors.filter(a => a.type === "character");
 
     const investigadores = atores.map(a => {
       const hp     = a.system?.attribs?.hp  ?? { value: 10, max: 10 };
@@ -193,7 +193,7 @@ class DDPGMPanel extends Application {
     // ── Exposição em massa ──
     html.find(".ddp-gm-mass-btn").on("click", async (e) => {
       const delta = parseFloat(e.currentTarget.dataset.delta);
-      const atores = game.actors.filter(a => a.type === "character" && a.hasPlayerOwner);
+      const atores = game.actors.filter(a => a.type === "character");
       for (const ator of atores) {
         const atual = ator.getFlag(MODULE_ID, "aurora") ?? 0;
         const nova  = Math.max(0, Math.min(10, parseFloat((atual + delta).toFixed(1))));
@@ -302,7 +302,7 @@ class DDPGMPanel extends Application {
     html.find("#btn-san-todos").on("click", async () => {
       const macro = _encontrarMacro("01", "SAN");
       if (!macro) return ui.notifications.warn("Macro de SAN não encontrada. Importe as macros do Compêndio.");
-      const atores = game.actors.filter(a => a.type === "character" && a.hasPlayerOwner);
+      const atores = game.actors.filter(a => a.type === "character");
       for (const ator of atores) {
         const token = canvas.tokens?.placeables.find(t => t.actor?.id === ator.id);
         if (token) { token.control({ releaseOthers: false }); }
