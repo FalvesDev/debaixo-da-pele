@@ -22,13 +22,13 @@ Hooks.once("init", () => {
   const BASE = "modules/debaixo-da-pele/assets/icons/";
 
   const novosStatus = [
-    { id: STATUS.HEMORRAGIA,      label: "Hemorragia",         icon: `${BASE}status-hemorragia.svg`    },
-    { id: STATUS.FERIDO,          label: "Ferido",             icon: `${BASE}status-ferido.svg`        },
-    { id: STATUS.FERIMENTO_GRAVE, label: "Ferimento Grave",    icon: `${BASE}status-ferimento-grave.svg` },
-    { id: STATUS.AURORA_F2,       label: "Aurora — Moderado",  icon: `${BASE}status-aurora-f2.svg`    },
-    { id: STATUS.AURORA_F3,       label: "Aurora — Grave",     icon: `${BASE}status-aurora-f3.svg`    },
-    { id: STATUS.AURORA_F4,       label: "Aurora — TRANSFORMAÇÃO", icon: `${BASE}status-aurora-f4.svg` },
-    { id: STATUS.INCONSCIENTE,    label: "Inconsciente",       icon: `${BASE}status-inconsciente.svg` }
+    { id: STATUS.HEMORRAGIA,      label: "Hemorragia",             img: `${BASE}status-hemorragia.svg`      },
+    { id: STATUS.FERIDO,          label: "Ferido",                 img: `${BASE}status-ferido.svg`          },
+    { id: STATUS.FERIMENTO_GRAVE, label: "Ferimento Grave",        img: `${BASE}status-ferimento-grave.svg` },
+    { id: STATUS.AURORA_F2,       label: "Aurora — Moderado",      img: `${BASE}status-aurora-f2.svg`       },
+    { id: STATUS.AURORA_F3,       label: "Aurora — Grave",         img: `${BASE}status-aurora-f3.svg`       },
+    { id: STATUS.AURORA_F4,       label: "Aurora — TRANSFORMAÇÃO", img: `${BASE}status-aurora-f4.svg`       },
+    { id: STATUS.INCONSCIENTE,    label: "Inconsciente",           img: `${BASE}status-inconsciente.svg`    }
   ];
 
   novosStatus.forEach(s => {
@@ -46,7 +46,7 @@ async function _setStatus(actor, statusId, ativo) {
     if (!statusCfg) return;
     await actor.createEmbeddedDocuments("ActiveEffect", [{
       name:     statusCfg.label,
-      icon:     statusCfg.icon,
+      img:      statusCfg.img,
       statuses: [statusId],
       flags:    { [MODULE_ID]: { statusAuto: true, statusId } }
     }]);
@@ -106,7 +106,7 @@ Hooks.on("preUpdateActor", (actor, changes, _options, _userId) => {
   changes._ddpHpAnterior = actor.system?.attribs?.hp?.value;
 });
 
-Hooks.on("updateActor", async (actor, changes, _options, userId) => {
+Hooks.on("updateActor", async (actor, changes, _options, _userId) => {
   // Só o GM (ou o dono do token) processa
   if (!game.user.isGM && actor.ownership[game.user.id] < 3) return;
 
@@ -124,7 +124,7 @@ Hooks.on("updateActor", async (actor, changes, _options, userId) => {
 });
 
 // ─── Hemorragia: 1 HP por rodada no combate ──────────────────
-Hooks.on("updateCombat", async (combat, changes, _options, userId) => {
+Hooks.on("updateCombat", async (combat, changes, _options, _userId) => {
   if (!game.user.isGM) return;
   // Só processa na virada de turno/rodada
   if (changes.turn === undefined && changes.round === undefined) return;
