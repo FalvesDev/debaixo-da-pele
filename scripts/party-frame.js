@@ -112,8 +112,36 @@ class DDPPartyFrame extends Application {
 
     // Double-click → abre ficha
     html.find(".ddp-pf-char").on("dblclick", (e) => {
+      if ($(e.target).hasClass("ddp-pf-inv-btn")) return; // não conflitar com botão
       const actorId = e.currentTarget.dataset.actorId;
       game.actors.get(actorId)?.sheet?.render(true);
+    });
+
+    // Botão de inventário 🎒
+    html.find(".ddp-pf-inv-btn").on("click", (e) => {
+      e.stopPropagation();
+      const actorId = e.currentTarget.dataset.actorId;
+      const actor   = game.actors.get(actorId);
+      if (!actor) return;
+
+      // Seleciona o token do personagem no canvas (necessário para a macro)
+      const token = canvas.tokens?.placeables?.find(t => t.actor?.id === actorId);
+      if (token) token.control({ releaseOthers: true });
+
+      // Busca e executa a macro de inventário
+      const macro = game.macros.find(m =>
+        m.name.startsWith("04") ||
+        m.name.toLowerCase().includes("inventário") ||
+        m.name.toLowerCase().includes("inventario")
+      );
+
+      if (macro) {
+        macro.execute();
+      } else {
+        // Fallback: abre ficha do personagem na aba de inventário se macro não existir
+        actor.sheet?.render(true);
+        ui.notifications.warn("Macro de inventário não encontrada. Importe as macros via Painel GM → Ações → Importar Macros.");
+      }
     });
   }
 }
