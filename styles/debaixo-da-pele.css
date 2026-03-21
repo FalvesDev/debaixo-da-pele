@@ -657,7 +657,22 @@
   align-items: center;
   gap: 2px;
   flex-shrink: 0;
-  width: 18px;
+  width: 24px;
+}
+
+/* Botão de inventário */
+.ddp-pf-inv-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.85em;
+  line-height: 1;
+  padding: 2px 3px;
+  border-radius: 3px;
+  transition: background 0.15s;
+  margin-top: 2px;
+}
+.ddp-pf-inv-btn:hover {
+  background: rgba(255,255,255,0.15);
 }
 
 .ddp-pf-status-icon {
