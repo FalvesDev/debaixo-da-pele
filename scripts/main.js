@@ -107,7 +107,7 @@ async function _handleSocket(data) {
 
 // ─── READY ──────────────────────────────────────────────────
 Hooks.once("ready", () => {
-  console.log(`${MODULE_ID} | Debaixo da Pele v1.4.0 pronto.`);
+  console.log(`${MODULE_ID} | Debaixo da Pele v1.4.1 pronto.`);
 
   if (game.user.isGM) {
     const dias = game.settings.get(MODULE_ID, "geradorDias");
