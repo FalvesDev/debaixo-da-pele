@@ -1,0 +1,67 @@
+<div id="ddp-party-frame" class="{{#if minimized}}ddp-pf-minimized{{/if}}">
+
+  <!-- Cabeçalho -->
+  <div class="ddp-pf-header">
+    <i class="fas fa-skull"></i>
+    <span class="ddp-pf-title">Investigadores</span>
+    <button class="ddp-pf-btn-toggle" title="{{#if minimized}}Expandir{{else}}Minimizar{{/if}}">
+      <i class="fas {{#if minimized}}fa-chevron-up{{else}}fa-chevron-down{{/if}}"></i>
+    </button>
+  </div>
+
+  <!-- Lista de personagens -->
+  <div class="ddp-pf-body">
+    {{#each personagens}}
+    <div class="ddp-pf-char {{statusClass}}" data-actor-id="{{id}}" title="{{nome}} — Clique para focar token">
+
+      <!-- Avatar + dot de Aurora -->
+      <div class="ddp-pf-avatar-col">
+        <img class="ddp-pf-avatar" src="{{img}}" alt="{{nome}}">
+        <div class="ddp-pf-aurora-pip" style="background:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}"></div>
+      </div>
+
+      <!-- Barras + nome -->
+      <div class="ddp-pf-bars-col">
+        <div class="ddp-pf-name">{{nomeAbrev}}</div>
+
+        <!-- HP -->
+        <div class="ddp-pf-bar-row" title="HP: {{hp.value}} / {{hp.max}}">
+          <span class="ddp-pf-lbl">HP</span>
+          <div class="ddp-pf-bar-bg">
+            <div class="ddp-pf-bar-fill" style="width:{{hpPct}}%; background:{{hpCor}}"></div>
+          </div>
+          <span class="ddp-pf-val {{hpValClass}}">{{hp.value}}</span>
+        </div>
+
+        <!-- SAN -->
+        <div class="ddp-pf-bar-row" title="SAN: {{san.value}} / {{san.max}}">
+          <span class="ddp-pf-lbl">SAN</span>
+          <div class="ddp-pf-bar-bg">
+            <div class="ddp-pf-bar-fill ddp-pf-san-fill" style="width:{{sanPct}}%; background:{{sanCor}}"></div>
+          </div>
+          <span class="ddp-pf-val {{sanValClass}}">{{san.value}}</span>
+        </div>
+      </div>
+
+      <!-- Ícones de status (direita) -->
+      <div class="ddp-pf-status-col">
+        {{#if mascaraAtiva}}
+        <span title="{{mascaraLabel}}" class="ddp-pf-status-icon">🛡️</span>
+        {{/if}}
+        {{#if hemorragia}}
+        <span title="Hemorragia ativa" class="ddp-pf-status-icon ddp-pf-hemorragia">🩸</span>
+        {{/if}}
+        {{#if inconsciente}}
+        <span title="Inconsciente" class="ddp-pf-status-icon">💤</span>
+        {{/if}}
+      </div>
+
+    </div>
+    {{/each}}
+
+    {{#unless personagens.length}}
+    <div class="ddp-pf-empty">Nenhum investigador ativo.</div>
+    {{/unless}}
+  </div>
+
+</div>

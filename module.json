@@ -1,8 +1,8 @@
 {
   "id": "debaixo-da-pele",
   "title": "Debaixo da Pele — CoC7 Sistema de Inventário e Macros",
-  "description": "Módulo completo para a campanha 'Debaixo da Pele' (Call of Cthulhu 7e). Inclui sistema de inventário por slots, rastreador de Exposição Aurora, timer de Override, gerenciamento de sanidade e macros de mesa.",
-  "version": "1.2.0",
+  "description": "Módulo completo para a campanha 'Debaixo da Pele' (Call of Cthulhu 7e). Inclui sistema de inventário por slots, rastreador de Exposição Aurora integrado na ficha, token HUD com HP/SAN/Aurora, painel de investigadores persistente e macros de mesa.",
+  "version": "1.3.0",
   "thumbnail": "modules/debaixo-da-pele/assets/icons/module-thumbnail.svg",
   "url": "https://github.com/FalvesDev/debaixo-da-pele",
   "manifest": "https://raw.githubusercontent.com/FalvesDev/debaixo-da-pele/main/module.json",
@@ -25,29 +25,10 @@
   "styles": [
     "styles/debaixo-da-pele.css"
   ],
-  "packs": [
-    {
-      "name": "itens-debaixo-da-pele",
-      "label": "Itens — Debaixo da Pele",
-      "path": "packs/itens-debaixo-da-pele",
-      "type": "Item",
-      "system": "CoC7",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      }
-    },
-    {
-      "name": "macros-debaixo-da-pele",
-      "label": "Macros — Debaixo da Pele",
-      "path": "packs/macros-debaixo-da-pele",
-      "type": "Macro"
-    }
-  ],
   "relationships": {
     "systems": [
       {
-        "id": "CoC7",
+        "id": "coc7",
         "type": "system",
         "compatibility": {
           "minimum": "9.0.0"

@@ -1,13 +1,4 @@
-# Build / release
+module.zip
 *.zip
-*.tar.gz
-
-# OS
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Editors
-.vscode/
-.idea/
-*.swp
