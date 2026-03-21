@@ -71,6 +71,9 @@ export function getFaseAurora(nivel) {
 // ─── Inject panel no renderActorSheet ────────────────────────
 Hooks.on("renderActorSheet", (sheet, html, _data) => {
   if (sheet.actor?.type !== "character") return;
+  // Jogadores só veem o painel Aurora se o GM já revelou o Composto
+  const podeVer = game.user.isGM || game.settings.get(MODULE_ID, "auroraVisivelJogadores");
+  if (!podeVer) return;
   _injectAuroraPanel(sheet, html);
 });
 

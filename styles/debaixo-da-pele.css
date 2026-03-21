@@ -683,3 +683,389 @@
   color: #444;
   font-style: italic;
 }
+
+/* ============================================================
+   GM PANEL — Painel de Controle do Mestre
+   ============================================================ */
+
+.ddp-gm-panel .window-content {
+  padding: 0;
+  background: #0c0c18;
+  overflow: hidden;
+}
+
+.ddp-gm-panel .window-header {
+  background: #08080f;
+  border-bottom: 2px solid #c0392b;
+}
+
+.ddp-gm-panel .window-title {
+  color: #ddd;
+  font-size: 0.9em;
+}
+
+/* ─── Wrap geral ────────────────────────────────────────────── */
+.ddp-gm-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Signika", sans-serif;
+  color: #ccc;
+}
+
+/* ─── Nav de tabs ───────────────────────────────────────────── */
+.ddp-gm-nav {
+  display: flex;
+  background: #080810;
+  border-bottom: 1px solid #1e1e2e;
+  flex-shrink: 0;
+}
+
+.ddp-gm-nav-item {
+  flex: 1;
+  padding: 7px 4px;
+  text-align: center;
+  font-size: 0.7em;
+  color: #555;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  user-select: none;
+}
+
+.ddp-gm-nav-item:hover { color: #aaa; }
+.ddp-gm-nav-item.active {
+  color: #ddd;
+  border-bottom-color: #c0392b;
+}
+
+/* ─── Tabs ──────────────────────────────────────────────────── */
+.ddp-gm-tab {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  max-height: 440px;
+  padding: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #333 transparent;
+}
+.ddp-gm-tab.active { display: flex; }
+
+/* ─── Seções ────────────────────────────────────────────────── */
+.ddp-gm-section {
+  background: #0e0e1c;
+  border: 1px solid #1e1e2e;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+}
+
+.ddp-gm-section-label {
+  display: block;
+  font-size: 0.63em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  margin-bottom: 7px;
+}
+
+/* ─── Linha de controle ─────────────────────────────────────── */
+.ddp-gm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid #111;
+}
+.ddp-gm-row:last-child { border-bottom: none; }
+
+.ddp-gm-lbl {
+  font-size: 0.8em;
+  color: #aaa;
+}
+.ddp-gm-lbl.ddp-crit { color: #ff4444; }
+.ddp-gm-lbl.ddp-warn { color: #ffaa00; }
+
+.ddp-gm-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ddp-gm-val {
+  font-size: 1.1em;
+  font-weight: bold;
+  min-width: 28px;
+  text-align: center;
+  color: #ddd;
+}
+.ddp-gm-val.ddp-crit { color: #ff4444; }
+.ddp-gm-val.ddp-warn { color: #ffaa00; }
+
+.ddp-gm-adj {
+  width: 26px; height: 24px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background: #1a1a2a;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 0;
+  transition: background 0.15s;
+}
+.ddp-gm-adj:hover { background: #252535; color: #fff; }
+
+/* ─── Toggle botões ─────────────────────────────────────────── */
+.ddp-gm-toggle {
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 0.72em;
+  font-weight: bold;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.ddp-toggle-on  {
+  background: #1a3a1a; color: #88ff88;
+  border-color: #2a5a2a;
+}
+.ddp-toggle-off {
+  background: #2a1a1a; color: #888;
+  border-color: #3a2a2a;
+}
+.ddp-toggle-off:hover  { background: #2e1e1e; color: #aaa; }
+.ddp-toggle-on:hover   { background: #1e3e1e; }
+.ddp-gm-toggle[disabled] { opacity: 0.4; cursor: not-allowed; }
+
+/* ─── Grid de estatísticas ──────────────────────────────────── */
+.ddp-gm-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.ddp-gm-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #080810;
+  border-radius: 4px;
+  padding: 6px 4px;
+}
+.ddp-gm-stat-val {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ddd;
+}
+.ddp-gm-stat-val.ddp-crit { color: #ff4444; animation: ddp-val-blink 1s infinite; }
+.ddp-gm-stat-lbl {
+  font-size: 0.6em;
+  color: #555;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* ─── Linha de PJ ───────────────────────────────────────────── */
+.ddp-gm-pj-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px solid #111;
+  flex-wrap: wrap;
+}
+.ddp-gm-pj-row:last-child { border-bottom: none; }
+
+.ddp-gm-pj-nome {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 90px;
+  font-size: 0.82em;
+}
+
+.ddp-aurora-pip-sm {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.ddp-gm-pj-stats {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.ddp-gm-stat-badge {
+  font-size: 0.65em;
+  padding: 1px 5px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0a0a14;
+  white-space: nowrap;
+}
+.ddp-hp-badge  { color: #88cc88; border-color: #225522; }
+.ddp-san-badge { color: #8888cc; border-color: #222255; }
+.ddp-aur-badge { background: #08080f; }
+.ddp-badge-warn { color: #ffaa00 !important; border-color: #554400 !important; }
+.ddp-badge-crit { color: #ff4444 !important; border-color: #550000 !important; animation: ddp-val-blink 1s infinite; }
+
+.ddp-gm-pj-ctrl {
+  display: flex;
+  gap: 2px;
+}
+
+.ddp-gm-aurora-adj {
+  width: 26px; height: 20px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background: #1a1a2a;
+  color: #ff8888;
+  cursor: pointer;
+  font-size: 0.65em;
+  font-weight: bold;
+  padding: 0;
+}
+.ddp-gm-aurora-adj.ddp-adj-add { color: #88ff88; }
+.ddp-gm-aurora-adj:hover { background: #252535; }
+
+.ddp-gm-pj-flags {
+  display: flex;
+  gap: 2px;
+  font-size: 0.8em;
+}
+.ddp-flag { cursor: default; }
+
+/* ─── Botões de massa ───────────────────────────────────────── */
+.ddp-gm-row-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.ddp-gm-mass-btn,
+.ddp-gm-action-btn {
+  flex: 1;
+  min-width: 130px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #141422;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 0.72em;
+  transition: background 0.15s, color 0.15s;
+  text-align: center;
+}
+.ddp-gm-mass-btn:hover,
+.ddp-gm-action-btn:hover { background: #1e1e30; color: #fff; border-color: #555; }
+
+.ddp-btn-remove { color: #cc6666; border-color: #442222; }
+.ddp-btn-danger { color: #ff6666 !important; border-color: #550000 !important; background: #1a0a0a !important; }
+.ddp-btn-danger:hover { background: #220a0a !important; }
+
+.ddp-gm-hint {
+  font-size: 0.68em;
+  color: #555;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ─── Formulário ────────────────────────────────────────────── */
+.ddp-gm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.ddp-gm-form-group label { font-size: 0.72em; color: #777; }
+
+.ddp-gm-select,
+.ddp-gm-form-group input[type="text"],
+.ddp-gm-form-group textarea,
+.ddp-gm-textarea {
+  background: #08080f;
+  border: 1px solid #2a2a3a;
+  border-radius: 4px;
+  color: #ddd;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  font-family: "Signika", sans-serif;
+  resize: vertical;
+}
+.ddp-gm-select:focus,
+.ddp-gm-form-group input:focus,
+.ddp-gm-form-group textarea:focus { border-color: #555; outline: none; }
+
+/* ─── Caixa de revelação ────────────────────────────────────── */
+.ddp-reveal-box {
+  border-color: #3a2a10;
+  background: #0e0a04;
+}
+
+.ddp-gm-reveal-btn {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 2px solid #cc7700;
+  background: #1a1000;
+  color: #ffb347;
+  cursor: pointer;
+  font-size: 0.82em;
+  font-weight: bold;
+  transition: all 0.2s;
+  margin-top: 6px;
+}
+.ddp-gm-reveal-btn:hover {
+  background: #221500;
+  border-color: #ffaa00;
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.3);
+}
+
+.ddp-gm-btn-secondary {
+  width: 100%;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #0e0e1c;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.75em;
+  transition: all 0.15s;
+  margin-top: 4px;
+}
+.ddp-gm-btn-secondary:hover { background: #141428; color: #ccc; border-color: #555; }
+
+/* ─── Linha de revelação ────────────────────────────────────── */
+.ddp-gm-revelation-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #111;
+}
+.ddp-gm-revelation-row:last-child { border-bottom: none; }
+
+.ddp-gm-rev-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.ddp-gm-rev-info b { font-size: 0.82em; color: #ccc; }
+.ddp-gm-rev-info span { font-size: 0.68em; color: #555; }
+
+.ddp-rev-locked { opacity: 0.5; }
+
+/* ─── Botão caveira na barra de cena ────────────────────────── */
+.scene-control[data-control="ddp-gm-panel"] i,
+li.control-tool[data-tool="ddp-gm-panel"] i {
+  color: #c0392b;
+}
