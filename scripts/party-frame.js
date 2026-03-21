@@ -26,7 +26,7 @@ class DDPPartyFrame extends Application {
   // ─── Dados para o template ─────────────────────────────────
   getData() {
     const personagens = game.actors
-      .filter(a => a.type === "character" && a.hasPlayerOwner)
+      .filter(a => a.type === "character")
       .map(a => {
         const hp    = a.system?.attribs?.hp  ?? { value: 10, max: 10 };
         const san   = a.system?.attribs?.san ?? { value: 50, max: 99 };
@@ -124,24 +124,18 @@ class DDPPartyFrame extends Application {
       const actor   = game.actors.get(actorId);
       if (!actor) return;
 
-      // Seleciona o token do personagem no canvas (necessário para a macro)
+      // Seleciona o token no canvas
       const token = canvas.tokens?.placeables?.find(t => t.actor?.id === actorId);
       if (token) token.control({ releaseOthers: true });
 
-      // Busca e executa a macro de inventário
+      // Tenta macro de inventário; se não encontrar, abre a ficha diretamente
       const macro = game.macros.find(m =>
         m.name.startsWith("04") ||
         m.name.toLowerCase().includes("inventário") ||
         m.name.toLowerCase().includes("inventario")
       );
-
-      if (macro) {
-        macro.execute();
-      } else {
-        // Fallback: abre ficha do personagem na aba de inventário se macro não existir
-        actor.sheet?.render(true);
-        ui.notifications.warn("Macro de inventário não encontrada. Importe as macros via Painel GM → Ações → Importar Macros.");
-      }
+      if (macro) macro.execute();
+      else actor.sheet?.render(true);
     });
   }
 }
