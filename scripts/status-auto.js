@@ -92,10 +92,12 @@ async function _avaliarHP(actor, novoHP, hpAnterior) {
 }
 
 // ─── Avaliação de Aurora → ícones no token ───────────────────
+// Limiares alinhados com AURORA_FASES em aurora-system.js:
+// F1 [2, 4), F2 [4, 6), F3 [6, 8), F4 [8, 10]
 async function _avaliarAurora(actor, nivel) {
-  await _setStatus(actor, STATUS.AURORA_F2, nivel >= 4.01 && nivel <= 6);
-  await _setStatus(actor, STATUS.AURORA_F3, nivel >= 6.01 && nivel <= 8);
-  await _setStatus(actor, STATUS.AURORA_F4, nivel >= 8.01);
+  await _setStatus(actor, STATUS.AURORA_F2, nivel >= 4 && nivel < 6);
+  await _setStatus(actor, STATUS.AURORA_F3, nivel >= 6 && nivel < 8);
+  await _setStatus(actor, STATUS.AURORA_F4, nivel >= 8);
 }
 
 // Cache de HP anterior por actorId.
@@ -106,8 +108,9 @@ const _hpCache = new Map();
 // Limpa cache ao deletar ator para evitar memory leak
 Hooks.on("deleteActor", (actor) => { _hpCache.delete(actor.id); });
 
-// ─── Hook: captura HP antes da atualização ────────────────────
+// ─── Hook: captura HP antes da atualização (só GM consome o cache) ───
 Hooks.on("preUpdateActor", (actor, changes) => {
+  if (!game.user.isGM) return;
   const novoHP = foundry.utils.getProperty(changes, "system.attribs.hp.value");
   if (novoHP === undefined) return;
   _hpCache.set(actor.id, actor.system?.attribs?.hp?.value);
@@ -132,11 +135,11 @@ Hooks.on("updateActor", async (actor, changes) => {
   }
 });
 
-// ─── Hemorragia: 1 HP por rodada no combate ──────────────────
+// ─── Hemorragia: 1 HP por turno no combate ───────────────────
 Hooks.on("updateCombat", async (combat, changes, _options, _userId) => {
   if (!game.user.isGM) return;
-  // Só processa na virada de turno/rodada
-  if (changes.turn === undefined && changes.round === undefined) return;
+  // Processa apenas em avanço real de turno (não retrocesso, não só round sem turno)
+  if (changes.turn === undefined) return;
 
   for (const combatant of combat.combatants) {
     const actor = combatant.actor;

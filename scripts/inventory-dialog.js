@@ -48,9 +48,10 @@ function _calcGridRows(actor) {
   const baseRows = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.floor(str / 4)));
 
   // Cada mochila/bolsão equipada adiciona 2 linhas extras
-  const bagBonus = actor.items.contents
+  const bagCount = actor.items.contents
     .filter(i => !TIPOS_EXCLUIDOS.has(i.type) && /mochila|mochilão|backpack|bolsão|saco grande/i.test(i.name))
-    .reduce((acc) => acc + 2, 0);
+    .length;
+  const bagBonus = bagCount * 2;
 
   return Math.min(MAX_ROWS, baseRows + bagBonus);
 }
@@ -343,9 +344,8 @@ export class DDPInventoryDialog extends Application {
   // ── Auto-organizar ────────────────────────────────────
   _autoArrange() {
     this._layout = {};
-    const TIPOS_EXC = new Set(["skill", "occupation", "archetype", "talent", "setup"]);
     const items = [...this.actor.items.contents]
-      .filter(i => !TIPOS_EXC.has(i.type))
+      .filter(i => !TIPOS_EXCLUIDOS.has(i.type))
       .sort((a, b) => {
         const sa = _getItemSize(a), sb = _getItemSize(b);
         return (sb.w * sb.h) - (sa.w * sa.h);

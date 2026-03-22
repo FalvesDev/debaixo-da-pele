@@ -74,7 +74,8 @@ class DDPPlayerHUD extends Application {
 }
 
 // ─── Singleton ────────────────────────────────────────────────
-let _playerHUD = null;
+let _playerHUD    = null;
+let _settingLock  = false; // Evita race condition em cliques duplos rápidos
 
 function _getPlayerHUD() {
   if (!_playerHUD) _playerHUD = new DDPPlayerHUD();
@@ -97,12 +98,24 @@ Hooks.on("updateActor", (actor) => {
   }
 });
 
-// Atualiza ao mudar Active Effects (hemorragia, etc.)
-Hooks.on("createActiveEffect", (_e, _o, _u) => {
-  if (_playerHUD?.rendered) _playerHUD.render(false);
+// Atualiza ao mudar Active Effects — apenas do próprio personagem
+Hooks.on("createActiveEffect", (effect) => {
+  if (_playerHUD?.rendered && effect.parent?.id === game.user.character?.id)
+    _playerHUD.render(false);
 });
-Hooks.on("deleteActiveEffect", (_e, _o, _u) => {
-  if (_playerHUD?.rendered) _playerHUD.render(false);
+Hooks.on("deleteActiveEffect", (effect) => {
+  if (_playerHUD?.rendered && effect.parent?.id === game.user.character?.id)
+    _playerHUD.render(false);
+});
+
+// Atualiza se o GM associar/trocar o personagem do usuário durante a sessão
+Hooks.on("updateUser", (user) => {
+  if (user.id !== game.user.id || game.user.isGM) return;
+  if (game.user.character && game.settings.get(MODULE_ID, "playerHudVisible")) {
+    _getPlayerHUD().render(true);
+  } else {
+    _playerHUD?.render(false);
+  }
 });
 
 // Reage às settings
@@ -134,8 +147,14 @@ Hooks.on("getSceneControlButtons", (controls) => {
       icon:    "fas fa-heartbeat",
       visible: true,
       onClick: async () => {
-        const atual = game.settings.get(MODULE_ID, "playerHudVisible");
-        await game.settings.set(MODULE_ID, "playerHudVisible", !atual);
+        if (_settingLock) return;
+        _settingLock = true;
+        try {
+          const atual = game.settings.get(MODULE_ID, "playerHudVisible");
+          await game.settings.set(MODULE_ID, "playerHudVisible", !atual);
+        } finally {
+          _settingLock = false;
+        }
       },
       button: true
     });
@@ -143,17 +162,24 @@ Hooks.on("getSceneControlButtons", (controls) => {
 
   // Botão para GM: toggle rápido de Aurora visível para jogadores
   if (game.user.isGM) {
+    let _auroraLock = false;
     tokenControls.tools.push({
       name:    "ddp-aurora-toggle",
       title:   "Aurora — Toggle visível para jogadores",
       icon:    "fas fa-biohazard",
       visible: true,
       onClick: async () => {
-        const atual = game.settings.get(MODULE_ID, "auroraVisivelJogadores");
-        await game.settings.set(MODULE_ID, "auroraVisivelJogadores", !atual);
-        ui.notifications.info(
-          atual ? "☣ Aurora ocultada dos jogadores." : "☣ Aurora revelada para os jogadores!"
-        );
+        if (_auroraLock) return;
+        _auroraLock = true;
+        try {
+          const atual = game.settings.get(MODULE_ID, "auroraVisivelJogadores");
+          await game.settings.set(MODULE_ID, "auroraVisivelJogadores", !atual);
+          ui.notifications.info(
+            atual ? "☣ Aurora ocultada dos jogadores." : "☣ Aurora revelada para os jogadores!"
+          );
+        } finally {
+          _auroraLock = false;
+        }
       },
       button: true
     });
