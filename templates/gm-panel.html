@@ -4,6 +4,7 @@
   <nav class="ddp-gm-nav">
     <a class="ddp-gm-nav-item active" data-tab="sessao">⚙️ Sessão</a>
     <a class="ddp-gm-nav-item" data-tab="investigadores">🧍 PJs</a>
+    <a class="ddp-gm-nav-item" data-tab="aventura">🗺 Aventura</a>
     <a class="ddp-gm-nav-item" data-tab="controle">⚡ Controle</a>
   </nav>
 
@@ -51,7 +52,7 @@
         </div>
         <div class="ddp-gm-stat">
           <span class="ddp-gm-stat-val {{#if temHemorragia}}ddp-crit{{/if}}">{{totalHemorragias}}</span>
-          <span class="ddp-gm-stat-lbl">Hemorragia</span>
+          <span class="ddp-gm-stat-lbl">Hemorr</span>
         </div>
         <div class="ddp-gm-stat">
           <span class="ddp-gm-stat-val {{#if temInconsciente}}ddp-crit{{/if}}">{{totalInconscientes}}</span>
@@ -77,39 +78,68 @@
   <!-- ══ ABA: Investigadores ══ -->
   <div class="ddp-gm-tab" id="ddp-tab-investigadores">
 
-    <!-- Status dos PJs -->
-    <div class="ddp-gm-section">
-      <span class="ddp-gm-section-label">Status dos Personagens</span>
-
-      {{#each investigadores}}
-      <div class="ddp-gm-pj-row" data-actor-id="{{id}}">
-        <div class="ddp-gm-pj-nome">
-          <span class="ddp-aurora-pip-sm" style="background:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}"></span>
-          <b>{{nome}}</b>
-        </div>
-        <div class="ddp-gm-pj-stats">
-          <span class="ddp-gm-stat-badge ddp-hp-badge {{hpClass}}">HP {{hp.value}}/{{hp.max}}</span>
-          <span class="ddp-gm-stat-badge ddp-san-badge {{sanClass}}">SAN {{san.value}}</span>
-          <span class="ddp-gm-stat-badge ddp-aur-badge" style="border-color:{{faseCor}}; color:{{faseCor}}">☣ {{aurora}}</span>
-          {{#if hemorragia}}<span class="ddp-flag" title="Hemorragia">🩸</span>{{/if}}
-          {{#if inconsciente}}<span class="ddp-flag" title="KO">💤</span>{{/if}}
-          {{#if mascaraAtiva}}<span class="ddp-flag" title="{{mascaraLabel}}">🛡️</span>{{/if}}
-        </div>
-        <div class="ddp-gm-pj-ctrl">
-          <button class="ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-1" title="Aurora −1">−1</button>
-          <button class="ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-0.5" title="Aurora −½">−½</button>
-          <button class="ddp-gm-aurora-adj ddp-adj-add" data-actor="{{id}}" data-delta="0.5" title="Aurora +½">+½</button>
-          <button class="ddp-gm-aurora-adj ddp-adj-add" data-actor="{{id}}" data-delta="1" title="Aurora +1">+1</button>
-        </div>
+    {{#each investigadores}}
+    <div class="ddp-gm-pj-card">
+      <div class="ddp-gm-pj-header">
+        <span class="ddp-aurora-pip-sm" style="background:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}"></span>
+        <b>{{nome}}</b>
+        {{#if hemorragia}}<span title="Hemorragia">🩸</span>{{/if}}
+        {{#if inconsciente}}<span title="KO">💤</span>{{/if}}
+        {{#if mascaraAtiva}}<span title="{{mascaraLabel}}">🛡️</span>{{/if}}
       </div>
-      {{/each}}
 
-      {{#unless investigadores.length}}
-      <p style="color:#555; font-size:0.78em; font-style:italic; text-align:center; padding:8px 0;">
-        Nenhum personagem do tipo "character" encontrado.
-      </p>
-      {{/unless}}
+      <!-- HP -->
+      <div class="ddp-gm-stat-line">
+        <span class="ddp-gm-lbl">HP</span>
+        <span class="ddp-gm-cur {{hpClass}}">{{hp.value}}/{{hp.max}}</span>
+        <button class="ddp-gm-mini-adj ddp-gm-hp-adj" data-actor="{{id}}" data-delta="-5" title="HP −5">−5</button>
+        <button class="ddp-gm-mini-adj ddp-gm-hp-adj" data-actor="{{id}}" data-delta="-1" title="HP −1">−1</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-hp-adj" data-actor="{{id}}" data-delta="1" title="HP +1">+1</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-hp-adj" data-actor="{{id}}" data-delta="5" title="HP +5">+5</button>
+      </div>
+
+      <!-- SAN -->
+      <div class="ddp-gm-stat-line">
+        <span class="ddp-gm-lbl">SAN</span>
+        <span class="ddp-gm-cur {{sanClass}}">{{san.value}}/{{san.max}}</span>
+        <button class="ddp-gm-mini-adj ddp-gm-san-adj" data-actor="{{id}}" data-delta="-10" title="SAN −10">−10</button>
+        <button class="ddp-gm-mini-adj ddp-gm-san-adj" data-actor="{{id}}" data-delta="-5" title="SAN −5">−5</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-san-adj" data-actor="{{id}}" data-delta="5" title="SAN +5">+5</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-san-adj" data-actor="{{id}}" data-delta="10" title="SAN +10">+10</button>
+      </div>
+
+      <!-- Aurora -->
+      <div class="ddp-gm-stat-line">
+        <span class="ddp-gm-lbl">☣</span>
+        <span class="ddp-gm-cur" style="color:{{faseCor}}">{{aurora}}</span>
+        <button class="ddp-gm-mini-adj ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-1" title="Aurora −1">−1</button>
+        <button class="ddp-gm-mini-adj ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="-0.5" title="Aurora −½">−½</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="0.5" title="Aurora +½">+½</button>
+        <button class="ddp-gm-mini-adj pos ddp-gm-aurora-adj" data-actor="{{id}}" data-delta="1" title="Aurora +1">+1</button>
+      </div>
+
+      <!-- Status -->
+      <div class="ddp-gm-status-line">
+        <button class="ddp-gm-hemo-toggle {{#if hemorragia}}ativo{{/if}}" data-actor="{{id}}"
+                title="{{#if hemorragia}}Remover Hemorragia{{else}}Aplicar Hemorragia{{/if}}">
+          {{#if hemorragia}}🩸 Hemo{{else}}🩹 Hemo{{/if}}
+        </button>
+        <select class="ddp-gm-mascara-select" data-actor="{{id}}" title="Máscara/Proteção">
+          <option value="nenhuma" {{#if mascaraNenhuma}}selected{{/if}}>Sem máscara</option>
+          <option value="cirurgica" {{#if mascaraCirurgica}}selected{{/if}}>Cirúrgica</option>
+          <option value="n95" {{#if mascaraN95}}selected{{/if}}>N95</option>
+          <option value="gas_civil" {{#if mascaraGasCivil}}selected{{/if}}>Gás Civil</option>
+          <option value="gas_esp" {{#if mascaraGasEsp}}selected{{/if}}>Gás Esp.</option>
+        </select>
+      </div>
     </div>
+    {{/each}}
+
+    {{#unless investigadores.length}}
+    <p style="color:#555; font-size:0.78em; font-style:italic; text-align:center; padding:8px 0;">
+      Nenhum personagem do tipo "character" encontrado.
+    </p>
+    {{/unless}}
 
     <!-- Exposição em massa -->
     <div class="ddp-gm-section">
@@ -121,19 +151,107 @@
       </div>
     </div>
 
-    <!-- Hemorragia -->
+  </div>
+
+  <!-- ══ ABA: Aventura ══ -->
+  <div class="ddp-gm-tab" id="ddp-tab-aventura">
+
+    <!-- Ato da Aventura -->
     <div class="ddp-gm-section">
-      <span class="ddp-gm-section-label">🩸 Hemorragia</span>
-      <div class="ddp-gm-form-group">
-        <select id="hemo-select" class="ddp-gm-select">
-          {{#each investigadores}}
-          <option value="{{id}}">{{nome}}</option>
-          {{/each}}
-        </select>
+      <span class="ddp-gm-section-label">🎭 Ato da Aventura</span>
+      <div class="ddp-gm-btn-group">
+        <button class="ddp-gm-btn-group-item ddp-gm-ato-btn {{#if ato1}}ddp-btn-ativo{{/if}}" data-ato="1">Ato 1: Chegada</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-ato-btn {{#if ato2}}ddp-btn-ativo{{/if}}" data-ato="2">Ato 2: Aurora</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-ato-btn {{#if ato3}}ddp-btn-ativo{{/if}}" data-ato="3">Ato 3: Confronto</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-ato-btn {{#if ato4}}ddp-btn-ativo{{/if}}" data-ato="4">Ato 4: Fuga</button>
       </div>
-      <div class="ddp-gm-row-wrap">
-        <button class="ddp-gm-action-btn ddp-btn-danger" id="btn-hemo-add">🩸 Aplicar</button>
-        <button class="ddp-gm-action-btn" id="btn-hemo-rem">🩹 Remover</button>
+    </div>
+
+    <!-- Andar Atual -->
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">🏢 Andar Atual</span>
+      <div class="ddp-gm-btn-group">
+        <button class="ddp-gm-btn-group-item ddp-gm-andar-btn {{#if andarB1}}ddp-btn-ativo{{/if}}" data-andar="B1">B1</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-andar-btn {{#if andarB2}}ddp-btn-ativo{{/if}}" data-andar="B2">B2</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-andar-btn {{#if andarB3}}ddp-btn-ativo{{/if}}" data-andar="B3">B3</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-andar-btn {{#if andarB4}}ddp-btn-ativo{{/if}}" data-andar="B4">B4</button>
+        <button class="ddp-gm-btn-group-item ddp-gm-andar-btn {{#if andarB5}}ddp-btn-ativo{{/if}}" data-andar="B5">B5</button>
+      </div>
+    </div>
+
+    <!-- Puzzles -->
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">🧩 Puzzles ({{puzzlesConcluidos}}/7)</span>
+      <div class="ddp-gm-puzzle-list">
+        <label class="ddp-gm-puzzle-item {{#if puzzle1}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="1" {{#if puzzle1}}checked{{/if}}>
+          01 — Código Override
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle2}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="2" {{#if puzzle2}}checked{{/if}}>
+          02 — Acesso ao B3
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle3}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="3" {{#if puzzle3}}checked{{/if}}>
+          03 — Servidor de Voss
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle4}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="4" {{#if puzzle4}}checked{{/if}}>
+          04 — Câmara de Contenção
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle5}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="5" {{#if puzzle5}}checked{{/if}}>
+          05 — Comunicação Externa
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle6}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="6" {{#if puzzle6}}checked{{/if}}>
+          06 — Gerador Emergência
+        </label>
+        <label class="ddp-gm-puzzle-item {{#if puzzle7}}concluido{{/if}}">
+          <input type="checkbox" class="ddp-gm-puzzle-check" data-puzzle="7" {{#if puzzle7}}checked{{/if}}>
+          07 — Plano de Fuga B
+        </label>
+      </div>
+    </div>
+
+    <!-- NPCs -->
+    <div class="ddp-gm-section">
+      <span class="ddp-gm-section-label">👥 NPCs</span>
+
+      <div class="ddp-gm-npc-row">
+        <span class="ddp-gm-npc-nome">Marcos Ramos</span>
+        <div class="ddp-gm-npc-btns">
+          <button class="ddp-gm-npc-btn {{#if npcMarcosVivo}}ddp-btn-ativo{{/if}}" data-npc="marcos" data-status="vivo">🟢 Vivo</button>
+          <button class="ddp-gm-npc-btn {{#if npcMarcosFerido}}ddp-btn-ativo{{/if}}" data-npc="marcos" data-status="ferido">🟡 Ferido</button>
+          <button class="ddp-gm-npc-btn {{#if npcMarcosMorto}}ddp-btn-ativo{{/if}}" data-npc="marcos" data-status="morto">⬛ Morto</button>
+        </div>
+      </div>
+
+      <div class="ddp-gm-npc-row">
+        <span class="ddp-gm-npc-nome">Dra. Voss</span>
+        <div class="ddp-gm-npc-btns">
+          <button class="ddp-gm-npc-btn {{#if npcVossAliada}}ddp-btn-ativo{{/if}}" data-npc="voss" data-status="aliada">🟢 Aliada</button>
+          <button class="ddp-gm-npc-btn {{#if npcVossAntagonista}}ddp-btn-ativo{{/if}}" data-npc="voss" data-status="antagonista">🟠 Antagonista</button>
+          <button class="ddp-gm-npc-btn {{#if npcVossMorta}}ddp-btn-ativo{{/if}}" data-npc="voss" data-status="morta">⬛ Morta</button>
+        </div>
+      </div>
+
+      <div class="ddp-gm-npc-row">
+        <span class="ddp-gm-npc-nome">Valentina</span>
+        <div class="ddp-gm-npc-btns">
+          <button class="ddp-gm-npc-btn {{#if npcValentinaViva}}ddp-btn-ativo{{/if}}" data-npc="valentina" data-status="viva">🟢 Viva</button>
+          <button class="ddp-gm-npc-btn {{#if npcValentinaComprometida}}ddp-btn-ativo{{/if}}" data-npc="valentina" data-status="comprometida">🟠 Comprometida</button>
+          <button class="ddp-gm-npc-btn {{#if npcValentinaMorta}}ddp-btn-ativo{{/if}}" data-npc="valentina" data-status="morta">⬛ Morta</button>
+        </div>
+      </div>
+
+      <div class="ddp-gm-npc-row">
+        <span class="ddp-gm-npc-nome">O Diretor</span>
+        <div class="ddp-gm-npc-btns">
+          <button class="ddp-gm-npc-btn {{#if npcDiretorDesconhecido}}ddp-btn-ativo{{/if}}" data-npc="diretor" data-status="desconhecido">❓ Desconhecido</button>
+          <button class="ddp-gm-npc-btn {{#if npcDiretorConfrontado}}ddp-btn-ativo{{/if}}" data-npc="diretor" data-status="confrontado">⚠️ Confrontado</button>
+          <button class="ddp-gm-npc-btn {{#if npcDiretorDerrotado}}ddp-btn-ativo{{/if}}" data-npc="diretor" data-status="derrotado">☠️ Derrotado</button>
+        </div>
       </div>
     </div>
 
