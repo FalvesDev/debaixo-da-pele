@@ -57,6 +57,24 @@ Hooks.once("init", () => {
     scope: "world", config: false, type: Boolean, default: false
   });
 
+  // Aventura / progresso
+  game.settings.register(MODULE_ID, "aventuraAto", {
+    name: "Ato atual da aventura",
+    scope: "world", config: false, type: Number, default: 1
+  });
+  game.settings.register(MODULE_ID, "aventuraAndar", {
+    name: "Andar atual",
+    scope: "world", config: false, type: String, default: "B1"
+  });
+  game.settings.register(MODULE_ID, "puzzlesConcluidos", {
+    name: "Puzzles concluídos (JSON)",
+    scope: "world", config: false, type: String, default: "[]"
+  });
+  game.settings.register(MODULE_ID, "npcStatus", {
+    name: "Status dos NPCs (JSON)",
+    scope: "world", config: false, type: String, default: "{}"
+  });
+
   // Preferências de cliente
   game.settings.register(MODULE_ID, "partyFrameVisible", {
     name: "Painel de Investigadores — Visível",
