@@ -1871,3 +1871,243 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   width: 10px;
   text-align: center;
 }
+
+/* ─── Player HUD — Barra inferior estilo Resident Evil ──────── */
+#ddp-player-hud {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+}
+
+#ddp-player-hud * {
+  pointer-events: all;
+}
+
+/* Botão toggle (sempre visível, acima do painel) */
+.ddp-phud-toggle {
+  background: rgba(10, 10, 15, 0.85);
+  border: 1px solid #333;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  color: #888;
+  width: 36px;
+  height: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  padding: 0;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+.ddp-phud-toggle:hover {
+  color: #cc3333;
+  background: rgba(20, 5, 5, 0.92);
+}
+
+/* Painel principal */
+.ddp-phud-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(8, 8, 12, 0.92);
+  border: 1px solid #2a2a2a;
+  border-top: 1px solid #3a1010;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 14px 8px 10px;
+  min-width: 360px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.8), inset 0 0 30px rgba(0,0,0,0.4);
+  /* Linha de scan RE */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    ),
+    linear-gradient(rgba(8,8,12,0.92), rgba(8,8,12,0.92));
+  transition: opacity 0.25s;
+}
+
+/* Collapsed: oculta conteúdo */
+#ddp-player-hud.ddp-phud-collapsed .ddp-phud-content {
+  display: none;
+}
+
+#ddp-player-hud.ddp-phud-collapsed .ddp-phud-toggle {
+  border-radius: 6px;
+  border-bottom: 1px solid #333;
+}
+
+/* Avatar */
+.ddp-phud-avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.ddp-phud-avatar-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ddp-phud-avatar-wrap.ddp-phud-koed {
+  border-color: #550000;
+  filter: grayscale(80%) brightness(0.5);
+}
+
+.ddp-phud-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ddp-phud-bleed-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 0, 0, 0.35);
+  animation: ddp-bleed-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes ddp-bleed-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.7; }
+}
+
+.ddp-phud-name {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  max-width: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Separador vertical */
+.ddp-phud-sep {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(to bottom, transparent, #333, transparent);
+}
+
+/* Barras */
+.ddp-phud-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.ddp-phud-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ddp-phud-lbl {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: #aaa;
+  width: 26px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.ddp-phud-bar-bg {
+  flex: 1;
+  height: 10px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ddp-phud-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.4s ease, background 0.4s ease;
+  position: relative;
+}
+
+/* Brilho interno na barra */
+.ddp-phud-bar-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px 2px 0 0;
+}
+
+.ddp-phud-val {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: #ddd;
+  font-weight: bold;
+  width: 44px;
+  text-align: right;
+}
+
+.ddp-phud-max {
+  font-size: 8px;
+  color: #555;
+}
+
+/* Barra crítica: pisca */
+.ddp-phud-crit .ddp-phud-bar-fill {
+  animation: ddp-crit-flash 0.8s ease-in-out infinite;
+}
+
+@keyframes ddp-crit-flash {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+.ddp-phud-crit .ddp-phud-lbl {
+  color: #ff4444;
+  animation: ddp-crit-flash 0.8s ease-in-out infinite;
+}
+
+/* Ícones de status */
+.ddp-phud-status-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 22px;
+}
+
+.ddp-phud-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.ddp-phud-icon-pulse {
+  animation: ddp-crit-flash 0.8s ease-in-out infinite;
+}
+
+.ddp-phud-icon-bleed {
+  animation: ddp-bleed-pulse 1.2s ease-in-out infinite;
+}
