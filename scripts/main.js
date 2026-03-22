@@ -123,6 +123,8 @@ async function _handleSocket(data) {
       break;
     }
     case "mostrarDocumento": {
+      // GM emite o socket — não precisa receber de volta
+      if (game.user.isGM) break;
       const col = data.docType === "JournalEntry" ? game.journal
                 : data.docType === "Item"         ? game.items
                 : null;
@@ -155,9 +157,11 @@ Hooks.once("ready", () => {
     }
   }
 
+  // Merge com o que status-auto.js e inventory-dialog.js já registraram
   window.DebaixoDaPele = {
+    ...(window.DebaixoDaPele ?? {}),
     MODULE_ID,
-    version: VERSION,
+    version:    VERSION,
     emitSocket: (data) => game.socket?.emit(`module.${MODULE_ID}`, data)
   };
 
