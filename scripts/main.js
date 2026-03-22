@@ -10,6 +10,7 @@ import "./party-frame.js";
 import "./status-auto.js";
 import "./gm-panel.js";
 import "./campaign-panel.js";
+import "./player-hud.js";
 
 const MODULE_ID = "debaixo-da-pele";
 const VERSION   = "1.8.0";
@@ -76,6 +77,12 @@ Hooks.once("init", () => {
   game.settings.register(MODULE_ID, "npcStatus", {
     name: "Status dos NPCs (JSON)",
     scope: "world", config: false, type: String, default: "{}"
+  });
+
+  // Player HUD (por jogador)
+  game.settings.register(MODULE_ID, "playerHudVisible", {
+    name: "Player HUD — Barra HP/SAN visível",
+    scope: "client", config: true, type: Boolean, default: true
   });
 
   // Preferências de cliente
