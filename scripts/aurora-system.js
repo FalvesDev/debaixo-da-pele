@@ -272,6 +272,10 @@ async function _setAurora(actor, nova, sheet) {
 
 // ─── Gerencia Active Effects por fase ────────────────────────
 async function _aplicarEfeitosAtivos(actor, nivel, anterior) {
+  // Apenas o GM escreve Active Effects — evita duplicatas quando jogador
+  // tem ownership e abre a ficha ao mesmo tempo que o GM.
+  if (!game.user.isGM) return;
+
   const fase         = getFaseAurora(nivel);
   const faseAnterior = getFaseAurora(anterior);
 

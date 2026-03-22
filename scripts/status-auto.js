@@ -92,12 +92,12 @@ async function _avaliarHP(actor, novoHP, hpAnterior) {
 }
 
 // ─── Avaliação de Aurora → ícones no token ───────────────────
-// Limiares alinhados com AURORA_FASES em aurora-system.js:
-// F1 [2, 4), F2 [4, 6), F3 [6, 8), F4 [8, 10]
+// Limiares espelham AURORA_FASES em aurora-system.js (min de cada fase).
+// Aurora usa steps de 0.5, então 4.0 ainda é Fase 1 (max:4 em AURORA_FASES).
 async function _avaliarAurora(actor, nivel) {
-  await _setStatus(actor, STATUS.AURORA_F2, nivel >= 4 && nivel < 6);
-  await _setStatus(actor, STATUS.AURORA_F3, nivel >= 6 && nivel < 8);
-  await _setStatus(actor, STATUS.AURORA_F4, nivel >= 8);
+  await _setStatus(actor, STATUS.AURORA_F2, nivel >= 4.01 && nivel <= 6);
+  await _setStatus(actor, STATUS.AURORA_F3, nivel >= 6.01 && nivel <= 8);
+  await _setStatus(actor, STATUS.AURORA_F4, nivel >= 8.01);
 }
 
 // Cache de HP anterior por actorId.
