@@ -8,6 +8,7 @@ import "./token-hud.js";
 import "./party-frame.js";
 import "./status-auto.js";
 import "./gm-panel.js";
+import "./campaign-panel.js";
 
 const MODULE_ID = "debaixo-da-pele";
 

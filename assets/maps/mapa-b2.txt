@@ -1,0 +1,27 @@
+╔══════════════════════════════════════════════════════════════╗
+║        B2 — LABORATÓRIOS DE PESQUISA (Nível -1)              ║
+║        ⚠ Aurora +0.5/hora sem máscara                        ║
+╠══════════════════╦═══════════════════╦═══════════════════════╣
+║  LAB. ALFA       ║   LAB. BETA       ║   ENFERMARIA          ║
+║  [B2-L01]        ║  [B2-L02]         ║  [B2-M01]             ║
+║  amostras Aurora ║  câmara isolam.   ║  morfina, codeína      ║
+║  microscópios    ║  espécimes frascos║  Kit PA Avançado       ║
+║  resultados parc.║                   ║  bandagem hemostát.   ║
+╠══════════════════╬═══════════════════╩═══════════════════════╣
+║  ARMÁRIO SEG.    ║           CORREDOR PRINCIPAL B2            ║
+║  [B2-A01]        ║                                           ║
+║  CÓDIGO: 1987    ╠════════════════════╦═══════════════════════╣
+║  ← Escopeta 12   ║  SALA DE CONTROLE  ║  DEPÓSITO B2          ║
+║                  ║  [B2-S01]          ║  [B2-D01]             ║
+╠══════════════════║  monitores         ║  máscaras N95         ║
+║  WC B2           ║  logs de exposição ║  walkie-talkies       ║
+║  [B2-W01]        ║  PUZZLE-02: acesso ║  suprimentos          ║
+╚══════════════════╩════════════╦═══════╩═══════════════════════╝
+                                ║
+                   ┌────────────┴───────────┐
+                   │  CÂMARA DESCONTAM.     │
+                   │  [B2-C01]              │
+                   │  ← obrigatório p/ B3   │
+                   │  PUZZLE-02             │
+                   └───────────┬────────────┘
+                               │ → B3
