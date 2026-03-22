@@ -91,7 +91,9 @@ export class DDPInventoryDialog extends Application {
 
   // ── Dados para o template Handlebars ──────────────────
   getData() {
-    const allItems = this.actor.items.contents;
+    // Filtra apenas itens físicos — exclui perícias, ocupações e talentos do CoC7
+    const TIPOS_EXCLUIDOS = new Set(["skill", "occupation", "archetype", "talent", "setup"]);
+    const allItems = this.actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
 
     // Itens posicionados no grid com coordenadas absolutas
     const placedItems = [];
