@@ -48,7 +48,8 @@
         <div class="ddp-inv-placed-item {{#if rotated}}ddp-rotated{{/if}}"
              data-item-id="{{id}}"
              draggable="true"
-             title="{{name}} ({{sizeLabel}})">
+             title="{{name}} ({{sizeLabel}})"
+             style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
           <img src="{{img}}" draggable="false" />
           <div class="ddp-inv-item-name">{{name}}</div>
           <div class="ddp-inv-item-size">{{sizeLabel}}</div>
