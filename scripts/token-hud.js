@@ -86,8 +86,10 @@ function _drawHUD(token) {
 
   // Remove HUD anterior
   if (token[HUD_KEY]) {
-    try { token.removeChild(token[HUD_KEY]); } catch (_) {}
-    token[HUD_KEY].destroy({ children: true });
+    try {
+      token.removeChild(token[HUD_KEY]);
+      token[HUD_KEY].destroy({ children: true });
+    } catch (_) {}
     delete token[HUD_KEY];
   }
 

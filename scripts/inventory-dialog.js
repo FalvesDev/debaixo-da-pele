@@ -13,7 +13,7 @@ const CELL_PX   = 52; // px por célula
 function _getItemSize(item) {
   // 1. Flags explícitos no item (definidos via macro ou importação)
   const f = item.flags?.[MODULE_ID];
-  if (f?.gridW && f?.gridH) return { w: +f.gridW, h: +f.gridH };
+  if (f?.gridW !== undefined && f?.gridH !== undefined) return { w: Math.max(1, +f.gridW), h: Math.max(1, +f.gridH) };
 
   // 2. Heurística por nome (português e inglês)
   const n = (item.name ?? "").toLowerCase();

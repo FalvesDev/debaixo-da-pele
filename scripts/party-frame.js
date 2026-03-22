@@ -111,6 +111,7 @@ class DDPPartyFrame extends Application {
 
     // Clicar no personagem → foca o token e seleciona
     html.find(".ddp-pf-char").on("click", (e) => {
+      if (!canvas?.ready) return;
       const actorId = e.currentTarget.dataset.actorId;
       const token   = canvas.tokens?.placeables?.find(t => t.actor?.id === actorId);
       if (!token) return ui.notifications.info("Token não encontrado na cena atual.");
