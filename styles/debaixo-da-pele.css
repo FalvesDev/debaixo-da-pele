@@ -463,12 +463,13 @@
   bottom: 100px;
   left: 10px;
   z-index: 65;
-  width: 210px;
+  width: 220px;
   background: rgba(10, 10, 20, 0.92);
   border: 1px solid #2a2a3a;
   border-radius: 7px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.7);
   font-family: "Signika", sans-serif;
+  font-size: 13px;
   color: #ccc;
   backdrop-filter: blur(4px);
   overflow: hidden;
@@ -594,7 +595,7 @@
 }
 
 .ddp-pf-name {
-  font-size: 0.8em;
+  font-size: 0.85em;
   font-weight: bold;
   color: #ddd;
   white-space: nowrap;
@@ -735,6 +736,7 @@
   flex-direction: column;
   height: 100%;
   font-family: "Signika", sans-serif;
+  font-size: 13px;
   color: #ccc;
 }
 
@@ -1483,13 +1485,24 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   overflow: hidden;
 }
 
+.ddp-inventory-dialog {
+  min-width: 400px;
+  min-height: 280px;
+}
+
 .ddp-inv-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
   font-family: 'Signika', serif;
+  font-size: 13px;
   color: #ccc;
   user-select: none;
+}
+
+/* Corpo scroll quando janela menor que grid */
+.ddp-inv-body {
+  overflow: auto;
 }
 
 /* Header */
@@ -1528,8 +1541,14 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   line-height: 1.2;
 }
 
+.ddp-inv-cap-info {
+  color: #666;
+  font-size: 0.9em;
+  cursor: help;
+}
+
 .ddp-inv-counter {
-  font-size: 0.7em;
+  font-size: 0.75em;
   color: #888;
 }
 
