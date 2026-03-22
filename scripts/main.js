@@ -5,12 +5,14 @@
 
 import "./aurora-system.js";
 import "./token-hud.js";
+import "./inventory-dialog.js";
 import "./party-frame.js";
 import "./status-auto.js";
 import "./gm-panel.js";
 import "./campaign-panel.js";
 
 const MODULE_ID = "debaixo-da-pele";
+const VERSION   = "1.8.0";
 
 // ─── SETTINGS ───────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -88,18 +90,18 @@ Hooks.once("init", () => {
 });
 
 // ─── SOCKET — Revelações em tempo real ──────────────────────
-Hooks.once("setup", () => {
-  game.socket?.on(`module.${MODULE_ID}`, _handleSocket);
-});
+// Registrado no ready: game.socket garantido disponível em v11/v12
+// (setup usa optional-chain silencioso; ready é o momento seguro)
 
 async function _handleSocket(data) {
   switch (data.action) {
     case "revelarComposto": {
-      // Força refresh visual em todos os clientes
+      // Refresh visual para todos os clientes
       setTimeout(() => {
-        canvas.tokens?.placeables.forEach(t => t.refresh?.());
+        if (canvas?.ready) canvas.tokens?.placeables.forEach(t => t.refresh?.());
       }, 400);
-      // Popup dramático em todas as telas
+      // Popup apenas para jogadores — o GM já vê confirmação local no painel
+      if (game.user.isGM) break;
       new Dialog({
         title: "🔬 Descoberta Perturbadora",
         content: `
@@ -124,7 +126,9 @@ async function _handleSocket(data) {
       break;
     }
     case "mostrarMensagem": {
-      ChatMessage.create({ content: data.conteudo, whisper: [] });
+      // Apenas o GM cria a mensagem no servidor (evita N duplicatas)
+      if (!game.user.isGM) break;
+      await ChatMessage.create({ content: data.conteudo, whisper: [] });
       break;
     }
   }
@@ -132,7 +136,8 @@ async function _handleSocket(data) {
 
 // ─── READY ──────────────────────────────────────────────────
 Hooks.once("ready", () => {
-  console.log(`${MODULE_ID} | Debaixo da Pele v1.5.0 pronto.`);
+  game.socket.on(`module.${MODULE_ID}`, _handleSocket);
+  console.log(`${MODULE_ID} | Debaixo da Pele v${VERSION} pronto.`);
 
   if (game.user.isGM) {
     const dias = game.settings.get(MODULE_ID, "geradorDias");
@@ -145,7 +150,7 @@ Hooks.once("ready", () => {
 
   window.DebaixoDaPele = {
     MODULE_ID,
-    version: "1.5.0",
+    version: VERSION,
     emitSocket: (data) => game.socket?.emit(`module.${MODULE_ID}`, data)
   };
 

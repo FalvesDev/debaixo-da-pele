@@ -199,13 +199,21 @@ function _injectAuroraPanel(sheet, html) {
   // Remove painel duplicado e injeta
   html.find(`#ddp-aurora-${actor.id}`).remove();
 
-  // Procura o ponto de inserção na ficha CoC7
-  const alvo = (
-    html.find('.tab[data-tab="main"]').first() ||
-    html.find('.tab[data-tab="skills"]').first() ||
-    html.find('.sheet-body .tab.active').first() ||
-    html.find('.sheet-body').first()
-  );
+  // Procura o ponto de inserção na ficha CoC7.
+  // Atenção: jQuery.find() nunca retorna falsy (set vazio é truthy),
+  // por isso verificamos .length antes de usar ||.
+  const alvo = (() => {
+    for (const sel of [
+      '.tab[data-tab="main"]',
+      '.tab[data-tab="skills"]',
+      '.sheet-body .tab.active',
+      '.sheet-body'
+    ]) {
+      const el = html.find(sel);
+      if (el.length) return el.first();
+    }
+    return html;
+  })();
   alvo.prepend(panelHtml);
 
   // ─── Eventos ─────────────────────────────────────────────────
@@ -337,7 +345,7 @@ async function _aplicarEfeitosAtivos(actor, nivel, anterior) {
     const novaSan  = Math.max(0, sanAtual - fase.sanEntrada);
     await actor.update({ "system.attribs.san.value": novaSan });
     await actor.setFlag(MODULE_ID, "aurora_fase2_san_ok", true);
-    ChatMessage.create({
+    await ChatMessage.create({
       content: `
         <div style="border-left:4px solid #ffb347; padding:8px 12px; background:#1a1a2e">
           🟠 <b>Aurora — Fase 2 atingida: ${actor.name}</b><br>
@@ -353,6 +361,9 @@ async function _aplicarEfeitosAtivos(actor, nivel, anterior) {
 
 function _notificarMudancaFase(actor, anterior, nova) {
   if (nova.id === anterior.id) return;
+  // Apenas o GM cria a mensagem — evita duplicatas quando múltiplos clientes
+  // têm a ficha aberta e todos chamam _setAurora simultaneamente.
+  if (!game.user.isGM) return;
   const subindo = nova.id > anterior.id;
 
   ChatMessage.create({

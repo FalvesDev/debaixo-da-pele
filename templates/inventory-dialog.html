@@ -1,0 +1,92 @@
+{{!-- INVENTÁRIO GRID — Estilo Resident Evil --}}
+<div class="ddp-inv-wrapper">
+
+  {{!-- Header --}}
+  <div class="ddp-inv-header">
+    <img class="ddp-inv-actor-img" src="{{actorImg}}" />
+    <div class="ddp-inv-actor-info">
+      <span class="ddp-inv-actor-name">{{actorName}}</span>
+      <span class="ddp-inv-counter">{{alocados}}/{{totalItens}} itens alocados</span>
+    </div>
+    {{#if canEdit}}
+    <div class="ddp-inv-btns">
+      <button class="ddp-inv-btn-auto" title="Organizar automaticamente">
+        <i class="fas fa-magic"></i> Organizar
+      </button>
+      <button class="ddp-inv-btn-clear" title="Limpar grid">
+        <i class="fas fa-trash-alt"></i>
+      </button>
+      <button class="ddp-inv-btn-save" title="Salvar layout">
+        <i class="fas fa-save"></i> Salvar
+      </button>
+    </div>
+    {{/if}}
+  </div>
+
+  {{!-- Corpo: grid + painel lateral --}}
+  <div class="ddp-inv-body">
+
+    {{!-- Grid principal (Mochila) --}}
+    <div class="ddp-inv-grid-wrap">
+      <div class="ddp-inv-section-label">
+        <i class="fas fa-backpack"></i> MOCHILA
+        <span class="ddp-inv-hint">Duplo-clique para girar · Botão direito para remover</span>
+      </div>
+      <div class="ddp-inv-grid"
+           style="width:{{gridWidth}}px; height:{{gridHeight}}px;">
+
+        {{!-- Células de fundo (drop targets) --}}
+        {{#each cells}}
+        <div class="ddp-inv-cell"
+             data-row="{{row}}"
+             data-col="{{col}}"
+             style="left:{{styleLeft}}px; top:{{styleTop}}px;"></div>
+        {{/each}}
+
+        {{!-- Itens posicionados --}}
+        {{#each placedItems}}
+        <div class="ddp-inv-placed-item {{#if rotated}}ddp-rotated{{/if}}"
+             data-item-id="{{id}}"
+             draggable="true"
+             title="{{name}} ({{sizeLabel}})">
+          <img src="{{img}}" draggable="false" />
+          <div class="ddp-inv-item-name">{{name}}</div>
+          <div class="ddp-inv-item-size">{{sizeLabel}}</div>
+          <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+
+    {{!-- Painel lateral: não alocados --}}
+    <div class="ddp-inv-unassigned">
+      <div class="ddp-inv-section-label"><i class="fas fa-inbox"></i> NÃO ALOCADOS</div>
+      <div class="ddp-inv-unass-list">
+        {{#each unassigned}}
+        <div class="ddp-inv-unass-item"
+             data-item-id="{{id}}"
+             draggable="true"
+             title="{{name}} ({{sizeLabel}}) — Arraste para o grid">
+          <img src="{{img}}" />
+          <div class="ddp-inv-unass-info">
+            <span class="ddp-inv-unass-name">{{name}}</span>
+            <span class="ddp-inv-unass-size">{{sizeLabel}}</span>
+          </div>
+        </div>
+        {{else}}
+        <p class="ddp-inv-all-placed">
+          <i class="fas fa-check-circle"></i><br>
+          Todos os itens estão alocados!
+        </p>
+        {{/each}}
+      </div>
+      <div class="ddp-inv-legend">
+        <div><i class="fas fa-arrows-alt"></i> Arrastar para mover</div>
+        <div><i class="fas fa-sync-alt"></i> Duplo-clique = girar</div>
+        <div><i class="fas fa-times"></i> Botão direito = remover</div>
+      </div>
+    </div>
+
+  </div>
+</div>

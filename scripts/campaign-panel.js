@@ -152,12 +152,12 @@ class DDPCampaignPanel extends Application {
   getData() {
     const aventuraAndar = game.settings.get(MODULE_ID, "aventuraAndar");
     const aventuraAto   = game.settings.get(MODULE_ID, "aventuraAto");
-    const puzzles       = JSON.parse(game.settings.get(MODULE_ID, "puzzlesConcluidos") || "[]");
+    const puzzles       = (() => { try { return JSON.parse(game.settings.get(MODULE_ID, "puzzlesConcluidos") || "[]"); } catch { return []; } })();
 
     const capitulos = CAPITULOS.map(c => ({
       ...c,
       ativo: c.num === this._capAtivo,
-      andارAtual: c.andar === aventuraAndar,
+      andarAtual: c.andar === aventuraAndar,
       puzzlesConcluidos: c.puzzles.filter((_p, i) => {
         // Mapeia puzzle do capítulo ao índice global
         const offset = CAPITULOS.slice(0, c.num - 1).reduce((s, cc) => s + cc.puzzles.length, 0);

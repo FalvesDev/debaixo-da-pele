@@ -105,6 +105,13 @@ function _drawHUD(token) {
 
   const W = token.w || canvas.grid?.size || 100;
 
+  const lblStyle = {
+    fontFamily: "Arial", fontSize: 7,
+    fill: 0x999999,
+    dropShadow: true, dropShadowColor: 0x000000,
+    dropShadowDistance: 1, dropShadowBlur: 1
+  };
+
   let barSlot = 1;
 
   // ── HP bar ──
@@ -112,6 +119,9 @@ function _drawHUD(token) {
     const hpY = -(STEP * barSlot++);
     container.addChild(_drawBar(0, hpY, W, data.hpPct, data.hpColor));
     container.addChild(_drawLabel(`${data.hp.value}`, W - 14, hpY - 1));
+    const lblHP = new PIXI.Text("HP", lblStyle);
+    lblHP.position.set(1, hpY - 1); lblHP.resolution = 2;
+    container.addChild(lblHP);
   }
 
   // ── SAN bar ──
@@ -119,6 +129,9 @@ function _drawHUD(token) {
     const sanY = -(STEP * barSlot++);
     container.addChild(_drawBar(0, sanY, W, data.sanPct, data.sanColor));
     container.addChild(_drawLabel(`${data.san.value}`, W - 18, sanY - 1));
+    const lblSAN = new PIXI.Text("SAN", lblStyle);
+    lblSAN.position.set(1, sanY - 1); lblSAN.resolution = 2;
+    container.addChild(lblSAN);
   }
 
   // ── Aurora mini-bar (só se revelado) ──
@@ -126,27 +139,16 @@ function _drawHUD(token) {
     const aurY = -(STEP * barSlot++);
     container.addChild(_drawBar(0, aurY, W, data.aurPct, data.aurColor));
     if (data.aurora > 0) container.addChild(_drawLabel(`A${data.aurora}`, W - 20, aurY - 1));
+    const lblAUR = new PIXI.Text("☣", { ...lblStyle, fontSize: 7, fill: data.aurColor });
+    lblAUR.position.set(1, aurY - 1); lblAUR.resolution = 2;
+    container.addChild(lblAUR);
   }
 
-  // Labels fixos (esquerda) — HP / SAN / A
-  const lblStyle = {
-    fontFamily: "Arial", fontSize: 7,
-    fill: 0x999999,
-    dropShadow: true, dropShadowColor: 0x000000,
-    dropShadowDistance: 1, dropShadowBlur: 1
-  };
-  const lblHP  = new PIXI.Text("HP",  lblStyle);  lblHP.position.set(1,  hpY - 1);  lblHP.resolution = 2;
-  const lblSAN = new PIXI.Text("SAN", lblStyle);  lblSAN.position.set(1, sanY - 1); lblSAN.resolution = 2;
-  const lblAUR = new PIXI.Text("☣",  { ...lblStyle, fontSize: 7, fill: data.aurColor });
-  lblAUR.position.set(1, aurY - 1); lblAUR.resolution = 2;
-
-  container.addChild(lblHP, lblSAN, lblAUR);
-
-  // ── Ícone de máscara (canto superior direito) ──
+  // ── Ícone de máscara (acima de todas as barras) ──
   const mascaraTipo = token.actor?.getFlag(MODULE_ID, "mascara_tipo") ?? "nenhuma";
   if (mascaraTipo !== "nenhuma") {
     const shield = new PIXI.Text("🛡", { fontFamily: "Arial", fontSize: 10, fill: 0xffffff });
-    shield.position.set(W - 12, -(STEP * 4));
+    shield.position.set(W - 12, -(STEP * barSlot));
     shield.resolution = 2;
     container.addChild(shield);
   }
@@ -174,11 +176,25 @@ Hooks.on("destroyToken", (token) => {
 
 // Redesenha ao mudar Aurora (não capturado pelo refreshToken)
 Hooks.on("updateActor", (actor, changes) => {
-  const auroraChanged = foundry.utils.hasProperty(changes, `flags.${MODULE_ID}.aurora`);
+  if (!canvas?.ready) return;
+  const auroraChanged  = foundry.utils.hasProperty(changes, `flags.${MODULE_ID}.aurora`);
   const mascaraChanged = foundry.utils.hasProperty(changes, `flags.${MODULE_ID}.mascara_tipo`);
   if (!auroraChanged && !mascaraChanged) return;
 
   canvas.tokens?.placeables
     .filter(t => t.actor?.id === actor.id)
     .forEach(t => _drawHUD(t));
+});
+
+// Redesenha todos os tokens quando a setting de HUD muda
+Hooks.on("updateSetting", (setting) => {
+  const relevante = [
+    `${MODULE_ID}.tokenHudEnabled`,
+    `${MODULE_ID}.hpSanVisivelJogadores`,
+    `${MODULE_ID}.auroraVisivelJogadores`,
+    `${MODULE_ID}.auroraRevelado`
+  ];
+  if (!relevante.includes(setting.key)) return;
+  if (!canvas?.ready) return;
+  canvas.tokens?.placeables.forEach(t => _drawHUD(t));
 });

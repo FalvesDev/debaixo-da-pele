@@ -98,25 +98,31 @@ async function _avaliarAurora(actor, nivel) {
   await _setStatus(actor, STATUS.AURORA_F4, nivel >= 8.01);
 }
 
-// ─── Hook: mudança de HP ──────────────────────────────────────
-Hooks.on("preUpdateActor", (actor, changes, _options, _userId) => {
+// Cache de HP anterior por actorId.
+// Escrever em `changes` no preUpdateActor não funciona em clientes remotos
+// porque o delta não é retransmitido com campos arbitrários.
+const _hpCache = new Map();
+
+// ─── Hook: captura HP antes da atualização ────────────────────
+Hooks.on("preUpdateActor", (actor, changes) => {
   const novoHP = foundry.utils.getProperty(changes, "system.attribs.hp.value");
   if (novoHP === undefined) return;
-  // Armazena HP anterior para detectar Ferimento Grave
-  changes._ddpHpAnterior = actor.system?.attribs?.hp?.value;
+  _hpCache.set(actor.id, actor.system?.attribs?.hp?.value);
 });
 
-Hooks.on("updateActor", async (actor, changes, _options, _userId) => {
-  // Só o GM (ou o dono do token) processa
-  if (!game.user.isGM && actor.ownership[game.user.id] < 3) return;
+// ─── Hook: processa automações após atualização ───────────────
+Hooks.on("updateActor", async (actor, changes) => {
+  // Apenas o GM executa escritas de Active Effects para evitar duplicatas
+  // (quando GM + jogador dono ambos processassem → 2× createEmbeddedDocuments)
+  if (!game.user.isGM) return;
 
-  // HP mudou
   const novoHP = foundry.utils.getProperty(changes, "system.attribs.hp.value");
   if (novoHP !== undefined) {
-    await _avaliarHP(actor, novoHP, changes._ddpHpAnterior);
+    const hpAnterior = _hpCache.get(actor.id);
+    _hpCache.delete(actor.id);
+    await _avaliarHP(actor, novoHP, hpAnterior);
   }
 
-  // Aurora mudou
   const novaAurora = foundry.utils.getProperty(changes, `flags.${MODULE_ID}.aurora`);
   if (novaAurora !== undefined) {
     await _avaliarAurora(actor, novaAurora);

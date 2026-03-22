@@ -7,6 +7,12 @@ import { getFaseAurora } from "./aurora-system.js";
 
 const MODULE_ID = "debaixo-da-pele";
 
+// ─── Utilitário: JSON.parse seguro ───────────────────────────
+function _parseSafe(str, fallback) {
+  try { return JSON.parse(str || JSON.stringify(fallback)); }
+  catch { return fallback; }
+}
+
 // ─── Helpers de macro ────────────────────────────────────────
 /**
  * Encontra uma macro pelo número DDP (ex: "01") ou por termos do label.
@@ -134,14 +140,13 @@ class DDPGMPanel extends Application {
 
     // Journals e items para seleção
     const journals = game.journal?.contents?.map(j => ({ id: j.id, name: j.name })) ?? [];
-    const items    = game.items?.contents?.filter(i => i.hasPlayerOwner || game.user.isGM)
-                                          .map(i => ({ id: i.id, name: i.name })) ?? [];
+    const items    = game.items?.contents?.map(i => ({ id: i.id, name: i.name })) ?? [];
 
     // Aventura / progresso
     const aventuraAto   = game.settings.get(MODULE_ID, "aventuraAto");
     const aventuraAndar = game.settings.get(MODULE_ID, "aventuraAndar");
-    const puzzles       = JSON.parse(game.settings.get(MODULE_ID, "puzzlesConcluidos") || "[]");
-    const npcRaw        = JSON.parse(game.settings.get(MODULE_ID, "npcStatus") || "{}");
+    const puzzles       = _parseSafe(game.settings.get(MODULE_ID, "puzzlesConcluidos"), []);
+    const npcRaw        = _parseSafe(game.settings.get(MODULE_ID, "npcStatus"), {});
 
     return {
       investigadores,
@@ -206,7 +211,9 @@ class DDPGMPanel extends Application {
       const key   = e.currentTarget.dataset.setting;
       const delta = parseInt(e.currentTarget.dataset.delta);
       const atual = game.settings.get(MODULE_ID, key);
-      const novo  = Math.max(0, atual + delta);
+      // diaCampanha tem mínimo 1 (conforme range registrado); geradorDias tem mínimo 0
+      const min   = key === "diaCampanha" ? 1 : 0;
+      const novo  = Math.max(min, atual + delta);
       await game.settings.set(MODULE_ID, key, novo);
       this.render(false);
     });
@@ -423,7 +430,7 @@ class DDPGMPanel extends Application {
     html.find(".ddp-gm-puzzle-check").on("change", async (e) => {
       const num = parseInt(e.currentTarget.dataset.puzzle);
       const raw = game.settings.get(MODULE_ID, "puzzlesConcluidos");
-      const lista = JSON.parse(raw || "[]");
+      const lista = _parseSafe(raw, []);
       const idx = lista.indexOf(num);
       if (e.currentTarget.checked && idx === -1) lista.push(num);
       else if (!e.currentTarget.checked && idx !== -1) lista.splice(idx, 1);
@@ -435,7 +442,7 @@ class DDPGMPanel extends Application {
       const npcKey = e.currentTarget.dataset.npc;
       const status = e.currentTarget.dataset.status;
       const raw = game.settings.get(MODULE_ID, "npcStatus");
-      const obj = JSON.parse(raw || "{}");
+      const obj = _parseSafe(raw, {});
       obj[npcKey] = status;
       await game.settings.set(MODULE_ID, "npcStatus", JSON.stringify(obj));
       this.render(false);
@@ -487,5 +494,5 @@ Hooks.on("updateSetting", (setting) => {
 
 // Re-render ao mudar HP/SAN/Aurora de atores
 Hooks.on("updateActor", (actor) => {
-  if (actor.hasPlayerOwner && _gmPanel?.rendered) _gmPanel.render(false);
+  if (actor.type === "character" && _gmPanel?.rendered) _gmPanel.render(false);
 });
