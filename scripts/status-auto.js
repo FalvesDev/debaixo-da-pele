@@ -103,6 +103,9 @@ async function _avaliarAurora(actor, nivel) {
 // porque o delta não é retransmitido com campos arbitrários.
 const _hpCache = new Map();
 
+// Limpa cache ao deletar ator para evitar memory leak
+Hooks.on("deleteActor", (actor) => { _hpCache.delete(actor.id); });
+
 // ─── Hook: captura HP antes da atualização ────────────────────
 Hooks.on("preUpdateActor", (actor, changes) => {
   const novoHP = foundry.utils.getProperty(changes, "system.attribs.hp.value");

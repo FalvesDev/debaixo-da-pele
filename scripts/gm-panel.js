@@ -9,7 +9,8 @@ const MODULE_ID = "debaixo-da-pele";
 
 // ─── Utilitário: JSON.parse seguro ───────────────────────────
 function _parseSafe(str, fallback) {
-  try { return JSON.parse(str || JSON.stringify(fallback)); }
+  if (!str) return fallback;
+  try { return JSON.parse(str); }
   catch { return fallback; }
 }
 
@@ -406,7 +407,7 @@ class DDPGMPanel extends Application {
       if (!macro) return ui.notifications.warn("Macro de SAN não encontrada. Importe as macros do Compêndio.");
       const atores = game.actors.filter(a => a.type === "character");
       for (const ator of atores) {
-        const token = canvas.tokens?.placeables.find(t => t.actor?.id === ator.id);
+        const token = canvas?.ready ? canvas.tokens?.placeables?.find(t => t.actor?.id === ator.id) : null;
         if (token) { token.control({ releaseOthers: false }); }
       }
       macro.execute();
