@@ -685,6 +685,16 @@
   animation: ddp-hemo-pulse 1.2s ease-in-out infinite;
 }
 
+.ddp-pf-hidden {
+  color: #333 !important;
+  font-style: italic;
+}
+
+.ddp-pf-aurora-dot {
+  font-size: 0.8em;
+  line-height: 1;
+}
+
 @keyframes ddp-hemo-pulse {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.3; }
@@ -1465,3 +1475,338 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
 
 .ddp-cp-puzzle { color: #88aaff; }
 .ddp-cp-perigo { color: #cc6644; }
+
+/* ─── INVENTÁRIO GRID — Estilo Resident Evil ──────────────── */
+.ddp-inventory-dialog .window-content {
+  padding: 0;
+  background: #080808;
+  overflow: hidden;
+}
+
+.ddp-inv-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Signika', serif;
+  color: #ccc;
+  user-select: none;
+}
+
+/* Header */
+.ddp-inv-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #0f0f0f;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.ddp-inv-actor-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #3a3a3a;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ddp-inv-actor-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ddp-inv-actor-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #eee;
+  line-height: 1.2;
+}
+
+.ddp-inv-counter {
+  font-size: 0.7em;
+  color: #555;
+}
+
+.ddp-inv-btns {
+  display: flex;
+  gap: 5px;
+}
+
+.ddp-inv-btns button {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #999;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.78em;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.ddp-inv-btns button:hover {
+  background: #252525;
+  border-color: #555;
+  color: #eee;
+}
+
+/* Corpo */
+.ddp-inv-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Rótulos de seção */
+.ddp-inv-section-label {
+  font-size: 0.68em;
+  letter-spacing: 0.12em;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ddp-inv-hint {
+  font-size: 0.85em;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #333;
+  margin-left: auto;
+  font-style: italic;
+}
+
+/* Wrapper do grid */
+.ddp-inv-grid-wrap {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Grid posicionado */
+.ddp-inv-grid {
+  position: relative;
+  background: #060606;
+  border: 1px solid #1e1e1e;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+  /* Linhas de grade */
+  background-image:
+    linear-gradient(to right, #141414 1px, transparent 1px),
+    linear-gradient(to bottom, #141414 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* Células (drop targets) */
+.ddp-inv-cell {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  transition: background 0.08s;
+  pointer-events: none; /* deixa eventos passarem para o grid */
+}
+
+.ddp-inv-cell.ddp-drop-ok {
+  background: rgba(80, 200, 80, 0.22);
+  border: 1px solid rgba(80, 255, 80, 0.45);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.ddp-inv-cell.ddp-drop-bad {
+  background: rgba(220, 50, 50, 0.22);
+  border: 1px solid rgba(255, 60, 60, 0.45);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Itens posicionados no grid */
+.ddp-inv-placed-item {
+  position: absolute;
+  box-sizing: border-box;
+  cursor: grab;
+  z-index: 10;
+  border: 1px solid #2a2a2a;
+  background: #141414;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+  padding: 2px;
+}
+
+.ddp-inv-placed-item:hover {
+  border-color: #555;
+  box-shadow: 0 0 10px rgba(255,255,255,0.12), inset 0 0 4px rgba(255,255,255,0.05);
+  z-index: 20;
+}
+
+.ddp-inv-placed-item.ddp-rotated {
+  border-color: #334466;
+  box-shadow: 0 0 6px rgba(60, 100, 200, 0.3);
+}
+
+.ddp-inv-placed-item.ddp-dragging {
+  opacity: 0.45;
+  cursor: grabbing;
+}
+
+.ddp-inv-placed-item img {
+  width: 100%;
+  height: calc(100% - 16px);
+  object-fit: contain;
+  pointer-events: none;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
+.ddp-inv-item-name {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  font-size: 0.56em;
+  color: rgba(200, 200, 200, 0.85);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 4px #000, 0 0 4px #000;
+  line-height: 1.1;
+  pointer-events: none;
+}
+
+.ddp-inv-item-size {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  font-size: 0.5em;
+  color: rgba(100, 100, 100, 0.7);
+  pointer-events: none;
+}
+
+.ddp-inv-rotate-icon {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  font-size: 0.55em;
+  color: rgba(80, 80, 80, 0.6);
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.ddp-inv-placed-item:hover .ddp-inv-rotate-icon {
+  opacity: 1;
+}
+
+/* Painel lateral */
+.ddp-inv-unassigned {
+  width: 192px;
+  min-width: 192px;
+  background: #0c0c0c;
+  border-left: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.ddp-inv-unass-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ddp-inv-unass-list::-webkit-scrollbar { width: 3px; }
+.ddp-inv-unass-list::-webkit-scrollbar-track { background: transparent; }
+.ddp-inv-unass-list::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+.ddp-inv-unass-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 7px;
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 3px;
+  cursor: grab;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.ddp-inv-unass-item:hover {
+  background: #1c1c1c;
+  border-color: #3a3a3a;
+}
+
+.ddp-inv-unass-item.ddp-dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.ddp-inv-unass-item img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ddp-inv-unass-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.ddp-inv-unass-name {
+  font-size: 0.75em;
+  color: #bbb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ddp-inv-unass-size {
+  font-size: 0.62em;
+  color: #444;
+}
+
+.ddp-inv-all-placed {
+  text-align: center;
+  color: #3a5a3a;
+  font-size: 0.82em;
+  padding: 16px 8px;
+  line-height: 1.8;
+}
+
+.ddp-inv-legend {
+  border-top: 1px solid #1a1a1a;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ddp-inv-legend div {
+  font-size: 0.65em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ddp-inv-legend i {
+  color: #2a3a4a;
+  width: 10px;
+  text-align: center;
+}

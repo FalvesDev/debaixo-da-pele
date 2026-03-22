@@ -24,6 +24,7 @@
       <div class="ddp-pf-bars-col">
         <div class="ddp-pf-name">{{nomeAbrev}}</div>
 
+        {{#if @root.hpSanVisivel}}
         <!-- HP -->
         <div class="ddp-pf-bar-row" title="HP: {{hp.value}} / {{hp.max}}">
           <span class="ddp-pf-lbl">HP</span>
@@ -41,6 +42,10 @@
           </div>
           <span class="ddp-pf-val {{sanValClass}}">{{san.value}}</span>
         </div>
+        {{else}}
+        <div class="ddp-pf-bar-row"><span class="ddp-pf-lbl">HP</span><span class="ddp-pf-val ddp-pf-hidden">—</span></div>
+        <div class="ddp-pf-bar-row"><span class="ddp-pf-lbl">SAN</span><span class="ddp-pf-val ddp-pf-hidden">—</span></div>
+        {{/if}}
       </div>
 
       <!-- Ícones de status (direita) -->
@@ -53,6 +58,9 @@
         {{/if}}
         {{#if inconsciente}}
         <span title="Inconsciente" class="ddp-pf-status-icon">💤</span>
+        {{/if}}
+        {{#if @root.auroraVisivel}}
+        <span class="ddp-pf-aurora-dot" style="background:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}">⬟</span>
         {{/if}}
         <button class="ddp-pf-inv-btn" data-actor-id="{{id}}" title="Abrir Inventário de {{nome}}">🎒</button>
       </div>

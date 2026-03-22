@@ -4,6 +4,7 @@
 // ============================================================
 
 import { getFaseAurora } from "./aurora-system.js";
+import { DDPInventoryDialog } from "./inventory-dialog.js";
 
 const MODULE_ID = "debaixo-da-pele";
 
@@ -25,6 +26,13 @@ class DDPPartyFrame extends Application {
 
   // ─── Dados para o template ─────────────────────────────────
   getData() {
+    const isGM = game.user.isGM;
+    const hpSanVisivel  = isGM || game.settings.get(MODULE_ID, "hpSanVisivelJogadores");
+    const auroraVisivel = isGM || (
+      game.settings.get(MODULE_ID, "auroraRevelado") &&
+      game.settings.get(MODULE_ID, "auroraVisivelJogadores")
+    );
+
     const personagens = game.actors
       .filter(a => a.type === "character")
       .map(a => {
@@ -88,7 +96,7 @@ class DDPPartyFrame extends Application {
         };
       });
 
-    return { personagens, minimized: this._minimized };
+    return { personagens, minimized: this._minimized, hpSanVisivel, auroraVisivel };
   }
 
   // ─── Listeners ──────────────────────────────────────────────
@@ -107,7 +115,10 @@ class DDPPartyFrame extends Application {
       const token   = canvas.tokens?.placeables?.find(t => t.actor?.id === actorId);
       if (!token) return ui.notifications.info("Token não encontrado na cena atual.");
       token.control({ releaseOthers: true });
-      canvas.animatePan({ x: token.x + token.w / 2, y: token.y + token.h / 2, duration: 500 });
+      // Usa document.width/height (em cells) × grid.size para pan correto em qualquer zoom
+      const cx = token.x + (token.document.width  * (canvas.grid?.size ?? 100)) / 2;
+      const cy = token.y + (token.document.height * (canvas.grid?.size ?? 100)) / 2;
+      canvas.animatePan({ x: cx, y: cy, duration: 500 });
     });
 
     // Double-click → abre ficha
@@ -117,25 +128,11 @@ class DDPPartyFrame extends Application {
       game.actors.get(actorId)?.sheet?.render(true);
     });
 
-    // Botão de inventário 🎒
+    // Botão de inventário 🎒 → abre grid estilo Resident Evil
     html.find(".ddp-pf-inv-btn").on("click", (e) => {
       e.stopPropagation();
       const actorId = e.currentTarget.dataset.actorId;
-      const actor   = game.actors.get(actorId);
-      if (!actor) return;
-
-      // Seleciona o token no canvas
-      const token = canvas.tokens?.placeables?.find(t => t.actor?.id === actorId);
-      if (token) token.control({ releaseOthers: true });
-
-      // Tenta macro de inventário; se não encontrar, abre a ficha diretamente
-      const macro = game.macros.find(m =>
-        m.name.startsWith("04") ||
-        m.name.toLowerCase().includes("inventário") ||
-        m.name.toLowerCase().includes("inventario")
-      );
-      if (macro) macro.execute();
-      else actor.sheet?.render(true);
+      DDPInventoryDialog.open(actorId);
     });
   }
 }
@@ -159,7 +156,7 @@ Hooks.once("ready", () => {
 
 // Atualiza ao mudar HP, SAN, Aurora, efeitos, máscaras
 Hooks.on("updateActor", (actor, changes) => {
-  if (!_partyFrame?.rendered || !actor.hasPlayerOwner) return;
+  if (!_partyFrame?.rendered || actor.type !== "character") return;
 
   const relevante =
     foundry.utils.hasProperty(changes, "system.attribs.hp.value")  ||
@@ -184,10 +181,23 @@ Hooks.on("deleteActor", () => { if (_partyFrame?.rendered) _partyFrame.render(fa
 
 // Toggle via setting
 Hooks.on("updateSetting", (setting) => {
-  if (setting.key !== `${MODULE_ID}.partyFrameVisible`) return;
-  if (setting.value) {
-    _getFrame().render(true);
-  } else {
-    _partyFrame?.close();
+  const key = setting.key;
+
+  if (key === `${MODULE_ID}.partyFrameVisible`) {
+    // Em Foundry v12 setting.value é string serializada — usar get() para o bool real
+    if (game.settings.get(MODULE_ID, "partyFrameVisible")) {
+      _getFrame().render(true);
+    } else {
+      _partyFrame?.close();
+    }
+    return;
   }
+
+  // Re-renderiza quando GM muda visibilidade de HP/SAN/Aurora para jogadores
+  const refreshKeys = [
+    `${MODULE_ID}.hpSanVisivelJogadores`,
+    `${MODULE_ID}.auroraRevelado`,
+    `${MODULE_ID}.auroraVisivelJogadores`
+  ];
+  if (refreshKeys.includes(key) && _partyFrame?.rendered) _partyFrame.render(false);
 });
