@@ -170,12 +170,13 @@ Hooks.on("updateActor", (actor, changes) => {
   if (relevante) _partyFrame.render(false);
 });
 
-// Atualiza quando Active Effects mudam (hemorragia, etc.)
-Hooks.on("createActiveEffect", (_effect, _options, _userId) => {
-  if (_partyFrame?.rendered) _partyFrame.render(false);
+// Atualiza quando Active Effects mudam — filtra apenas personagens do party frame
+const _isPjActor = (effect) => effect.parent?.type === "character";
+Hooks.on("createActiveEffect", (effect) => {
+  if (_partyFrame?.rendered && _isPjActor(effect)) _partyFrame.render(false);
 });
-Hooks.on("deleteActiveEffect", (_effect, _options, _userId) => {
-  if (_partyFrame?.rendered) _partyFrame.render(false);
+Hooks.on("deleteActiveEffect", (effect) => {
+  if (_partyFrame?.rendered && _isPjActor(effect)) _partyFrame.render(false);
 });
 
 // Atualiza quando atores são adicionados/removidos
