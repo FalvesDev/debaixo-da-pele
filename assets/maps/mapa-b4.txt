@@ -1,0 +1,25 @@
+╔══════════════════════════════════════════════════════════════╗
+║        B4 — CONTENÇÃO E CONTROLE (Nível -3)                  ║
+║        ⚠⚠⚠ Aurora +1.5/hora — máscara gás obrigatória       ║
+╠════════════════════╦═════════════════╦════════════════════════╣
+║  CÂMARA CONTENÇÃO  ║  SALA OVERRIDE  ║  GABINETE DO DIRETOR  ║
+║  [B4-K01]          ║  [B4-O01]       ║  [B4-D01]              ║
+║  PUZZLE-04         ║  terminal emerg.║  ← O Diretor aqui      ║
+║  confinados vivos  ║  código 472-___ ║  2ª parte do código    ║
+║  ← PERIGO EXTREMO  ║  requer senha   ║  negoc. ou combate     ║
+╠════════════════════╬═════════════════╩════════════════════════╣
+║  GERADOR EMERG.    ║          CORREDOR PRINCIPAL B4            ║
+║  [B4-G01]          ║                                          ║
+║  PUZZLE-06         ╠══════════════════╦════════════════════════╣
+║  ativar → abre     ║  COMUNICAÇÕES    ║  HANGAR INTERNO        ║
+║  saídas B5         ║  [B4-C01]        ║  [B4-H01]              ║
+╠════════════════════║  PUZZLE-05       ║  veículo blindado      ║
+║  DEPÓSITO B4       ║  antena contato  ║  rota fuga alternativa ║
+║  [B4-D02]          ║  exterior        ║  portão elétrico       ║
+╚════════════════════╩═══════╦══════════╩════════════════════════╝
+                             ║
+                  ┌──────────┴──────────┐
+                  │  ELEVADOR B4        │
+                  │  → B5 (código req.) │
+                  │  código: 472-___    │
+                  └─────────────────────┘

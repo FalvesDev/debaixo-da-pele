@@ -1,0 +1,26 @@
+╔══════════════════════════════════════════════════════════════╗
+║          B1 — RECEPÇÃO E SEGURANÇA (Nível Térreo)            ║
+╠══════════════╦═══════════════════╦══════════════════════════╣
+║   GARAGEM    ║    RECEPÇÃO       ║   POSTO DE SEGURANÇA      ║
+║  [B1-G01]    ║   [B1-R01]        ║      [B1-S01]             ║
+║              ║                   ║  ← Manual Seção 14.6      ║
+║  2 viaturas  ║  secretária KO    ║    PUZZLE-01: cod 472     ║
+║  portão trav.║  câmeras ativas   ║                           ║
+╠══════════════╬═══════════════════╩══════════════════════════╣
+║  DEPÓSITO    ║           CORREDOR PRINCIPAL B1               ║
+║  [B1-D01]    ║                                               ║
+║  kits PA     ╠════════════════════════╦═══════════════════════╣
+║  lanternas   ║  SALA DE BRIEFING      ║  BANHEIRO             ║
+║  pilhas      ║  [B1-B01]              ║  [B1-W01]             ║
+╠══════════════║  docs confidenciais    ║                       ║
+║  WC/SERVIÇO  ║  mapa parcial B2       ║                       ║
+║  [B1-W02]    ╠════════════════════════╩═══════════════════════╣
+╚══════════════╩═══════════════╦═══════════════════════════════╝
+                               ║
+                    ┌──────────┴──────────┐
+                    │  ELEVADOR [B1-E01]  │
+                    │  + ESCADAS B1-B5    │
+                    │  → bloqueado (B2+)  │
+                    └─────────────────────┘
+
+LEGENDA: [cod] = código da sala  ← = item importante  PUZZLE = enigma

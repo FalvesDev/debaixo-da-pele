@@ -1,0 +1,25 @@
+╔══════════════════════════════════════════════════════════════╗
+║     B3 — PESQUISA AVANÇADA / LABORATÓRIO VOSS (Nível -2)     ║
+║     ⚠⚠ Aurora +1.0/hora — máscaras N95 ou superior          ║
+╠═══════════════════╦══════════════════╦════════════════════════╣
+║  LAB. DE VOSS     ║  SERVIDOR DADOS  ║  CÂMARA DE SÍNTESE    ║
+║  [B3-V01]         ║  [B3-S01]        ║  [B3-C01]              ║
+║  ← Seringa Voss   ║  PUZZLE-03:senha ║  destilador Aurora     ║
+║  notas pessoais   ║  nas notas Voss  ║  tanques pressuriz.    ║
+║  diário secreto   ║  arquivos RE     ║  PERIGO: explosivo      ║
+╠═══════════════════╬══════════════════╩════════════════════════╣
+║  ARQUIVO CONF.    ║          CORREDOR PRINCIPAL B3             ║
+║  [B3-A01]         ║                                           ║
+║  docs Projeto RE  ╠══════════════════╦════════════════════════╣
+║  história Aurora  ║  SALA VOSS       ║  TÚNEL DE SERVIÇO      ║
+║  arquivos deletad.║  [B3-E01]        ║  [B3-T01]              ║
+╠═══════════════════║  ← encontro com  ║  rota alternativa B4   ║
+║  WC B3            ║  Dra. Voss aqui  ║  ⚠ risco colapso       ║
+║  [B3-W01]         ║  aliada/antag.?  ║  mais rápido que elev. ║
+╚═══════════════════╩══════════╦═══════╩════════════════════════╝
+                               ║
+                    ┌──────────┴──────────┐
+                    │   ELEVADOR B3       │
+                    │   → B4 (bloqueado)  │
+                    │   requer override   │
+                    └─────────────────────┘

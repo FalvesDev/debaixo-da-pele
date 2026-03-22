@@ -1,0 +1,73 @@
+<div class="ddp-cp-wrap">
+
+  <!-- Abas de capítulo -->
+  <nav class="ddp-cp-nav">
+    {{#each capitulos}}
+    <button class="ddp-cp-tab {{#if ativo}}ddp-cp-tab-ativo{{/if}}"
+            data-cap="{{num}}"
+            style="--cap-cor: {{cor}}"
+            title="Capítulo {{num}}: {{titulo}}">
+      {{num}}
+    </button>
+    {{/each}}
+  </nav>
+
+  <!-- Conteúdo do capítulo ativo -->
+  <div class="ddp-cp-body">
+    <div class="ddp-cp-header" style="border-left: 4px solid {{capAtivo.cor}}">
+      <div class="ddp-cp-cap-num" style="color:{{capAtivo.cor}}">CAP. {{capAtivo.num}}</div>
+      <div class="ddp-cp-titles">
+        <h2 class="ddp-cp-titulo">{{capAtivo.titulo}}</h2>
+        <p class="ddp-cp-subtitulo">{{capAtivo.subtitulo}}</p>
+      </div>
+      <div class="ddp-cp-andar-badge" style="border-color:{{capAtivo.cor}}; color:{{capAtivo.cor}}">
+        {{capAtivo.andar}}
+      </div>
+    </div>
+
+    <p class="ddp-cp-desc">{{capAtivo.descricao}}</p>
+
+    <div class="ddp-cp-cols">
+
+      <!-- Locais -->
+      <div class="ddp-cp-col">
+        <div class="ddp-cp-section-label">📍 Locais</div>
+        {{#each capAtivo.locais}}
+        <div class="ddp-cp-local">
+          <span class="ddp-cp-local-cod">[{{cod}}]</span>
+          <div class="ddp-cp-local-info">
+            <b>{{nome}}</b>
+            <span>{{desc}}</span>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Objetivos + Puzzles + NPCs -->
+      <div class="ddp-cp-col">
+
+        <div class="ddp-cp-section-label">🎯 Objetivos</div>
+        {{#each capAtivo.objetivos}}
+        <div class="ddp-cp-item">▸ {{this}}</div>
+        {{/each}}
+
+        <div class="ddp-cp-section-label" style="margin-top:10px">🧩 Puzzles</div>
+        {{#each capAtivo.puzzles}}
+        <div class="ddp-cp-item ddp-cp-puzzle">{{this}}</div>
+        {{/each}}
+
+        <div class="ddp-cp-section-label" style="margin-top:10px">👥 NPCs Presentes</div>
+        {{#each capAtivo.npcs}}
+        <div class="ddp-cp-item">• {{this}}</div>
+        {{/each}}
+
+        <div class="ddp-cp-section-label" style="margin-top:10px">⚠️ Perigos</div>
+        {{#each capAtivo.perigos}}
+        <div class="ddp-cp-item ddp-cp-perigo">⚠ {{this}}</div>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+
+</div>

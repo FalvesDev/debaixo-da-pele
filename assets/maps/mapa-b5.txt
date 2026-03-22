@@ -1,0 +1,28 @@
+╔══════════════════════════════════════════════════════════════╗
+║        B5 — O NÚCLEO (Nível -4 / Mais Profundo)              ║
+║        ☠ Aurora +2.0/hora — máscara gás especializada        ║
+╠═══════════════════╦══════════════════╦═════════════════════════╣
+║  CÂMARA DO NÚCLEO ║  SALA FERNANDO   ║  CÂMARA AURORA-0       ║
+║  [B5-N01]         ║  [B5-F01]        ║  [B5-E01]               ║
+║  ← FONTE Aurora   ║  PUZZLE-07       ║  ← Espécime original   ║
+║  exposição máxima ║  Dremel aqui     ║  AURORA-0               ║
+║  sem proteção=KO  ║  notas de escape ║  encontro final         ║
+║                   ║  plano de fuga B ║  possível aliado?       ║
+╠═══════════════════╬══════════════════╩═════════════════════════╣
+║  REATOR CONT.     ║           CORREDOR FINAL B5                ║
+║  [B5-R01]         ║                                            ║
+║  sabotagem →      ╠══════════════════╦═════════════════════════╣
+║  destruir compl.  ║  SAÍDA SUL       ║  TÚNEL EVACUAÇÃO        ║
+║  ⚠ irreversível   ║  [B5-S01]        ║  [B5-T01]               ║
+╠═══════════════════║  ← override ativo║  parcialmente inundado  ║
+║  DEPÓSITO FINAL   ║  código 472-___  ║  lento mas seguro       ║
+║  [B5-D01]         ║  SAÍDA PRINCIPAL ║  não precisa código     ║
+╚═══════════════════╩══════╦═══════════╩═════════════════════════╝
+                           ║
+              ═════════════╩═════════════
+                 FUGA / DESFECHO FINAL
+              ════════════════════════════
+  [OPÇÃO A] Override ativo → Saída Sul [B5-S01]
+  [OPÇÃO B] Plano Fernando → Dremel → Túnel [B5-T01]
+  [OPÇÃO C] Sabotagem Reator [B5-R01] → Destruir complexo
+  [OPÇÃO D] AURORA-0 → Negociação → Saída secreta
