@@ -175,14 +175,19 @@ Hooks.once("ready", () => {
               callback: async () => {
                 const docs = await pack.getDocuments();
                 let criadas = 0;
-                for (const doc of docs) {
-                  if (!game.macros.find(m => m.name === doc.name)) {
-                    await Macro.create({ name: doc.name, type: doc.type, command: doc.command, img: doc.img });
-                    criadas++;
+                try {
+                  for (const doc of docs) {
+                    if (!game.macros.find(m => m.name === doc.name)) {
+                      await Macro.create({ name: doc.name, type: doc.type, command: doc.command, img: doc.img });
+                      criadas++;
+                    }
                   }
+                  await game.settings.set(MODULE_ID, "macrosImportadas", true);
+                  ui.notifications.info(`✅ ${criadas} macro(s) DDP importada(s) com sucesso!`);
+                } catch (err) {
+                  console.error("DDP | Erro ao importar macros:", err);
+                  ui.notifications.error("Erro ao importar macros. Verifique o console.");
                 }
-                await game.settings.set(MODULE_ID, "macrosImportadas", true);
-                ui.notifications.info(`✅ ${criadas} macro(s) DDP importada(s) com sucesso!`);
               }
             },
             depois: {

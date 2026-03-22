@@ -378,7 +378,7 @@ function _notificarMudancaFase(actor, anterior, nova) {
           </ul>` : ""}
       </div>
     `
-  });
+  }).catch(err => console.error("DDP | Erro ao criar ChatMessage de fase Aurora:", err));
 
   // Alerta GM em transformação total
   if (nova.id === 4 && game.user.isGM) {
@@ -397,8 +397,10 @@ function _executarMacro(actor, terminos) {
     return ui.notifications.warn(`Macro não encontrada. Termos buscados: ${terminos.join(", ")}`);
   }
   // Selecionar token do ator na cena para contexto
-  const token = canvas.tokens?.placeables?.find(t => t.actor?.id === actor.id);
-  if (token) token.control({ releaseOthers: true });
+  if (canvas?.ready) {
+    const token = canvas.tokens?.placeables?.find(t => t.actor?.id === actor.id);
+    if (token) token.control({ releaseOthers: true });
+  }
   macro.execute();
 }
 
