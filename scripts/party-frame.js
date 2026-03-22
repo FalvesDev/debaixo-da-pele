@@ -34,7 +34,9 @@ class DDPPartyFrame extends Application {
     );
 
     const personagens = game.actors
-      .filter(a => a.type === "character")
+      .filter(a => a.type === "character" && (
+        a.getFlag(MODULE_ID, "tipo") === "pj" || a.hasPlayerOwner
+      ))
       .map(a => {
         const hp    = a.system?.attribs?.hp  ?? { value: 10, max: 10 };
         const san   = a.system?.attribs?.san ?? { value: 50, max: 99 };

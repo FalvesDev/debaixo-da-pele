@@ -6,7 +6,12 @@
     <img class="ddp-inv-actor-img" src="{{actorImg}}" />
     <div class="ddp-inv-actor-info">
       <span class="ddp-inv-actor-name">{{actorName}}</span>
-      <span class="ddp-inv-counter">{{alocados}}/{{totalItens}} itens alocados</span>
+      <span class="ddp-inv-counter">
+        {{alocados}}/{{totalItens}} itens
+        <span class="ddp-inv-cap-info" title="FOR {{strValue}} ÷ 4 = {{gridRows}} linhas{{#if bagBonus}} (+{{bagBonus}} mochila){{/if}}">
+          · {{usedSlots}}/{{totalSlots}} slots {{#if bagBonus}}<i class="fas fa-backpack"></i>{{/if}}
+        </span>
+      </span>
     </div>
     {{#if canEdit}}
     <div class="ddp-inv-btns">
