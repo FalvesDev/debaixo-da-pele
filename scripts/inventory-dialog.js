@@ -401,3 +401,78 @@ Hooks.once("ready", () => {
     abrirInventario: DDPInventoryDialog.open.bind(DDPInventoryDialog)
   };
 });
+
+// ─── Painel compacto na ficha do personagem ───────────────
+Hooks.on("renderActorSheet", (sheet, html) => {
+  if (sheet.actor?.type !== "character") return;
+  const actor = sheet.actor;
+  const canEdit = actor.isOwner || game.user.isGM;
+  if (!canEdit) return;
+
+  // Calcula dados resumidos
+  const rows     = _calcGridRows(actor);
+  const total    = rows * GRID_COLS;
+  const layout   = actor.flags?.[MODULE_ID]?.inventario ?? {};
+  const allItems = actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
+  let usedSlots  = 0;
+  for (const [itemId, pos] of Object.entries(layout)) {
+    const item = actor.items.get(itemId);
+    if (!item) continue;
+    const sz = _getItemSize(item);
+    const w  = pos.rotated ? sz.h : sz.w;
+    const h  = pos.rotated ? sz.w : sz.h;
+    usedSlots += w * h;
+  }
+  const freeSlots   = total - usedSlots;
+  const pct         = total > 0 ? Math.round((usedSlots / total) * 100) : 0;
+  const barCor      = pct < 60 ? "#44cc44" : pct < 85 ? "#ffaa00" : "#dd2222";
+  const alocados    = Object.keys(layout).filter(id => actor.items.get(id)).length;
+  const naoAlocados = allItems.length - alocados;
+  const str         = actor.system?.characteristics?.str?.value ?? 40;
+
+  const panelHtml = `
+    <div id="ddp-inv-panel-${actor.id}" class="ddp-inv-sheet-panel">
+      <div class="ddp-inv-sheet-header">
+        <i class="fas fa-backpack"></i>
+        <span class="ddp-inv-sheet-title">INVENTÁRIO</span>
+        <span class="ddp-inv-sheet-cap" title="FOR ${str} ÷ 4 = ${rows} linhas · ${total} slots">
+          ${usedSlots}/${total} slots
+        </span>
+        <button class="ddp-inv-sheet-btn" data-actor-id="${actor.id}" title="Abrir inventário">
+          <i class="fas fa-boxes"></i> Abrir
+        </button>
+      </div>
+      <div class="ddp-inv-sheet-bar-bg">
+        <div class="ddp-inv-sheet-bar-fill" style="width:${pct}%; background:${barCor};"></div>
+      </div>
+      <div class="ddp-inv-sheet-stats">
+        <span><i class="fas fa-cubes"></i> ${alocados} alocados</span>
+        ${naoAlocados > 0 ? `<span style="color:#ffaa44;"><i class="fas fa-exclamation-triangle"></i> ${naoAlocados} soltos</span>` : ""}
+        <span style="color:#666;">${freeSlots} livres</span>
+      </div>
+    </div>
+  `;
+
+  html.find(`#ddp-inv-panel-${actor.id}`).remove();
+
+  // Injeta abaixo do painel Aurora (ou no topo da aba principal)
+  const alvo = (() => {
+    for (const sel of [
+      '.tab[data-tab="main"]',
+      '.tab[data-tab="skills"]',
+      '.sheet-body .tab.active',
+      '.sheet-body'
+    ]) {
+      const el = html.find(sel);
+      if (el.length) return el.first();
+    }
+    return html;
+  })();
+  alvo.append(panelHtml);
+
+  // Botão abre o inventário
+  html.find(`.ddp-inv-sheet-btn[data-actor-id="${actor.id}"]`).on("click", (e) => {
+    e.preventDefault();
+    DDPInventoryDialog.open(actor.id);
+  });
+});
