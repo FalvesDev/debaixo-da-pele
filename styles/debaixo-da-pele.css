@@ -2110,3 +2110,86 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
 .ddp-phud-icon-bleed {
   animation: ddp-bleed-pulse 1.2s ease-in-out infinite;
 }
+
+/* ─── Painel de Inventário na ficha do personagem ────────── */
+.ddp-inv-sheet-panel {
+  margin: 6px 4px 10px;
+  border: 1px solid #2a2a3a;
+  border-radius: 6px;
+  background: #0a0a18;
+  overflow: hidden;
+  font-family: "Signika", sans-serif;
+}
+
+.ddp-inv-sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  background: #0d0d1c;
+  border-bottom: 1px solid #1a1a2e;
+}
+
+.ddp-inv-sheet-header i.fa-backpack {
+  color: #cc8844;
+  font-size: 0.9em;
+}
+
+.ddp-inv-sheet-title {
+  font-size: 0.68em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+  flex: 1;
+}
+
+.ddp-inv-sheet-cap {
+  font-size: 0.72em;
+  color: #888;
+  cursor: help;
+}
+
+.ddp-inv-sheet-btn {
+  padding: 2px 9px;
+  border-radius: 8px;
+  border: 1px solid #3a3a5a;
+  background: #14142a;
+  color: #8888cc;
+  cursor: pointer;
+  font-size: 0.68em;
+  font-weight: bold;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.ddp-inv-sheet-btn:hover {
+  background: #1e1e40;
+  border-color: #6666aa;
+  color: #aaaaff;
+}
+
+.ddp-inv-sheet-bar-bg {
+  height: 4px;
+  background: #111;
+}
+
+.ddp-inv-sheet-bar-fill {
+  height: 100%;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+.ddp-inv-sheet-stats {
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  font-size: 0.68em;
+  color: #666;
+}
+
+.ddp-inv-sheet-stats i {
+  color: #5577aa;
+  margin-right: 2px;
+}
