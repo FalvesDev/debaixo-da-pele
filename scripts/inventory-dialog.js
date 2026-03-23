@@ -22,18 +22,87 @@ function _getItemSize(item) {
 
   // 2. Heurística por nome (português e inglês)
   const n = (item.name ?? "").toLowerCase();
-  if (/rifle|carabina|shotgun|espingarda|lança/.test(n))              return { w: 1, h: 3 };
-  if (/pistola|revólver|revolver|faca|machado|bastão|baton/.test(n)) return { w: 1, h: 2 };
-  if (/kit médico|kit de primeiros|maleta médica/.test(n))           return { w: 2, h: 2 };
-  if (/bandagem grande|atadura|curativo grande/.test(n))             return { w: 2, h: 1 };
-  if (/mochila|mochilão|backpack|bolsão|saco grande/.test(n))        return { w: 2, h: 2 };
-  if (/bolsa|bag|sacola/.test(n))                                    return { w: 1, h: 2 };
-  if (/documento|pasta|diário|diario|mapa|relatório|relatorio|caderno/.test(n)) return { w: 1, h: 1 };
-  if (/lanterna|rádio|radio|binóculo/.test(n))                       return { w: 1, h: 1 };
-  if (/máscara de gás|máscara gás|mascara gas/.test(n))              return { w: 2, h: 2 };
-  if (/colete|armadura|escudo/.test(n))                              return { w: 2, h: 2 };
-  if (/munição|municao|ammo|bala|cartucho|clip|magazine|pente|cargador/.test(n)) return { w: 1, h: 1 };
-  if (/granada|bomba/.test(n))                                       return { w: 1, h: 1 };
+
+  // ── Armas longas (1×3) ──────────────────────────────────
+  if (/rifle|carabina|shotgun|espingarda|lança|metralhadora|submetralhadora|smg|sniper|fuzil/.test(n))
+    return { w: 1, h: 3 };
+
+  // ── Extintores / barras pesadas (1×3) ───────────────────
+  if (/extintor|fire extinguisher/.test(n))
+    return { w: 1, h: 3 };
+
+  // ── Armas médias (1×2) ──────────────────────────────────
+  if (/pistola|revólver|revolver|faca|machado|bastão|baton|porrete|cacete|martelo|hammer|machete|espada|sabre|lança-chamas|taser|stungun|stun gun|arco|besta|crossbow|estilingue/.test(n))
+    return { w: 1, h: 2 };
+
+  // ── Ferramentas / alavancas / tubos (1×2) ──────────────
+  if (/alavanca|crowbar|pé de cabra|cano|tubo|pipe|chave inglesa|wrench|chave de fenda|screwdriver|alicate|pliers|tesoura scissors|serrote|saw|foice|lâmpada de sinalização|flare/.test(n))
+    return { w: 1, h: 2 };
+
+  // ── Câmera / binóculo / visão noturna (1×2) ─────────────
+  if (/câmera|camera|binóculo|binoculars|visão noturna|night vision|telescópio|telescope/.test(n))
+    return { w: 1, h: 2 };
+
+  // ── Lanterna / rádio comunicador (1×2) ──────────────────
+  if (/lanterna|flashlight|rádio|radio/.test(n))
+    return { w: 1, h: 2 };
+
+  // ── Corda / corrente (2×1) ──────────────────────────────
+  if (/corda|rope|corrente|chain|cabo|wire|fio/.test(n))
+    return { w: 2, h: 1 };
+
+  // ── Kits médicos / maletas (2×2) ────────────────────────
+  if (/kit médico|kit de primeiros|maleta médica|maleta|first aid kit|trauma kit|desfibrilador/.test(n))
+    return { w: 2, h: 2 };
+
+  // ── Bandagens / curativos grandes (2×1) ─────────────────
+  if (/bandagem grande|atadura|curativo grande|bandagem|tourniquet|torniquete/.test(n))
+    return { w: 2, h: 1 };
+
+  // ── Roupas / equipamentos pesados (2×2) ─────────────────
+  if (/máscara de gás|máscara gás|mascara gas|gas mask/.test(n))   return { w: 2, h: 2 };
+  if (/colete|armadura|escudo|traje|hazmat|macacão|capacete|helmet|proteção/.test(n))
+    return { w: 2, h: 2 };
+
+  // ── Mochilas / contêineres grandes (2×2) ────────────────
+  if (/mochila|mochilão|backpack|bolsão|saco grande|malinha|briefcase|caixa|toolbox/.test(n))
+    return { w: 2, h: 2 };
+
+  // ── Bolsas (1×2) ────────────────────────────────────────
+  if (/bolsa|bag|sacola|pochete/.test(n))
+    return { w: 1, h: 2 };
+
+  // ── Itens 1×1 explícitos ─────────────────────────────────
+  // Munição
+  if (/munição|municao|ammo|bala|cartucho|clip|magazine|pente|cargador|projétil/.test(n))
+    return { w: 1, h: 1 };
+  // Explosivos pequenos
+  if (/granada|bomba|grenade|explosivo|dinamite|mina|mine/.test(n))
+    return { w: 1, h: 1 };
+  // Documentos / papéis
+  if (/documento|pasta|diário|diario|mapa|relatório|relatorio|caderno|anotação|anotacao|nota|note|carta|letter|ficha|formulário|formulario|manual|livro|book/.test(n))
+    return { w: 1, h: 1 };
+  // Medicamentos / seringas / amostras
+  if (/seringa|syringe|ampola|vial|frasco|flask|comprimido|pílula|pilula|pill|remédio|remedio|medicine|medicamento|analgésico|antibiótico|morfina|adrenalina|amostra|sample|composto|serum|soro|aurora|substância|substancia/.test(n))
+    return { w: 1, h: 1 };
+  // Alimentos / água
+  if (/comida|food|ração|racao|ration|snack|lanche|barra de cereal|água|water|cantil|canteen|garrafa|bottle|termos|thermos/.test(n))
+    return { w: 1, h: 1 };
+  // Itens pequenos de utilidade
+  if (/chave|key|keycard|cartão|cartao|crachá|cracha|badge|id|isqueiro|lighter|fósforo|fosforo|matches|lanterna pequena|mini lanterna|pilha|bateria|battery|tape|fita adesiva|zip tie|abraçadeira|arame|lock pick/.test(n))
+    return { w: 1, h: 1 };
+  // Eletrônicos pequenos
+  if (/celular|phone|smartphone|tablet|pen drive|pendrive|usb|disco|drive|chip|cartão de memória|walkie/.test(n))
+    return { w: 1, h: 1 };
+  // Equipamentos de segurança pequenos
+  if (/algema|handcuff|relógio|watch|óculos|glasses|goggles|luva|glove/.test(n))
+    return { w: 1, h: 1 };
+  // Álcool / spray / aerossol
+  if (/álcool|alcool|alcohol|spray|aerossol|desinfetante|antisséptico/.test(n))
+    return { w: 1, h: 1 };
+  // Curativos pequenos
+  if (/curativo|band.?aid|esparadrapo|atadura pequena/.test(n))
+    return { w: 1, h: 1 };
 
   // 3. Tipo CoC7
   if (item.type === "weapon") return { w: 1, h: 2 };
