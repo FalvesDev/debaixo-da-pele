@@ -11,6 +11,7 @@ import "./status-auto.js";
 import "./gm-panel.js";
 import "./campaign-panel.js";
 import "./player-hud.js";
+import "./roll-request.js";
 
 const MODULE_ID = "debaixo-da-pele";
 const VERSION   = "1.8.0";
@@ -138,6 +139,11 @@ async function _handleSocket(data) {
       // Apenas o GM cria a mensagem no servidor (evita N duplicatas)
       if (!game.user.isGM) break;
       await ChatMessage.create({ content: data.conteudo, whisper: [] });
+      break;
+    }
+    case "solicitarRoll": {
+      // Dispara hook — roll-request.js filtra por targetUserId
+      Hooks.callAll("ddp:rollRequest", data);
       break;
     }
   }

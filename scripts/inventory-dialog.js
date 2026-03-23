@@ -6,7 +6,7 @@
 const MODULE_ID = "debaixo-da-pele";
 
 const GRID_COLS  = 6;
-const CELL_PX    = 52;  // px por célula
+const CELL_PX    = 60;  // px por célula
 const MIN_ROWS   = 3;
 const MAX_ROWS   = 12;
 
@@ -28,8 +28,8 @@ function _getItemSize(item) {
   if (/bandagem grande|atadura|curativo grande/.test(n))             return { w: 2, h: 1 };
   if (/mochila|mochilão|backpack|bolsão|saco grande/.test(n))        return { w: 2, h: 2 };
   if (/bolsa|bag|sacola/.test(n))                                    return { w: 1, h: 2 };
-  if (/documento|pasta|diário|diario|mapa|relatório|relatorio|caderno/.test(n)) return { w: 1, h: 2 };
-  if (/lanterna|rádio|radio|binóculo/.test(n))                       return { w: 1, h: 2 };
+  if (/documento|pasta|diário|diario|mapa|relatório|relatorio|caderno/.test(n)) return { w: 1, h: 1 };
+  if (/lanterna|rádio|radio|binóculo/.test(n))                       return { w: 1, h: 1 };
   if (/máscara de gás|máscara gás|mascara gas/.test(n))              return { w: 2, h: 2 };
   if (/colete|armadura|escudo/.test(n))                              return { w: 2, h: 2 };
   if (/munição|municao|ammo|bala|cartucho|clip|magazine|pente|cargador/.test(n)) return { w: 1, h: 1 };
