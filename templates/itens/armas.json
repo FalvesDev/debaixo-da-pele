@@ -12,12 +12,11 @@
       "range": "15",
       "ammo": 6,
       "malfunction": 100,
-      "properties": {
-        "improv": false
-      }
+      "properties": { "improv": false }
     },
     "flags": {
       "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
         "slots": 3,
         "categoria": "arma",
         "notas": "Recarga: 2 ações. Sem modo semiautomático."
@@ -30,19 +29,18 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
     "system": {
       "description": {
-        "value": "<p>Pistola semiautomática Taurus PT92, calibre 9mm. 17 cartuchos no pente + 1 na câmara. Padrão de seguranças e policiais brasileiros. Mais versátil que o revólver.</p>"
+        "value": "<p>Pistola semiautomática Taurus PT92, calibre 9mm. 17 cartuchos no pente + 1 na câmara. Padrão de seguranças e policiais brasileiros.</p>"
       },
       "skill": "Armas de Fogo (Pistola)",
       "damage": "1D10",
       "range": "15",
       "ammo": 17,
       "malfunction": 100,
-      "properties": {
-        "improv": false
-      }
+      "properties": { "improv": false }
     },
     "flags": {
       "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
         "slots": 3,
         "categoria": "arma",
         "notas": "Recarga: 1 ação (pente). Disparo simples ou rápido."
@@ -62,15 +60,14 @@
       "range": "10",
       "ammo": 6,
       "malfunction": 99,
-      "properties": {
-        "improv": false
-      }
+      "properties": { "improv": false }
     },
     "flags": {
       "debaixo-da-pele": {
+        "gridW": 1, "gridH": 3,
         "slots": 6,
         "categoria": "arma",
-        "notas": "Bônus: aplica Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação."
+        "notas": "Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação."
       }
     }
   },
@@ -87,15 +84,14 @@
       "range": "cc",
       "ammo": 0,
       "malfunction": 100,
-      "properties": {
-        "improv": false
-      }
+      "properties": { "improv": false }
     },
     "flags": {
       "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
         "slots": 2,
         "categoria": "arma",
-        "notas": "Silenciosa. Ataque pelas costas: +bônus de dados. Não pode ser desarmado facilmente."
+        "notas": "Silenciosa. Ataque pelas costas: +bônus de dados."
       }
     }
   },
@@ -112,15 +108,134 @@
       "range": "cc",
       "ammo": 0,
       "malfunction": 100,
-      "properties": {
-        "improv": true
-      }
+      "properties": { "improv": true }
     },
     "flags": {
       "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
         "slots": 3,
         "categoria": "ferramenta-arma",
-        "notas": "Uso duplo: arma e ferramenta. Bônus de +20% em testes de arrombar portas."
+        "notas": "Uso duplo: arma e ferramenta. +20% em testes de arrombar portas."
+      }
+    }
+  },
+  {
+    "name": "Extintor de Incêndio",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/extintor.svg",
+    "system": {
+      "description": {
+        "value": "<p>Extintor de CO₂ de 4kg. Usado como arma improvisada: golpe pesado (1D8+1D4). Pode ser descarregado para criar nuvem de névoa de CO₂ — cega e sufoca temporariamente (teste CON ou −30% por 1D3 rodadas). Encontrado em corredores do complexo.</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D8+1D4",
+      "range": "cc",
+      "ammo": 1,
+      "malfunction": 100,
+      "properties": { "improv": true }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 3,
+        "slots": 5,
+        "categoria": "ferramenta-arma",
+        "notas": "Pesado (−10% DEX enquanto carregado). Descarga: névoa CO₂ cobre 3m, teste CON ou cego+sufoca por 1D3 rodadas."
+      }
+    }
+  },
+  {
+    "name": "Machado de Emergência",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/machado.svg",
+    "system": {
+      "description": {
+        "value": "<p>Machado de emergência fixado na parede de corredores de segurança. Cabo curto, lâmina robusta. Arma de combate corpo a corpo eficaz. Também pode ser usado para arrombar portas de madeira.</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D8+1D4",
+      "range": "cc",
+      "ammo": 0,
+      "malfunction": 100,
+      "properties": { "improv": false }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
+        "slots": 4,
+        "categoria": "arma",
+        "notas": "Pode arrombar portas de madeira em 1D3 rodadas."
+      }
+    }
+  },
+  {
+    "name": "Cano de Metal",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/cano-metal.svg",
+    "system": {
+      "description": {
+        "value": "<p>Cano de aço de aproximadamente 60cm retirado de instalação hidráulica ou estrutural. Arma improvisada contundente. Comum nos corredores de manutenção do Complexo Elara.</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D6+1",
+      "range": "cc",
+      "ammo": 0,
+      "malfunction": 100,
+      "properties": { "improv": true }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 2,
+        "slots": 3,
+        "categoria": "ferramenta-arma",
+        "notas": "Encontrado em salas de manutenção. Pode ser dobrado em teste de Mecânica para criar gancho ou alavanca."
+      }
+    }
+  },
+  {
+    "name": "Bisturi",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/bisturi.svg",
+    "system": {
+      "description": {
+        "value": "<p>Bisturi cirúrgico de aço inox, cabo metálico. Lâmina extremamente afiada, ideal para cortes precisos. Como arma: dano mínimo mas pode causar hemorragia (1 PV/rodada em sucesso crítico).</p>"
+      },
+      "skill": "Briga",
+      "damage": "1D3",
+      "range": "cc",
+      "ammo": 0,
+      "malfunction": 100,
+      "properties": { "improv": true }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1,
+        "slots": 0.5,
+        "categoria": "arma",
+        "notas": "Crítico: causa hemorragia (1 PV/rodada, requer bandagem ou teste Medicina). Encontrado em B2."
+      }
+    }
+  },
+  {
+    "name": "Spray de Pimenta",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/spray-pimenta.svg",
+    "system": {
+      "description": {
+        "value": "<p>Spray de defesa pessoal (OC — oleorresina de capsaicina). Alcance 2m. Contra humanos: cega e incapacita por 1D6 rodadas (teste CON para reduzir para 1D3). Contra Refinados: apenas 1D3 rodadas de perturbação (não imobiliza).</p>"
+      },
+      "skill": "Arremesso",
+      "damage": "0 (efeito cegante)",
+      "range": "2",
+      "ammo": 6,
+      "malfunction": 100,
+      "properties": { "improv": false }
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1,
+        "slots": 1,
+        "categoria": "arma",
+        "notas": "6 usos. Ineficaz contra criaturas sem olhos normais. Vento desfavorável: teste AGI ou afeta o próprio usuário."
       }
     }
   }
