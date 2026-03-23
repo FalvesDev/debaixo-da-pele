@@ -6,38 +6,47 @@
     "system": {
       "characteristics": {
         "str": { "value": 65 },
-        "con": { "value": 55 },
+        "con": { "value": 60 },
         "siz": { "value": 65 },
         "dex": { "value": 60 },
         "int": { "value": 55 },
-        "pow": { "value": 60 },
+        "pow": { "value": 55 },
         "app": { "value": 55 },
         "edu": { "value": 55 }
       },
       "attribs": {
-        "hp":  { "value": 12, "max": 12 },
-        "mp":  { "value": 12, "max": 12 },
-        "san": { "value": 45, "max": 60 }
+        "hp":  { "value": 13, "max": 13 },
+        "mp":  { "value": 11, "max": 11 },
+        "san": { "value": 45, "max": 55 }
       },
       "description": {
-        "biography": "<p>Segurança veterano da Hexacor, há 6 anos no posto. Acima do solo (guarita). Conhece bem os turnos e rotinas. Assustado mas não acovardado. Sua SAN já sofreu com coisas que viu nos últimos dias. Está disposto a ajudar se os PJs ganharem sua confiança.</p>"
+        "biography": "<p>Técnico-chefe de Manutenção do Complexo Elara. 22 anos no complexo — desde a construção do prédio. Único funcionário mantido após a recuperação judicial de setembro de 2009, pago em dinheiro pela holding anônima. Macacão azul da Elara, mãos calejadas, fala pouco e diretamente.</p><p>Não é frio — é pragmático. Quando o horror fica óbvio demais você vê nos olhos, mas a voz não quebra.</p><p>Nunca perguntou o que os pesquisadores 'lá embaixo' faziam. Eles nunca disseram. Agora se arrepende das duas coisas.</p><p><strong>Não desce.</strong> Nada vai fazer Marcos descer em B1 durante o lockdown. Mas conhece o prédio melhor que qualquer vivo e é a âncora de normalidade do grupo.</p>"
       }
     },
     "flags": {
       "debaixo-da-pele": {
         "tipo": "aliado",
-        "localização": "Guarita / Galpão de produção",
+        "localização": "Acima do solo — Galpão de produção (preso do lado de fora do lockdown)",
         "aurora": 0,
-        "relacoes": "Subalterno de Sérgio Dantas. Amigo de Fernando Alencar (desaparecido).",
+        "relacoes": "Vínculo com Fernando Alencar (técnico desaparecido, aprovação do Dremel que o preocupa). Sem relação de subordinação com os PJs — é funcionário da holding anônima.",
         "sabe": [
-          "Código da guarita: 4471",
-          "Localização do armamento básico (galpão)",
-          "Rotina dos turnos normais",
-          "Que 'algo aconteceu' no B3 há 3 dias"
+          "Código de acesso B1 pelo galpão: 1229 (data de fundação da Elara)",
+          "Localização do gerador de emergência e prazo do combustível (6–7 dias)",
+          "Onde ficam ferramentas de manutenção, Dremel, pilhas reserva",
+          "Que Fernando Alencar pediu um Dremel em 30/12/2009 para 'manutenção de dutos'",
+          "Que existe subsolo B1 (escritórios) e B2 (laboratório) — nunca entrou em B3/B4",
+          "Que câmeras externas do complexo não funcionam desde o lockdown"
         ],
         "nao_sabe": [
           "O que é o Composto Aurora",
-          "Localização de B4"
+          "Que existem B3 e B4",
+          "O que aconteceu no incidente de 6 de janeiro",
+          "De quem é o dinheiro que recebe mensalmente"
+        ],
+        "esconde": [
+          "Ouviu barulhos estranhos vindo do acesso de B1 na primeira semana do lockdown — decidiu ignorar",
+          "Aprovou a requisição do Dremel de Alencar sem verificar — culpa difusa",
+          "Tentou ligar para a família no primeiro dia e ninguém atendeu"
         ]
       }
     }
@@ -54,7 +63,7 @@
         "dex": { "value": 65 },
         "int": { "value": 90 },
         "pow": { "value": 75 },
-        "app": { "value": 65 },
+        "app": { "value": 55 },
         "edu": { "value": 95 }
       },
       "attribs": {
@@ -63,21 +72,29 @@
         "san": { "value": 35, "max": 80 }
       },
       "description": {
-        "biography": "<p>Pesquisadora sênior do Projeto Aurora, especialidade em bioquímica. Teve uma crise de consciência ao ver os resultados da Fase III. Está escondida em uma sala-forte improvisada no B2, com documentos comprometedores. Quer sair mas tem informações vitais. Cansada, paranoica, mas lúcida.</p>"
+        "biography": "<p>Pesquisadora Principal do Projeto Aurora, bioquímica. 90 dias de isolamento num safe room improvisado na Sala de Armazenamento 2-F de B2. Mal nutrida, tremores leves nas mãos que esconde quando percebe que alguém está olhando. Jaleco cinza de uso, olheiras profundas.</p><p>Iridescência no antebraço esquerdo — exposição nível 2 ao composto. Usa manga comprida mesmo no calor. Não diz porque tem medo de ser tratada como ameaça.</p><p>Carrega uma seringa de composto Aurora concentrado que chama de 'último recurso' sem especificar o que exatamente isso significa.</p><p><strong>Não julgá-la imediatamente</strong> é o que abre a porta. Se um jogador começar com 'você é responsável por tudo isso', ela fecha completamente.</p>"
       }
     },
     "flags": {
       "debaixo-da-pele": {
         "tipo": "aliada",
-        "localização": "B2 — sala de conferências (trancada por dentro)",
+        "localização": "B2 — Sala de Armazenamento 2-F (safe room improvisada)",
         "aurora": 1.5,
-        "relacoes": "Antiga parceira científica de Castilho (agora inimigos). Ex-colega de Carolina Melo.",
+        "relacoes": "Antiga parceira científica de Castilho — seis anos de trabalho conjunto. O vínculo ainda existe e pode ser usado narrativamente.",
         "sabe": [
-          "Toda a pesquisa do Projeto Aurora",
-          "Como criar o antídoto parcial (reduz Aurora em 2 pontos)",
-          "Localização de B4 e o que está lá",
-          "Código de B2: 3391",
-          "Que Castilho tem uma seringa de Aurora pura"
+          "Tudo sobre AURORA-0: origem marinha, mecanismo bioquímico, taxa de transformação, estágios",
+          "Código completo de override: 472391 (ela o criou — não oferece espontaneamente)",
+          "Senha do servidor B2: aurora.0",
+          "Que Valentina está viva em B3 — viu registros de câmera antes de pararem",
+          "Que Castilho entrou em B4 voluntariamente em 5 de janeiro — viu o log de acesso",
+          "Fórmula do antídoto parcial (o físico foi destruído quando B3 foi isolado — mas a fórmula existe no DOC-05)",
+          "O que o composto faz em longo prazo com exposição nível 2+ (o que está acontecendo com ela)"
+        ],
+        "esconde": [
+          "A própria exposição nível 2 — iridescência no antebraço",
+          "O código de override — tem medo que corram para B3 sem estar preparados",
+          "A seringa de composto concentrado",
+          "Que filmou Valentina no dia 60 pedindo para ligar para a mãe — e não permitiu"
         ],
         "documentos": ["DOC-04", "DOC-05", "DOC-12"]
       }
@@ -95,7 +112,7 @@
         "dex": { "value": 70 },
         "int": { "value": 60 },
         "pow": { "value": 45 },
-        "app": { "value": 40 },
+        "app": { "value": 35 },
         "edu": { "value": 50 }
       },
       "attribs": {
@@ -104,21 +121,22 @@
         "san": { "value": 20, "max": 55 }
       },
       "description": {
-        "biography": "<p>Ex-técnica de laboratório, sujeito de 'Fase II voluntária'. Mantém a maioria das faculdades mas está fisicamente alterada (cicatrizes simétricas, força aumentada). Lealdade dividida entre auto-preservação e o processo que lhe deu capacidades além do humano. Pode ser aliada ou ameaça dependendo das escolhas dos PJs.</p>"
+        "biography": "<p>Voluntária do Programa Aurora. Natural de Guarulhos/SP. Entrou no programa em 2006 com 21 anos, sob pressão financeira. Assinou o termo de consentimento. Acreditou que era seguro.</p><p>Ainda parece uma jovem de 24 anos de relance. A ilusão se desfaz com atenção: pele com qualidade de fluxo sob luz direta, olhos grandes demais com iridescência azul-esverdeada. O cabelo ainda é o mesmo cabelo. Esse detalhe ajuda e piora ao mesmo tempo.</p><p>Usa manga comprida. Segura uma foto plastificada que raramente solta. Fala sobre Guarulhos com frequência — o apartamento da mãe, o cheiro de carne assada aos domingos.</p><p>Melancólica de uma forma que não é depressão — é luto. Ainda tem senso de humor. <em>'Eu ia fazer uma pós-graduação. Agora sou um fenômeno de biologia. Só mudei de área.'</em></p><p>Em algum momento vai perguntar simplesmente: <strong>'Podem me levar com vocês?'</strong></p>"
       }
     },
     "flags": {
       "debaixo-da-pele": {
         "tipo": "ambiguo",
-        "localização": "B3 — quarto 3-C",
+        "localização": "B3 — Quarto 3-C (porta barricada por dentro)",
         "aurora": 7.0,
-        "relacoes": "Participante voluntária. Conhece Castilho pessoalmente. Odeia os Refinados Básicos.",
+        "relacoes": "Relação estranha com Castilho (o chama de 'Dr. Castilho', convivência com algo perigoso que conhece bem). Os Refinados não a atacam — nível de Aurora alto o suficiente para reconhecimento como 'semelhante'.",
         "sabe": [
-          "Rotina de Castilho",
-          "Localização do antídoto parcial (Lab B2-A)",
-          "Caminho alternativo para B4 (duto de ventilação)"
+          "Rotina de patrulha do Diretor (ciclo completo)",
+          "Que Voss está viva em algum lugar de B2 — viu sinais de movimento nas câmeras antes de pararem",
+          "Que B4 é o lugar mais perigoso — Castilho a proibiu de se aproximar",
+          "Que existe saída de emergência (ouviu conversas) mas não sabe onde"
         ],
-        "condicao": "Negociação necessária. Exige proteção em troca de informação."
+        "condicao": "Negocia. Exige que não seja abandonada em troca de informação sobre a rotina de Castilho. Não é exigência nem ameaça — é o pedido mais humano possível."
       }
     }
   }

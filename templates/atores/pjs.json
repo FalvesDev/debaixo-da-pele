@@ -5,24 +5,24 @@
     "img": "icons/svg/mystery-man.svg",
     "system": {
       "characteristics": {
-        "str": { "value": 65 },
-        "con": { "value": 60 },
-        "siz": { "value": 70 },
+        "str": { "value": 60 },
+        "con": { "value": 65 },
+        "siz": { "value": 65 },
         "dex": { "value": 55 },
-        "app": { "value": 50 },
+        "app": { "value": 60 },
         "int": { "value": 75 },
-        "pow": { "value": 65 },
+        "pow": { "value": 55 },
         "edu": { "value": 80 }
       },
       "attribs": {
         "hp":  { "value": 13, "max": 13 },
-        "mp":  { "value": 13, "max": 13 },
-        "san": { "value": 65, "max": 65 },
-        "lck": { "value": 65 }
+        "mp":  { "value": 11, "max": 11 },
+        "san": { "value": 55, "max": 55 },
+        "lck": { "value": 55 }
       },
       "description": {
-        "occupation": "Engenheiro de Segurança",
-        "biography": "<p>Engenheiro de segurança patrimonial contratado pela Hexacor para auditar os sistemas da instalação. Especialista em protocolos de contenção e sistemas de acesso. Cético por natureza, mas curioso demais para seu próprio bem.</p>"
+        "occupation": "Engenheiro de Segurança Patrimonial",
+        "biography": "<p>Consultor externo contratado pela Nova Lumière Cosméticos para inspecionar os sistemas de segurança física do Complexo Elara antes da posse formal. 15 anos de experiência em instalações industriais. Divorciado, filho de 14 anos. Tem o notebook com a planta baixa do complexo — mas apenas do andar acima do solo. A partir do B1, a planta não existe.</p><p><strong>Falha:</strong> Subestima risco pessoal — foi treinado a avaliar riscos de sistemas, não de pessoas.</p><p><strong>Segredo:</strong> Numa vistoria anterior em Minas Gerais, encontrou irregularidades e não reportou para não perder o contrato. Houve acidente. Ninguém morreu. Ele carrega isso.</p>"
       }
     },
     "flags": {
@@ -33,8 +33,8 @@
         "max_mochila": 16,
         "mochila_nome": "Mochila 30L",
         "vestindo_epi": false,
-        "ocupacao": "Engenheiro de Segurança",
-        "conexoes": "Hexacor (empregador), sindicato de engenheiros"
+        "ocupacao": "Engenheiro de Segurança Patrimonial",
+        "conexoes": "Nova Lumière Cosméticos (cliente principal), sem vínculo com a Elara"
       }
     }
   },
@@ -45,23 +45,23 @@
     "system": {
       "characteristics": {
         "str": { "value": 45 },
-        "con": { "value": 65 },
+        "con": { "value": 60 },
         "siz": { "value": 55 },
-        "dex": { "value": 70 },
-        "app": { "value": 65 },
+        "dex": { "value": 60 },
+        "app": { "value": 70 },
         "int": { "value": 85 },
-        "pow": { "value": 70 },
+        "pow": { "value": 65 },
         "edu": { "value": 90 }
       },
       "attribs": {
         "hp":  { "value": 12, "max": 12 },
-        "mp":  { "value": 14, "max": 14 },
-        "san": { "value": 70, "max": 70 },
-        "lck": { "value": 70 }
+        "mp":  { "value": 13, "max": 13 },
+        "san": { "value": 65, "max": 65 },
+        "lck": { "value": 60 }
       },
       "description": {
-        "occupation": "Médica",
-        "biography": "<p>Médica clínica geral com especialização em medicina do trabalho. Enviada para avaliar condições de saúde dos funcionários da instalação após relatórios anônimos sobre 'acidentes de trabalho incomuns'.</p>"
+        "occupation": "Médica — Medicina Ocupacional",
+        "biography": "<p>Funcionária do RH da Nova Lumière Cosméticos, especializada em medicina ocupacional. Enviada para verificar se o Complexo Elara tem condições sanitárias para receber novos funcionários. Segunda inspeção deste tipo — a primeira foi numa fábrica têxtil em São Bernardo.</p><p><strong>Falha:</strong> Dificuldade de aceitar que nem tudo tem solução médica. Pode se fixar em tentar tratar em vez de recuar para sobreviver.</p><p><strong>Segredo:</strong> Perdeu um paciente por erro diagnóstico durante a residência. Processo encerrado sem penalidade. Ela sabe que cometeu o erro.</p>"
       }
     },
     "flags": {
@@ -72,8 +72,8 @@
         "max_mochila": 12,
         "mochila_nome": "Mochila 20L",
         "vestindo_epi": false,
-        "ocupacao": "Médica",
-        "conexoes": "CRM, Ministério da Saúde (contato), Isabela Voss (colega de faculdade)"
+        "ocupacao": "Médica — Medicina Ocupacional",
+        "conexoes": "Nova Lumière Cosméticos (empregadora), CRM, Beatriz Fontes (conhecidas — Beatriz a convenceu a vir)"
       }
     }
   },
@@ -83,24 +83,24 @@
     "img": "icons/svg/mystery-man.svg",
     "system": {
       "characteristics": {
-        "str": { "value": 70 },
-        "con": { "value": 65 },
-        "siz": { "value": 75 },
+        "str": { "value": 55 },
+        "con": { "value": 60 },
+        "siz": { "value": 60 },
         "dex": { "value": 50 },
-        "app": { "value": 60 },
-        "int": { "value": 70 },
-        "pow": { "value": 55 },
-        "edu": { "value": 70 }
+        "app": { "value": 75 },
+        "int": { "value": 80 },
+        "pow": { "value": 70 },
+        "edu": { "value": 75 }
       },
       "attribs": {
-        "hp":  { "value": 14, "max": 14 },
-        "mp":  { "value": 11, "max": 11 },
-        "san": { "value": 55, "max": 55 },
-        "lck": { "value": 55 }
+        "hp":  { "value": 12, "max": 12 },
+        "mp":  { "value": 14, "max": 14 },
+        "san": { "value": 70, "max": 70 },
+        "lck": { "value": 65 }
       },
       "description": {
         "occupation": "Gerente de Operações",
-        "biography": "<p>Gerente de operações da Hexacor com 8 anos na empresa. Conhece a instalação melhor que ninguém. Pragmático e focado em resultados, mas começa a questionar o que realmente acontece nos andares inferiores.</p>"
+        "biography": "<p>Funcionário sênior da Nova Lumière Cosméticos há 7 anos. Foi ele quem coordenou a due diligence e pressionou internamente pela compra do Complexo Elara quando outros tinham dúvidas. Casado há 20 anos, três filhos adultos. Tem o hábito irritante de fazer listas de tudo — vai ser a habilidade mais útil do grupo.</p><p><strong>Falha:</strong> Precisa de controle da situação para funcionar. Quando perde o framework, paralisa buscando um plano em vez de agir.</p><p><strong>Segredo:</strong> Sente o peso de ter trazido todos aqui. Foi ele que pressionou pela aquisição. Cada olhar dos outros é um lembrete silencioso.</p>"
       }
     },
     "flags": {
@@ -112,7 +112,7 @@
         "mochila_nome": "Mochila 30L",
         "vestindo_epi": false,
         "ocupacao": "Gerente de Operações",
-        "conexoes": "Hexacor (liderança), Marcos Heleno (subordinado), fornecedores"
+        "conexoes": "Nova Lumière Cosméticos (7 anos), Rogério Leal (chefe imediato), coordenou a aquisição do Complexo Elara"
       }
     }
   },
@@ -122,24 +122,24 @@
     "img": "icons/svg/mystery-man.svg",
     "system": {
       "characteristics": {
-        "str": { "value": 40 },
+        "str": { "value": 45 },
         "con": { "value": 55 },
-        "siz": { "value": 50 },
-        "dex": { "value": 65 },
-        "app": { "value": 75 },
+        "siz": { "value": 55 },
+        "dex": { "value": 60 },
+        "app": { "value": 80 },
         "int": { "value": 90 },
-        "pow": { "value": 75 },
-        "edu": { "value": 95 }
+        "pow": { "value": 65 },
+        "edu": { "value": 85 }
       },
       "attribs": {
         "hp":  { "value": 11, "max": 11 },
-        "mp":  { "value": 15, "max": 15 },
-        "san": { "value": 75, "max": 75 },
-        "lck": { "value": 75 }
+        "mp":  { "value": 13, "max": 13 },
+        "san": { "value": 65, "max": 65 },
+        "lck": { "value": 60 }
       },
       "description": {
         "occupation": "Advogada Corporativa",
-        "biography": "<p>Advogada especializada em direito corporativo e compliance. Foi enviada para revisar contratos e proteger os interesses legais da Hexacor — mas algo nos documentos não bate. Sua mente analítica é sua principal arma.</p>"
+        "biography": "<p>Escritório próprio (Fontes & Associados), prestadora de serviços para a Nova Lumière. Foi a advogada responsável pela revisão do contrato de aquisição do Complexo Elara. Há um parágrafo naquele contrato que concede às holdings anônimas da Elara acesso irrestrito às 'descobertas científicas derivadas das instalações adquiridas'. Ela notou. Perguntou. Aceitou a resposta vaga. Nunca contou a Sérgio.</p><p><strong>Falha:</strong> Dificuldade com situações sem regra aplicável. Busca procedimentos onde não existem.</p><p><strong>Segredo:</strong> O parágrafo que deixou passar. Parte do que a motiva aqui é culpa.</p>"
       }
     },
     "flags": {
@@ -151,7 +151,7 @@
         "mochila_nome": "Bolsa de campo",
         "vestindo_epi": false,
         "ocupacao": "Advogada Corporativa",
-        "conexoes": "OAB, escritório de advocacia, ANVISA (contato indireto)"
+        "conexoes": "Nova Lumière Cosméticos (cliente), OAB, Sérgio Dantas (sabe do parágrafo suspeito — ele não sabe)"
       }
     }
   },
@@ -161,24 +161,24 @@
     "img": "icons/svg/mystery-man.svg",
     "system": {
       "characteristics": {
-        "str": { "value": 55 },
-        "con": { "value": 60 },
-        "siz": { "value": 60 },
-        "dex": { "value": 80 },
-        "app": { "value": 70 },
+        "str": { "value": 50 },
+        "con": { "value": 55 },
+        "siz": { "value": 55 },
+        "dex": { "value": 75 },
+        "app": { "value": 65 },
         "int": { "value": 75 },
-        "pow": { "value": 65 },
+        "pow": { "value": 60 },
         "edu": { "value": 65 }
       },
       "attribs": {
-        "hp":  { "value": 12, "max": 12 },
-        "mp":  { "value": 13, "max": 13 },
-        "san": { "value": 65, "max": 65 },
-        "lck": { "value": 65 }
+        "hp":  { "value": 11, "max": 11 },
+        "mp":  { "value": 12, "max": 12 },
+        "san": { "value": 60, "max": 60 },
+        "lck": { "value": 70 }
       },
       "description": {
-        "occupation": "Fotógrafo",
-        "biography": "<p>Fotógrafo jornalístico contratado para documentar as instalações para um relatório corporativo. Olho aguçado para detalhes e instinto apurado para quando algo está errado. Sua câmera pode ser a única prova do que acontece aqui.</p>"
+        "occupation": "Fotógrafo Freelancer",
+        "biography": "<p>Freelancer contratado pela Nova Lumière para documentação visual da inspeção. De Minas Gerais, em São Paulo há 4 anos. Carrega a câmera como escudo emocional — quando está ansioso, filma. Manda dinheiro para a mãe toda semana. O menor cliente da Nova Lumière no grupo — e o que menos tem a perder profissionalmente. Isso o torna, paradoxalmente, o mais livre para agir.</p><p><strong>Falha:</strong> Tende a se dissociar ficando atrás da câmera. Em crise extrema, pode ficar paralisado documentando em vez de fugindo.</p><p><strong>Segredo:</strong> Antes do lockdown, fotografou uma porta trancada no fundo do galpão com cheiro diferente vindo pela fresta. Achou que estava sendo paranoico. Não falou com ninguém. A foto está no cartão da câmera.</p>"
       }
     },
     "flags": {
@@ -187,10 +187,10 @@
         "slots_bolsos": 0,
         "slots_mochila": 0,
         "max_mochila": 12,
-        "mochila_nome": "Mochila 20L",
+        "mochila_nome": "Mochila de câmera",
         "vestindo_epi": false,
-        "ocupacao": "Fotógrafo",
-        "conexoes": "Revista/Jornal (contratante), agência de imagens"
+        "ocupacao": "Fotógrafo Freelancer",
+        "conexoes": "Nova Lumière Cosméticos (cliente), Sérgio Dantas (quem o contratou)"
       }
     }
   }
