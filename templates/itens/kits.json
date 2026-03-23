@@ -1,0 +1,267 @@
+{
+  "_info": "Kits oficiais da campanha Debaixo da Pele. Use a macro 'Distribuir Kit' ou adicione manualmente os itens ao ator.",
+
+  "kits_iniciais": [
+    {
+      "id": "kit-base",
+      "nome": "Kit Base — Todos os Personagens",
+      "descricao": "Fornecido gratuitamente pela Nova Lumière para a vistoria. Todos os 5 PJs recebem este kit.",
+      "custo": "R$ 0 (empresa)",
+      "peso_total": "~1,5kg",
+      "personagens": ["Todos"],
+      "itens": [
+        { "item": "Crachá Nova Lumière",        "qtd": 1 },
+        { "item": "Celular Nokia",               "qtd": 1 },
+        { "item": "Lanterna (LED)",              "qtd": 1 },
+        { "item": "Pilhas AA (pack 4)",          "qtd": 1 },
+        { "item": "Garrafa de Água (500ml)",     "qtd": 1 },
+        { "item": "Barra de Energia",            "qtd": 2 }
+      ],
+      "notas": "A lanterna vem com pilhas novas (8h). Mapa impresso da região é dado pelo GM como handout."
+    },
+    {
+      "id": "kit-tecnico-engenharia",
+      "nome": "Kit Técnico / Engenharia",
+      "descricao": "Para engenheiros, técnicos e operadores de campo. Kit de Antônio Figueiredo.",
+      "custo": "R$ 180",
+      "peso_total": "~1,5kg",
+      "personagens": ["Antônio Figueiredo"],
+      "bonus": "+10% em rolagens de Reparar Elétrica/Mecânica com o kit completo.",
+      "itens": [
+        { "item": "Multitool (Leatherman)",      "qtd": 1 },
+        { "item": "Fita Isolante",               "qtd": 1 },
+        { "item": "Fita Silver Tape (rolo)",     "qtd": 1 },
+        { "item": "Lanterna de Cabeça",          "qtd": 1 },
+        { "item": "Pilhas AA (pack 4)",          "qtd": 1, "notas": "Reserva para a lanterna de cabeça" },
+        { "item": "Alicate Universal",           "qtd": 1 },
+        { "item": "Chave Inglesa",               "qtd": 1 },
+        { "item": "Luvas de Couro Grossas",      "qtd": 1 }
+      ]
+    },
+    {
+      "id": "kit-medico",
+      "nome": "Kit Médico / Primeiros Socorros",
+      "descricao": "Para médicos, enfermeiros e paramédicos. Kit de Carolina Melo.",
+      "custo": "R$ 220",
+      "peso_total": "~1,6kg",
+      "personagens": ["Carolina Melo"],
+      "bonus": "+10% em rolagens de Primeiros Socorros e Medicina com o kit completo.",
+      "itens": [
+        { "item": "Kit de Primeiros Socorros Avançado", "qtd": 1 },
+        { "item": "Bandagem Hemostática",               "qtd": 2 },
+        { "item": "Luvas Cirúrgicas Pack (10x)",        "qtd": 1 },
+        { "item": "Antisséptico Povidine",              "qtd": 1 },
+        { "item": "Analgésico Forte — Codeína 30mg",    "qtd": 1, "notas": "1 cartela (6 comprimidos)" },
+        { "item": "Tesoura Cirúrgica",                  "qtd": 1 },
+        { "item": "Máscara Cirúrgica",                  "qtd": 5 }
+      ]
+    },
+    {
+      "id": "kit-documentacao",
+      "nome": "Kit Documentação / Fotografia",
+      "descricao": "Para fotógrafos, jornalistas e documentaristas. Kit de Tiago Araújo.",
+      "custo": "R$ 550",
+      "peso_total": "~1,0kg",
+      "personagens": ["Tiago Araújo"],
+      "bonus": "Documentação fotográfica tem valor legal no epílogo. +15% Persuasão com evidências visuais.",
+      "itens": [
+        { "item": "Câmera Fotográfica DSLR",     "qtd": 1 },
+        { "item": "Câmera de Vídeo",             "qtd": 1, "notas": "Câmera de vídeo mini-DV" },
+        { "item": "Pen Drive 4GB",               "qtd": 1 },
+        { "item": "Gravador de Voz Digital",     "qtd": 1 },
+        { "item": "Pilhas AA (pack 4)",          "qtd": 1, "notas": "Reserva para câmeras e gravador" }
+      ]
+    },
+    {
+      "id": "kit-corporativo-juridico",
+      "nome": "Kit Corporativo / Jurídico",
+      "descricao": "Para advogados, gestores e executivos. Kit de Beatriz Fontes e Sérgio Dantas.",
+      "custo": "R$ 280",
+      "peso_total": "~3,4kg",
+      "personagens": ["Beatriz Fontes", "Sérgio Dantas"],
+      "bonus": "Acesso ao dossiê de aquisição da Elara. +10% Direito e Persuasão corporativa.",
+      "itens_beatriz": [
+        { "item": "Notebook Dell Latitude",          "qtd": 1 },
+        { "item": "Pen Drive 4GB",                   "qtd": 2, "notas": "1 com documentos da empresa, 1 vazio" },
+        { "item": "Pasta com Dossiê de Aquisição",   "qtd": 1, "notas": "Contém a cláusula suspeita das holdings" },
+        { "item": "BlackBerry (Executivo)",          "qtd": 1 }
+      ],
+      "itens_sergio": [
+        { "item": "Notebook Dell Latitude",          "qtd": 1 },
+        { "item": "Pen Drive 4GB",                   "qtd": 1 },
+        { "item": "Pasta com Dossiê de Aquisição",   "qtd": 1 },
+        { "item": "Walkie-Talkie",                   "qtd": 2, "notas": "Par — para comunicação entre o grupo" },
+        { "item": "Mochila 30L (Resistente)",        "qtd": 1 }
+      ]
+    },
+    {
+      "id": "kit-seguranca",
+      "nome": "Kit Segurança / Proteção",
+      "descricao": "Para seguranças, ex-militares ou policiais. Não se aplica aos 5 PJs principais, mas disponível para personagens alternativos ou encontrado em sala de segurança B1.",
+      "custo": "R$ 1.400",
+      "peso_total": "~5,2kg",
+      "personagens": ["Personagem alternativo — Segurança"],
+      "bonus": "−1 dano projéteis (colete). +10% Arma de Fogo e Percepção em situações de segurança.",
+      "itens": [
+        { "item": "Colete à Prova de Bala (Nível II)",  "qtd": 1 },
+        { "item": "Revólver .38 Taurus",                "qtd": 1, "notas": "Ver armas.json" },
+        { "item": "Munição .38 Special (caixa 50)",     "qtd": 1, "notas": "Começa com 18 balas no coldre + caixa" },
+        { "item": "Algemas (par)",                      "qtd": 1 },
+        { "item": "Lanterna Tática (Resistente)",       "qtd": 1 },
+        { "item": "Kit de Primeiros Socorros Básico",   "qtd": 1 },
+        { "item": "Faca Tática",                        "qtd": 1, "notas": "Ver armas.json" }
+      ]
+    },
+    {
+      "id": "kit-cientifico",
+      "nome": "Kit Científico / Laboratório",
+      "descricao": "Para químicos, biólogos e pesquisadores. Útil se o grupo encontrar a Dra. Voss ou precisar analisar o Composto Aurora.",
+      "custo": "R$ 310",
+      "peso_total": "~2,1kg",
+      "personagens": ["Personagem alternativo — Cientista"],
+      "bonus": "+15% em Química e Biologia ao analisar substâncias. Identificação do Composto Aurora possível.",
+      "itens": [
+        { "item": "Kit de Análise Química",      "qtd": 1 },
+        { "item": "Luvas Cirúrgicas Pack (10x)", "qtd": 1 },
+        { "item": "Óculos de Proteção",          "qtd": 1 },
+        { "item": "Respirador N95",              "qtd": 3 },
+        { "item": "Seringa Vazia (5ml)",         "qtd": 3 }
+      ]
+    }
+  ],
+
+  "kits_tecnicos": [
+    {
+      "id": "kit-guarita-manutencao",
+      "nome": "Kit Guarita / Manutenção",
+      "local": "Acima do Solo — Guarita e Galpão de Produção",
+      "descricao": "Ferramentas e suprimentos de Marcos Heleno. Distribuídos no Galpão e depósito de manutenção.",
+      "itens": [
+        { "item": "Pé de Cabra",                 "qtd": 1, "notas": "Ver armas.json — ferramenta principal de Marcos" },
+        { "item": "Chave Inglesa",               "qtd": 2 },
+        { "item": "Kit Chave de Fenda",          "qtd": 1 },
+        { "item": "Fita Silver Tape (rolo)",     "qtd": 2 },
+        { "item": "Fita Isolante",               "qtd": 1 },
+        { "item": "Lanterna (LED)",              "qtd": 2 },
+        { "item": "Pilhas AA (pack 4)",          "qtd": 3 },
+        { "item": "Fio de Metal / Arame",        "qtd": 2 },
+        { "item": "Abraçadeiras de Nylon (x10)", "qtd": 2 },
+        { "item": "Corda de Nylon 10m",          "qtd": 1 },
+        { "item": "Isqueiro",                    "qtd": 2 }
+      ]
+    },
+    {
+      "id": "kit-enfermaria-b1",
+      "nome": "Kit Enfermaria B1",
+      "local": "B1 — Administração Subterrânea — Sala de Enfermaria",
+      "descricao": "Suprimentos médicos básicos de emergência deixados na enfermaria de B1. Aberta com Cartão Nível 1.",
+      "itens": [
+        { "item": "Kit de Primeiros Socorros Básico",    "qtd": 2 },
+        { "item": "Bandagem Hemostática",                "qtd": 3 },
+        { "item": "Morfina (Seringa)",                   "qtd": 2 },
+        { "item": "Atadura Elástica",                    "qtd": 4 },
+        { "item": "Antisséptico Povidine",               "qtd": 2 },
+        { "item": "Soro Fisiológico (250ml)",            "qtd": 3 },
+        { "item": "Luvas Cirúrgicas Pack (10x)",         "qtd": 2 },
+        { "item": "Seringa Vazia (5ml)",                 "qtd": 5 },
+        { "item": "Garrafa de Água (500ml)",             "qtd": 4 }
+      ]
+    },
+    {
+      "id": "kit-seguranca-b1",
+      "nome": "Kit Sala de Segurança B1",
+      "local": "B1 — Sala de Segurança (Cód. 1229)",
+      "descricao": "Arsenal e equipamentos da equipe de segurança que foi dispensada em setembro de 2009. Ficou intacto.",
+      "itens": [
+        { "item": "Revólver .38 Taurus",                "qtd": 2, "notas": "Ver armas.json" },
+        { "item": "Pistola 9mm PT92",                   "qtd": 1, "notas": "Ver armas.json" },
+        { "item": "Munição .38 Special (caixa 50)",     "qtd": 2 },
+        { "item": "Munição 9mm Parabellum (caixa 50)",  "qtd": 1 },
+        { "item": "Colete à Prova de Bala (Nível II)",  "qtd": 2 },
+        { "item": "Algemas (par)",                      "qtd": 3 },
+        { "item": "Lanterna Tática (Resistente)",       "qtd": 2 },
+        { "item": "Kit de Primeiros Socorros Básico",   "qtd": 1 },
+        { "item": "Mochila Tática 30L",                 "qtd": 1 },
+        { "item": "Kit de Arrombamento",                "qtd": 1, "notas": "Suspeito — quem deixou aqui?" },
+        { "item": "Faca Tática",                        "qtd": 2, "notas": "Ver armas.json" }
+      ]
+    },
+    {
+      "id": "kit-laboratorio-b2",
+      "nome": "Kit Laboratório B2",
+      "local": "B2 — Laboratórios Principais (Cód. 3391 — Voss)",
+      "descricao": "Equipamentos dos laboratórios de P&D da Divisão Ômega. Alguns itens únicos e críticos para a trama.",
+      "itens": [
+        { "item": "Máscara de Gás Especial (Lab)",      "qtd": 1, "notas": "ÚNICO no complexo — decisão narrativa" },
+        { "item": "Traje Hazmat Completo",              "qtd": 1 },
+        { "item": "Kit de Primeiros Socorros Avançado", "qtd": 2 },
+        { "item": "Respirador N95",                     "qtd": 4 },
+        { "item": "Kit de Análise Química",             "qtd": 1 },
+        { "item": "Seringa Vazia (5ml)",                "qtd": 10 },
+        { "item": "Composto Aurora (Amostra)",          "qtd": 2, "notas": "PERIGO: não quebrar" },
+        { "item": "Soro Fisiológico (250ml)",           "qtd": 5 },
+        { "item": "Luvas Cirúrgicas Pack (10x)",        "qtd": 3 },
+        { "item": "Óculos de Proteção",                 "qtd": 3 },
+        { "item": "Morfina (Seringa)",                  "qtd": 3 },
+        { "item": "Adrenalina (Seringa Auto-injetável)","qtd": 2 },
+        { "item": "Álcool Isopropílico 70% (frasco)",  "qtd": 3 }
+      ]
+    },
+    {
+      "id": "kit-espingarda-puzzle",
+      "nome": "PUZZLE-03 — A Espingarda",
+      "local": "B2 — Armário Trancado (Puzzle 03 — cadeado combinação 4471)",
+      "descricao": "A espingarda está escondida em um armário trancado. É o PUZZLE-03 da campanha. Jogadores precisam descobrir a combinação.",
+      "referencia_puzzle": "Puzzles/PUZZLE-03 — A Espingarda.md",
+      "itens": [
+        { "item": "Espingarda 12 Pump",                 "qtd": 1, "notas": "Ver armas.json — único no complexo" },
+        { "item": "Cartucho 12 calibre — chumbo (caixa 25)", "qtd": 2 },
+        { "item": "Cartucho 12 calibre — slug (caixa 25)",   "qtd": 1 }
+      ]
+    },
+    {
+      "id": "kit-fuga-b3-b4",
+      "nome": "Kit Fuga / Improvisação B3–B4",
+      "local": "B3 — Sala de Manutenção e Poço de Elevador",
+      "descricao": "Itens espalhados nas áreas de manutenção de B3 para a fuga final. O Dremel é a chave para B4 (alternativa ao código de override).",
+      "itens": [
+        { "item": "Dremel (Miniretífica)",              "qtd": 1, "notas": "PISTA do DOC-13 — abre B4 (BARULHENTO)" },
+        { "item": "Bateria 9V (2x)",                    "qtd": 2, "notas": "Para o Dremel" },
+        { "item": "Corda de Nylon 15m",                 "qtd": 1 },
+        { "item": "Mosquetão e Trava",                  "qtd": 2 },
+        { "item": "Fio de Metal / Arame",               "qtd": 1 },
+        { "item": "Fita Silver Tape (rolo)",            "qtd": 1 },
+        { "item": "Abraçadeiras de Nylon (x10)",        "qtd": 1 },
+        { "item": "Extintor de Incêndio",               "qtd": 2, "notas": "Ver armas.json — parede do corredor" },
+        { "item": "Lanterna de Emergência (Flare)",     "qtd": 2 }
+      ]
+    },
+    {
+      "id": "kit-voss",
+      "nome": "Kit da Dra. Voss (Safe Room 2-F)",
+      "local": "B2 — Sala 2-F (Safe Room da Isabela Voss)",
+      "descricao": "O que Voss acumulou em 90 dias de isolamento. Alguns itens científicos únicos e a seringa de 'último recurso'.",
+      "itens": [
+        { "item": "Composto Aurora (Amostra)",          "qtd": 1, "notas": "A seringa de 'último recurso' de Voss — NÃO distribuir sem cena narrativa" },
+        { "item": "Kit de Primeiros Socorros Avançado", "qtd": 1 },
+        { "item": "Garrafa de Água (500ml)",            "qtd": 3 },
+        { "item": "Ração de Emergência (MRE)",          "qtd": 5 },
+        { "item": "Barra de Energia",                   "qtd": 8 },
+        { "item": "Cartão de Acesso — Nível 2 (Pesquisador)", "qtd": 1 },
+        { "item": "Respirador N95",                     "qtd": 2 },
+        { "item": "Seringa Vazia (5ml)",                "qtd": 5 },
+        { "item": "Kit de Análise Química",             "qtd": 1, "notas": "Análise parcial — Voss já trabalhou nisso" }
+      ]
+    }
+  ],
+
+  "regras_de_kit": {
+    "kit_base": "Todos os PJs começam com o Kit Base (fornecido pela Nova Lumière).",
+    "kit_especializado": "Cada PJ escolhe UM kit especializado de acordo com sua ocupação.",
+    "peso_kit_completo": "Um kit base + especializado pesa ~3–5kg, dentro da capacidade de qualquer PJ sem penalidade.",
+    "itens_encontrados": "Kits técnicos são encontrados durante a campanha — GM decide quando revelar.",
+    "espingarda": "PUZZLE-03: a espingarda requer que os jogadores encontrem a combinação 4471 (código da guarita exterior).",
+    "mascara_especial": "A Máscara de Gás Especial é ÚNICA. O GM deve criar tensão em torno de quem a usa — especialmente em B4.",
+    "composto_voss": "A seringa de Voss não é um item normal — é uma decisão narrativa. Só distribuir com cena adequada."
+  }
+}
