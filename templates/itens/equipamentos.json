@@ -630,6 +630,16 @@
     "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "categoria": "container", "linhasBonus": 1, "notas": "+1 linha no grid. Acesso rápido." } }
   },
   {
+    "name": "Biscoito Bauduco",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/biscoito.svg",
+    "system": {
+      "description": { "value": "<p>Pacote de biscoito cream cracker Bauduco. Alimento rápido e prático. Remove penalidade de fome por 3h. Pouco calórico mas fácil de carregar. Encontrado em copas, salas de descanso e vending machines do complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Remove penalidade de fome por 3h. Calórico baixo — não substitui refeição completa.", "fome": 25, "sede": 0 } }
+  },
+  {
     "name": "Barra de Energia",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/barra-energia.svg",

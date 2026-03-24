@@ -47,6 +47,16 @@ class DDPPlayerHUD extends Application {
     const auroraVisivel = game.settings.get(MODULE_ID, "auroraVisivelJogadores");
     const hemorragia    = actor.effects.some(e => e.statuses?.has("ddp-hemorragia") || e.name === "Hemorragia");
 
+    // Fome e Sede (0–100, 100 = saciado/hidratado)
+    const fome = Math.max(0, Math.min(100, actor.getFlag(MODULE_ID, "fome") ?? 100));
+    const sede = Math.max(0, Math.min(100, actor.getFlag(MODULE_ID, "sede") ?? 100));
+    const fomePct = fome;
+    const sedePct = sede;
+    const fomeCor = fome > 60 ? "#88cc44" : fome > 30 ? "#ffaa00" : "#dd4400";
+    const sedeCor = sede > 60 ? "#44aadd" : sede > 30 ? "#ffaa00" : "#cc2200";
+    const fomeCrit = fome <= 30;
+    const sedeCrit = sede <= 30;
+
     return {
       hasActor:   true,
       collapsed:  this._collapsed,
@@ -60,7 +70,8 @@ class DDPPlayerHUD extends Application {
       inconsciente: hp.value <= 0,
       hemorragia,
       aurora,
-      auroraVisivel
+      auroraVisivel,
+      fome, sede, fomePct, sedePct, fomeCor, sedeCor, fomeCrit, sedeCrit
     };
   }
 
@@ -68,6 +79,26 @@ class DDPPlayerHUD extends Application {
     super.activateListeners(html);
     html.find(".ddp-phud-toggle").on("click", () => {
       this._collapsed = !this._collapsed;
+      this.render(false);
+    });
+
+    // Clique nas barras de fome/sede → ajusta valor
+    html.find(".ddp-phud-bar-mini").on("click", async (e) => {
+      const actor = game.user.character;
+      if (!actor) return;
+      const stat = e.currentTarget.dataset.stat;
+      if (!stat) return;
+      const atual = actor.getFlag(MODULE_ID, stat) ?? 100;
+      const label = stat === "fome" ? "🍞 Fome" : "💧 Sede";
+      const novo = await Dialog.prompt({
+        title: `${label} — ${actor.name}`,
+        content: `<label>${label} (0–100):<br><input type="range" id="val" min="0" max="100" value="${atual}" style="width:100%"><span id="lbl">${atual}</span>
+          <script>document.getElementById('val').oninput = e => document.getElementById('lbl').textContent = e.target.value;</script></label>`,
+        callback: html => parseInt(html.find("#val").val()),
+        rejectClose: false
+      });
+      if (novo == null) return;
+      await actor.setFlag(MODULE_ID, stat, Math.max(0, Math.min(100, novo)));
       this.render(false);
     });
   }

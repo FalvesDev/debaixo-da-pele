@@ -5,13 +5,24 @@
 
 const MODULE_ID = "debaixo-da-pele";
 
-const GRID_COLS  = 6;
-const CELL_PX    = 60;  // px por célula
-const MIN_ROWS   = 3;
-const MAX_ROWS   = 12;
+const GRID_COLS  = 5;      // colunas da mochila
+const QUICK_COLS = 3;      // colunas do inventário rápido
+const QUICK_ROWS = 2;      // linhas do inventário rápido
+const CELL_PX    = 70;     // px por célula
+const MIN_ROWS   = 2;
+const MAX_ROWS   = 8;
 
 // Tipos CoC7 que NÃO são itens físicos
 const TIPOS_EXCLUIDOS = new Set(["skill", "occupation", "archetype", "talent", "setup"]);
+
+// Regex de itens equipáveis (wearables)
+const WEARABLE_RE = /colete|capacete|hazmat|luvas|máscara|mascara|respirador|óculos|oculos|n95/i;
+
+// ─── Helpers ──────────────────────────────────────────────
+function _isWearable(item) {
+  if (item.type === "weapon") return true;
+  return WEARABLE_RE.test(item.name ?? "");
+}
 
 // ─── Tamanho padrão dos itens ─────────────────────────────
 function _getItemSize(item) {
@@ -73,34 +84,24 @@ function _getItemSize(item) {
     return { w: 1, h: 2 };
 
   // ── Itens 1×1 explícitos ─────────────────────────────────
-  // Munição
   if (/munição|municao|ammo|bala|cartucho|clip|magazine|pente|cargador|projétil/.test(n))
     return { w: 1, h: 1 };
-  // Explosivos pequenos
   if (/granada|bomba|grenade|explosivo|dinamite|mina|mine/.test(n))
     return { w: 1, h: 1 };
-  // Documentos / papéis
   if (/documento|pasta|diário|diario|mapa|relatório|relatorio|caderno|anotação|anotacao|nota|note|carta|letter|ficha|formulário|formulario|manual|livro|book/.test(n))
     return { w: 1, h: 1 };
-  // Medicamentos / seringas / amostras
   if (/seringa|syringe|ampola|vial|frasco|flask|comprimido|pílula|pilula|pill|remédio|remedio|medicine|medicamento|analgésico|antibiótico|morfina|adrenalina|amostra|sample|composto|serum|soro|aurora|substância|substancia/.test(n))
     return { w: 1, h: 1 };
-  // Alimentos / água
   if (/comida|food|ração|racao|ration|snack|lanche|barra de cereal|água|water|cantil|canteen|garrafa|bottle|termos|thermos/.test(n))
     return { w: 1, h: 1 };
-  // Itens pequenos de utilidade
   if (/chave|key|keycard|cartão|cartao|crachá|cracha|badge|id|isqueiro|lighter|fósforo|fosforo|matches|lanterna pequena|mini lanterna|pilha|bateria|battery|tape|fita adesiva|zip tie|abraçadeira|arame|lock pick/.test(n))
     return { w: 1, h: 1 };
-  // Eletrônicos pequenos
   if (/celular|phone|smartphone|tablet|pen drive|pendrive|usb|disco|drive|chip|cartão de memória|walkie/.test(n))
     return { w: 1, h: 1 };
-  // Equipamentos de segurança pequenos
   if (/algema|handcuff|relógio|watch|óculos|glasses|goggles|luva|glove/.test(n))
     return { w: 1, h: 1 };
-  // Álcool / spray / aerossol
   if (/álcool|alcool|alcohol|spray|aerossol|desinfetante|antisséptico/.test(n))
     return { w: 1, h: 1 };
-  // Curativos pequenos
   if (/curativo|band.?aid|esparadrapo|atadura pequena/.test(n))
     return { w: 1, h: 1 };
 
@@ -111,18 +112,42 @@ function _getItemSize(item) {
   return { w: 1, h: 1 };
 }
 
-// ─── Calcula linhas do grid (STR/4 + bônus de mochilas) ───
+// ─── Calcula linhas do grid da mochila (STR/10 arredondado) ───
 function _calcGridRows(actor) {
-  const str     = actor.system?.characteristics?.str?.value ?? 40;
-  const baseRows = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.floor(str / 4)));
+  const str      = actor.system?.characteristics?.str?.value ?? 40;
+  const baseRows = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.ceil(str / 10)));
 
-  // Cada mochila/bolsão equipada adiciona 2 linhas extras
+  // Cada mochila/bolsão adiciona 1 linha extra
   const bagCount = actor.items.contents
     .filter(i => !TIPOS_EXCLUIDOS.has(i.type) && /mochila|mochilão|backpack|bolsão|saco grande/i.test(i.name))
     .length;
-  const bagBonus = bagCount * 2;
+  const bagBonus = bagCount;
 
   return Math.min(MAX_ROWS, baseRows + bagBonus);
+}
+
+// ─── Migração de layout antigo para novo formato ─────────────
+function _migrateLayout(raw) {
+  if (!raw || typeof raw !== "object") return { quick: {}, bag: {}, equipped: {} };
+
+  // Formato novo: tem a chave "bag" ou "quick"
+  if (raw.bag !== undefined || raw.quick !== undefined) {
+    return {
+      quick:    raw.quick    ?? {},
+      bag:      raw.bag      ?? {},
+      equipped: raw.equipped ?? {}
+    };
+  }
+
+  // Formato antigo: flat object de itemId -> { row, col, rotated }
+  // Move tudo para bag
+  const bag = {};
+  for (const [id, pos] of Object.entries(raw)) {
+    if (pos && typeof pos === "object" && "row" in pos && "col" in pos) {
+      bag[id] = pos;
+    }
+  }
+  return { quick: {}, bag, equipped: {} };
 }
 
 // ─── Application ─────────────────────────────────────────
@@ -130,7 +155,7 @@ export class DDPInventoryDialog extends Application {
   constructor(actor, options = {}) {
     super(options);
     this.actor     = actor;
-    this._layout   = foundry.utils.deepClone(actor.flags?.[MODULE_ID]?.inventario ?? {});
+    this._layout   = _migrateLayout(actor.flags?.[MODULE_ID]?.inventario);
     this._dragging = null;
     this._gridRows = _calcGridRows(actor);
   }
@@ -138,20 +163,23 @@ export class DDPInventoryDialog extends Application {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id:        "ddp-inventory-dialog",
-      title:     "📦 Inventário",
+      title:     "Inventário",
       template:  "modules/debaixo-da-pele/templates/inventory-dialog.html",
-      width:     GRID_COLS * CELL_PX + 256,
-      height:    MAX_ROWS * CELL_PX + 160,
+      width:     GRID_COLS * CELL_PX + QUICK_COLS * CELL_PX + 290,
+      height:    MAX_ROWS * CELL_PX + 220,
       resizable: true,
       classes:   ["ddp-inventory-dialog"]
     });
   }
 
-  // ── Matriz 2D a partir do layout ──────────────────────
-  _buildMatrix() {
-    const rows = this._gridRows;
-    const m = Array.from({ length: rows }, () => Array(GRID_COLS).fill(null));
-    for (const [itemId, pos] of Object.entries(this._layout)) {
+  // ── Matriz 2D para uma zona específica ────────────────
+  _buildMatrix(zone) {
+    const zoneLayout = this._layout[zone] ?? {};
+    const cols = zone === "quick" ? QUICK_COLS : GRID_COLS;
+    const rows = zone === "quick" ? QUICK_ROWS : this._gridRows;
+    const m = Array.from({ length: rows }, () => Array(cols).fill(null));
+
+    for (const [itemId, pos] of Object.entries(zoneLayout)) {
       const item = this.actor.items.get(itemId);
       if (!item) continue;
       const sz = _getItemSize(item);
@@ -159,23 +187,24 @@ export class DDPInventoryDialog extends Application {
       const h  = pos.rotated ? sz.w : sz.h;
       for (let r = pos.row; r < pos.row + h; r++) {
         for (let c = pos.col; c < pos.col + w; c++) {
-          if (r < rows && c < GRID_COLS) m[r][c] = itemId;
+          if (r < rows && c < cols) m[r][c] = itemId;
         }
       }
     }
     return m;
   }
 
-  // ── Verifica se item cabe na posição ──────────────────
-  _canPlace(itemId, row, col, rotated) {
+  // ── Verifica se item cabe na posição de uma zona ──────
+  _canPlace(zone, itemId, row, col, rotated) {
     const item = this.actor.items.get(itemId);
     if (!item) return false;
     const sz   = _getItemSize(item);
     const w    = rotated ? sz.h : sz.w;
     const h    = rotated ? sz.w : sz.h;
-    const rows = this._gridRows;
-    if (row < 0 || col < 0 || row + h > rows || col + w > GRID_COLS) return false;
-    const m = this._buildMatrix();
+    const cols = zone === "quick" ? QUICK_COLS : GRID_COLS;
+    const rows = zone === "quick" ? QUICK_ROWS : this._gridRows;
+    if (row < 0 || col < 0 || row + h > rows || col + w > cols) return false;
+    const m = this._buildMatrix(zone);
     for (let r = row; r < row + h; r++) {
       for (let c = col; c < col + w; c++) {
         if (m[r][c] !== null && m[r][c] !== itemId) return false;
@@ -184,71 +213,157 @@ export class DDPInventoryDialog extends Application {
     return true;
   }
 
+  // ── Remove item de todas as zonas ─────────────────────
+  _removeFromAllZones(itemId) {
+    delete this._layout.quick[itemId];
+    delete this._layout.bag[itemId];
+    delete this._layout.equipped[itemId];
+  }
+
+  // ── Equipa um item ─────────────────────────────────────
+  _equipItem(itemId) {
+    this._removeFromAllZones(itemId);
+    this._layout.equipped[itemId] = true;
+  }
+
+  // ── Desequipa um item (volta para não alocados) ────────
+  _unequipItem(itemId) {
+    delete this._layout.equipped[itemId];
+  }
+
   // ── Dados para o template Handlebars ──────────────────
   getData() {
-    // Recalcula grid ao abrir (mochilas podem ter mudado)
     this._gridRows = _calcGridRows(this.actor);
-    const rows = this._gridRows;
+    const bagRows  = this._gridRows;
 
-    const str       = this.actor.system?.characteristics?.str?.value ?? 40;
-    const strBase   = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.floor(str / 4)));
-    const bagBonus  = rows - strBase;
-    const totalSlots = rows * GRID_COLS;
+    const str      = this.actor.system?.characteristics?.str?.value ?? 40;
+    const strBase  = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.ceil(str / 10)));
+    const bagBonus = bagRows - strBase;
 
     const allItems = this.actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
 
-    // Itens posicionados
-    const placedItems = [];
-    let usedSlots = 0;
-    for (const [itemId, pos] of Object.entries(this._layout)) {
+    // ── Itens equipados ──────────────────────────────────
+    const equippedItems = [];
+    for (const itemId of Object.keys(this._layout.equipped ?? {})) {
       const item = this.actor.items.get(itemId);
       if (!item) continue;
       const sz = _getItemSize(item);
-      const w  = pos.rotated ? sz.h : sz.w;
-      const h  = pos.rotated ? sz.w : sz.h;
-      usedSlots += w * h;
-      placedItems.push({
-        id:          itemId,
-        name:        item.name,
-        img:         item.img,
-        rotated:     pos.rotated,
-        sizeLabel:   `${sz.w}×${sz.h}`,
-        styleLeft:   pos.col * CELL_PX,
-        styleTop:    pos.row * CELL_PX,
-        styleWidth:  w * CELL_PX,
-        styleHeight: h * CELL_PX
+      equippedItems.push({
+        id:        itemId,
+        name:      item.name,
+        img:       item.img,
+        slotLabel: `${sz.w}×${sz.h}`,
+        isWearable: _isWearable(item)
       });
     }
 
-    // Itens não alocados
-    const unassigned = allItems.filter(i => !this._layout[i.id]).map(i => {
-      const sz = _getItemSize(i);
-      return { id: i.id, name: i.name, img: i.img, sizeLabel: `${sz.w}×${sz.h}` };
-    });
+    // ── Conjunto de IDs alocados (quick + bag + equipped) ─
+    const allocatedIds = new Set([
+      ...Object.keys(this._layout.quick ?? {}),
+      ...Object.keys(this._layout.bag   ?? {}),
+      ...Object.keys(this._layout.equipped ?? {})
+    ]);
 
-    // Células do grid
-    const cells = [];
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < GRID_COLS; c++) {
-        cells.push({ row: r, col: c, styleLeft: c * CELL_PX, styleTop: r * CELL_PX });
+    // ── Helper para montar itens de uma zona grid ─────────
+    const buildZoneItems = (zone) => {
+      const zoneLayout = this._layout[zone] ?? {};
+      const items = [];
+      let used = 0;
+      for (const [itemId, pos] of Object.entries(zoneLayout)) {
+        const item = this.actor.items.get(itemId);
+        if (!item) continue;
+        const sz = _getItemSize(item);
+        const w  = pos.rotated ? sz.h : sz.w;
+        const h  = pos.rotated ? sz.w : sz.h;
+        used += w * h;
+        items.push({
+          id:          itemId,
+          name:        item.name,
+          img:         item.img,
+          rotated:     pos.rotated,
+          sizeLabel:   `${sz.w}×${sz.h}`,
+          isWearable:  _isWearable(item),
+          styleLeft:   pos.col * CELL_PX,
+          styleTop:    pos.row * CELL_PX,
+          styleWidth:  w * CELL_PX,
+          styleHeight: h * CELL_PX,
+          zone
+        });
+      }
+      return { items, used };
+    };
+
+    const { items: quickItems, used: quickUsed } = buildZoneItems("quick");
+    const { items: bagItems,   used: bagUsed   } = buildZoneItems("bag");
+
+    const quickTotalSlots = QUICK_COLS * QUICK_ROWS;
+    const bagTotalSlots   = GRID_COLS * bagRows;
+    const totalSlots      = quickTotalSlots + bagTotalSlots;
+    const usedSlots       = quickUsed + bagUsed;
+
+    // ── Células da zona rápida ─────────────────────────────
+    const quickCells = [];
+    for (let r = 0; r < QUICK_ROWS; r++) {
+      for (let c = 0; c < QUICK_COLS; c++) {
+        quickCells.push({ row: r, col: c, styleLeft: c * CELL_PX, styleTop: r * CELL_PX });
       }
     }
+
+    // ── Células da mochila ─────────────────────────────────
+    const bagCells = [];
+    for (let r = 0; r < bagRows; r++) {
+      for (let c = 0; c < GRID_COLS; c++) {
+        bagCells.push({ row: r, col: c, styleLeft: c * CELL_PX, styleTop: r * CELL_PX });
+      }
+    }
+
+    // ── Itens não alocados ─────────────────────────────────
+    const unassigned = allItems
+      .filter(i => !allocatedIds.has(i.id))
+      .map(i => {
+        const sz = _getItemSize(i);
+        return {
+          id:        i.id,
+          name:      i.name,
+          img:       i.img,
+          sizeLabel: `${sz.w}×${sz.h}`,
+          isWearable: _isWearable(i)
+        };
+      });
 
     return {
       actorName:   this.actor.name,
       actorImg:    this.actor.img,
-      gridWidth:   GRID_COLS * CELL_PX,
-      gridHeight:  rows * CELL_PX,
-      cells,
-      placedItems,
-      unassigned,
-      totalItens:  allItems.length,
-      alocados:    placedItems.length,
       canEdit:     this.actor.isOwner || game.user.isGM,
-      // Capacidade
+
+      // Zona rápida
+      quickItems,
+      quickCells,
+      quickWidth:  QUICK_COLS * CELL_PX,
+      quickHeight: QUICK_ROWS * CELL_PX,
+      quickUsed,
+      quickTotal:  quickTotalSlots,
+
+      // Mochila
+      bagItems,
+      bagCells,
+      bagWidth:    GRID_COLS * CELL_PX,
+      bagHeight:   bagRows * CELL_PX,
+      bagRows,
+      bagUsed,
+      bagTotal:    bagTotalSlots,
+
+      // Equipados
+      equippedItems,
+      equippedCount: equippedItems.length,
+
+      // Não alocados
+      unassigned,
+
+      // Totais
+      totalItens:  allItems.length,
+      alocados:    quickItems.length + bagItems.length,
       strValue:    str,
-      gridRows:    rows,
-      gridCols:    GRID_COLS,
       totalSlots,
       usedSlots,
       freeSlots:   totalSlots - usedSlots,
@@ -260,12 +375,13 @@ export class DDPInventoryDialog extends Application {
   activateListeners(html) {
     super.activateListeners(html);
 
-    const grid = html.find(".ddp-inv-grid")[0];
+    const quickGrid = html.find(".ddp-inv-grid-quick")[0];
+    const bagGrid   = html.find(".ddp-inv-grid-bag")[0];
 
-    // ── Drag: item NÃO alocado → grid ──
+    // ── Drag: item NÃO alocado → qualquer grid ──
     html.find(".ddp-inv-unass-item").on("dragstart", (e) => {
       const itemId = e.currentTarget.dataset.itemId;
-      this._dragging = { itemId, fromGrid: false, offsetRow: 0, offsetCol: 0 };
+      this._dragging = { itemId, fromZone: null, offsetRow: 0, offsetCol: 0 };
       e.originalEvent.dataTransfer.setData("text/plain", itemId);
       e.currentTarget.classList.add("ddp-dragging");
     });
@@ -276,11 +392,12 @@ export class DDPInventoryDialog extends Application {
 
     // ── Drag: item DO grid ──
     html.find(".ddp-inv-placed-item").on("dragstart", (e) => {
-      const itemId = e.currentTarget.dataset.itemId;
-      const rect   = e.currentTarget.getBoundingClientRect();
+      const itemId  = e.currentTarget.dataset.itemId;
+      const fromZone = e.currentTarget.dataset.zone;
+      const rect    = e.currentTarget.getBoundingClientRect();
       const offsetCol = Math.floor((e.originalEvent.clientX - rect.left) / CELL_PX);
       const offsetRow = Math.floor((e.originalEvent.clientY - rect.top)  / CELL_PX);
-      this._dragging = { itemId, fromGrid: true, offsetRow, offsetCol };
+      this._dragging = { itemId, fromZone, offsetRow, offsetCol };
       e.originalEvent.dataTransfer.setData("text/plain", itemId);
       e.currentTarget.classList.add("ddp-dragging");
     });
@@ -291,19 +408,78 @@ export class DDPInventoryDialog extends Application {
 
     // ── Duplo-clique → girar ──
     html.find(".ddp-inv-placed-item").on("dblclick", (e) => {
-      this._rotateItem(e.currentTarget.dataset.itemId);
+      const itemId = e.currentTarget.dataset.itemId;
+      const zone   = e.currentTarget.dataset.zone;
+      this._rotateItem(zone, itemId);
     });
 
-    // ── Botão direito → remover ──
+    // ── Botão direito em item do grid → menu contextual ──
     html.find(".ddp-inv-placed-item").on("contextmenu", (e) => {
       e.preventDefault();
-      delete this._layout[e.currentTarget.dataset.itemId];
+      e.stopPropagation();
+      const itemId   = e.currentTarget.dataset.itemId;
+      const zone     = e.currentTarget.dataset.zone;
+      const item     = this.actor.items.get(itemId);
+      const wearable = item && _isWearable(item);
+      this._showGridContextMenu(e.originalEvent, itemId, zone, wearable);
+    });
+
+    // ── Botão direito em item equipado → menu desequipar ──
+    html.find(".ddp-inv-equipped-item").on("contextmenu", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const itemId = e.currentTarget.dataset.itemId;
+      this._showEquippedContextMenu(e.originalEvent, itemId);
+    });
+
+    // ── Botão X no item equipado ──
+    html.find(".ddp-inv-equipped-remove").on("click", (e) => {
+      e.stopPropagation();
+      const itemId = e.currentTarget.closest(".ddp-inv-equipped-item").dataset.itemId;
+      this._unequipItem(itemId);
       this.render(false);
     });
 
-    if (!grid) return;
+    // ── Setup de cada grid ──
+    if (quickGrid) this._setupGridListeners(quickGrid, "quick");
+    if (bagGrid)   this._setupGridListeners(bagGrid,   "bag");
 
-    // ── DragOver: highlight ──
+    // ── Drop na área não alocados → remove do grid ──
+    const unassPanel = html.find(".ddp-inv-unassigned")[0];
+    if (unassPanel) {
+      unassPanel.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = "move";
+      });
+      unassPanel.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (!this._dragging?.fromZone) return;
+        const { itemId, fromZone } = this._dragging;
+        delete this._layout[fromZone][itemId];
+        this._dragging = null;
+        this.render(false);
+      });
+    }
+
+    // ── Botões ──
+    html.find(".ddp-inv-btn-auto").on("click", () => {
+      this._autoArrange();
+      this.render(false);
+    });
+    html.find(".ddp-inv-btn-clear").on("click", () => {
+      this._layout.quick    = {};
+      this._layout.bag      = {};
+      this._layout.equipped = {};
+      this.render(false);
+    });
+    html.find(".ddp-inv-btn-save").on("click", async () => {
+      await this._saveLayout();
+      ui.notifications.info("Inventário salvo!");
+    });
+  }
+
+  // ── Setup de listeners de drag & drop para um grid ────
+  _setupGridListeners(grid, zone) {
     grid.addEventListener("dragover", (e) => {
       e.preventDefault();
       e.dataTransfer.dropEffect = "move";
@@ -315,14 +491,20 @@ export class DDPInventoryDialog extends Application {
       const targetCol = dropCol - (this._dragging.offsetCol ?? 0);
       const targetRow = dropRow - (this._dragging.offsetRow ?? 0);
       const { itemId } = this._dragging;
-      const rotated   = this._layout[itemId]?.rotated ?? false;
-      const item      = this.actor.items.get(itemId);
+
+      // Rotação: usa a rotação atual do item na zona de origem (se vier de grid)
+      const fromZone  = this._dragging.fromZone;
+      const rotated   = fromZone
+        ? (this._layout[fromZone]?.[itemId]?.rotated ?? false)
+        : false;
+
+      const item = this.actor.items.get(itemId);
       if (!item) return;
 
       const sz    = _getItemSize(item);
       const w     = rotated ? sz.h : sz.w;
       const h     = rotated ? sz.w : sz.h;
-      const valid = this._canPlace(itemId, targetRow, targetCol, rotated);
+      const valid = this._canPlace(zone, itemId, targetRow, targetCol, rotated);
 
       grid.querySelectorAll(".ddp-inv-cell").forEach(c =>
         c.classList.remove("ddp-drop-ok", "ddp-drop-bad")
@@ -341,7 +523,6 @@ export class DDPInventoryDialog extends Application {
       );
     });
 
-    // ── Drop no grid ──
     grid.addEventListener("drop", (e) => {
       e.preventDefault();
       grid.querySelectorAll(".ddp-inv-cell").forEach(c =>
@@ -349,85 +530,185 @@ export class DDPInventoryDialog extends Application {
       );
       if (!this._dragging) return;
 
-      const { itemId, offsetRow = 0, offsetCol = 0 } = this._dragging;
+      const { itemId, fromZone, offsetRow = 0, offsetCol = 0 } = this._dragging;
       const rect      = grid.getBoundingClientRect();
       const dropCol   = Math.floor((e.clientX - rect.left) / CELL_PX);
       const dropRow   = Math.floor((e.clientY - rect.top)  / CELL_PX);
       const targetCol = dropCol - offsetCol;
       const targetRow = dropRow - offsetRow;
-      const rotated   = this._layout[itemId]?.rotated ?? false;
+      const rotated   = fromZone
+        ? (this._layout[fromZone]?.[itemId]?.rotated ?? false)
+        : false;
 
-      if (this._canPlace(itemId, targetRow, targetCol, rotated)) {
-        this._layout[itemId] = { row: targetRow, col: targetCol, rotated };
+      if (this._canPlace(zone, itemId, targetRow, targetCol, rotated)) {
+        // Remove da zona de origem (pode ser outra zona ou não existir)
+        if (fromZone) {
+          delete this._layout[fromZone][itemId];
+        }
+        // Remove dos equipados se estava lá
+        delete this._layout.equipped[itemId];
+        this._layout[zone][itemId] = { row: targetRow, col: targetCol, rotated };
         this.render(false);
       } else {
         ui.notifications.warn("Não cabe nessa posição.");
       }
       this._dragging = null;
     });
-
-    // ── Drop na área não alocados → remove do grid ──
-    const unassPanel = html.find(".ddp-inv-unassigned")[0];
-    if (unassPanel) {
-      unassPanel.addEventListener("dragover", (e) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
-      });
-      unassPanel.addEventListener("drop", (e) => {
-        e.preventDefault();
-        if (!this._dragging?.fromGrid) return;
-        delete this._layout[this._dragging.itemId];
-        this._dragging = null;
-        this.render(false);
-      });
-    }
-
-    // ── Botões ──
-    html.find(".ddp-inv-btn-auto").on("click", () => {
-      this._autoArrange();
-      this.render(false);
-    });
-    html.find(".ddp-inv-btn-clear").on("click", () => {
-      this._layout = {};
-      this.render(false);
-    });
-    html.find(".ddp-inv-btn-save").on("click", async () => {
-      await this._saveLayout();
-      ui.notifications.info("✅ Inventário salvo!");
-    });
   }
 
-  // ── Girar item ────────────────────────────────────────
-  _rotateItem(itemId) {
-    if (!this._layout[itemId]) return;
-    const pos        = this._layout[itemId];
+  // ── Menu contextual para itens no grid ────────────────
+  _showGridContextMenu(event, itemId, zone, isWearable) {
+    // Remove menus anteriores
+    document.querySelectorAll(".ddp-context-menu").forEach(m => m.remove());
+
+    const menu = document.createElement("div");
+    menu.className = "ddp-context-menu";
+    menu.style.cssText = `
+      position: fixed;
+      left: ${event.clientX}px;
+      top:  ${event.clientY}px;
+      z-index: 99999;
+      background: #111;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 3px 0;
+      min-width: 140px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.8);
+      font-family: 'Signika', sans-serif;
+      font-size: 12px;
+    `;
+
+    const addItem = (label, icon, onClick, color) => {
+      const li = document.createElement("div");
+      li.innerHTML = `<i class="fas ${icon}" style="width:14px;text-align:center;margin-right:6px;color:${color || '#888'};"></i>${label}`;
+      li.style.cssText = `padding:6px 12px;cursor:pointer;color:#ccc;white-space:nowrap;`;
+      li.addEventListener("mouseenter", () => li.style.background = "#222");
+      li.addEventListener("mouseleave", () => li.style.background = "");
+      li.addEventListener("click", () => { menu.remove(); onClick(); });
+      menu.appendChild(li);
+    };
+
+    if (isWearable) {
+      addItem("Equipar", "fa-shield-alt", () => {
+        this._equipItem(itemId);
+        this.render(false);
+      }, "#88ff88");
+    }
+
+    addItem("Girar", "fa-sync-alt", () => {
+      this._rotateItem(zone, itemId);
+    }, "#8888ff");
+
+    addItem("Remover do grid", "fa-times", () => {
+      delete this._layout[zone][itemId];
+      this.render(false);
+    }, "#ff8888");
+
+    document.body.appendChild(menu);
+
+    // Fecha ao clicar fora
+    const close = (e) => {
+      if (!menu.contains(e.target)) { menu.remove(); document.removeEventListener("click", close); }
+    };
+    setTimeout(() => document.addEventListener("click", close), 0);
+  }
+
+  // ── Menu contextual para itens equipados ──────────────
+  _showEquippedContextMenu(event, itemId) {
+    document.querySelectorAll(".ddp-context-menu").forEach(m => m.remove());
+
+    const menu = document.createElement("div");
+    menu.className = "ddp-context-menu";
+    menu.style.cssText = `
+      position: fixed;
+      left: ${event.clientX}px;
+      top:  ${event.clientY}px;
+      z-index: 99999;
+      background: #111;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 3px 0;
+      min-width: 160px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.8);
+      font-family: 'Signika', sans-serif;
+      font-size: 12px;
+    `;
+
+    const li = document.createElement("div");
+    li.innerHTML = `<i class="fas fa-shield-alt" style="width:14px;text-align:center;margin-right:6px;color:#ffaa44;"></i>Desequipar`;
+    li.style.cssText = `padding:6px 12px;cursor:pointer;color:#ccc;white-space:nowrap;`;
+    li.addEventListener("mouseenter", () => li.style.background = "#222");
+    li.addEventListener("mouseleave", () => li.style.background = "");
+    li.addEventListener("click", () => {
+      menu.remove();
+      this._unequipItem(itemId);
+      this.render(false);
+    });
+    menu.appendChild(li);
+
+    document.body.appendChild(menu);
+    const close = (e) => {
+      if (!menu.contains(e.target)) { menu.remove(); document.removeEventListener("click", close); }
+    };
+    setTimeout(() => document.addEventListener("click", close), 0);
+  }
+
+  // ── Girar item em uma zona ─────────────────────────────
+  _rotateItem(zone, itemId) {
+    const pos = this._layout[zone]?.[itemId];
+    if (!pos) return;
     const newRotated = !pos.rotated;
-    if (this._canPlace(itemId, pos.row, pos.col, newRotated)) {
-      this._layout[itemId].rotated = newRotated;
+    if (this._canPlace(zone, itemId, pos.row, pos.col, newRotated)) {
+      this._layout[zone][itemId].rotated = newRotated;
       this.render(false);
     } else {
       ui.notifications.warn("Sem espaço para girar o item aqui.");
     }
   }
 
-  // ── Auto-organizar ────────────────────────────────────
+  // ── Auto-organizar ─────────────────────────────────────
   _autoArrange() {
-    this._layout = {};
+    this._layout.quick    = {};
+    this._layout.bag      = {};
+    // Mantém equipados
+    const equipped = this._layout.equipped ?? {};
+
     const items = [...this.actor.items.contents]
-      .filter(i => !TIPOS_EXCLUIDOS.has(i.type))
+      .filter(i => !TIPOS_EXCLUIDOS.has(i.type) && !equipped[i.id])
       .sort((a, b) => {
         const sa = _getItemSize(a), sb = _getItemSize(b);
         return (sb.w * sb.h) - (sa.w * sa.h);
       });
+
     for (const item of items) {
+      const sz = _getItemSize(item);
+      // Itens pequenos (1×1 ou 1×2) → tentar quick primeiro
+      const tryQuick = (sz.w * sz.h) <= 2;
       let placed = false;
-      for (const rotated of [false, true]) {
-        if (placed) break;
-        for (let r = 0; r < this._gridRows && !placed; r++) {
-          for (let c = 0; c < GRID_COLS && !placed; c++) {
-            if (this._canPlace(item.id, r, c, rotated)) {
-              this._layout[item.id] = { row: r, col: c, rotated };
-              placed = true;
+
+      if (tryQuick) {
+        for (const rotated of [false, true]) {
+          if (placed) break;
+          for (let r = 0; r < QUICK_ROWS && !placed; r++) {
+            for (let c = 0; c < QUICK_COLS && !placed; c++) {
+              if (this._canPlace("quick", item.id, r, c, rotated)) {
+                this._layout.quick[item.id] = { row: r, col: c, rotated };
+                placed = true;
+              }
+            }
+          }
+        }
+      }
+
+      if (!placed) {
+        for (const rotated of [false, true]) {
+          if (placed) break;
+          for (let r = 0; r < this._gridRows && !placed; r++) {
+            for (let c = 0; c < GRID_COLS && !placed; c++) {
+              if (this._canPlace("bag", item.id, r, c, rotated)) {
+                this._layout.bag[item.id] = { row: r, col: c, rotated };
+                placed = true;
+              }
             }
           }
         }
@@ -438,10 +719,16 @@ export class DDPInventoryDialog extends Application {
   // ── Salva nas flags do ator ───────────────────────────
   async _saveLayout() {
     const validIds = new Set(this.actor.items.map(i => i.id));
-    for (const id of Object.keys(this._layout)) {
-      if (!validIds.has(id)) delete this._layout[id];
+    for (const zone of ["quick", "bag", "equipped"]) {
+      for (const id of Object.keys(this._layout[zone] ?? {})) {
+        if (!validIds.has(id)) delete this._layout[zone][id];
+      }
     }
-    await this.actor.setFlag(MODULE_ID, "inventario", foundry.utils.deepClone(this._layout));
+    await this.actor.setFlag(MODULE_ID, "inventario", {
+      quick:    foundry.utils.deepClone(this._layout.quick),
+      bag:      foundry.utils.deepClone(this._layout.bag),
+      equipped: foundry.utils.deepClone(this._layout.equipped)
+    });
   }
 
   // ── Abre (previne duplicatas) ─────────────────────────
@@ -474,38 +761,65 @@ Hooks.once("ready", () => {
 // ─── Painel compacto na ficha do personagem ───────────────
 Hooks.on("renderActorSheet", (sheet, html) => {
   if (sheet.actor?.type !== "character") return;
-  const actor = sheet.actor;
+  const actor   = sheet.actor;
   const canEdit = actor.isOwner || game.user.isGM;
   if (!canEdit) return;
 
-  // Calcula dados resumidos
-  const rows     = _calcGridRows(actor);
-  const total    = rows * GRID_COLS;
-  const layout   = actor.flags?.[MODULE_ID]?.inventario ?? {};
-  const allItems = actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
-  let usedSlots  = 0;
-  for (const [itemId, pos] of Object.entries(layout)) {
+  const bagRows    = _calcGridRows(actor);
+  const str        = actor.system?.characteristics?.str?.value ?? 40;
+  const rawLayout  = actor.flags?.[MODULE_ID]?.inventario ?? {};
+  const layout     = _migrateLayout(rawLayout);
+  const allItems   = actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
+
+  // Conta slots usados
+  let quickUsed = 0;
+  let bagUsed   = 0;
+  for (const [itemId, pos] of Object.entries(layout.quick ?? {})) {
     const item = actor.items.get(itemId);
     if (!item) continue;
     const sz = _getItemSize(item);
     const w  = pos.rotated ? sz.h : sz.w;
     const h  = pos.rotated ? sz.w : sz.h;
-    usedSlots += w * h;
+    quickUsed += w * h;
   }
-  const freeSlots   = total - usedSlots;
-  const pct         = total > 0 ? Math.round((usedSlots / total) * 100) : 0;
-  const barCor      = pct < 60 ? "#44cc44" : pct < 85 ? "#ffaa00" : "#dd2222";
-  const alocados    = Object.keys(layout).filter(id => actor.items.get(id)).length;
-  const naoAlocados = allItems.length - alocados;
-  const str         = actor.system?.characteristics?.str?.value ?? 40;
+  for (const [itemId, pos] of Object.entries(layout.bag ?? {})) {
+    const item = actor.items.get(itemId);
+    if (!item) continue;
+    const sz = _getItemSize(item);
+    const w  = pos.rotated ? sz.h : sz.w;
+    const h  = pos.rotated ? sz.w : sz.h;
+    bagUsed += w * h;
+  }
+
+  const equippedCount = Object.keys(layout.equipped ?? {}).filter(id => actor.items.get(id)).length;
+  const quickTotal    = QUICK_COLS * QUICK_ROWS;
+  const bagTotal      = GRID_COLS * bagRows;
+  const totalSlots    = quickTotal + bagTotal;
+  const usedSlots     = quickUsed + bagUsed;
+  const freeSlots     = totalSlots - usedSlots;
+  const pct           = totalSlots > 0 ? Math.round((usedSlots / totalSlots) * 100) : 0;
+  const barCor        = pct < 60 ? "#44cc44" : pct < 85 ? "#ffaa00" : "#dd2222";
+
+  const allocatedIds  = new Set([
+    ...Object.keys(layout.quick ?? {}),
+    ...Object.keys(layout.bag   ?? {}),
+    ...Object.keys(layout.equipped ?? {})
+  ]);
+  const naoAlocados = allItems.filter(i => !allocatedIds.has(i.id)).length;
+
+  const equippedList = Object.keys(layout.equipped ?? {})
+    .map(id => actor.items.get(id))
+    .filter(Boolean)
+    .map(i => i.name)
+    .join(", ");
 
   const panelHtml = `
     <div id="ddp-inv-panel-${actor.id}" class="ddp-inv-sheet-panel">
       <div class="ddp-inv-sheet-header">
         <i class="fas fa-backpack"></i>
         <span class="ddp-inv-sheet-title">INVENTÁRIO</span>
-        <span class="ddp-inv-sheet-cap" title="FOR ${str} ÷ 4 = ${rows} linhas · ${total} slots">
-          ${usedSlots}/${total} slots
+        <span class="ddp-inv-sheet-cap" title="FOR ${str} ÷ 10 (arredondado) = ${bagRows} linhas · ${totalSlots} slots">
+          ${usedSlots}/${totalSlots} slots
         </span>
         <button class="ddp-inv-sheet-btn" data-actor-id="${actor.id}" title="Abrir inventário">
           <i class="fas fa-boxes"></i> Abrir
@@ -515,7 +829,9 @@ Hooks.on("renderActorSheet", (sheet, html) => {
         <div class="ddp-inv-sheet-bar-fill" style="width:${pct}%; background:${barCor};"></div>
       </div>
       <div class="ddp-inv-sheet-stats">
-        <span><i class="fas fa-cubes"></i> ${alocados} alocados</span>
+        ${equippedCount > 0 ? `<span title="${equippedList}"><i class="fas fa-shield-alt"></i> Equipados: ${equippedCount}</span>` : ""}
+        <span><i class="fas fa-bolt"></i> Rápido: ${quickUsed}/${quickTotal}</span>
+        <span><i class="fas fa-backpack"></i> Mochila: ${bagUsed}/${bagTotal}</span>
         ${naoAlocados > 0 ? `<span style="color:#ffaa44;"><i class="fas fa-exclamation-triangle"></i> ${naoAlocados} soltos</span>` : ""}
         <span style="color:#666;">${freeSlots} livres</span>
       </div>
@@ -524,7 +840,6 @@ Hooks.on("renderActorSheet", (sheet, html) => {
 
   html.find(`#ddp-inv-panel-${actor.id}`).remove();
 
-  // Injeta abaixo do painel Aurora (ou no topo da aba principal)
   const alvo = (() => {
     for (const sel of [
       '.tab[data-tab="main"]',
@@ -539,7 +854,6 @@ Hooks.on("renderActorSheet", (sheet, html) => {
   })();
   alvo.append(panelHtml);
 
-  // Botão abre o inventário
   html.find(`.ddp-inv-sheet-btn[data-actor-id="${actor.id}"]`).on("click", (e) => {
     e.preventDefault();
     DDPInventoryDialog.open(actor.id);
