@@ -2,3 +2,5 @@ module.zip
 *.zip
 .DS_Store
 Thumbs.db
+debaixo-da-pele
+node_modules/
