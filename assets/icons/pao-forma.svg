@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="8" y="22" width="48" height="34" rx="6" fill="#f0d080"/>
+  <ellipse cx="32" cy="22" rx="24" ry="10" fill="#e8c870"/>
+  <rect x="12" y="30" width="40" height="22" rx="4" fill="#e8c060"/>
+  <line x1="29" y1="22" x2="29" y2="56" stroke="#d4a840" stroke-width="2" opacity="0.5"/>
+  <text x="32" y="48" text-anchor="middle" font-size="6" fill="#a07020" font-family="sans-serif">2 fatias</text>
+</svg>

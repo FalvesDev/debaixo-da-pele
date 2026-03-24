@@ -644,30 +644,130 @@
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/barra-energia.svg",
     "system": {
-      "description": { "value": "<p>Barra de cereais. Remove penalidade de fome por 6h. Sem comer 12h+: −10% todas as perícias.</p>" },
+      "description": { "value": "<p>Barra de cereais energética. Rápida e prática. Remove penalidade de fome por 6h. Sem comer 12h+: −10% em todas as perícias.</p>" },
       "quantity": 1, "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Remove penalidade de fome por 6h." } }
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Remove penalidade de fome por 6h.", "fome": 35, "sede": 0 } }
   },
   {
     "name": "Garrafa de Água (500ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/garrafa-agua.svg",
     "system": {
-      "description": { "value": "<p>Água potável. Necessária para recuperação natural de PV. Sem água 8h+: −10% físicas e mentais. Torneiras B2+: +0,1 Aurora por uso.</p>" },
+      "description": { "value": "<p>Água mineral potável. Necessária para recuperação natural de PV. Sem água 8h+: −10% físicas e mentais. Torneiras B2+: contaminadas (+0,1 Aurora por uso).</p>" },
       "quantity": 1, "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Necessária para cura natural. Torneiras B2+: contaminadas (+0,1 Aurora)." } }
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Necessária para cura natural. Torneiras B2+ contaminadas.", "fome": 0, "sede": 40 } }
+  },
+  {
+    "name": "Água Mineral Crystal (600ml)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/agua-mineral.svg",
+    "system": {
+      "description": { "value": "<p>Garrafa de 600ml de água mineral Crystal. Encontrada em máquinas de vending, copas e salas de reunião. Essencial para hidratação. Necessária para recuperação natural de PV (1/dia).</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Necessária para cura natural. Hidratação completa.", "fome": 0, "sede": 45 } }
+  },
+  {
+    "name": "Suco de Laranja Caixinha",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/suco-caixinha.svg",
+    "system": {
+      "description": { "value": "<p>Caixinha de suco de laranja 200ml. Açucarado e fácil de transportar. Alivia sede e repõe um pouco de energia. Copa executiva ou máquina de vending do complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Leve. Copa ou vending. Sedento + fome leve.", "fome": 10, "sede": 25 } }
+  },
+  {
+    "name": "Refrigerante Lata (350ml)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/refrigerante.svg",
+    "system": {
+      "description": { "value": "<p>Lata de refrigerante (cola). Alivia sede parcialmente — o açúcar aumenta a sede depois. Máquinas de vending do complexo. Contém cafeína: remove penalidade de fadiga por 1h.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "+15 sede agora, −5 depois (açúcar). Cafeína: remove fadiga por 1h.", "fome": 5, "sede": 15 } }
+  },
+  {
+    "name": "Chocolate Lacta (barra)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/chocolate.svg",
+    "system": {
+      "description": { "value": "<p>Barra de chocolate ao leite Lacta. Alta caloria, fácil de carregar. Não remove muita fome mas dá um boost de energia. Faz secar a boca. Encontrado em copas e gavetas de escritório.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+20 fome, −5 sede (açúcar seca boca). Calorias rápidas.", "fome": 20, "sede": -5 } }
+  },
+  {
+    "name": "Biscoito Recheado (pacote)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/biscoito-recheado.svg",
+    "system": {
+      "description": { "value": "<p>Pacote de biscoito recheado de chocolate. Doce e crocante. Disponível em máquinas de vending do complexo. Calórico mas aumenta a sede.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+15 fome, −5 sede. Vending machine.", "fome": 15, "sede": -5 } }
+  },
+  {
+    "name": "Amendoim Torrado (pacote)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/amendoim.svg",
+    "system": {
+      "description": { "value": "<p>Pacotinho de amendoim torrado e salgado. Proteína rápida. Salgado — aumenta a sede. Encontrado em gavetas de escritório ou copas do complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+20 fome, −10 sede (salgado). Proteína rápida.", "fome": 20, "sede": -10 } }
+  },
+  {
+    "name": "Café Solúvel (sachê)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/cafe-solavel.svg",
+    "system": {
+      "description": { "value": "<p>Sachê de café solúvel 3-em-1. Requer água quente (ou morna — funciona mas gosto horrível). Cafeína suprime fome por 2h. Remove penalidade de fadiga. Cozinha ou copa do complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Suprime fome por 2h. Remove fadiga. Requer água. Aumenta sede depois.", "fome": 15, "sede": 10 } }
+  },
+  {
+    "name": "Maçã",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/maca.svg",
+    "system": {
+      "description": { "value": "<p>Maçã fresca. Encontrada na fruteira da copa executiva ou em lanche deixado numa mesa. Natural e hidratante — repõe fome e sede simultaneamente. A melhor opção de suprimento no complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Melhor custo-benefício: fome + sede. Natural.", "fome": 20, "sede": 20 } }
+  },
+  {
+    "name": "Energético (lata 250ml)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/energetico.svg",
+    "system": {
+      "description": { "value": "<p>Lata de energético (Monster/Red Bull). Cafeína + taurina + açúcar. Suprime fome e fadiga por 3h. Após o efeito: −10% em todas ações por 1h (crash). Máquina de vending executiva, B1.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Suprime fome/fadiga 3h. Crash: −10% por 1h depois. Vending B1.", "fome": 10, "sede": 10 } }
+  },
+  {
+    "name": "Pão de Forma (2 fatias)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/pao-forma.svg",
+    "system": {
+      "description": { "value": "<p>Duas fatias de pão de forma embaladas. Simples mas calórico. Encontrado na cozinha do refeitório ou copa de B1. Um dos alimentos mais saciantes do complexo.</p>" },
+      "quantity": 1, "properties": {}
+    },
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+30 fome. Encontrado na cozinha B1.", "fome": 30, "sede": 0 } }
   },
   {
     "name": "Ração de Emergência (MRE)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/racao.svg",
     "system": {
-      "description": { "value": "<p>Ração militar compacta. Remove penalidade de fome por 12h (dobro da barra). Depósito de segurança ou sala de descanso B1.</p>" },
+      "description": { "value": "<p>Ração militar compacta. Remove penalidade de fome por 12h (mais completa que qualquer lanche). Depósito de segurança ou sala de descanso B1.</p>" },
       "quantity": 1, "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "12h fome (2x barra). Mais pesada. Encontrada em B1." } }
+    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "12h fome. +10 sede (vem com pacote de água). Encontrada em B1.", "fome": 60, "sede": 10 } }
   },
   {
     "name": "Álcool Isopropílico 70% (frasco)",

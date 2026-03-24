@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="14" y="12" width="36" height="44" rx="4" fill="#f5a623"/>
+  <rect x="14" y="12" width="36" height="8" rx="4" fill="#e8951f"/>
+  <rect x="18" y="24" width="28" height="18" rx="3" fill="#fff" opacity="0.3"/>
+  <text x="32" y="36" text-anchor="middle" font-size="8" fill="#fff" font-family="sans-serif" font-weight="bold">SUCO</text>
+  <text x="32" y="45" text-anchor="middle" font-size="6" fill="#fff" font-family="sans-serif">LARANJA</text>
+  <rect x="26" y="8" width="12" height="6" rx="3" fill="#ccc"/>
+</svg>
