@@ -7,19 +7,19 @@
     <div class="ddp-inv-actor-info">
       <span class="ddp-inv-actor-name">{{actorName}}</span>
       <span class="ddp-inv-counter">
-        {{alocados}}/{{totalItens}} itens
-        <span class="ddp-inv-cap-info" title="FOR {{strValue}} ÷ 4 = {{gridRows}} linhas{{#if bagBonus}} (+{{bagBonus}} mochila){{/if}}">
-          · {{usedSlots}}/{{totalSlots}} slots {{#if bagBonus}}<i class="fas fa-backpack"></i>{{/if}}
+        {{alocados}}/{{totalItens}} itens alocados
+        <span class="ddp-inv-cap-info" title="FOR {{strValue}} ÷ 10 (arredondado) = {{bagRows}} linhas{{#if bagBonus}} (+{{bagBonus}} mochila){{/if}}">
+          · {{usedSlots}}/{{totalSlots}} slots{{#if bagBonus}} <i class="fas fa-backpack"></i>{{/if}}
         </span>
       </span>
     </div>
     {{#if canEdit}}
     <div class="ddp-inv-btns">
       <button class="ddp-inv-btn-auto" title="Organizar automaticamente">
-        <i class="fas fa-magic"></i> Organizar
+        <i class="fas fa-magic"></i> Auto
       </button>
-      <button class="ddp-inv-btn-clear" title="Limpar grid">
-        <i class="fas fa-trash-alt"></i>
+      <button class="ddp-inv-btn-clear" title="Limpar tudo">
+        <i class="fas fa-trash-alt"></i> Limpar
       </button>
       <button class="ddp-inv-btn-save" title="Salvar layout">
         <i class="fas fa-save"></i> Salvar
@@ -28,41 +28,106 @@
     {{/if}}
   </div>
 
-  {{!-- Corpo: grid + painel lateral --}}
+  {{!-- Seção EQUIPADOS --}}
+  {{#if equippedItems}}
+  <div class="ddp-inv-equipped-section">
+    <div class="ddp-inv-section-label">
+      <i class="fas fa-shield-alt"></i> EQUIPADO
+      <span class="ddp-inv-hint">Botão direito para desequipar</span>
+    </div>
+    <div class="ddp-inv-equipped-list">
+      {{#each equippedItems}}
+      <div class="ddp-inv-equipped-item" data-item-id="{{id}}" title="{{name}} — Botão direito para desequipar">
+        <img src="{{img}}" />
+        <span class="ddp-inv-equipped-name">{{name}}</span>
+        <button class="ddp-inv-equipped-remove" title="Desequipar"><i class="fas fa-times"></i></button>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+
+  {{!-- Corpo: zonas de grid --}}
   <div class="ddp-inv-body">
 
-    {{!-- Grid principal (Mochila) --}}
-    <div class="ddp-inv-grid-wrap">
-      <div class="ddp-inv-section-label">
-        <i class="fas fa-backpack"></i> MOCHILA
-        <span class="ddp-inv-hint">Duplo-clique para girar · Botão direito para remover</span>
-      </div>
-      <div class="ddp-inv-grid"
-           style="width:{{gridWidth}}px; height:{{gridHeight}}px;">
+    {{!-- Zonas de grid lado a lado --}}
+    <div class="ddp-inv-zones">
 
-        {{!-- Células de fundo (drop targets) --}}
-        {{#each cells}}
-        <div class="ddp-inv-cell"
-             data-row="{{row}}"
-             data-col="{{col}}"
-             style="left:{{styleLeft}}px; top:{{styleTop}}px;"></div>
-        {{/each}}
-
-        {{!-- Itens posicionados --}}
-        {{#each placedItems}}
-        <div class="ddp-inv-placed-item {{#if rotated}}ddp-rotated{{/if}}"
-             data-item-id="{{id}}"
-             draggable="true"
-             title="{{name}} ({{sizeLabel}})"
-             style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
-          <img src="{{img}}" draggable="false" />
-          <div class="ddp-inv-item-name">{{name}}</div>
-          <div class="ddp-inv-item-size">{{sizeLabel}}</div>
-          <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
+      {{!-- Zona: Acesso Rápido --}}
+      <div class="ddp-inv-zone-quick">
+        <div class="ddp-inv-section-label">
+          <i class="fas fa-bolt"></i> ACESSO RÁPIDO
+          <span class="ddp-inv-hint">{{quickUsed}}/{{quickTotal}}</span>
         </div>
-        {{/each}}
+        <div class="ddp-inv-grid ddp-inv-grid-quick"
+             style="width:{{quickWidth}}px; height:{{quickHeight}}px;
+                    background-size: {{../CELL_PX}}px {{../CELL_PX}}px;">
 
+          {{!-- Células de fundo --}}
+          {{#each quickCells}}
+          <div class="ddp-inv-cell"
+               data-row="{{row}}"
+               data-col="{{col}}"
+               style="left:{{styleLeft}}px; top:{{styleTop}}px;"></div>
+          {{/each}}
+
+          {{!-- Itens posicionados --}}
+          {{#each quickItems}}
+          <div class="ddp-inv-placed-item {{#if rotated}}ddp-rotated{{/if}}"
+               data-item-id="{{id}}"
+               data-zone="quick"
+               draggable="true"
+               title="{{name}} ({{sizeLabel}})"
+               style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
+            <img src="{{img}}" draggable="false" />
+            <div class="ddp-inv-item-name">{{name}}</div>
+            <div class="ddp-inv-item-size">{{sizeLabel}}</div>
+            <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
+          </div>
+          {{/each}}
+
+        </div>
       </div>
+
+      {{!-- Separador vertical --}}
+      <div class="ddp-inv-zone-sep"></div>
+
+      {{!-- Zona: Mochila --}}
+      <div class="ddp-inv-zone-bag">
+        <div class="ddp-inv-section-label">
+          <i class="fas fa-backpack"></i> MOCHILA
+          <span class="ddp-inv-hint">{{bagUsed}}/{{bagTotal}} · Duplo-clique = girar · Dir. = menu</span>
+        </div>
+        <div class="ddp-inv-grid ddp-inv-grid-bag"
+             style="width:{{bagWidth}}px; height:{{bagHeight}}px;
+                    background-size: {{../CELL_PX}}px {{../CELL_PX}}px;">
+
+          {{!-- Células de fundo --}}
+          {{#each bagCells}}
+          <div class="ddp-inv-cell"
+               data-row="{{row}}"
+               data-col="{{col}}"
+               style="left:{{styleLeft}}px; top:{{styleTop}}px;"></div>
+          {{/each}}
+
+          {{!-- Itens posicionados --}}
+          {{#each bagItems}}
+          <div class="ddp-inv-placed-item {{#if rotated}}ddp-rotated{{/if}}"
+               data-item-id="{{id}}"
+               data-zone="bag"
+               draggable="true"
+               title="{{name}} ({{sizeLabel}})"
+               style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
+            <img src="{{img}}" draggable="false" />
+            <div class="ddp-inv-item-name">{{name}}</div>
+            <div class="ddp-inv-item-size">{{sizeLabel}}</div>
+            <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
+          </div>
+          {{/each}}
+
+        </div>
+      </div>
+
     </div>
 
     {{!-- Painel lateral: não alocados --}}
@@ -77,7 +142,7 @@
           <img src="{{img}}" />
           <div class="ddp-inv-unass-info">
             <span class="ddp-inv-unass-name">{{name}}</span>
-            <span class="ddp-inv-unass-size">{{sizeLabel}}</span>
+            <span class="ddp-inv-unass-size">{{sizeLabel}}{{#if isWearable}} <i class="fas fa-shield-alt" style="color:#88cc88;font-size:0.8em;" title="Equipável"></i>{{/if}}</span>
           </div>
         </div>
         {{else}}
@@ -90,7 +155,8 @@
       <div class="ddp-inv-legend">
         <div><i class="fas fa-arrows-alt"></i> Arrastar para mover</div>
         <div><i class="fas fa-sync-alt"></i> Duplo-clique = girar</div>
-        <div><i class="fas fa-times"></i> Botão direito = remover</div>
+        <div><i class="fas fa-mouse"></i> Dir. = menu</div>
+        <div><i class="fas fa-shield-alt"></i> Verde = equipável</div>
       </div>
     </div>
 

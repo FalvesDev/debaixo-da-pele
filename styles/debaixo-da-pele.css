@@ -2074,6 +2074,26 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   color: #666;
 }
 
+/* Mini barras (fome/sede) */
+.ddp-phud-bar-mini {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.ddp-phud-bar-mini:hover { opacity: 1; }
+.ddp-phud-lbl-mini {
+  font-size: 13px;
+  width: 22px;
+  text-align: center;
+}
+.ddp-phud-val-mini {
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: bold;
+  width: 28px;
+  text-align: right;
+}
+
 /* Barra crítica: pisca */
 .ddp-phud-crit .ddp-phud-bar-fill {
   animation: ddp-crit-flash 0.8s ease-in-out infinite;
@@ -2192,4 +2212,184 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
 .ddp-inv-sheet-stats i {
   color: #4466bb;
   margin-right: 2px;
+}
+
+/* ============================================================
+   INVENTÁRIO — Duas Zonas (Quick + Bag) + Equipados
+   CELL_PX = 70px
+   ============================================================ */
+
+/* ─── Atualiza tamanho de célula para 70px ──────────────── */
+.ddp-inv-grid {
+  background-size: 70px 70px !important;
+}
+
+.ddp-inv-cell {
+  width: 70px;
+  height: 70px;
+}
+
+/* ─── Seção de itens equipados ──────────────────────────── */
+.ddp-inv-equipped-section {
+  padding: 8px 10px 6px;
+  border-bottom: 1px solid #1e1e1e;
+  flex-shrink: 0;
+  background: #0a0a0a;
+}
+
+.ddp-inv-equipped-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.ddp-inv-equipped-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #0f1f0f 0%, #0a150a 100%);
+  border: 1px solid #2a5a2a;
+  border-radius: 4px;
+  cursor: default;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  max-width: 200px;
+}
+
+.ddp-inv-equipped-item:hover {
+  border-color: #3a8a3a;
+  box-shadow: 0 0 8px rgba(60, 160, 60, 0.3);
+}
+
+.ddp-inv-equipped-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 3px rgba(80, 200, 80, 0.4));
+}
+
+.ddp-inv-equipped-name {
+  font-size: 0.72em;
+  color: #8add8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.ddp-inv-equipped-remove {
+  all: unset;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.7em;
+  padding: 1px 3px;
+  border-radius: 2px;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ddp-inv-equipped-remove:hover {
+  color: #ff6666;
+  background: rgba(255, 80, 80, 0.12);
+}
+
+/* ─── Itens equipados no grid (borda verde) ─────────────── */
+.ddp-inv-placed-item.ddp-equipped {
+  border-color: #2a7a2a;
+  box-shadow: 0 0 8px rgba(60, 180, 60, 0.45);
+  background: linear-gradient(135deg, #0f1f0f 0%, #0a150a 100%);
+}
+
+/* ─── Container de zonas lado a lado ────────────────────── */
+.ddp-inv-body {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+}
+
+.ddp-inv-zones {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  padding: 10px 6px 10px 10px;
+  flex-shrink: 0;
+}
+
+/* ─── Zona rápida ───────────────────────────────────────── */
+.ddp-inv-zone-quick {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ddp-inv-zone-quick .ddp-inv-section-label {
+  color: #88aaff;
+}
+
+.ddp-inv-zone-quick .ddp-inv-section-label i {
+  color: #6688ff;
+}
+
+/* ─── Separador entre zonas ─────────────────────────────── */
+.ddp-inv-zone-sep {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #2a2a2a, transparent);
+  margin: 0 8px;
+  align-self: stretch;
+}
+
+/* ─── Zona mochila ──────────────────────────────────────── */
+.ddp-inv-zone-bag {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ddp-inv-zone-bag .ddp-inv-section-label {
+  color: #ccaa66;
+}
+
+.ddp-inv-zone-bag .ddp-inv-section-label i {
+  color: #cc8844;
+}
+
+/* ─── Grids individuais das zonas ───────────────────────── */
+.ddp-inv-grid-quick,
+.ddp-inv-grid-bag {
+  position: relative;
+  background: #060606;
+  border: 1px solid #2a2a2a;
+  border-radius: 2px;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 0 12px rgba(0,0,0,0.6);
+  background-image:
+    linear-gradient(to right, #1a1a1a 1px, transparent 1px),
+    linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.ddp-inv-grid-quick {
+  border-color: #1e2a3a;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 0 8px rgba(40, 80, 160, 0.2);
+}
+
+/* ─── Menu contextual (criado via JS) ───────────────────── */
+.ddp-context-menu {
+  user-select: none;
+}
+
+/* ─── Painel lateral atualizado ─────────────────────────── */
+.ddp-inv-unassigned {
+  width: 200px;
+  min-width: 200px;
+  background: #0c0c0c;
+  border-left: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8px;
+  gap: 8px;
+  overflow: hidden;
 }
