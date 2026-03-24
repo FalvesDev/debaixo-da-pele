@@ -4,829 +4,2148 @@
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/kit-pa-basico.svg",
     "system": {
-      "description": { "value": "<p>Kit básico com gazes, esparadrapo, antisséptico e tesoura. Sucesso em Primeiros Socorros: 1D3 HP. Sucesso extremo: 1D6 HP. Uso único por ferimento por personagem.</p>" },
-      "quantity": 3, "properties": {}
+      "description": {
+        "value": "<p>Kit básico com gazes, esparadrapo, antisséptico e tesoura. Sucesso em Primeiros Socorros: 1D3 HP. Sucesso extremo: 1D6 HP. Uso único por ferimento por personagem.</p>"
+      },
+      "quantity": 3,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 2, "usos": 3, "categoria": "medico", "notas": "1D3 HP (PA) / 1D6 HP (extremo). Não trata Aurora." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 2,
+        "usos": 3,
+        "categoria": "medico",
+        "notas": "1D3 HP (PA) / 1D6 HP (extremo). Não trata Aurora."
+      }
+    }
   },
   {
     "name": "Kit de Primeiros Socorros Avançado",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/kit-pa-avancado.svg",
     "system": {
-      "description": { "value": "<p>Kit profissional médico. Medicina (sucesso): 1D6 HP / extremo: 2D4 HP. Primeiros Socorros: 1D4+1 HP. Pode estancar hemorragia grave sem rolagem.</p>" },
-      "quantity": 5, "properties": {}
+      "description": {
+        "value": "<p>Kit profissional médico. Medicina (sucesso): 1D6 HP / extremo: 2D4 HP. Primeiros Socorros: 1D4+1 HP. Pode estancar hemorragia grave sem rolagem.</p>"
+      },
+      "quantity": 5,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 3, "usos": 5, "categoria": "medico", "notas": "Medicina: 1D6/2D4 HP. PA: 1D4+1 HP. Estanca hemorragia automaticamente." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "usos": 5,
+        "categoria": "medico",
+        "notas": "Medicina: 1D6/2D4 HP. PA: 1D4+1 HP. Estanca hemorragia automaticamente."
+      }
+    }
   },
   {
     "name": "Bandagem Hemostática",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/bandagem.svg",
     "system": {
-      "description": { "value": "<p>Bandagem especial que estanca hemorragias graves automaticamente, sem rolagem. Não recupera PV. Personagem com hemorragia perde 1 PV/rodada até estancar.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Bandagem especial que estanca hemorragias graves automaticamente, sem rolagem. Não recupera PV. Personagem com hemorragia perde 1 PV/rodada até estancar.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 1, "slots": 1, "usos": 1, "categoria": "medico", "notas": "Automático, sem rolagem. Remove Active Effect de hemorragia." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Automático, sem rolagem. Remove Active Effect de hemorragia."
+      }
+    }
   },
   {
     "name": "Atadura Elástica",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/atadura.svg",
     "system": {
-      "description": { "value": "<p>Atadura elástica para imobilização e enfaixamento. Estabiliza fraturas, comprime ferimentos. 3 usos por rolo. Não cura HP — previne piora.</p>" },
-      "quantity": 3, "properties": {}
+      "description": {
+        "value": "<p>Atadura elástica para imobilização e enfaixamento. Estabiliza fraturas, comprime ferimentos. 3 usos por rolo. Não cura HP — previne piora.</p>"
+      },
+      "quantity": 3,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 3, "categoria": "medico", "notas": "Imobilização de fraturas. 3 usos. Improviso: pode ser usada como corda curta." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 3,
+        "categoria": "medico",
+        "notas": "Imobilização de fraturas. 3 usos. Improviso: pode ser usada como corda curta."
+      }
+    }
   },
   {
     "name": "Antisséptico Povidine",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/antissetico.svg",
     "system": {
-      "description": { "value": "<p>Solução iodopovidona 10%. Limpeza e desinfecção de ferimentos abertos. 10 aplicações. Reduz chance de infecção em 50%. Essencial para ferimentos de garras/mordidas de Refinados.</p>" },
-      "quantity": 10, "properties": {}
+      "description": {
+        "value": "<p>Solução iodopovidona 10%. Limpeza e desinfecção de ferimentos abertos. 10 aplicações. Reduz chance de infecção em 50%. Essencial para ferimentos de garras/mordidas de Refinados.</p>"
+      },
+      "quantity": 10,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 10, "categoria": "medico", "notas": "−50% chance infecção. Crítico para ferimentos de Refinados (contaminação Aurora)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 10,
+        "categoria": "medico",
+        "notas": "−50% chance infecção. Crítico para ferimentos de Refinados (contaminação Aurora)."
+      }
+    }
   },
   {
     "name": "Morfina (Seringa)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/morfina.svg",
     "system": {
-      "description": { "value": "<p>Ampola pré-carregada de morfina. Elimina toda penalidade de dor por 6h. Inconsciente por dor: pode agir por 1D4 rodadas. Risco de dependência com uso repetido.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Ampola pré-carregada de morfina. Elimina toda penalidade de dor por 6h. Inconsciente por dor: pode agir por 1D4 rodadas. Risco de dependência com uso repetido.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "medico", "notas": "Dor: 6h. Overdose: 2 doses/dia → CON ou inconsciente 1D6h. Dependência: 2 sessões seguidas." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Dor: 6h. Overdose: 2 doses/dia → CON ou inconsciente 1D6h. Dependência: 2 sessões seguidas."
+      }
+    }
   },
   {
     "name": "Adrenalina (Seringa Auto-injetável)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/adrenalina.svg",
     "system": {
-      "description": { "value": "<p>Epinefrina auto-injetável. Inconsciente: age por 1 rodada. Consciente: +10% físicas por 2 rodadas, depois −10% por 1h. Não recupera PV.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Epinefrina auto-injetável. Inconsciente: age por 1 rodada. Consciente: +10% físicas por 2 rodadas, depois −10% por 1h. Não recupera PV.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "medico", "notas": "Não auto-aplicável se inconsciente. Crash: −10% por 1h após uso." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Não auto-aplicável se inconsciente. Crash: −10% por 1h após uso."
+      }
+    }
   },
   {
     "name": "Analgésico Forte — Codeína 30mg",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/codeina.svg",
     "system": {
-      "description": { "value": "<p>Cartela 6 comprimidos. Remove penalidade de dor (PV ≤ metade) por 4h. Máx. 2/dia sem risco. 3° comprimido: teste CON ou náusea (−20% extra).</p>" },
-      "quantity": 6, "properties": {}
+      "description": {
+        "value": "<p>Cartela 6 comprimidos. Remove penalidade de dor (PV ≤ metade) por 4h. Máx. 2/dia sem risco. 3° comprimido: teste CON ou náusea (−20% extra).</p>"
+      },
+      "quantity": 6,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 6, "categoria": "medico", "notas": "Receita médica necessária. 4h duração." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 6,
+        "categoria": "medico",
+        "notas": "Receita médica necessária. 4h duração."
+      }
+    }
   },
   {
     "name": "Tesoura Cirúrgica",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/tesoura-cirurgica.svg",
     "system": {
-      "description": { "value": "<p>Tesoura cirúrgica de inox de ponta reta. Usada para cortar bandagens, panos, suturas improvisadas. Como ferramenta: pode cortar fios e cabos finos. Parte do kit médico de Carolina.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Tesoura cirúrgica de inox de ponta reta. Usada para cortar bandagens, panos, suturas improvisadas. Como ferramenta: pode cortar fios e cabos finos. Parte do kit médico de Carolina.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "medico", "notas": "Corta fios e cabos finos. Imprescindível para cirurgias improvisadas." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "medico",
+        "notas": "Corta fios e cabos finos. Imprescindível para cirurgias improvisadas."
+      }
+    }
   },
   {
     "name": "Luvas Cirúrgicas Pack (10x)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/luvas-cirurgicas.svg",
     "system": {
-      "description": { "value": "<p>Pack 10 pares de luvas de látex descartáveis. Proteção biológica e química básica. −80% exposição Aurora por contato manual. Rasgam em combate corpo a corpo.</p>" },
-      "quantity": 10, "properties": {}
+      "description": {
+        "value": "<p>Pack 10 pares de luvas de látex descartáveis. Proteção biológica e química básica. −80% exposição Aurora por contato manual. Rasgam em combate corpo a corpo.</p>"
+      },
+      "quantity": 10,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 10, "categoria": "medico", "equipavel": true, "slotEquipado": 0, "notas": "Equipada: não ocupa slots. −80% Aurora por contato." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 10,
+        "categoria": "medico",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "notas": "Equipada: não ocupa slots. −80% Aurora por contato."
+      }
+    }
   },
   {
     "name": "Seringa Vazia (5ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/seringa-vazia.svg",
     "system": {
-      "description": { "value": "<p>Seringa estéril de 5ml. Coleta amostras do Composto Aurora. Fundamental para análise científica com Voss. Requer luvas para manuseio de Aurora.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Seringa estéril de 5ml. Coleta amostras do Composto Aurora. Fundamental para análise científica com Voss. Requer luvas para manuseio de Aurora.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "medico", "notas": "Coleta Aurora: requer luvas. Voss pode analisar a amostra." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Coleta Aurora: requer luvas. Voss pode analisar a amostra."
+      }
+    }
   },
   {
     "name": "Soro Fisiológico (250ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/soro.svg",
     "system": {
-      "description": { "value": "<p>Bolsa de soro fisiológico 0,9% NaCl. Hidratação IV ou lavagem de ferimentos. Com Kit Avançado: +1D3 HP extra em repouso de 8h. Encontrado em enfermaria B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Bolsa de soro fisiológico 0,9% NaCl. Hidratação IV ou lavagem de ferimentos. Com Kit Avançado: +1D3 HP extra em repouso de 8h. Encontrado em enfermaria B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "medico", "notas": "+1D3 HP extra (repouso 8h + Kit Avançado). Lavagem: −20% chance infecção." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "+1D3 HP extra (repouso 8h + Kit Avançado). Lavagem: −20% chance infecção."
+      }
+    }
   },
   {
     "name": "Composto Aurora (Amostra)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/aurora-amostra.svg",
     "system": {
-      "description": { "value": "<p>Amostra em seringa do Composto Aurora coletada nos labs. PERIGO: não quebrar. Quebra: +2 exposição Aurora imediata. Voss pode identificar concentração e possíveis antídotos.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Amostra em seringa do Composto Aurora coletada nos labs. PERIGO: não quebrar. Quebra: +2 exposição Aurora imediata. Voss pode identificar concentração e possíveis antídotos.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "amostra", "perigo": true, "notas": "PERIGO: quebra = +2 Aurora imediata. Voss pode analisar. Seringa de Voss: uso voluntário = risco alto." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "amostra",
+        "perigo": true,
+        "notas": "PERIGO: quebra = +2 Aurora imediata. Voss pode analisar. Seringa de Voss: uso voluntário = risco alto."
+      }
+    }
   },
   {
     "name": "Kit de Análise Química",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/kit-quimica.svg",
     "system": {
-      "description": { "value": "<p>Kit básico de análise química: reagentes, pipetas, tiras de pH, tubos de ensaio. Identificação de substâncias desconhecidas. Requer Química 40%+. Laboratório B2 tem versão completa.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Kit básico de análise química: reagentes, pipetas, tiras de pH, tubos de ensaio. Identificação de substâncias desconhecidas. Requer Química 40%+. Laboratório B2 tem versão completa.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 3, "categoria": "ciencia", "notas": "+15% Química/Biologia em análise de substâncias. Identifica Composto Aurora com sucesso." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "ciencia",
+        "notas": "+15% Química/Biologia em análise de substâncias. Identifica Composto Aurora com sucesso."
+      }
+    }
   },
   {
     "name": "Máscara Cirúrgica",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mascara-cirurgica.svg",
     "system": {
-      "description": { "value": "<p>Máscara descartável cirúrgica. B2: +0,5/h Aurora → +0,25/h. Sem efeito B3/B4. Satura após 4h. 0 slots quando equipada no rosto.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Máscara descartável cirúrgica. B2: +0,5/h Aurora → +0,25/h. Sem efeito B3/B4. Satura após 4h. 0 slots quando equipada no rosto.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "reducaoAurora": 0.25, "notas": "B2: −50% Aurora. Sem efeito B3+. Dura 4h." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.25,
+        "notas": "B2: −50% Aurora. Sem efeito B3+. Dura 4h."
+      }
+    }
   },
   {
     "name": "Respirador N95",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/respirador-n95.svg",
     "system": {
-      "description": { "value": "<p>Respirador N95 com válvula. B2: +0,5/h → +0,1/h Aurora. B3: +1/h → +0,4/h. Eficaz por 8h contínuas. 0 slots equipado.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Respirador N95 com válvula. B2: +0,5/h → +0,1/h Aurora. B3: +1/h → +0,4/h. Eficaz por 8h contínuas. 0 slots equipado.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "reducaoAurora": 0.6, "notas": "B2: −80% | B3: −60%. Dura 8h." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.6,
+        "notas": "B2: −80% | B3: −60%. Dura 8h."
+      }
+    }
   },
   {
     "name": "Máscara de Gás Civil",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mascara-gas-civil.svg",
     "system": {
-      "description": { "value": "<p>Máscara de gás civil com filtro combinado. B2: zera Aurora. B3: +0,25/h. B4: +0,5/h. Filtro dura ~24h. −5% Percepção (visão lateral). 0 slots equipada.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Máscara de gás civil com filtro combinado. B2: zera Aurora. B3: +0,25/h. B4: +0,5/h. Filtro dura ~24h. −5% Percepção (visão lateral). 0 slots equipada.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 2, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "reducaoAurora": 0.5, "notas": "B2: 0 Aurora | B3: −75% | B4: −50%. Filtro 24h. −5% Percepção." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.5,
+        "notas": "B2: 0 Aurora | B3: −75% | B4: −50%. Filtro 24h. −5% Percepção."
+      }
+    }
   },
   {
     "name": "Máscara de Gás Especial (Lab)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mascara-gas-especial.svg",
     "system": {
-      "description": { "value": "<p>Máscara laboratorial HEPA triplo. ZERA exposição Aurora em qualquer andar. ÚNICA no complexo — armário de emergência B2. Sem penalidade de Percepção.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Máscara laboratorial HEPA triplo. ZERA exposição Aurora em qualquer andar. ÚNICA no complexo — armário de emergência B2. Sem penalidade de Percepção.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 2, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "reducaoAurora": 1.0, "notas": "ÚNICO no complexo. Aurora = 0 em qualquer andar. Sem penalidade." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 1,
+        "notas": "ÚNICO no complexo. Aurora = 0 em qualquer andar. Sem penalidade."
+      }
+    }
   },
   {
     "name": "Colete à Prova de Bala (Nível II)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/colete.svg",
     "system": {
-      "description": { "value": "<p>Colete balístico civil nível II. −1 ponto de dano de projéteis. Penalidade: −10% DEX quando vestido. Encontrado na sala de segurança B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Colete balístico civil nível II. −1 ponto de dano de projéteis. Penalidade: −10% DEX quando vestido. Encontrado na sala de segurança B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 3, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "armadura": 1, "notas": "Vestido: −1 dano projéteis. −10% DEX quando vestido. Não protege contra garras de Refinados." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "armadura": 1,
+        "notas": "Vestido: −1 dano projéteis. −10% DEX quando vestido. Não protege contra garras de Refinados."
+      }
+    }
   },
   {
     "name": "Capacete de Segurança",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/capacete.svg",
     "system": {
-      "description": { "value": "<p>Capacete industrial ABS. 1 ponto de armadura (cabeça). Reduz dano de objetos caindo. Equipado: 0 slots.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Capacete industrial ABS. 1 ponto de armadura (cabeça). Reduz dano de objetos caindo. Equipado: 0 slots.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 2, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "armadura": 1, "notas": "Armadura apenas cabeça. Reduz dano de queda em 2 pontos." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "armadura": 1,
+        "notas": "Armadura apenas cabeça. Reduz dano de queda em 2 pontos."
+      }
+    }
   },
   {
     "name": "Traje Hazmat Completo",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/hazmat.svg",
     "system": {
-      "description": { "value": "<p>Traje proteção química nível B. Máscara integrada, luvas e capuz selado. −95% Aurora. −20% DEX/AGI enquanto vestido. Dura 8h. Encontrado em sala de equipamentos B2.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Traje proteção química nível B. Máscara integrada, luvas e capuz selado. −95% Aurora. −20% DEX/AGI enquanto vestido. Dura 8h. Encontrado em sala de equipamentos B2.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 4, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "reducaoAurora": 0.95, "notas": "−95% Aurora. −20% DEX e AGI. Dura 8h. Sala equipamentos B2." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "reducaoAurora": 0.95,
+        "notas": "−95% Aurora. −20% DEX e AGI. Dura 8h. Sala equipamentos B2."
+      }
+    }
   },
   {
     "name": "Óculos de Proteção",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/oculos-protecao.svg",
     "system": {
-      "description": { "value": "<p>Óculos policarbonato. Proteção contra respingos químicos e biológicos. Com Respirador N95: conjunto equivale a máscara de gás civil para efeito de Aurora.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Óculos policarbonato. Proteção contra respingos químicos e biológicos. Com Respirador N95: conjunto equivale a máscara de gás civil para efeito de Aurora.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "notas": "Com N95: −60% Aurora (combo). Proteção ocular contra fluidos." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "notas": "Com N95: −60% Aurora (combo). Proteção ocular contra fluidos."
+      }
+    }
   },
   {
     "name": "Luvas de Couro Grossas",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/luvas-couro.svg",
     "system": {
-      "description": { "value": "<p>Luvas de couro espesso. Proteção contra vidro, farpas e superfícies cortantes. −1 dano de corte nas mãos. Parte do kit técnico de Antônio.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Luvas de couro espesso. Proteção contra vidro, farpas e superfícies cortantes. −1 dano de corte nas mãos. Parte do kit técnico de Antônio.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "protecao", "equipavel": true, "slotEquipado": 0, "notas": "−1 dano corte nas mãos. −5% em testes de delicadeza manual enquanto equipada." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "protecao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "notas": "−1 dano corte nas mãos. −5% em testes de delicadeza manual enquanto equipada."
+      }
+    }
   },
   {
     "name": "Lanterna (LED)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/lanterna.svg",
     "system": {
-      "description": { "value": "<p>Lanterna tática LED de mão. Cone de 10m. Ocupa 1 mão em uso. Requer pilhas AA (8h). Sem luz nos subsolos: −40% perícias visuais, −60% em combate.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Lanterna tática LED de mão. Cone de 10m. Ocupa 1 mão em uso. Requer pilhas AA (8h). Sem luz nos subsolos: −40% perícias visuais, −60% em combate.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 2, "categoria": "iluminacao", "notas": "10m cone. Ocupa 1 mão. Requer AA. Sem luz: −40% perícias visuais." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "iluminacao",
+        "notas": "10m cone. Ocupa 1 mão. Requer AA. Sem luz: −40% perícias visuais."
+      }
+    }
   },
   {
     "name": "Lanterna Tática (Resistente)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/lanterna-tatica.svg",
     "system": {
-      "description": { "value": "<p>Lanterna tática de alta resistência. 20m de iluminação, resistente a impactos. 6–8h de duração. Encontrada na sala de segurança ou com seguranças do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Lanterna tática de alta resistência. 20m de iluminação, resistente a impactos. 6–8h de duração. Encontrada na sala de segurança ou com seguranças do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 2, "categoria": "iluminacao", "notas": "20m cone. Mais resistente. Usada pelo pessoal de segurança da Elara." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "iluminacao",
+        "notas": "20m cone. Mais resistente. Usada pelo pessoal de segurança da Elara."
+      }
+    }
   },
   {
     "name": "Lanterna de Cabeça",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/lanterna-cabeca.svg",
     "system": {
-      "description": { "value": "<p>Lanterna de cabeça por elástico. Mãos livres. 8m de iluminação. 10h com pilhas AA. 0 slots quando equipada na cabeça.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Lanterna de cabeça por elástico. Mãos livres. 8m de iluminação. 10h com pilhas AA. 0 slots quando equipada na cabeça.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "categoria": "iluminacao", "equipavel": true, "slotEquipado": 0, "notas": "Equipada: 0 slots. Mãos livres. 8m. 10h duração." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "categoria": "iluminacao",
+        "equipavel": true,
+        "slotEquipado": 0,
+        "notas": "Equipada: 0 slots. Mãos livres. 8m. 10h duração."
+      }
+    }
   },
   {
     "name": "Isqueiro",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/isqueiro.svg",
     "system": {
-      "description": { "value": "<p>Isqueiro descartável. Luz emergência (1m). ~3000 acendidas. CUIDADO em ambientes com vazamento de gás (B3/B4).</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Isqueiro descartável. Luz emergência (1m). ~3000 acendidas. CUIDADO em ambientes com vazamento de gás (B3/B4).</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "suprimento", "notas": "1m luz emergência. Fogo para incendiar materiais. PERIGO em B3/B4." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "suprimento",
+        "notas": "1m luz emergência. Fogo para incendiar materiais. PERIGO em B3/B4."
+      }
+    }
   },
   {
     "name": "Pilhas AA (pack 4)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/pilhas.svg",
     "system": {
-      "description": { "value": "<p>Pack 4 pilhas AA alcalinas. Carrega: lanterna de mão (8h), lanterna de cabeça (10h), walkie-talkie (6h). Sem pilhas = lanterna apagada.</p>" },
-      "quantity": 4, "properties": {}
+      "description": {
+        "value": "<p>Pack 4 pilhas AA alcalinas. Carrega: lanterna de mão (8h), lanterna de cabeça (10h), walkie-talkie (6h). Sem pilhas = lanterna apagada.</p>"
+      },
+      "quantity": 4,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "suprimento", "notas": "Carrega: lanterna (8h) / cabeça (10h) / walkie (6h)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "suprimento",
+        "notas": "Carrega: lanterna (8h) / cabeça (10h) / walkie (6h)."
+      }
+    }
   },
   {
     "name": "Bateria 9V (2x)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/bateria-9v.svg",
     "system": {
-      "description": { "value": "<p>Par baterias 9V. Para câmeras, detectores e o Dremel. Podem ser combinadas para improviso elétrico.</p>" },
-      "quantity": 2, "properties": {}
+      "description": {
+        "value": "<p>Par baterias 9V. Para câmeras, detectores e o Dremel. Podem ser combinadas para improviso elétrico.</p>"
+      },
+      "quantity": 2,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "suprimento", "notas": "Câmeras, detectores, Dremel. Improviso: criar faísca elétrica." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "suprimento",
+        "notas": "Câmeras, detectores, Dremel. Improviso: criar faísca elétrica."
+      }
+    }
   },
   {
     "name": "Lanterna de Emergência (Flare)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/flare.svg",
     "system": {
-      "description": { "value": "<p>Sinalizador emergência de 30 min. Iluminação intensa vermelha em raio 20m. ATENÇÃO: atrairá qualquer Refinado próximo para investigar.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Sinalizador emergência de 30 min. Iluminação intensa vermelha em raio 20m. ATENÇÃO: atrairá qualquer Refinado próximo para investigar.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "usos": 1, "categoria": "iluminacao", "notas": "30 min. 20m raio. ATRAI Refinados. Use como diversão ou sinalização externa." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "iluminacao",
+        "notas": "30 min. 20m raio. ATRAI Refinados. Use como diversão ou sinalização externa."
+      }
+    }
   },
   {
     "name": "Vela",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/vela.svg",
     "system": {
-      "description": { "value": "<p>Vela comum. 4–6h de luz fraca (2m). Encontrada em salas de descanso. Menos útil que lanterna mas funciona sem pilhas.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Vela comum. 4–6h de luz fraca (2m). Encontrada em salas de descanso. Menos útil que lanterna mas funciona sem pilhas.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "iluminacao", "notas": "2m de luz. 4–6h. Sem pilhas necessárias. Chama apaga com vento forte." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "iluminacao",
+        "notas": "2m de luz. 4–6h. Sem pilhas necessárias. Chama apaga com vento forte."
+      }
+    }
   },
   {
     "name": "Walkie-Talkie",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/walkie-talkie.svg",
     "system": {
-      "description": { "value": "<p>Rádio comunicador. ~500m interno, 2km externo. 8h bateria. Sinal: −20% clareza B3, −50% B4. Interceptável. Requer AA.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Rádio comunicador. ~500m interno, 2km externo. 8h bateria. Sinal: −20% clareza B3, −50% B4. Interceptável. Requer AA.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 2, "categoria": "comunicacao", "notas": "500m interno / 2km externo. B3: −20% | B4: −50% transmissão. Sem criptografia." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "comunicacao",
+        "notas": "500m interno / 2km externo. B3: −20% | B4: −50% transmissão. Sem criptografia."
+      }
+    }
   },
   {
     "name": "Celular Nokia",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/celular.svg",
     "system": {
-      "description": { "value": "<p>Nokia básico (2010). Sem sinal em qualquer subterrâneo. Câmera 2MP, SMS, ligações. Agenda de contatos pode ser útil no epílogo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Nokia básico (2010). Sem sinal em qualquer subterrâneo. Câmera 2MP, SMS, ligações. Agenda de contatos pode ser útil no epílogo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "comunicacao", "notas": "Sem sinal B1+. Fotos baixa qualidade. Agenda: contatos externos para o epílogo." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "comunicacao",
+        "notas": "Sem sinal B1+. Fotos baixa qualidade. Agenda: contatos externos para o epílogo."
+      }
+    }
   },
   {
     "name": "BlackBerry (Executivo)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/blackberry.svg",
     "system": {
-      "description": { "value": "<p>BlackBerry corporativo de Beatriz. E-mails corporativos, agenda, documentos em PDF. Sem sinal no subsolo. Contém histórico de comunicações com a holding anônima da Elara.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>BlackBerry corporativo de Beatriz. E-mails corporativos, agenda, documentos em PDF. Sem sinal no subsolo. Contém histórico de comunicações com a holding anônima da Elara.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "comunicacao", "notas": "PISTA: e-mails com holding anônima. Sem sinal B1+. +10% Persuasão corporativa." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "comunicacao",
+        "notas": "PISTA: e-mails com holding anônima. Sem sinal B1+. +10% Persuasão corporativa."
+      }
+    }
   },
   {
     "name": "Gravador de Voz Digital",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/gravador.svg",
     "system": {
-      "description": { "value": "<p>Gravador digital portátil. Capacidade 4h de áudio. Grava depoimentos, sons ambiente, descobertas. Pilha AAA. Evidência de áudio tem valor legal no epílogo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Gravador digital portátil. Capacidade 4h de áudio. Grava depoimentos, sons ambiente, descobertas. Pilha AAA. Evidência de áudio tem valor legal no epílogo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "comunicacao", "notas": "4h de áudio. Gravações = prova no epílogo. Pode gravar sons de Refinados para análise." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "comunicacao",
+        "notas": "4h de áudio. Gravações = prova no epílogo. Pode gravar sons de Refinados para análise."
+      }
+    }
   },
   {
     "name": "Notebook Dell Latitude",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/notebook.svg",
     "system": {
-      "description": { "value": "<p>Notebook corporativo com plantas do complexo (solo e B1 parcial). Bateria ~3h. Rede cabeada interna: se conectado a RJ45, acessa logs do complexo. Dossiê de aquisição da Elara.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Notebook corporativo com plantas do complexo (solo e B1 parcial). Bateria ~3h. Rede cabeada interna: se conectado a RJ45, acessa logs do complexo. Dossiê de aquisição da Elara.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 4, "categoria": "documento", "notas": "Plantas (solo+B1). Rede interna: logs do sistema. 3h bateria. 2,5kg." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "categoria": "documento",
+        "notas": "Plantas (solo+B1). Rede interna: logs do sistema. 3h bateria. 2,5kg."
+      }
+    }
   },
   {
     "name": "Câmera Digital Compacta (Canon IXUS)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/camera-compacta.svg",
     "system": {
-      "description": { "value": "<p>Câmera digital compacta 8MP Canon IXUS. Cartão 2GB (~1000 fotos). Parte do kit de documentação da empresa. Menor e mais discreta que a DSLR de Tiago.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Câmera digital compacta 8MP Canon IXUS. Cartão 2GB (~1000 fotos). Parte do kit de documentação da empresa. Menor e mais discreta que a DSLR de Tiago.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "documento", "notas": "8MP. Cartão 2GB. Fotos = evidência. Menos profissional que DSLR mas menor." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "documento",
+        "notas": "8MP. Cartão 2GB. Fotos = evidência. Menos profissional que DSLR mas menor."
+      }
+    }
   },
   {
     "name": "Câmera Fotográfica DSLR",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/camera-foto.svg",
     "system": {
-      "description": { "value": "<p>DSLR semi-profissional de Tiago. 12MP, flash embutido. Flash em B3+: teste Furtividade para não atrair Refinados. Bateria ~300 fotos.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>DSLR semi-profissional de Tiago. 12MP, flash embutido. Flash em B3+: teste Furtividade para não atrair Refinados. Bateria ~300 fotos.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 3, "categoria": "documento", "notas": "Fotos de alta qualidade = prova de peso. Flash atrairá atenção no escuro em B3+." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "documento",
+        "notas": "Fotos de alta qualidade = prova de peso. Flash atrairá atenção no escuro em B3+."
+      }
+    }
   },
   {
     "name": "Câmera de Vídeo",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/camera-video.svg",
     "system": {
-      "description": { "value": "<p>Câmera de vídeo digital mini-DV. Modo noturno P&B. Áudio embutido. 2h de gravação. Tiago a carrega — tende a ficar gravando em vez de fugindo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Câmera de vídeo digital mini-DV. Modo noturno P&B. Áudio embutido. 2h de gravação. Tiago a carrega — tende a ficar gravando em vez de fugindo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 3, "categoria": "documento", "notas": "Modo noturno (P&B com grão). Grava áudio. 2h bateria. Falha de Tiago: dissociação via câmera." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "documento",
+        "notas": "Modo noturno (P&B com grão). Grava áudio. 2h bateria. Falha de Tiago: dissociação via câmera."
+      }
+    }
   },
   {
     "name": "Pen Drive 4GB",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/pendrive.svg",
     "system": {
-      "description": { "value": "<p>Pen drive USB 4GB. Cópia de dados de terminais (teste Computadores). Documentos da Divisão Ômega, fotos, logs. Prova física portátil e facilmente escondida.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Pen drive USB 4GB. Cópia de dados de terminais (teste Computadores). Documentos da Divisão Ômega, fotos, logs. Prova física portátil e facilmente escondida.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "Cópia de dados = prova. Facilmente escondido. Copiar terminal: teste Computadores." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "Cópia de dados = prova. Facilmente escondido. Copiar terminal: teste Computadores."
+      }
+    }
   },
   {
     "name": "Pasta com Dossiê de Aquisição",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/pasta-documentos.svg",
     "system": {
-      "description": { "value": "<p>Pasta de couro com o contrato de aquisição da Nova Lumière impresso. Contém a cláusula suspeita das holdings anônimas que Beatriz notou e não reportou. Prova legal crucial.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Pasta de couro com o contrato de aquisição da Nova Lumière impresso. Contém a cláusula suspeita das holdings anônimas que Beatriz notou e não reportou. Prova legal crucial.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "documento", "notas": "PISTA: cláusula das holdings anônimas. Beatriz sabe do parágrafo. +10% Direito." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "documento",
+        "notas": "PISTA: cláusula das holdings anônimas. Beatriz sabe do parágrafo. +10% Direito."
+      }
+    }
   },
   {
     "name": "Cartão de Acesso — Nível 1 (Visitante)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/keycard-1.svg",
     "system": {
-      "description": { "value": "<p>Cartão de acesso eletrônico emitido para visitantes autorizados. Acesso: B1 geral, áreas administrativas. Não funciona em B2+.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Cartão de acesso eletrônico emitido para visitantes autorizados. Acesso: B1 geral, áreas administrativas. Não funciona em B2+.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "Acesso: B1 geral. Inútil em B2+." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "Acesso: B1 geral. Inútil em B2+."
+      }
+    }
   },
   {
     "name": "Cartão de Acesso — Nível 2 (Pesquisador)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/keycard-2.svg",
     "system": {
-      "description": { "value": "<p>Cartão de pesquisador da Divisão Ômega. Acesso B1 total + B2 labs restritos. Pertencia a um dos 12 pesquisadores que ficaram em 2009.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Cartão de pesquisador da Divisão Ômega. Acesso B1 total + B2 labs restritos. Pertencia a um dos 12 pesquisadores que ficaram em 2009.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "Acesso: B1 total, B2 labs. Inútil em B3." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "Acesso: B1 total, B2 labs. Inútil em B3."
+      }
+    }
   },
   {
     "name": "Cartão de Acesso — Nível 3 (Diretor)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/keycard-3.svg",
     "system": {
-      "description": { "value": "<p>Cartão do Dr. Castilho — autorização máxima. B1 a B3 irrestrito. B4 ainda requer código override 472391. Castilho o carregava na noite do Incidente.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Cartão do Dr. Castilho — autorização máxima. B1 a B3 irrestrito. B4 ainda requer código override 472391. Castilho o carregava na noite do Incidente.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "B1–B3 irrestrito. B4: código 472391 ainda necessário." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "B1–B3 irrestrito. B4: código 472391 ainda necessário."
+      }
+    }
   },
   {
     "name": "Crachá Nova Lumière",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/cracha.svg",
     "system": {
-      "description": { "value": "<p>Crachá de visitante da Nova Lumière Cosméticos com foto e nome. Acesso básico ao solo e guarita. Fornecido pela empresa para a vistoria.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Crachá de visitante da Nova Lumière Cosméticos com foto e nome. Acesso básico ao solo e guarita. Fornecido pela empresa para a vistoria.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "Acesso: solo e guarita. Marcos Heleno o reconhece." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "Acesso: solo e guarita. Marcos Heleno o reconhece."
+      }
+    }
   },
   {
     "name": "Chave Mestra (Galpão)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/chave-mestra.svg",
     "system": {
-      "description": { "value": "<p>Chave metálica mestra para portas mecânicas do Galpão e manutenção do solo. Pertencia a Marcos Heleno. Não funciona nas portas eletrônicas subterrâneas.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Chave metálica mestra para portas mecânicas do Galpão e manutenção do solo. Pertencia a Marcos Heleno. Não funciona nas portas eletrônicas subterrâneas.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "documento", "notas": "Portas mecânicas do Galpão. Inútil em B1+." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "documento",
+        "notas": "Portas mecânicas do Galpão. Inútil em B1+."
+      }
+    }
   },
   {
     "name": "Multitool (Leatherman)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/multitool.svg",
     "system": {
-      "description": { "value": "<p>Ferramenta multifuncional Leatherman com alicate, faca pequena, chave de fenda, abridor. O canivete suíço do engenheiro. +10% Reparar Elétrica/Mecânica com o kit técnico completo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Ferramenta multifuncional Leatherman com alicate, faca pequena, chave de fenda, abridor. O canivete suíço do engenheiro. +10% Reparar Elétrica/Mecânica com o kit técnico completo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "ferramenta", "notas": "Alicate, faca, chave, abridor. +10% Reparar quando com kit técnico. Arma improvisada: 1D4." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "Alicate, faca, chave, abridor. +10% Reparar quando com kit técnico. Arma improvisada: 1D4."
+      }
+    }
   },
   {
     "name": "Fita Isolante",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/fita-isolante.svg",
     "system": {
-      "description": { "value": "<p>Fita isolante elétrica PVC. Isola fios expostos, sela pequenas frestas. Menos forte que silver tape mas isolamento elétrico superior.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Fita isolante elétrica PVC. Isola fios expostos, sela pequenas frestas. Menos forte que silver tape mas isolamento elétrico superior.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "ferramenta", "notas": "Isola fios. Sela frestas pequenas. Combinada com silver tape: vedação aprimorada." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "ferramenta",
+        "notas": "Isola fios. Sela frestas pequenas. Combinada com silver tape: vedação aprimorada."
+      }
+    }
   },
   {
     "name": "Fita Silver Tape (rolo)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/fita-silver.svg",
     "system": {
-      "description": { "value": "<p>Fita adesiva de alumínio. Sela tubulações (−30% Aurora por fresta). Imobiliza ferimentos temporariamente. Força suficiente para segurar pessoa por curto tempo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Fita adesiva de alumínio. Sela tubulações (−30% Aurora por fresta). Imobiliza ferimentos temporariamente. Força suficiente para segurar pessoa por curto tempo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "ferramenta", "notas": "Sela frestas: −30% Aurora. Algema improvisada. Impermeável." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "Sela frestas: −30% Aurora. Algema improvisada. Impermeável."
+      }
+    }
   },
   {
     "name": "Chave Inglesa",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/chave-inglesa.svg",
     "system": {
-      "description": { "value": "<p>Chave inglesa ajustável 30cm. Ferramenta essencial para tubulações e estruturas. Arma improvisada: 1D6 dano. Antônio carrega uma.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Chave inglesa ajustável 30cm. Ferramenta essencial para tubulações e estruturas. Arma improvisada: 1D6 dano. Antônio carrega uma.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 2, "categoria": "ferramenta", "notas": "Arma: 1D6. +20% Mecânica/tubulações. Pode ser jogada como distração." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "ferramenta",
+        "notas": "Arma: 1D6. +20% Mecânica/tubulações. Pode ser jogada como distração."
+      }
+    }
   },
   {
     "name": "Kit Chave de Fenda",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/chave-fenda.svg",
     "system": {
-      "description": { "value": "<p>Set de chaves de fenda (fenda + Phillips) em estojo. Abre painéis elétricos, tampas de duto, caixas de equipamento. +15% Elétrica/Reparar.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Set de chaves de fenda (fenda + Phillips) em estojo. Abre painéis elétricos, tampas de duto, caixas de equipamento. +15% Elétrica/Reparar.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "categoria": "ferramenta", "notas": "+15% Elétrica/Reparar em painéis. Pode travar/destravar fechaduras simples." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "+15% Elétrica/Reparar em painéis. Pode travar/destravar fechaduras simples."
+      }
+    }
   },
   {
     "name": "Alicate Universal",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/alicate.svg",
     "system": {
-      "description": { "value": "<p>Alicate universal de inox. Corta fios, dobra metal, preensão. +10% Elétrica. Pode travar argolas e correntes.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Alicate universal de inox. Corta fios, dobra metal, preensão. +10% Elétrica. Pode travar argolas e correntes.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "categoria": "ferramenta", "notas": "+10% Elétrica. Corta fios finos. Parte do kit técnico de Antônio." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "+10% Elétrica. Corta fios finos. Parte do kit técnico de Antônio."
+      }
+    }
   },
   {
     "name": "Dremel (Miniretífica)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/dremel.svg",
     "system": {
-      "description": { "value": "<p>Miniretífica Dremel. Corta metal fino, abre fechaduras reforçadas. PISTA: DOC-13 menciona requisição de Dremel. Abre trava de B4 em 2D6 rodadas (BARULHENTO). Requer bateria 9V.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Miniretífica Dremel. Corta metal fino, abre fechaduras reforçadas. PISTA: DOC-13 menciona requisição de Dremel. Abre trava de B4 em 2D6 rodadas (BARULHENTO). Requer bateria 9V.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 2, "categoria": "ferramenta", "notas": "PISTA: DOC-13. Abre B4 em 2D6 rodadas — muito barulhento (atrai Refinados)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "ferramenta",
+        "notas": "PISTA: DOC-13. Abre B4 em 2D6 rodadas — muito barulhento (atrai Refinados)."
+      }
+    }
   },
   {
     "name": "Abraçadeiras de Nylon (x10)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/abraçadeiras.svg",
     "system": {
-      "description": { "value": "<p>10 zip ties de 30cm. Algema improvisada (FOR 60 para arrombar). Prender cabos, criar armadilha de tropeço.</p>" },
-      "quantity": 10, "properties": {}
+      "description": {
+        "value": "<p>10 zip ties de 30cm. Algema improvisada (FOR 60 para arrombar). Prender cabos, criar armadilha de tropeço.</p>"
+      },
+      "quantity": 10,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "ferramenta", "notas": "Algema: FOR 60 para arrombar. Armadilha tropeço: Percepção para detectar." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "ferramenta",
+        "notas": "Algema: FOR 60 para arrombar. Armadilha tropeço: Percepção para detectar."
+      }
+    }
   },
   {
     "name": "Kit de Arrombamento",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/lockpick.svg",
     "system": {
-      "description": { "value": "<p>Set de lockpicks. +20% em Fechaduras mecânicas. Ineficaz em fechaduras eletrônicas. Pertencia a pesquisador da Divisão Ômega. Encontrado em B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Set de lockpicks. +20% em Fechaduras mecânicas. Ineficaz em fechaduras eletrônicas. Pertencia a pesquisador da Divisão Ômega. Encontrado em B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "ferramenta", "notas": "+20% Fechaduras mecânicas. Inútil em fechaduras eletrônicas/código. Encontrado em B1." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "+20% Fechaduras mecânicas. Inútil em fechaduras eletrônicas/código. Encontrado em B1."
+      }
+    }
   },
   {
     "name": "Algemas (par)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/algemas.svg",
     "system": {
-      "description": { "value": "<p>Par de algemas metálicas padrão policial. Imobiliza humanos efetivamente. Contra Refinados: apenas FOR 80+ consegue arrombar. Parte do kit de segurança.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Par de algemas metálicas padrão policial. Imobiliza humanos efetivamente. Contra Refinados: apenas FOR 80+ consegue arrombar. Parte do kit de segurança.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "ferramenta", "notas": "Imobiliza humanos. Refinados: FOR 80+ para arrombar. Requer chave ou lockpick para abrir." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "Imobiliza humanos. Refinados: FOR 80+ para arrombar. Requer chave ou lockpick para abrir."
+      }
+    }
   },
   {
     "name": "Corda de Nylon 15m",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/corda.svg",
     "system": {
-      "description": { "value": "<p>Corda nylon trançado 15m. Suporta 300kg. Escaladas, amarrar, improvisações. Pode ser cortada com faca em 1D4 rodadas.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Corda nylon trançado 15m. Suporta 300kg. Escaladas, amarrar, improvisações. Pode ser cortada com faca em 1D4 rodadas.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 1, "slots": 3, "categoria": "ferramenta", "notas": "300kg. Escalada de poços de elevador. Cortável com faca (1D4 rodadas)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 3,
+        "categoria": "ferramenta",
+        "notas": "300kg. Escalada de poços de elevador. Cortável com faca (1D4 rodadas)."
+      }
+    }
   },
   {
     "name": "Corda de Nylon 10m",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/corda-10.svg",
     "system": {
-      "description": { "value": "<p>Corda fina nylon 10m. Suporta 150kg. Mais compacta. Sala de manutenção do Galpão.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Corda fina nylon 10m. Suporta 150kg. Mais compacta. Sala de manutenção do Galpão.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 1, "slots": 2, "categoria": "ferramenta", "notas": "150kg. Alternativa compacta para poços de elevador." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 2,
+        "categoria": "ferramenta",
+        "notas": "150kg. Alternativa compacta para poços de elevador."
+      }
+    }
   },
   {
     "name": "Mosquetão e Trava",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mosquetao.svg",
     "system": {
-      "description": { "value": "<p>Mosquetão metálico com trava de segurança. Ancoragem de corda para descidas controladas. Suporta 200kg.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Mosquetão metálico com trava de segurança. Ancoragem de corda para descidas controladas. Suporta 200kg.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "categoria": "ferramenta", "notas": "Ancoragem de corda. Sem ele, descidas na corda: −20% em testes de Atletismo." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "ferramenta",
+        "notas": "Ancoragem de corda. Sem ele, descidas na corda: −20% em testes de Atletismo."
+      }
+    }
   },
   {
     "name": "Fio de Metal / Arame",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/arame.svg",
     "system": {
-      "description": { "value": "<p>Rolo de arame de aço ~5m. Armadilha de tropeço (1D3 dano + queda). Trava manivelas e alavancas. Corredores de manutenção.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Rolo de arame de aço ~5m. Armadilha de tropeço (1D3 dano + queda). Trava manivelas e alavancas. Corredores de manutenção.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 1, "slots": 1, "categoria": "ferramenta", "notas": "Armadilha: 1D3 dano + AGI ou cai. Trava alavancas. Combine com silver tape." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "ferramenta",
+        "notas": "Armadilha: 1D3 dano + AGI ou cai. Trava alavancas. Combine com silver tape."
+      }
+    }
   },
   {
     "name": "Mochila 30L (Resistente)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mochila-20l.svg",
     "system": {
-      "description": { "value": "<p>Mochila resistente 30L. +3 linhas no grid de inventário quando equipada. Para carregar tudo sem penalidade de carga.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Mochila resistente 30L. +3 linhas no grid de inventário quando equipada. Para carregar tudo sem penalidade de carga.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 3, "categoria": "container", "linhasBonus": 3, "notas": "+3 linhas no grid quando equipada." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "container",
+        "linhasBonus": 3,
+        "notas": "+3 linhas no grid quando equipada."
+      }
+    }
   },
   {
     "name": "Mochila Tática 30L",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/mochila-tatica.svg",
     "system": {
-      "description": { "value": "<p>Mochila tática MOLLE 30L. Múltiplos compartimentos, resistente a cortes. +3 linhas no grid. Sala de segurança B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Mochila tática MOLLE 30L. Múltiplos compartimentos, resistente a cortes. +3 linhas no grid. Sala de segurança B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 2, "gridH": 2, "slots": 3, "categoria": "container", "linhasBonus": 3, "notas": "+3 linhas. Resistente a cortes. Sala segurança B1." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "container",
+        "linhasBonus": 3,
+        "notas": "+3 linhas. Resistente a cortes. Sala segurança B1."
+      }
+    }
   },
   {
     "name": "Bolsa de Campo",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/bolsa-campo.svg",
     "system": {
-      "description": { "value": "<p>Bolsa transversal / messenger bag. +1 linha no grid. Acesso rápido sem tirar das costas.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Bolsa transversal / messenger bag. +1 linha no grid. Acesso rápido sem tirar das costas.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 2, "slots": 1, "categoria": "container", "linhasBonus": 1, "notas": "+1 linha no grid. Acesso rápido." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "categoria": "container",
+        "linhasBonus": 1,
+        "notas": "+1 linha no grid. Acesso rápido."
+      }
+    }
   },
   {
     "name": "Biscoito Bauduco",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/biscoito.svg",
     "system": {
-      "description": { "value": "<p>Pacote de biscoito cream cracker Bauduco. Alimento rápido e prático. Remove penalidade de fome por 3h. Pouco calórico mas fácil de carregar. Encontrado em copas, salas de descanso e vending machines do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Pacote de biscoito cream cracker Bauduco. Alimento rápido e prático. Remove penalidade de fome por 3h. Pouco calórico mas fácil de carregar. Encontrado em copas, salas de descanso e vending machines do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Remove penalidade de fome por 3h. Calórico baixo — não substitui refeição completa.", "fome": 25, "sede": 0 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Remove penalidade de fome por 3h. Calórico baixo — não substitui refeição completa.",
+        "fome": 25,
+        "sede": 0
+      }
+    }
   },
   {
     "name": "Barra de Energia",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/barra-energia.svg",
     "system": {
-      "description": { "value": "<p>Barra de cereais energética. Rápida e prática. Remove penalidade de fome por 6h. Sem comer 12h+: −10% em todas as perícias.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Barra de cereais energética. Rápida e prática. Remove penalidade de fome por 6h. Sem comer 12h+: −10% em todas as perícias.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Remove penalidade de fome por 6h.", "fome": 35, "sede": 0 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Remove penalidade de fome por 6h.",
+        "fome": 35,
+        "sede": 0
+      }
+    }
   },
   {
     "name": "Garrafa de Água (500ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/garrafa-agua.svg",
     "system": {
-      "description": { "value": "<p>Água mineral potável. Necessária para recuperação natural de PV. Sem água 8h+: −10% físicas e mentais. Torneiras B2+: contaminadas (+0,1 Aurora por uso).</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Água mineral potável. Necessária para recuperação natural de PV. Sem água 8h+: −10% físicas e mentais. Torneiras B2+: contaminadas (+0,1 Aurora por uso).</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Necessária para cura natural. Torneiras B2+ contaminadas.", "fome": 0, "sede": 40 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Necessária para cura natural. Torneiras B2+ contaminadas.",
+        "fome": 0,
+        "sede": 40
+      }
+    }
   },
   {
     "name": "Água Mineral Crystal (600ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/agua-mineral.svg",
     "system": {
-      "description": { "value": "<p>Garrafa de 600ml de água mineral Crystal. Encontrada em máquinas de vending, copas e salas de reunião. Essencial para hidratação. Necessária para recuperação natural de PV (1/dia).</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Garrafa de 600ml de água mineral Crystal. Encontrada em máquinas de vending, copas e salas de reunião. Essencial para hidratação. Necessária para recuperação natural de PV (1/dia).</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Necessária para cura natural. Hidratação completa.", "fome": 0, "sede": 45 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Necessária para cura natural. Hidratação completa.",
+        "fome": 0,
+        "sede": 45
+      }
+    }
   },
   {
     "name": "Suco de Laranja Caixinha",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/suco-caixinha.svg",
     "system": {
-      "description": { "value": "<p>Caixinha de suco de laranja 200ml. Açucarado e fácil de transportar. Alivia sede e repõe um pouco de energia. Copa executiva ou máquina de vending do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Caixinha de suco de laranja 200ml. Açucarado e fácil de transportar. Alivia sede e repõe um pouco de energia. Copa executiva ou máquina de vending do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Leve. Copa ou vending. Sedento + fome leve.", "fome": 10, "sede": 25 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Leve. Copa ou vending. Sedento + fome leve.",
+        "fome": 10,
+        "sede": 25
+      }
+    }
   },
   {
     "name": "Refrigerante Lata (350ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/refrigerante.svg",
     "system": {
-      "description": { "value": "<p>Lata de refrigerante (cola). Alivia sede parcialmente — o açúcar aumenta a sede depois. Máquinas de vending do complexo. Contém cafeína: remove penalidade de fadiga por 1h.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Lata de refrigerante (cola). Alivia sede parcialmente — o açúcar aumenta a sede depois. Máquinas de vending do complexo. Contém cafeína: remove penalidade de fadiga por 1h.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "+15 sede agora, −5 depois (açúcar). Cafeína: remove fadiga por 1h.", "fome": 5, "sede": 15 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "+15 sede agora, −5 depois (açúcar). Cafeína: remove fadiga por 1h.",
+        "fome": 5,
+        "sede": 15
+      }
+    }
   },
   {
     "name": "Chocolate Lacta (barra)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/chocolate.svg",
     "system": {
-      "description": { "value": "<p>Barra de chocolate ao leite Lacta. Alta caloria, fácil de carregar. Não remove muita fome mas dá um boost de energia. Faz secar a boca. Encontrado em copas e gavetas de escritório.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Barra de chocolate ao leite Lacta. Alta caloria, fácil de carregar. Não remove muita fome mas dá um boost de energia. Faz secar a boca. Encontrado em copas e gavetas de escritório.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+20 fome, −5 sede (açúcar seca boca). Calorias rápidas.", "fome": 20, "sede": -5 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "+20 fome, −5 sede (açúcar seca boca). Calorias rápidas.",
+        "fome": 20,
+        "sede": -5
+      }
+    }
   },
   {
     "name": "Biscoito Recheado (pacote)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/biscoito-recheado.svg",
     "system": {
-      "description": { "value": "<p>Pacote de biscoito recheado de chocolate. Doce e crocante. Disponível em máquinas de vending do complexo. Calórico mas aumenta a sede.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Pacote de biscoito recheado de chocolate. Doce e crocante. Disponível em máquinas de vending do complexo. Calórico mas aumenta a sede.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+15 fome, −5 sede. Vending machine.", "fome": 15, "sede": -5 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "+15 fome, −5 sede. Vending machine.",
+        "fome": 15,
+        "sede": -5
+      }
+    }
   },
   {
     "name": "Amendoim Torrado (pacote)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/amendoim.svg",
     "system": {
-      "description": { "value": "<p>Pacotinho de amendoim torrado e salgado. Proteína rápida. Salgado — aumenta a sede. Encontrado em gavetas de escritório ou copas do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Pacotinho de amendoim torrado e salgado. Proteína rápida. Salgado — aumenta a sede. Encontrado em gavetas de escritório ou copas do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+20 fome, −10 sede (salgado). Proteína rápida.", "fome": 20, "sede": -10 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "+20 fome, −10 sede (salgado). Proteína rápida.",
+        "fome": 20,
+        "sede": -10
+      }
+    }
   },
   {
     "name": "Café Solúvel (sachê)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/cafe-solavel.svg",
     "system": {
-      "description": { "value": "<p>Sachê de café solúvel 3-em-1. Requer água quente (ou morna — funciona mas gosto horrível). Cafeína suprime fome por 2h. Remove penalidade de fadiga. Cozinha ou copa do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Sachê de café solúvel 3-em-1. Requer água quente (ou morna — funciona mas gosto horrível). Cafeína suprime fome por 2h. Remove penalidade de fadiga. Cozinha ou copa do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Suprime fome por 2h. Remove fadiga. Requer água. Aumenta sede depois.", "fome": 15, "sede": 10 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Suprime fome por 2h. Remove fadiga. Requer água. Aumenta sede depois.",
+        "fome": 15,
+        "sede": 10
+      }
+    }
   },
   {
     "name": "Maçã",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/maca.svg",
     "system": {
-      "description": { "value": "<p>Maçã fresca. Encontrada na fruteira da copa executiva ou em lanche deixado numa mesa. Natural e hidratante — repõe fome e sede simultaneamente. A melhor opção de suprimento no complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Maçã fresca. Encontrada na fruteira da copa executiva ou em lanche deixado numa mesa. Natural e hidratante — repõe fome e sede simultaneamente. A melhor opção de suprimento no complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "Melhor custo-benefício: fome + sede. Natural.", "fome": 20, "sede": 20 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Melhor custo-benefício: fome + sede. Natural.",
+        "fome": 20,
+        "sede": 20
+      }
+    }
   },
   {
     "name": "Energético (lata 250ml)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/energetico.svg",
     "system": {
-      "description": { "value": "<p>Lata de energético (Monster/Red Bull). Cafeína + taurina + açúcar. Suprime fome e fadiga por 3h. Após o efeito: −10% em todas ações por 1h (crash). Máquina de vending executiva, B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Lata de energético (Monster/Red Bull). Cafeína + taurina + açúcar. Suprime fome e fadiga por 3h. Após o efeito: −10% em todas ações por 1h (crash). Máquina de vending executiva, B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "Suprime fome/fadiga 3h. Crash: −10% por 1h depois. Vending B1.", "fome": 10, "sede": 10 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "Suprime fome/fadiga 3h. Crash: −10% por 1h depois. Vending B1.",
+        "fome": 10,
+        "sede": 10
+      }
+    }
   },
   {
     "name": "Pão de Forma (2 fatias)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/pao-forma.svg",
     "system": {
-      "description": { "value": "<p>Duas fatias de pão de forma embaladas. Simples mas calórico. Encontrado na cozinha do refeitório ou copa de B1. Um dos alimentos mais saciantes do complexo.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Duas fatias de pão de forma embaladas. Simples mas calórico. Encontrado na cozinha do refeitório ou copa de B1. Um dos alimentos mais saciantes do complexo.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 0.5, "usos": 1, "categoria": "suprimento", "notas": "+30 fome. Encontrado na cozinha B1.", "fome": 30, "sede": 0 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "+30 fome. Encontrado na cozinha B1.",
+        "fome": 30,
+        "sede": 0
+      }
+    }
   },
   {
     "name": "Ração de Emergência (MRE)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/racao.svg",
     "system": {
-      "description": { "value": "<p>Ração militar compacta. Remove penalidade de fome por 12h (mais completa que qualquer lanche). Depósito de segurança ou sala de descanso B1.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Ração militar compacta. Remove penalidade de fome por 12h (mais completa que qualquer lanche). Depósito de segurança ou sala de descanso B1.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 1, "categoria": "suprimento", "notas": "12h fome. +10 sede (vem com pacote de água). Encontrada em B1.", "fome": 60, "sede": 10 } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "suprimento",
+        "notas": "12h fome. +10 sede (vem com pacote de água). Encontrada em B1.",
+        "fome": 60,
+        "sede": 10
+      }
+    }
   },
   {
     "name": "Álcool Isopropílico 70% (frasco)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/alcool.svg",
     "system": {
-      "description": { "value": "<p>Frasco 100ml. Antisséptico. Esteriliza instrumentos. Fogo improvisado (isqueiro + álcool): 1D6 dano área pequena. CUIDADO em B3/B4.</p>" },
-      "quantity": 1, "properties": {}
+      "description": {
+        "value": "<p>Frasco 100ml. Antisséptico. Esteriliza instrumentos. Fogo improvisado (isqueiro + álcool): 1D6 dano área pequena. CUIDADO em B3/B4.</p>"
+      },
+      "quantity": 1,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "usos": 3, "categoria": "suprimento", "notas": "Antisséptico. Fogo improvisado: 1D6. PERIGO em B3/B4 (gases inflamáveis)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 3,
+        "categoria": "suprimento",
+        "notas": "Antisséptico. Fogo improvisado: 1D6. PERIGO em B3/B4 (gases inflamáveis)."
+      }
+    }
   },
   {
     "name": "Munição .38 Special (caixa 50)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/municao-38.svg",
     "system": {
-      "description": { "value": "<p>Caixa 50 cartuchos .38 Special. Para Revólver .38 Taurus. ~8 recargas completas.</p>" },
-      "quantity": 50, "properties": {}
+      "description": {
+        "value": "<p>Caixa 50 cartuchos .38 Special. Para Revólver .38 Taurus. ~8 recargas completas.</p>"
+      },
+      "quantity": 50,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "municao", "notas": "50 cart. / ~8 recargas do .38 Taurus." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "municao",
+        "notas": "50 cart. / ~8 recargas do .38 Taurus."
+      }
+    }
   },
   {
     "name": "Munição .357 Magnum (caixa 50)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/municao-357.svg",
     "system": {
-      "description": { "value": "<p>Caixa 50 cartuchos .357 Magnum. Para Revólver .357 Taurus. Munição mais potente e escassa no complexo.</p>" },
-      "quantity": 50, "properties": {}
+      "description": {
+        "value": "<p>Caixa 50 cartuchos .357 Magnum. Para Revólver .357 Taurus. Munição mais potente e escassa no complexo.</p>"
+      },
+      "quantity": 50,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "municao", "notas": "50 cart. Escassa no complexo. ~8 recargas do .357." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "municao",
+        "notas": "50 cart. Escassa no complexo. ~8 recargas do .357."
+      }
+    }
   },
   {
     "name": "Munição 9mm Parabellum (caixa 50)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/municao-9mm.svg",
     "system": {
-      "description": { "value": "<p>Caixa 50 cartuchos 9mm. Para PT92 e similares. ~3 pentes completos. A mais comum na sala de segurança.</p>" },
-      "quantity": 50, "properties": {}
+      "description": {
+        "value": "<p>Caixa 50 cartuchos 9mm. Para PT92 e similares. ~3 pentes completos. A mais comum na sala de segurança.</p>"
+      },
+      "quantity": 50,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "municao", "notas": "50 cart. / ~3 pentes do PT92. Mais comum na segurança." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "municao",
+        "notas": "50 cart. / ~3 pentes do PT92. Mais comum na segurança."
+      }
+    }
   },
   {
     "name": "Cartucho 12 calibre — chumbo (caixa 25)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/municao-12.svg",
     "system": {
-      "description": { "value": "<p>Caixa 25 cartuchos 12 gauge (perdigões). Para espingarda pump. ~4 recargas completas. Escassos — cada disparo conta.</p>" },
-      "quantity": 25, "properties": {}
+      "description": {
+        "value": "<p>Caixa 25 cartuchos 12 gauge (perdigões). Para espingarda pump. ~4 recargas completas. Escassos — cada disparo conta.</p>"
+      },
+      "quantity": 25,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "municao", "notas": "25 cart. / ~4 recargas. ESCASSO. Dano varia por distância (4D6/2D6/1D6)." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "municao",
+        "notas": "25 cart. / ~4 recargas. ESCASSO. Dano varia por distância (4D6/2D6/1D6)."
+      }
+    }
   },
   {
     "name": "Cartucho 12 calibre — slug (caixa 25)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/municao-12-slug.svg",
     "system": {
-      "description": { "value": "<p>Caixa 25 slugs (balas sólidas) calibre 12. Dano: 2D6+4 (único projétil, sem dispersão). Mais preciso mas perde área de efeito. Muito escasso.</p>" },
-      "quantity": 25, "properties": {}
+      "description": {
+        "value": "<p>Caixa 25 slugs (balas sólidas) calibre 12. Dano: 2D6+4 (único projétil, sem dispersão). Mais preciso mas perde área de efeito. Muito escasso.</p>"
+      },
+      "quantity": 25,
+      "properties": {}
     },
-    "flags": { "debaixo-da-pele": { "gridW": 1, "gridH": 1, "slots": 1, "categoria": "municao", "notas": "2D6+4 (projétil único). Mais preciso. Sem dispersão. Muito escasso." } }
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "municao",
+        "notas": "2D6+4 (projétil único). Mais preciso. Sem dispersão. Muito escasso."
+      }
+    }
+  },
+  {
+    "name": "Pé de Cabra",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/pe-de-cabra.svg",
+    "system": {
+      "description": {
+        "value": "<p>Ferramenta para arrombar portas e paletes. Dano improvisado: 1D6+DB. Serve como alavanca para mover objetos pesados.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.2,
+      "price": 45,
+      "notes": "Dano improvisado 1D6+DB. Abre portas trancadas (FOR oposta).",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "ferramenta",
+        "notas": "1D6+DB improviso"
+      }
+    }
+  },
+  {
+    "name": "Machado de Bombeiro",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/machado-bombeiro.svg",
+    "system": {
+      "description": {
+        "value": "<p>Machado pesado com cabo de fibra. Arrombamento de portas e cercas. Dano: 1D8+2+DB. Muito ruidoso.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 2.8,
+      "price": 120,
+      "notes": "Dano 1D8+2+DB. Ruidoso — atrairá atenção.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "ferramenta",
+        "notas": "1D8+2+DB. Ruído."
+      }
+    }
+  },
+  {
+    "name": "Desfibrilador Portátil (DEA)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/desfibrilador.svg",
+    "system": {
+      "description": {
+        "value": "<p>Dispositivo automático de ressuscitação. Estabiliza personagem em 0 HP com sucesso extremo em Medicina. Bateria para 3 usos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.5,
+      "price": 800,
+      "notes": "Estabiliza em 0 HP (Medicina extremo). 3 usos.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "usos": 3,
+        "categoria": "medico",
+        "notas": "Estabiliza 0HP. 3 usos."
+      }
+    }
+  },
+  {
+    "name": "Torniquete",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/torniquete.svg",
+    "system": {
+      "description": {
+        "value": "<p>Garrote hemostático de aplicação rápida. Para hemorragia em membros — suspende perda de HP por sangramento. Uso único por ferimento.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.15,
+      "price": 35,
+      "notes": "Para hemorragia em membro. Uso único.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "medico",
+        "notas": "Para hemorragia."
+      }
+    }
+  },
+  {
+    "name": "Antibiótico (Amoxicilina 500mg)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/antibiotico.svg",
+    "system": {
+      "description": {
+        "value": "<p>Cartela 14 comprimidos. Previne infecção em ferimentos abertos se administrado em até 6h. Sucesso em Medicina confirma eficácia.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.05,
+      "price": 18,
+      "notes": "Previne infecção. Administrar em até 6h. Uso 7 dias.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 7,
+        "categoria": "medico",
+        "notas": "Previne infecção. 7 doses."
+      }
+    }
+  },
+  {
+    "name": "Comprimido de Purificação de Água (x10)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/purificador-agua.svg",
+    "system": {
+      "description": {
+        "value": "<p>Tabletes de cloro para tratar até 10L de água contaminada. Aguardar 30 minutos. Não neutraliza Aurora.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.05,
+      "price": 8,
+      "notes": "Purifica 10L de água. 30min. Não neutraliza Aurora.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 10,
+        "categoria": "sobrevivencia",
+        "notas": "Purifica água."
+      }
+    }
+  },
+  {
+    "name": "Bússola Militar",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/bussola.svg",
+    "system": {
+      "description": {
+        "value": "<p>Bússola baseplate com espelho de sinalização. +20% em Navigate. Funciona sem bateria. Pode falhar em zonas de anomalia magnética Aurora.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.1,
+      "price": 55,
+      "notes": "+20% Navigate. Pode falhar em anomalias Aurora.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "navegacao",
+        "notas": "+20% Navigate."
+      }
+    }
+  },
+  {
+    "name": "GPS Portátil (Garmin)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/gps.svg",
+    "system": {
+      "description": {
+        "value": "<p>GPS com mapas da região. +40% em Navigate, precisão 5m. Bateria 12h. Bloqueável por jammers e anomalias Aurora.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.2,
+      "price": 350,
+      "notes": "+40% Navigate. 12h bateria. Bloqueável por jammers.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "navegacao",
+        "notas": "+40% Navigate."
+      }
+    }
+  },
+  {
+    "name": "Kit de Rappel",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-rappel.svg",
+    "system": {
+      "description": {
+        "value": "<p>Corda 30m, dois mosquetões, cadeirinha e descensor ATC. Descida segura até 30m. Teste de Climb necessário. Cap.: 150kg.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 3.5,
+      "price": 280,
+      "notes": "Descida segura 30m. Teste Climb necessário.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "categoria": "escalada",
+        "notas": "Descida 30m."
+      }
+    }
+  },
+  {
+    "name": "Dinamite (2 bastões)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/dinamite.svg",
+    "system": {
+      "description": {
+        "value": "<p>Dois bastões com espoleta. Demolição: abre alvenaria/concreto. Dano área: 3D10 raio 3m / 1D10 raio 6m. Muito ruidoso e instável.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.8,
+      "price": 0,
+      "notes": "3D10 raio 3m / 1D10 raio 6m. Item restrito.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 2,
+        "categoria": "explosivo",
+        "notas": "3D10 raio 3m."
+      }
+    }
+  },
+  {
+    "name": "Antídoto Aurora (Experimental)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/antidoto-aurora.svg",
+    "system": {
+      "description": {
+        "value": "<p>Composto experimental da Nova Lumière. Reduz Aurora em 1D3 pontos (60% sucesso). Falha crítica: +1 Aurora. Uso único. Item exclusivo.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.05,
+      "price": 0,
+      "notes": "Reduz Aurora 1D3. 60% chance. Falha crítica: +1 Aurora.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 1,
+        "categoria": "especial",
+        "notas": "Reduz Aurora 1D3."
+      }
+    }
+  },
+  {
+    "name": "Diário de Pesquisa (Dr. Vasquez)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/diario-pesquisa.svg",
+    "system": {
+      "description": {
+        "value": "<p>Caderno com anotações sobre experimentos Aurora. Coordenadas do Nível B2. Leitura completa: +1D6 Cthulhu Mythos, -1D3 SAN.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.3,
+      "price": 0,
+      "notes": "+1D6 Mythos / -1D3 SAN (leitura completa). Item narrativo.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "documento",
+        "notas": "Item narrativo."
+      }
+    }
   }
 ]
