@@ -760,6 +760,7 @@ Hooks.once("ready", () => {
 
 // ─── Painel compacto na ficha do personagem ───────────────
 Hooks.on("renderActorSheet", (sheet, html) => {
+  try {
   if (sheet.actor?.type !== "character") return;
   const actor   = sheet.actor;
   const canEdit = actor.isOwner || game.user.isGM;
@@ -842,6 +843,9 @@ Hooks.on("renderActorSheet", (sheet, html) => {
 
   const alvo = (() => {
     for (const sel of [
+      '.tab[data-tab="gear"]',
+      '.tab[data-tab="gears"]',
+      '.tab[data-tab="possessions"]',
       '.tab[data-tab="main"]',
       '.tab[data-tab="skills"]',
       '.sheet-body .tab.active',
@@ -852,10 +856,13 @@ Hooks.on("renderActorSheet", (sheet, html) => {
     }
     return html;
   })();
-  alvo.append(panelHtml);
+  alvo.prepend(panelHtml);
 
   html.find(`.ddp-inv-sheet-btn[data-actor-id="${actor.id}"]`).on("click", (e) => {
     e.preventDefault();
     DDPInventoryDialog.open(actor.id);
   });
+  } catch(err) {
+    console.error("DDP | Erro no painel de inventário:", err);
+  }
 });

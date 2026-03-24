@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="20" y="8" width="24" height="48" rx="8" fill="#b3d9f5"/>
+  <rect x="20" y="8" width="24" height="12" rx="4" fill="#90c4e8"/>
+  <rect x="22" y="26" width="8" height="3" rx="2" fill="#fff" opacity="0.7"/>
+  <rect x="22" y="32" width="5" height="2" rx="1" fill="#fff" opacity="0.5"/>
+  <text x="32" y="52" text-anchor="middle" font-size="7" fill="#1a6fa0" font-family="sans-serif" font-weight="bold">CRYSTAL</text>
+</svg>

@@ -54,6 +54,26 @@
       </div>
       {{/if}}
 
+      {{!-- Fome --}}
+      <div class="ddp-phud-bar-row ddp-phud-bar-mini {{#if fomeCrit}}ddp-phud-crit{{/if}}"
+           title="Fome: {{fome}}/100 — Clique para ajustar" data-stat="fome">
+        <span class="ddp-phud-lbl ddp-phud-lbl-mini">🍞</span>
+        <div class="ddp-phud-bar-bg">
+          <div class="ddp-phud-bar-fill" style="width:{{fomePct}}%; background:{{fomeCor}};"></div>
+        </div>
+        <span class="ddp-phud-val ddp-phud-val-mini" style="color:{{fomeCor}};">{{fome}}</span>
+      </div>
+
+      {{!-- Sede --}}
+      <div class="ddp-phud-bar-row ddp-phud-bar-mini {{#if sedeCrit}}ddp-phud-crit{{/if}}"
+           title="Sede: {{sede}}/100 — Clique para ajustar" data-stat="sede">
+        <span class="ddp-phud-lbl ddp-phud-lbl-mini">💧</span>
+        <div class="ddp-phud-bar-bg">
+          <div class="ddp-phud-bar-fill" style="width:{{sedePct}}%; background:{{sedeCor}};"></div>
+        </div>
+        <span class="ddp-phud-val ddp-phud-val-mini" style="color:{{sedeCor}};">{{sede}}</span>
+      </div>
+
     </div>
 
     {{!-- Ícones de status --}}
