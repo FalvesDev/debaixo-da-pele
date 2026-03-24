@@ -92,8 +92,11 @@ class DDPPlayerHUD extends Application {
       const label = stat === "fome" ? "🍞 Fome" : "💧 Sede";
       const novo = await Dialog.prompt({
         title: `${label} — ${actor.name}`,
-        content: `<label>${label} (0–100):<br><input type="range" id="val" min="0" max="100" value="${atual}" style="width:100%"><span id="lbl">${atual}</span>
-          <script>document.getElementById('val').oninput = e => document.getElementById('lbl').textContent = e.target.value;</script></label>`,
+        content: `<label style="display:block;margin:8px 0">${label} (0–100):<br>
+          <input type="range" id="val" min="0" max="100" value="${atual}"
+                 oninput="this.nextElementSibling.textContent=this.value"
+                 style="width:100%;margin:6px 0">
+          <span id="lbl" style="font-weight:bold">${atual}</span></label>`,
         callback: html => parseInt(html.find("#val").val()),
         rejectClose: false
       });
