@@ -14,10 +14,9 @@
     {{#each personagens}}
     <div class="ddp-pf-char {{statusClass}}" data-actor-id="{{id}}" title="{{nome}} — Clique para focar token">
 
-      <!-- Avatar + dot de Aurora -->
+      <!-- Avatar -->
       <div class="ddp-pf-avatar-col">
         <img class="ddp-pf-avatar" src="{{img}}" alt="{{nome}}">
-        <div class="ddp-pf-aurora-pip" style="background:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}"></div>
       </div>
 
       <!-- Barras + nome -->
@@ -58,9 +57,6 @@
         {{/if}}
         {{#if inconsciente}}
         <span title="Inconsciente" class="ddp-pf-status-icon">💤</span>
-        {{/if}}
-        {{#if @root.auroraVisivel}}
-        <span class="ddp-pf-aurora-dot" style="color:{{faseCor}}" title="Aurora {{aurora}} — {{faseLabel}}">⬟</span>
         {{/if}}
         <button class="ddp-pf-inv-btn" data-actor-id="{{id}}" title="Abrir Inventário de {{nome}}">🎒</button>
       </div>
