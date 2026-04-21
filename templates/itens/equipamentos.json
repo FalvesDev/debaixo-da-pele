@@ -1624,7 +1624,8 @@
         "slots": 3,
         "categoria": "container",
         "linhasBonus": 3,
-        "notas": "+3 linhas no grid quando equipada."
+        "notas": "+3 linhas no grid quando equipada.",
+        "bagBonus": 1
       }
     }
   },
@@ -1651,7 +1652,8 @@
         "slots": 3,
         "categoria": "container",
         "linhasBonus": 3,
-        "notas": "+3 linhas. Resistente a cortes. Sala segurança B1."
+        "notas": "+3 linhas. Resistente a cortes. Sala segurança B1.",
+        "bagBonus": 2
       }
     }
   },
@@ -1678,7 +1680,8 @@
         "slots": 1,
         "categoria": "container",
         "linhasBonus": 1,
-        "notas": "+1 linha no grid. Acesso rápido."
+        "notas": "+1 linha no grid. Acesso rápido.",
+        "bagBonus": 1
       }
     }
   },
@@ -2561,6 +2564,301 @@
         "categoria": "documento",
         "notas": "Item narrativo."
       }
+    }
+  },
+  {
+    "name": "Correia Tática (Belt Rig)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/correia-tatica.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "quickBonus": 1,
+        "categoria": "correia"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Correia modular de nylon com argolas MOLLE. Adiciona <strong>+1 linha</strong> ao inventário de Acesso Rápido. Comporta pistola, faca, pouch e rádio.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1,
+      "price": 0,
+      "notes": "+1 linha zona rápida.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Colete Tático MOLLE",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/colete-tatico.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "quickBonus": 2,
+        "bagBonus": 1,
+        "categoria": "colete"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Colete balístico com sistema MOLLE e múltiplos bolsos. Adiciona <strong>+2 linhas</strong> ao Acesso Rápido e <strong>+1 linha</strong> à Mochila. Proteção leve (-1 dano projéteis).</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 3,
+      "price": 0,
+      "notes": "+2 rápido | +1 mochila | -1 dano projéteis.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Bolsa de Cintura Tática",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/bolsa-cintura.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "bagBonus": 1,
+        "categoria": "bolsa"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Pochete tática com compartimento principal e pocket frontal. Adiciona <strong>+1 linha</strong> à Mochila. Fixada ao cinto.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1,
+      "price": 0,
+      "notes": "+1 linha mochila.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Mochila de Assalto 45L",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/mochila-assalto.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "bagBonus": 3,
+        "categoria": "mochila"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Mochila tática de assalto com frame interno. Adiciona <strong>+3 linhas</strong> à Mochila no inventário. Ideal para operações longas.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 4,
+      "price": 0,
+      "notes": "+3 linhas mochila.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Coldre de Coxa",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/coldre-coxa.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "quickBonus": 1,
+        "categoria": "coldre"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Coldre tático de coxa com tira de fixação. Adiciona <strong>+1 linha</strong> ao Acesso Rápido. Sacar pistola sem penalidade de ação.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "+1 linha rápido. Sacar sem penalidade.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Cinto de Ferramentas",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/cinto-ferramentas.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "quickBonus": 1,
+        "categoria": "correia"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Cinto largo com múltiplos porta-ferramentas e argolas. Adiciona <strong>+1 linha</strong> ao Acesso Rápido para ferramentas e equipamentos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1,
+      "price": 0,
+      "notes": "+1 linha rápido.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Binóculo Tático 10×42",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/binoculo.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "categoria": "equipamento"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Binóculo militar com óptica de alta precisão. Bônus de +20% em Percepção (Avistar) a longa distância. Resistente a impactos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1,
+      "price": 0,
+      "notes": "+20% Avistar à distância.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Kit de Sutura de Campo",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-sutura.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "categoria": "medico"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Agulha, fio de sutura, tesoura estéril e luvas. Fecha lacerações profundas. Sucesso em Primeiros Socorros estabiliza ferimento sangrante. 3 usos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 3,
+      "weight": 0,
+      "price": 0,
+      "notes": "Fecha lacerações. 3 usos.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Rádio AM/FM Portátil",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/radio-portatil.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "categoria": "comunicacao"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Rádio portátil com antena extensível. Capta transmissões de emergência e sinais de socorro sem precisar de infraestrutura de celular.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "Frequências AM/FM e emergência.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Mapa Topográfico (Regional)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/mapa-topografico.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "categoria": "documento"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Mapa impresso 1:50.000 com curvas de nível e pontos de referência. Bônus de +20% em Navegação ao ar livre. Impermeável.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "+20% Navegação. Impermeável.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Estojo de Sobrevivência",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/estojo-sobrevivencia.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "categoria": "sobrevivencia"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Estojo metálico com fio de pesca, anzóis, fósforos à prova de água, espelho de sinalização e cobertor de emergência. Indispensável no campo.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1,
+      "price": 0,
+      "notes": "Kit completo de sobrevivência.",
+      "attributes": {}
+    }
+  },
+  {
+    "name": "Sacola Isotérmica",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/sacola-isotermica.svg",
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "categoria": "alimentacao"
+      }
+    },
+    "system": {
+      "description": {
+        "value": "<p>Sacola com isolamento térmico. Conserva alimentos e medicamentos por até 6 horas. Útil para morfina, vacinas e itens sensíveis ao calor.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "Conserva itens térmicos por 6h.",
+      "attributes": {}
     }
   }
 ]
