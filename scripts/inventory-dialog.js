@@ -5,12 +5,13 @@
 
 const MODULE_ID = "debaixo-da-pele";
 
-const GRID_COLS  = 5;      // colunas da mochila
-const QUICK_COLS = 3;      // colunas do inventário rápido
-const QUICK_ROWS = 2;      // linhas do inventário rápido
-const CELL_PX    = 70;     // px por célula
-const MIN_ROWS   = 2;
-const MAX_ROWS   = 8;
+const GRID_COLS       = 5;   // colunas da mochila
+const QUICK_COLS      = 3;   // colunas do inventário rápido
+const QUICK_ROWS_BASE = 2;   // linhas base do inventário rápido
+const QUICK_ROWS_MAX  = 5;   // máximo de linhas no inventário rápido
+const CELL_PX         = 70;  // px por célula
+const MIN_ROWS        = 2;
+const MAX_ROWS        = 8;
 
 // Tipos CoC7 que NÃO são itens físicos
 const TIPOS_EXCLUIDOS = new Set(["skill", "occupation", "archetype", "talent", "setup"]);
@@ -112,18 +113,36 @@ function _getItemSize(item) {
   return { w: 1, h: 1 };
 }
 
-// ─── Calcula linhas do grid da mochila (STR/10 arredondado) ───
+// ─── Calcula linhas do grid da mochila ───────────────────────
 function _calcGridRows(actor) {
   const str      = actor.system?.characteristics?.str?.value ?? 40;
   const baseRows = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.ceil(str / 10)));
 
-  // Cada mochila/bolsão adiciona 1 linha extra
-  const bagCount = actor.items.contents
-    .filter(i => !TIPOS_EXCLUIDOS.has(i.type) && /mochila|mochilão|backpack|bolsão|saco grande/i.test(i.name))
-    .length;
-  const bagBonus = bagCount;
+  const bonus = actor.items.contents
+    .filter(i => !TIPOS_EXCLUIDOS.has(i.type))
+    .reduce((sum, i) => {
+      const f = i.flags?.[MODULE_ID];
+      // Flag explícita tem prioridade
+      if (f?.bagBonus) return sum + Number(f.bagBonus);
+      // Heurística para bolsas/mochilas sem flag
+      if (/mochila|mochilão|backpack|bolsão|saco grande|bolsa de campo/i.test(i.name)) return sum + 1;
+      return sum;
+    }, 0);
 
-  return Math.min(MAX_ROWS, baseRows + bagBonus);
+  return Math.min(MAX_ROWS, baseRows + bonus);
+}
+
+// ─── Calcula linhas do grid rápido (correia/colete) ──────────
+function _calcQuickRows(actor) {
+  const bonus = actor.items.contents
+    .filter(i => !TIPOS_EXCLUIDOS.has(i.type))
+    .reduce((sum, i) => {
+      const f = i.flags?.[MODULE_ID];
+      if (f?.quickBonus) return sum + Number(f.quickBonus);
+      if (/correia tática|correia tatica|colete tático|colete tatico|tactical vest|rig tático|rig tatico/i.test(i.name)) return sum + 1;
+      return sum;
+    }, 0);
+  return Math.min(QUICK_ROWS_MAX, QUICK_ROWS_BASE + bonus);
 }
 
 // ─── Migração de layout antigo para novo formato ─────────────
@@ -154,10 +173,11 @@ function _migrateLayout(raw) {
 export class DDPInventoryDialog extends Application {
   constructor(actor, options = {}) {
     super(options);
-    this.actor     = actor;
-    this._layout   = _migrateLayout(actor.flags?.[MODULE_ID]?.inventario);
-    this._dragging = null;
-    this._gridRows = _calcGridRows(actor);
+    this.actor      = actor;
+    this._layout    = _migrateLayout(actor.flags?.[MODULE_ID]?.inventario);
+    this._dragging  = null;
+    this._gridRows  = _calcGridRows(actor);
+    this._quickRows = _calcQuickRows(actor);
   }
 
   static get defaultOptions() {
@@ -176,7 +196,7 @@ export class DDPInventoryDialog extends Application {
   _buildMatrix(zone) {
     const zoneLayout = this._layout[zone] ?? {};
     const cols = zone === "quick" ? QUICK_COLS : GRID_COLS;
-    const rows = zone === "quick" ? QUICK_ROWS : this._gridRows;
+    const rows = zone === "quick" ? this._quickRows : this._gridRows;
     const m = Array.from({ length: rows }, () => Array(cols).fill(null));
 
     for (const [itemId, pos] of Object.entries(zoneLayout)) {
@@ -202,7 +222,7 @@ export class DDPInventoryDialog extends Application {
     const w    = rotated ? sz.h : sz.w;
     const h    = rotated ? sz.w : sz.h;
     const cols = zone === "quick" ? QUICK_COLS : GRID_COLS;
-    const rows = zone === "quick" ? QUICK_ROWS : this._gridRows;
+    const rows = zone === "quick" ? this._quickRows : this._gridRows;
     if (row < 0 || col < 0 || row + h > rows || col + w > cols) return false;
     const m = this._buildMatrix(zone);
     for (let r = row; r < row + h; r++) {
@@ -233,12 +253,15 @@ export class DDPInventoryDialog extends Application {
 
   // ── Dados para o template Handlebars ──────────────────
   getData() {
-    this._gridRows = _calcGridRows(this.actor);
-    const bagRows  = this._gridRows;
+    this._gridRows  = _calcGridRows(this.actor);
+    this._quickRows = _calcQuickRows(this.actor);
+    const bagRows   = this._gridRows;
+    const quickRows = this._quickRows;
 
     const str      = this.actor.system?.characteristics?.str?.value ?? 40;
     const strBase  = Math.max(MIN_ROWS, Math.min(MAX_ROWS, Math.ceil(str / 10)));
-    const bagBonus = bagRows - strBase;
+    const bagBonus   = bagRows - strBase;
+    const quickBonus = quickRows - QUICK_ROWS_BASE;
 
     const allItems = this.actor.items.contents.filter(i => !TIPOS_EXCLUIDOS.has(i.type));
 
@@ -296,14 +319,14 @@ export class DDPInventoryDialog extends Application {
     const { items: quickItems, used: quickUsed } = buildZoneItems("quick");
     const { items: bagItems,   used: bagUsed   } = buildZoneItems("bag");
 
-    const quickTotalSlots = QUICK_COLS * QUICK_ROWS;
+    const quickTotalSlots = QUICK_COLS * quickRows;
     const bagTotalSlots   = GRID_COLS * bagRows;
     const totalSlots      = quickTotalSlots + bagTotalSlots;
     const usedSlots       = quickUsed + bagUsed;
 
     // ── Células da zona rápida ─────────────────────────────
     const quickCells = [];
-    for (let r = 0; r < QUICK_ROWS; r++) {
+    for (let r = 0; r < quickRows; r++) {
       for (let c = 0; c < QUICK_COLS; c++) {
         quickCells.push({ row: r, col: c, styleLeft: c * CELL_PX, styleTop: r * CELL_PX });
       }
@@ -339,10 +362,12 @@ export class DDPInventoryDialog extends Application {
       // Zona rápida
       quickItems,
       quickCells,
+      quickRows,
       quickWidth:  QUICK_COLS * CELL_PX,
-      quickHeight: QUICK_ROWS * CELL_PX,
+      quickHeight: quickRows * CELL_PX,
       quickUsed,
       quickTotal:  quickTotalSlots,
+      quickBonus,
 
       // Mochila
       bagItems,
@@ -689,7 +714,7 @@ export class DDPInventoryDialog extends Application {
       if (tryQuick) {
         for (const rotated of [false, true]) {
           if (placed) break;
-          for (let r = 0; r < QUICK_ROWS && !placed; r++) {
+          for (let r = 0; r < this._quickRows && !placed; r++) {
             for (let c = 0; c < QUICK_COLS && !placed; c++) {
               if (this._canPlace("quick", item.id, r, c, rotated)) {
                 this._layout.quick[item.id] = { row: r, col: c, rotated };

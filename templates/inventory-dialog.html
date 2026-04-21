@@ -8,7 +8,7 @@
       <span class="ddp-inv-actor-name">{{actorName}}</span>
       <span class="ddp-inv-counter">
         {{alocados}}/{{totalItens}} itens alocados
-        <span class="ddp-inv-cap-info" title="FOR {{strValue}} ÷ 10 (arredondado) = {{bagRows}} linhas{{#if bagBonus}} (+{{bagBonus}} mochila){{/if}}">
+        <span class="ddp-inv-cap-info" title="FOR {{strValue}} ÷ 10 = {{bagRows}} linhas mochila{{#if bagBonus}} (+{{bagBonus}} bolsa){{/if}} | Rápido: {{quickRows}} linhas{{#if quickBonus}} (+{{quickBonus}} correia){{/if}}">
           · {{usedSlots}}/{{totalSlots}} slots{{#if bagBonus}} <i class="fas fa-backpack"></i>{{/if}}
         </span>
       </span>
@@ -57,7 +57,7 @@
       <div class="ddp-inv-zone-quick">
         <div class="ddp-inv-section-label">
           <i class="fas fa-bolt"></i> ACESSO RÁPIDO
-          <span class="ddp-inv-hint">{{quickUsed}}/{{quickTotal}}</span>
+          <span class="ddp-inv-hint">{{quickUsed}}/{{quickTotal}}{{#if quickBonus}} <i class="fas fa-layer-group" title="+{{quickBonus}} linha(s) de correia/colete"></i>{{/if}}</span>
         </div>
         <div class="ddp-inv-grid ddp-inv-grid-quick"
              style="width:{{quickWidth}}px; height:{{quickHeight}}px;
