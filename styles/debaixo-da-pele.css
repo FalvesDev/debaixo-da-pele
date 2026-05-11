@@ -1578,6 +1578,128 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   color: #88dd88 !important;
 }
 
+/* ── Barras de status no inventário ─────────────────── */
+.ddp-inv-status-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 12px;
+  background: #0a0a0a;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.ddp-inv-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 14px;
+}
+
+.ddp-inv-bar-lbl {
+  font-size: 0.65em;
+  font-weight: bold;
+  width: 30px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.ddp-bar-hp     { color: #66cc66; }
+.ddp-bar-san    { color: #6688dd; }
+.ddp-bar-aurora { color: #aa66dd; }
+.ddp-bar-fome   { color: #cc8833; }
+
+.ddp-inv-bar-track {
+  flex: 1;
+  height: 7px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+.ddp-inv-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.ddp-bar-fill-hp     { background: #44aa44; }
+.ddp-bar-fill-san    { background: #4466cc; }
+.ddp-bar-fill-aurora { background: #8844cc; }
+.ddp-bar-fill-fome   { background: #cc7722; }
+
+.ddp-inv-bar-val {
+  font-size: 0.7em;
+  color: #aaa;
+  min-width: 36px;
+  text-align: right;
+}
+
+.ddp-inv-bar-max {
+  color: #555;
+}
+
+/* ── Badge de munição nos itens do grid ──────────────── */
+.ddp-inv-ammo-badge {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: rgba(0,0,0,0.75);
+  border-radius: 3px;
+  padding: 1px 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.ddp-inv-placed-item:hover .ddp-inv-ammo-badge {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ddp-ammo-btn {
+  all: unset;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 14px;
+  cursor: pointer;
+  color: #ffaa44;
+  background: #1a1a1a;
+  border-radius: 2px;
+  border: 1px solid #443322;
+  flex-shrink: 0;
+}
+
+.ddp-ammo-btn:hover {
+  background: #2a1a0a;
+  color: #ffcc66;
+  border-color: #664422;
+}
+
+.ddp-ammo-count {
+  font-size: 0.65em;
+  color: #ffcc88;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Munição na lista não alocados */
+.ddp-inv-unass-ammo {
+  font-size: 0.7em;
+  color: #ffaa44;
+  margin-top: 1px;
+}
+
 /* Corpo */
 .ddp-inv-body {
   display: flex;

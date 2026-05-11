@@ -28,6 +28,42 @@
     {{/if}}
   </div>
 
+  {{!-- Barras de Status --}}
+  <div class="ddp-inv-status-bars">
+    {{!-- HP --}}
+    <div class="ddp-inv-bar-row" title="Pontos de Vida: {{hp.value}} / {{hp.max}}">
+      <span class="ddp-inv-bar-lbl ddp-bar-hp">HP</span>
+      <div class="ddp-inv-bar-track">
+        <div class="ddp-inv-bar-fill ddp-bar-fill-hp" style="width:{{hpPct}}%;"></div>
+      </div>
+      <span class="ddp-inv-bar-val">{{hp.value}}<span class="ddp-inv-bar-max">/{{hp.max}}</span></span>
+    </div>
+    {{!-- SAN --}}
+    <div class="ddp-inv-bar-row" title="Sanidade: {{san.value}} / {{san.max}}">
+      <span class="ddp-inv-bar-lbl ddp-bar-san">SAN</span>
+      <div class="ddp-inv-bar-track">
+        <div class="ddp-inv-bar-fill ddp-bar-fill-san" style="width:{{sanPct}}%;"></div>
+      </div>
+      <span class="ddp-inv-bar-val">{{san.value}}<span class="ddp-inv-bar-max">/{{san.max}}</span></span>
+    </div>
+    {{!-- AURORA --}}
+    <div class="ddp-inv-bar-row" title="Aurora: {{aurora.value}} / {{aurora.max}}">
+      <span class="ddp-inv-bar-lbl ddp-bar-aurora">AUR</span>
+      <div class="ddp-inv-bar-track">
+        <div class="ddp-inv-bar-fill ddp-bar-fill-aurora" style="width:{{auroraPct}}%;"></div>
+      </div>
+      <span class="ddp-inv-bar-val">{{aurora.value}}<span class="ddp-inv-bar-max">/{{aurora.max}}</span></span>
+    </div>
+    {{!-- FOME --}}
+    <div class="ddp-inv-bar-row" title="Fome: {{fome.value}} / {{fome.max}}">
+      <span class="ddp-inv-bar-lbl ddp-bar-fome">FOME</span>
+      <div class="ddp-inv-bar-track">
+        <div class="ddp-inv-bar-fill ddp-bar-fill-fome" style="width:{{fomePct}}%;"></div>
+      </div>
+      <span class="ddp-inv-bar-val">{{fome.value}}<span class="ddp-inv-bar-max">/{{fome.max}}</span></span>
+    </div>
+  </div>
+
   {{!-- Seção EQUIPADOS --}}
   {{#if equippedItems}}
   <div class="ddp-inv-equipped-section">
@@ -82,6 +118,13 @@
             <img src="{{img}}" draggable="false" />
             <div class="ddp-inv-item-name">{{name}}</div>
             <div class="ddp-inv-item-size">{{sizeLabel}}</div>
+            {{#if isWeapon}}
+            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}">
+              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala">−</button>
+              <span class="ddp-ammo-count">{{ammoValue}}/{{ammoMax}}</span>
+              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala">+</button>
+            </div>
+            {{/if}}
             <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
           </div>
           {{/each}}
@@ -121,6 +164,13 @@
             <img src="{{img}}" draggable="false" />
             <div class="ddp-inv-item-name">{{name}}</div>
             <div class="ddp-inv-item-size">{{sizeLabel}}</div>
+            {{#if isWeapon}}
+            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}">
+              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala">−</button>
+              <span class="ddp-ammo-count">{{ammoValue}}/{{ammoMax}}</span>
+              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala">+</button>
+            </div>
+            {{/if}}
             <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
           </div>
           {{/each}}
@@ -143,6 +193,7 @@
           <div class="ddp-inv-unass-info">
             <span class="ddp-inv-unass-name">{{name}}</span>
             <span class="ddp-inv-unass-size">{{sizeLabel}}{{#if isWearable}} <i class="fas fa-shield-alt" style="color:#88cc88;font-size:0.8em;" title="Equipável"></i>{{/if}}</span>
+            {{#if isWeapon}}<span class="ddp-inv-unass-ammo"><i class="fas fa-circle" style="color:#ffaa44;font-size:0.7em;"></i> {{ammoValue}}/{{ammoMax}}</span>{{/if}}
           </div>
         </div>
         {{else}}
@@ -157,6 +208,7 @@
         <div><i class="fas fa-sync-alt"></i> Duplo-clique = girar</div>
         <div><i class="fas fa-mouse"></i> Dir. = menu</div>
         <div><i class="fas fa-shield-alt"></i> Verde = equipável</div>
+        <div><i class="fas fa-circle" style="color:#ffaa44;font-size:0.8em;"></i> Laranja = munição</div>
       </div>
     </div>
 

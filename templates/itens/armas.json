@@ -5,14 +5,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-revolver.svg",
     "system": {
       "description": {
-        "value": "<p>Revólver calibre .38 de fabricação nacional. Confiável e robusto, mas com recarga lenta (6 tiros). Modelo comum em equipes de segurança privada no Brasil.</p>"
+        "value": "<p>Revólver calibre .38 de fabricação nacional. Confiável e robusto, mas com recarga lenta (6 tiros). Modelo comum em equipes de segurança privada no Brasil.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Armas de Fogo (Pistola)",
-      "damage": "1D10",
-      "range": "15",
-      "ammo": 6,
+      "skill": {
+        "main":      { "name": "Armas de Fogo (Pistola)", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 15, "units": "", "damage": "1D10" },
+        "long":    { "value": 30, "units": "", "damage": "1D10" },
+        "extreme": { "value": 60, "units": "", "damage": "1D10" }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 6, "max": 6 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   1
     },
     "flags": {
       "debaixo-da-pele": {
@@ -29,14 +44,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
     "system": {
       "description": {
-        "value": "<p>Pistola semiautomática Taurus PT92, calibre 9mm. 17 cartuchos no pente + 1 na câmara. Padrão de seguranças e policiais brasileiros.</p>"
+        "value": "<p>Pistola semiautomática Taurus PT92, calibre 9mm. 17 cartuchos no pente + 1 na câmara. Padrão de seguranças e policiais brasileiros.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Armas de Fogo (Pistola)",
-      "damage": "1D10",
-      "range": "15",
-      "ammo": 17,
+      "skill": {
+        "main":      { "name": "Armas de Fogo (Pistola)", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 15, "units": "", "damage": "1D10" },
+        "long":    { "value": 30, "units": "", "damage": "1D10" },
+        "extreme": { "value": 60, "units": "", "damage": "1D10" }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 17, "max": 17 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   1
     },
     "flags": {
       "debaixo-da-pele": {
@@ -53,14 +83,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda.svg",
     "system": {
       "description": {
-        "value": "<p>Espingarda calibre 12, ação pump (bomba). Alta capacidade de parar alvos em curta distância. Ruído elevado — atrairá atenção. Tubular com 5+1 cartuchos.</p>"
+        "value": "<p>Espingarda calibre 12, ação pump (bomba). Alta capacidade de parar alvos em curta distância. Ruído elevado — atrairá atenção. Tubular com 5+1 cartuchos.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Armas de Fogo (Espingarda)",
-      "damage": "4D6",
-      "range": "10",
-      "ammo": 6,
+      "skill": {
+        "main":      { "name": "Armas de Fogo (Espingarda)", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 10, "units": "", "damage": "4D6" },
+        "long":    { "value": 20, "units": "", "damage": "2D6" },
+        "extreme": { "value": 40, "units": "", "damage": "1D6" }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 6, "max": 6 },
+      "blastRadius": "",
       "malfunction": 99,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   4
     },
     "flags": {
       "debaixo-da-pele": {
@@ -77,14 +122,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-faca.svg",
     "system": {
       "description": {
-        "value": "<p>Faca de combate com lâmina de 15cm e cabo antiderrapante. Silenciosa e sem limitação de munição. Arma de último recurso ou ataque sorrateiro.</p>"
+        "value": "<p>Faca de combate com lâmina de 15cm e cabo antiderrapante. Silenciosa e sem limitação de munição. Arma de último recurso ou ataque sorrateiro.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D6",
-      "range": "cc",
-      "ammo": 0,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D6" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 0, "max": 0 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   0
     },
     "flags": {
       "debaixo-da-pele": {
@@ -101,14 +161,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/arma-pe-de-cabra.svg",
     "system": {
       "description": {
-        "value": "<p>Ferramenta de aço usada para arrombar portas e caixas. Funciona como arma improvisada pesada. Também útil para destravar portas forçadas (teste de Mecânica ou Força).</p>"
+        "value": "<p>Ferramenta de aço usada para arrombar portas e caixas. Funciona como arma improvisada pesada. Também útil para destravar portas forçadas (teste de Mecânica ou Força).</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D6+2",
-      "range": "cc",
-      "ammo": 0,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D6+2" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 0, "max": 0 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true }
+      "properties": { "improv": true },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   2
     },
     "flags": {
       "debaixo-da-pele": {
@@ -125,14 +200,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/extintor.svg",
     "system": {
       "description": {
-        "value": "<p>Extintor de CO₂ de 4kg. Usado como arma improvisada: golpe pesado (1D8+1D4). Pode ser descarregado para criar nuvem de névoa de CO₂ — cega e sufoca temporariamente (teste CON ou −30% por 1D3 rodadas). Encontrado em corredores do complexo.</p>"
+        "value": "<p>Extintor de CO₂ de 4kg. Usado como arma improvisada: golpe pesado (1D8+1D4). Pode ser descarregado para criar nuvem de névoa de CO₂ — cega e sufoca temporariamente (teste CON ou −30% por 1D3 rodadas).</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D8+1D4",
-      "range": "cc",
-      "ammo": 1,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D8+1D4" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 1, "max": 1 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true }
+      "properties": { "improv": true },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   4
     },
     "flags": {
       "debaixo-da-pele": {
@@ -149,14 +239,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/machado.svg",
     "system": {
       "description": {
-        "value": "<p>Machado de emergência fixado na parede de corredores de segurança. Cabo curto, lâmina robusta. Arma de combate corpo a corpo eficaz. Também pode ser usado para arrombar portas de madeira.</p>"
+        "value": "<p>Machado de emergência fixado na parede de corredores de segurança. Cabo curto, lâmina robusta. Arma de combate corpo a corpo eficaz. Também pode ser usado para arrombar portas de madeira.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D8+1D4",
-      "range": "cc",
-      "ammo": 0,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D8+1D4" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 0, "max": 0 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   2
     },
     "flags": {
       "debaixo-da-pele": {
@@ -173,21 +278,36 @@
     "img": "modules/debaixo-da-pele/assets/icons/cano-metal.svg",
     "system": {
       "description": {
-        "value": "<p>Cano de aço de aproximadamente 60cm retirado de instalação hidráulica ou estrutural. Arma improvisada contundente. Comum nos corredores de manutenção do Complexo Elara.</p>"
+        "value": "<p>Cano de aço de aproximadamente 60cm retirado de instalação hidráulica ou estrutural. Arma improvisada contundente. Comum nos corredores de manutenção do Complexo Elara.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D6+1",
-      "range": "cc",
-      "ammo": 0,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D6+1" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 0, "max": 0 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true }
+      "properties": { "improv": true },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   1
     },
     "flags": {
       "debaixo-da-pele": {
         "gridW": 1, "gridH": 2,
         "slots": 3,
         "categoria": "ferramenta-arma",
-        "notas": "Encontrado em salas de manutenção. Pode ser dobrado em teste de Mecânica para criar gancho ou alavanca."
+        "notas": "Encontrado em salas de manutenção. Pode ser dobrado para criar gancho ou alavanca (teste Mecânica)."
       }
     }
   },
@@ -197,14 +317,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/bisturi.svg",
     "system": {
       "description": {
-        "value": "<p>Bisturi cirúrgico de aço inox, cabo metálico. Lâmina extremamente afiada, ideal para cortes precisos. Como arma: dano mínimo mas pode causar hemorragia (1 PV/rodada em sucesso crítico).</p>"
+        "value": "<p>Bisturi cirúrgico de aço inox, cabo metálico. Lâmina extremamente afiada, ideal para cortes precisos. Como arma: dano mínimo mas pode causar hemorragia (1 PV/rodada em sucesso crítico).</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Briga",
-      "damage": "1D3",
-      "range": "cc",
-      "ammo": 0,
+      "skill": {
+        "main":      { "name": "Briga", "id": "" },
+        "alternativ": { "name": "Medicina", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 0, "units": "", "damage": "1D3" },
+        "long":    { "value": 0, "units": "", "damage": "" },
+        "extreme": { "value": 0, "units": "", "damage": "" }
+      },
+      "wpnType": "melee",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 0, "max": 0 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   0
     },
     "flags": {
       "debaixo-da-pele": {
@@ -221,14 +356,29 @@
     "img": "modules/debaixo-da-pele/assets/icons/spray-pimenta.svg",
     "system": {
       "description": {
-        "value": "<p>Spray de defesa pessoal (OC — oleorresina de capsaicina). Alcance 2m. Contra humanos: cega e incapacita por 1D6 rodadas (teste CON para reduzir para 1D3). Contra Refinados: apenas 1D3 rodadas de perturbação (não imobiliza).</p>"
+        "value": "<p>Spray de defesa pessoal (OC — oleorresina de capsaicina). Alcance 2m. Contra humanos: cega e incapacita por 1D6 rodadas (teste CON para reduzir para 1D3). Contra Refinados: apenas 1D3 rodadas de perturbação.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
       },
-      "skill": "Arremesso",
-      "damage": "0 (efeito cegante)",
-      "range": "2",
-      "ammo": 6,
+      "skill": {
+        "main":      { "name": "Arremesso", "id": "" },
+        "alternativ": { "name": "", "id": "" }
+      },
+      "range": {
+        "normal":  { "value": 2,  "units": "", "damage": "0" },
+        "long":    { "value": 4,  "units": "", "damage": "0" },
+        "extreme": { "value": 6,  "units": "", "damage": "0" }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": { "value": 1, "max": 1, "period": "" },
+      "bullets":      { "value": 6, "max": 6 },
+      "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false }
+      "properties": { "improv": false },
+      "price":    { "value": 0, "level": "" },
+      "quantity": 1,
+      "weight":   0
     },
     "flags": {
       "debaixo-da-pele": {

@@ -287,6 +287,14 @@ export class DDPInventoryDialog extends Application {
       ...Object.keys(this._layout.equipped ?? {})
     ]);
 
+    // ── Helper de munição para um item arma ──────────────
+    const _getAmmo = (item) => {
+      const max = item.system?.bullets?.max ?? 0;
+      const saved = item.flags?.[MODULE_ID]?.ammo;
+      const val = saved !== undefined ? saved : (item.system?.bullets?.value ?? max);
+      return { ammoValue: Math.max(0, Math.min(max, val)), ammoMax: max };
+    };
+
     // ── Helper para montar itens de uma zona grid ─────────
     const buildZoneItems = (zone) => {
       const zoneLayout = this._layout[zone] ?? {};
@@ -299,6 +307,8 @@ export class DDPInventoryDialog extends Application {
         const w  = pos.rotated ? sz.h : sz.w;
         const h  = pos.rotated ? sz.w : sz.h;
         used += w * h;
+        const isWeapon = item.type === "weapon";
+        const { ammoValue, ammoMax } = isWeapon ? _getAmmo(item) : { ammoValue: 0, ammoMax: 0 };
         items.push({
           id:          itemId,
           name:        item.name,
@@ -306,6 +316,9 @@ export class DDPInventoryDialog extends Application {
           rotated:     pos.rotated,
           sizeLabel:   `${sz.w}×${sz.h}`,
           isWearable:  _isWearable(item),
+          isWeapon:    isWeapon && ammoMax > 0,
+          ammoValue,
+          ammoMax,
           styleLeft:   pos.col * CELL_PX,
           styleTop:    pos.row * CELL_PX,
           styleWidth:  w * CELL_PX,
@@ -345,19 +358,41 @@ export class DDPInventoryDialog extends Application {
       .filter(i => !allocatedIds.has(i.id))
       .map(i => {
         const sz = _getItemSize(i);
+        const isWeapon = i.type === "weapon";
+        const { ammoValue, ammoMax } = isWeapon ? _getAmmo(i) : { ammoValue: 0, ammoMax: 0 };
         return {
           id:        i.id,
           name:      i.name,
           img:       i.img,
           sizeLabel: `${sz.w}×${sz.h}`,
-          isWearable: _isWearable(i)
+          isWearable: _isWearable(i),
+          isWeapon:   isWeapon && ammoMax > 0,
+          ammoValue,
+          ammoMax
         };
       });
+
+    // ── Barras de status ──────────────────────────────────
+    const hp  = this.actor.system?.attribs?.hp  ?? { value: 10, max: 10 };
+    const san = this.actor.system?.attribs?.san ?? { value: 50, max: 99 };
+    const auroraVal  = this.actor.getFlag(MODULE_ID, "aurora") ?? 0;
+    const fomeVal    = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "fome") ?? 100));
+    const hpPct      = Math.round(Math.max(0, Math.min(100, (hp.value / Math.max(1, hp.max))  * 100)));
+    const sanPct     = Math.round(Math.max(0, Math.min(100, (san.value / Math.max(1, san.max ?? 99)) * 100)));
+    const auroraPct  = Math.round((auroraVal / 10) * 100);
+    const fomePct    = fomeVal;
 
     return {
       actorName:   this.actor.name,
       actorImg:    this.actor.img,
       canEdit:     this.actor.isOwner || game.user.isGM,
+
+      // Barras de status
+      hp:       { value: hp.value, max: hp.max },
+      san:      { value: san.value, max: san.max ?? 99 },
+      aurora:   { value: auroraVal, max: 10 },
+      fome:     { value: fomeVal, max: 100 },
+      hpPct, sanPct, auroraPct, fomePct,
 
       // Zona rápida
       quickItems,
@@ -485,6 +520,22 @@ export class DDPInventoryDialog extends Application {
         this.render(false);
       });
     }
+
+    // ── Munição: botões +/− ──
+    html.find(".ddp-ammo-dec, .ddp-ammo-inc").on("click", async (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      const itemId = e.currentTarget.dataset.itemId;
+      const item   = this.actor.items.get(itemId);
+      if (!item) return;
+      const max    = item.system?.bullets?.max ?? 0;
+      const saved  = item.flags?.[MODULE_ID]?.ammo;
+      const cur    = saved !== undefined ? saved : (item.system?.bullets?.value ?? max);
+      const delta  = e.currentTarget.classList.contains("ddp-ammo-inc") ? 1 : -1;
+      const nova   = Math.max(0, Math.min(max, cur + delta));
+      await item.setFlag(MODULE_ID, "ammo", nova);
+      this.render(false);
+    });
 
     // ── Botões ──
     html.find(".ddp-inv-btn-auto").on("click", () => {
@@ -818,7 +869,8 @@ Hooks.on("renderActorSheet", (sheet, html) => {
   }
 
   const equippedCount = Object.keys(layout.equipped ?? {}).filter(id => actor.items.get(id)).length;
-  const quickTotal    = QUICK_COLS * QUICK_ROWS;
+  const quickRows2    = _calcQuickRows(actor);
+  const quickTotal    = QUICK_COLS * quickRows2;
   const bagTotal      = GRID_COLS * bagRows;
   const totalSlots    = quickTotal + bagTotal;
   const usedSlots     = quickUsed + bagUsed;
