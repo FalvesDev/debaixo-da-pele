@@ -125,7 +125,7 @@
                data-item-id="{{id}}"
                data-zone="quick"
                draggable="true"
-               title="{{name}} ({{sizeLabel}})"
+               title="{{name}} ({{sizeLabel}}){{#if precoLabel}} · {{precoLabel}}{{/if}}"
                style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
             <img src="{{img}}" draggable="false" />
             <div class="ddp-inv-item-name">{{name}}</div>
@@ -174,7 +174,7 @@
                data-item-id="{{id}}"
                data-zone="bag"
                draggable="true"
-               title="{{name}} ({{sizeLabel}})"
+               title="{{name}} ({{sizeLabel}}){{#if precoLabel}} · {{precoLabel}}{{/if}}"
                style="left:{{styleLeft}}px; top:{{styleTop}}px; width:{{styleWidth}}px; height:{{styleHeight}}px;">
             <img src="{{img}}" draggable="false" />
             <div class="ddp-inv-item-name">{{name}}</div>
@@ -217,6 +217,7 @@
             </span>
             {{#if isWeapon}}<span class="ddp-inv-unass-ammo"><i class="fas fa-circle" style="color:#ffaa44;font-size:0.7em;"></i> {{ammoValue}}/{{ammoMax}}</span>{{/if}}
             {{#if isFood}}<span class="ddp-inv-unass-food">{{#if fomeRestore}}🍞+{{fomeRestore}}{{/if}}{{#if sedeRestore}} 💧{{#if (gt sedeRestore 0)}}+{{/if}}{{sedeRestore}}{{/if}}</span>{{/if}}
+            {{#if precoLabel}}<span class="ddp-inv-unass-price">{{precoLabel}}</span>{{/if}}
           </div>
         </div>
         {{else}}

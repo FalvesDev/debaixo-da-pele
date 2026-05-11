@@ -22,7 +22,8 @@
         "slots": 2,
         "usos": 3,
         "categoria": "medico",
-        "notas": "1D3 HP (PA) / 1D6 HP (extremo). Não trata Aurora."
+        "notas": "1D3 HP (PA) / 1D6 HP (extremo). Não trata Aurora.",
+        "preco": 45
       }
     }
   },
@@ -49,7 +50,8 @@
         "slots": 3,
         "usos": 5,
         "categoria": "medico",
-        "notas": "Medicina: 1D6/2D4 HP. PA: 1D4+1 HP. Estanca hemorragia automaticamente."
+        "notas": "Medicina: 1D6/2D4 HP. PA: 1D4+1 HP. Estanca hemorragia automaticamente.",
+        "preco": 180
       }
     }
   },
@@ -76,7 +78,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "medico",
-        "notas": "Automático, sem rolagem. Remove Active Effect de hemorragia."
+        "notas": "Automático, sem rolagem. Remove Active Effect de hemorragia.",
+        "preco": 85
       }
     }
   },
@@ -103,7 +106,8 @@
         "slots": 0.5,
         "usos": 3,
         "categoria": "medico",
-        "notas": "Imobilização de fraturas. 3 usos. Improviso: pode ser usada como corda curta."
+        "notas": "Imobilização de fraturas. 3 usos. Improviso: pode ser usada como corda curta.",
+        "preco": 12
       }
     }
   },
@@ -130,7 +134,8 @@
         "slots": 0.5,
         "usos": 10,
         "categoria": "medico",
-        "notas": "−50% chance infecção. Crítico para ferimentos de Refinados (contaminação Aurora)."
+        "notas": "−50% chance infecção. Crítico para ferimentos de Refinados (contaminação Aurora).",
+        "preco": 18
       }
     }
   },
@@ -157,7 +162,8 @@
         "slots": 0.5,
         "usos": 1,
         "categoria": "medico",
-        "notas": "Dor: 6h. Overdose: 2 doses/dia → CON ou inconsciente 1D6h. Dependência: 2 sessões seguidas."
+        "notas": "Dor: 6h. Overdose: 2 doses/dia → CON ou inconsciente 1D6h. Dependência: 2 sessões seguidas.",
+        "preco": 120
       }
     }
   },
@@ -184,7 +190,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "medico",
-        "notas": "Não auto-aplicável se inconsciente. Crash: −10% por 1h após uso."
+        "notas": "Não auto-aplicável se inconsciente. Crash: −10% por 1h após uso.",
+        "preco": 95
       }
     }
   },
@@ -211,7 +218,8 @@
         "slots": 1,
         "usos": 6,
         "categoria": "medico",
-        "notas": "Receita médica necessária. 4h duração."
+        "notas": "Receita médica necessária. 4h duração.",
+        "preco": 35
       }
     }
   },
@@ -237,7 +245,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "medico",
-        "notas": "Corta fios e cabos finos. Imprescindível para cirurgias improvisadas."
+        "notas": "Corta fios e cabos finos. Imprescindível para cirurgias improvisadas.",
+        "preco": 28
       }
     }
   },
@@ -266,7 +275,8 @@
         "categoria": "medico",
         "equipavel": true,
         "slotEquipado": 0,
-        "notas": "Equipada: não ocupa slots. −80% Aurora por contato."
+        "notas": "Equipada: não ocupa slots. −80% Aurora por contato.",
+        "preco": 15
       }
     }
   },
@@ -293,7 +303,8 @@
         "slots": 0.5,
         "usos": 1,
         "categoria": "medico",
-        "notas": "Coleta Aurora: requer luvas. Voss pode analisar a amostra."
+        "notas": "Coleta Aurora: requer luvas. Voss pode analisar a amostra.",
+        "preco": 5
       }
     }
   },
@@ -320,7 +331,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "medico",
-        "notas": "+1D3 HP extra (repouso 8h + Kit Avançado). Lavagem: −20% chance infecção."
+        "notas": "+1D3 HP extra (repouso 8h + Kit Avançado). Lavagem: −20% chance infecção.",
+        "preco": 22
       }
     }
   },
@@ -347,7 +359,8 @@
         "slots": 0.5,
         "categoria": "amostra",
         "perigo": true,
-        "notas": "PERIGO: quebra = +2 Aurora imediata. Voss pode analisar. Seringa de Voss: uso voluntário = risco alto."
+        "notas": "PERIGO: quebra = +2 Aurora imediata. Voss pode analisar. Seringa de Voss: uso voluntário = risco alto.",
+        "preco": 0
       }
     }
   },
@@ -373,7 +386,8 @@
         "gridH": 2,
         "slots": 3,
         "categoria": "ciencia",
-        "notas": "+15% Química/Biologia em análise de substâncias. Identifica Composto Aurora com sucesso."
+        "notas": "+15% Química/Biologia em análise de substâncias. Identifica Composto Aurora com sucesso.",
+        "preco": 350
       }
     }
   },
@@ -402,7 +416,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "reducaoAurora": 0.25,
-        "notas": "B2: −50% Aurora. Sem efeito B3+. Dura 4h."
+        "notas": "B2: −50% Aurora. Sem efeito B3+. Dura 4h.",
+        "preco": 5
       }
     }
   },
@@ -431,7 +446,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "reducaoAurora": 0.6,
-        "notas": "B2: −80% | B3: −60%. Dura 8h."
+        "notas": "B2: −80% | B3: −60%. Dura 8h.",
+        "preco": 22
       }
     }
   },
@@ -460,7 +476,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "reducaoAurora": 0.5,
-        "notas": "B2: 0 Aurora | B3: −75% | B4: −50%. Filtro 24h. −5% Percepção."
+        "notas": "B2: 0 Aurora | B3: −75% | B4: −50%. Filtro 24h. −5% Percepção.",
+        "preco": 180
       }
     }
   },
@@ -489,7 +506,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "reducaoAurora": 1,
-        "notas": "ÚNICO no complexo. Aurora = 0 em qualquer andar. Sem penalidade."
+        "notas": "ÚNICO no complexo. Aurora = 0 em qualquer andar. Sem penalidade.",
+        "preco": 450
       }
     }
   },
@@ -518,7 +536,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "armadura": 1,
-        "notas": "Vestido: −1 dano projéteis. −10% DEX quando vestido. Não protege contra garras de Refinados."
+        "notas": "Vestido: −1 dano projéteis. −10% DEX quando vestido. Não protege contra garras de Refinados.",
+        "preco": 1200
       }
     }
   },
@@ -547,7 +566,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "armadura": 1,
-        "notas": "Armadura apenas cabeça. Reduz dano de queda em 2 pontos."
+        "notas": "Armadura apenas cabeça. Reduz dano de queda em 2 pontos.",
+        "preco": 35
       }
     }
   },
@@ -576,7 +596,8 @@
         "equipavel": true,
         "slotEquipado": 0,
         "reducaoAurora": 0.95,
-        "notas": "−95% Aurora. −20% DEX e AGI. Dura 8h. Sala equipamentos B2."
+        "notas": "−95% Aurora. −20% DEX e AGI. Dura 8h. Sala equipamentos B2.",
+        "preco": 850
       }
     }
   },
@@ -604,7 +625,8 @@
         "categoria": "protecao",
         "equipavel": true,
         "slotEquipado": 0,
-        "notas": "Com N95: −60% Aurora (combo). Proteção ocular contra fluidos."
+        "notas": "Com N95: −60% Aurora (combo). Proteção ocular contra fluidos.",
+        "preco": 25
       }
     }
   },
@@ -632,7 +654,8 @@
         "categoria": "protecao",
         "equipavel": true,
         "slotEquipado": 0,
-        "notas": "−1 dano corte nas mãos. −5% em testes de delicadeza manual enquanto equipada."
+        "notas": "−1 dano corte nas mãos. −5% em testes de delicadeza manual enquanto equipada.",
+        "preco": 30
       }
     }
   },
@@ -658,7 +681,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "iluminacao",
-        "notas": "10m cone. Ocupa 1 mão. Requer AA. Sem luz: −40% perícias visuais."
+        "notas": "10m cone. Ocupa 1 mão. Requer AA. Sem luz: −40% perícias visuais.",
+        "preco": 35
       }
     }
   },
@@ -684,7 +708,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "iluminacao",
-        "notas": "20m cone. Mais resistente. Usada pelo pessoal de segurança da Elara."
+        "notas": "20m cone. Mais resistente. Usada pelo pessoal de segurança da Elara.",
+        "preco": 120
       }
     }
   },
@@ -712,7 +737,8 @@
         "categoria": "iluminacao",
         "equipavel": true,
         "slotEquipado": 0,
-        "notas": "Equipada: 0 slots. Mãos livres. 8m. 10h duração."
+        "notas": "Equipada: 0 slots. Mãos livres. 8m. 10h duração.",
+        "preco": 55
       }
     }
   },
@@ -738,7 +764,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "suprimento",
-        "notas": "1m luz emergência. Fogo para incendiar materiais. PERIGO em B3/B4."
+        "notas": "1m luz emergência. Fogo para incendiar materiais. PERIGO em B3/B4.",
+        "preco": 4
       }
     }
   },
@@ -764,7 +791,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "suprimento",
-        "notas": "Carrega: lanterna (8h) / cabeça (10h) / walkie (6h)."
+        "notas": "Carrega: lanterna (8h) / cabeça (10h) / walkie (6h).",
+        "preco": 12
       }
     }
   },
@@ -790,7 +818,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "suprimento",
-        "notas": "Câmeras, detectores, Dremel. Improviso: criar faísca elétrica."
+        "notas": "Câmeras, detectores, Dremel. Improviso: criar faísca elétrica.",
+        "preco": 10
       }
     }
   },
@@ -817,7 +846,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "iluminacao",
-        "notas": "30 min. 20m raio. ATRAI Refinados. Use como diversão ou sinalização externa."
+        "notas": "30 min. 20m raio. ATRAI Refinados. Use como diversão ou sinalização externa.",
+        "preco": 18
       }
     }
   },
@@ -843,7 +873,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "iluminacao",
-        "notas": "2m de luz. 4–6h. Sem pilhas necessárias. Chama apaga com vento forte."
+        "notas": "2m de luz. 4–6h. Sem pilhas necessárias. Chama apaga com vento forte.",
+        "preco": 3
       }
     }
   },
@@ -869,7 +900,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "comunicacao",
-        "notas": "500m interno / 2km externo. B3: −20% | B4: −50% transmissão. Sem criptografia."
+        "notas": "500m interno / 2km externo. B3: −20% | B4: −50% transmissão. Sem criptografia.",
+        "preco": 280
       }
     }
   },
@@ -895,7 +927,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "comunicacao",
-        "notas": "Sem sinal B1+. Fotos baixa qualidade. Agenda: contatos externos para o epílogo."
+        "notas": "Sem sinal B1+. Fotos baixa qualidade. Agenda: contatos externos para o epílogo.",
+        "preco": 350
       }
     }
   },
@@ -921,7 +954,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "comunicacao",
-        "notas": "PISTA: e-mails com holding anônima. Sem sinal B1+. +10% Persuasão corporativa."
+        "notas": "PISTA: e-mails com holding anônima. Sem sinal B1+. +10% Persuasão corporativa.",
+        "preco": 1800
       }
     }
   },
@@ -947,7 +981,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "comunicacao",
-        "notas": "4h de áudio. Gravações = prova no epílogo. Pode gravar sons de Refinados para análise."
+        "notas": "4h de áudio. Gravações = prova no epílogo. Pode gravar sons de Refinados para análise.",
+        "preco": 220
       }
     }
   },
@@ -973,7 +1008,8 @@
         "gridH": 2,
         "slots": 4,
         "categoria": "documento",
-        "notas": "Plantas (solo+B1). Rede interna: logs do sistema. 3h bateria. 2,5kg."
+        "notas": "Plantas (solo+B1). Rede interna: logs do sistema. 3h bateria. 2,5kg.",
+        "preco": 3500
       }
     }
   },
@@ -999,7 +1035,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "documento",
-        "notas": "8MP. Cartão 2GB. Fotos = evidência. Menos profissional que DSLR mas menor."
+        "notas": "8MP. Cartão 2GB. Fotos = evidência. Menos profissional que DSLR mas menor.",
+        "preco": 480
       }
     }
   },
@@ -1025,7 +1062,8 @@
         "gridH": 2,
         "slots": 3,
         "categoria": "documento",
-        "notas": "Fotos de alta qualidade = prova de peso. Flash atrairá atenção no escuro em B3+."
+        "notas": "Fotos de alta qualidade = prova de peso. Flash atrairá atenção no escuro em B3+.",
+        "preco": 2200
       }
     }
   },
@@ -1051,7 +1089,8 @@
         "gridH": 2,
         "slots": 3,
         "categoria": "documento",
-        "notas": "Modo noturno (P&B com grão). Grava áudio. 2h bateria. Falha de Tiago: dissociação via câmera."
+        "notas": "Modo noturno (P&B com grão). Grava áudio. 2h bateria. Falha de Tiago: dissociação via câmera.",
+        "preco": 1600
       }
     }
   },
@@ -1077,7 +1116,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "Cópia de dados = prova. Facilmente escondido. Copiar terminal: teste Computadores."
+        "notas": "Cópia de dados = prova. Facilmente escondido. Copiar terminal: teste Computadores.",
+        "preco": 65
       }
     }
   },
@@ -1103,7 +1143,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "documento",
-        "notas": "PISTA: cláusula das holdings anônimas. Beatriz sabe do parágrafo. +10% Direito."
+        "notas": "PISTA: cláusula das holdings anônimas. Beatriz sabe do parágrafo. +10% Direito.",
+        "preco": 0
       }
     }
   },
@@ -1129,7 +1170,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "Acesso: B1 geral. Inútil em B2+."
+        "notas": "Acesso: B1 geral. Inútil em B2+.",
+        "preco": 0
       }
     }
   },
@@ -1155,7 +1197,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "Acesso: B1 total, B2 labs. Inútil em B3."
+        "notas": "Acesso: B1 total, B2 labs. Inútil em B3.",
+        "preco": 0
       }
     }
   },
@@ -1181,7 +1224,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "B1–B3 irrestrito. B4: código 472391 ainda necessário."
+        "notas": "B1–B3 irrestrito. B4: código 472391 ainda necessário.",
+        "preco": 0
       }
     }
   },
@@ -1207,7 +1251,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "Acesso: solo e guarita. Marcos Heleno o reconhece."
+        "notas": "Acesso: solo e guarita. Marcos Heleno o reconhece.",
+        "preco": 0
       }
     }
   },
@@ -1233,7 +1278,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "documento",
-        "notas": "Portas mecânicas do Galpão. Inútil em B1+."
+        "notas": "Portas mecânicas do Galpão. Inútil em B1+.",
+        "preco": 0
       }
     }
   },
@@ -1259,7 +1305,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "Alicate, faca, chave, abridor. +10% Reparar quando com kit técnico. Arma improvisada: 1D4."
+        "notas": "Alicate, faca, chave, abridor. +10% Reparar quando com kit técnico. Arma improvisada: 1D4.",
+        "preco": 185
       }
     }
   },
@@ -1285,7 +1332,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "ferramenta",
-        "notas": "Isola fios. Sela frestas pequenas. Combinada com silver tape: vedação aprimorada."
+        "notas": "Isola fios. Sela frestas pequenas. Combinada com silver tape: vedação aprimorada.",
+        "preco": 6
       }
     }
   },
@@ -1311,7 +1359,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "Sela frestas: −30% Aurora. Algema improvisada. Impermeável."
+        "notas": "Sela frestas: −30% Aurora. Algema improvisada. Impermeável.",
+        "preco": 12
       }
     }
   },
@@ -1337,7 +1386,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "ferramenta",
-        "notas": "Arma: 1D6. +20% Mecânica/tubulações. Pode ser jogada como distração."
+        "notas": "Arma: 1D6. +20% Mecânica/tubulações. Pode ser jogada como distração.",
+        "preco": 28
       }
     }
   },
@@ -1363,7 +1413,8 @@
         "gridH": 2,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "+15% Elétrica/Reparar em painéis. Pode travar/destravar fechaduras simples."
+        "notas": "+15% Elétrica/Reparar em painéis. Pode travar/destravar fechaduras simples.",
+        "preco": 35
       }
     }
   },
@@ -1389,7 +1440,8 @@
         "gridH": 2,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "+10% Elétrica. Corta fios finos. Parte do kit técnico de Antônio."
+        "notas": "+10% Elétrica. Corta fios finos. Parte do kit técnico de Antônio.",
+        "preco": 22
       }
     }
   },
@@ -1415,7 +1467,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "ferramenta",
-        "notas": "PISTA: DOC-13. Abre B4 em 2D6 rodadas — muito barulhento (atrai Refinados)."
+        "notas": "PISTA: DOC-13. Abre B4 em 2D6 rodadas — muito barulhento (atrai Refinados).",
+        "preco": 320
       }
     }
   },
@@ -1441,7 +1494,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "ferramenta",
-        "notas": "Algema: FOR 60 para arrombar. Armadilha tropeço: Percepção para detectar."
+        "notas": "Algema: FOR 60 para arrombar. Armadilha tropeço: Percepção para detectar.",
+        "preco": 8
       }
     }
   },
@@ -1467,7 +1521,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "+20% Fechaduras mecânicas. Inútil em fechaduras eletrônicas/código. Encontrado em B1."
+        "notas": "+20% Fechaduras mecânicas. Inútil em fechaduras eletrônicas/código. Encontrado em B1.",
+        "preco": 0
       }
     }
   },
@@ -1493,7 +1548,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "Imobiliza humanos. Refinados: FOR 80+ para arrombar. Requer chave ou lockpick para abrir."
+        "notas": "Imobiliza humanos. Refinados: FOR 80+ para arrombar. Requer chave ou lockpick para abrir.",
+        "preco": 45
       }
     }
   },
@@ -1519,7 +1575,8 @@
         "gridH": 1,
         "slots": 3,
         "categoria": "ferramenta",
-        "notas": "300kg. Escalada de poços de elevador. Cortável com faca (1D4 rodadas)."
+        "notas": "300kg. Escalada de poços de elevador. Cortável com faca (1D4 rodadas).",
+        "preco": 85
       }
     }
   },
@@ -1545,7 +1602,8 @@
         "gridH": 1,
         "slots": 2,
         "categoria": "ferramenta",
-        "notas": "150kg. Alternativa compacta para poços de elevador."
+        "notas": "150kg. Alternativa compacta para poços de elevador.",
+        "preco": 60
       }
     }
   },
@@ -1571,7 +1629,8 @@
         "gridH": 1,
         "slots": 0.5,
         "categoria": "ferramenta",
-        "notas": "Ancoragem de corda. Sem ele, descidas na corda: −20% em testes de Atletismo."
+        "notas": "Ancoragem de corda. Sem ele, descidas na corda: −20% em testes de Atletismo.",
+        "preco": 35
       }
     }
   },
@@ -1597,7 +1656,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "ferramenta",
-        "notas": "Armadilha: 1D3 dano + AGI ou cai. Trava alavancas. Combine com silver tape."
+        "notas": "Armadilha: 1D3 dano + AGI ou cai. Trava alavancas. Combine com silver tape.",
+        "preco": 8
       }
     }
   },
@@ -1625,7 +1685,8 @@
         "categoria": "container",
         "linhasBonus": 3,
         "notas": "+3 linhas no grid quando equipada.",
-        "bagBonus": 1
+        "bagBonus": 1,
+        "preco": 145
       }
     }
   },
@@ -1653,7 +1714,8 @@
         "categoria": "container",
         "linhasBonus": 3,
         "notas": "+3 linhas. Resistente a cortes. Sala segurança B1.",
-        "bagBonus": 2
+        "bagBonus": 2,
+        "preco": 280
       }
     }
   },
@@ -1681,7 +1743,8 @@
         "categoria": "container",
         "linhasBonus": 1,
         "notas": "+1 linha no grid. Acesso rápido.",
-        "bagBonus": 1
+        "bagBonus": 1,
+        "preco": 95
       }
     }
   },
@@ -1710,7 +1773,8 @@
         "categoria": "suprimento",
         "notas": "Remove penalidade de fome por 3h. Calórico baixo — não substitui refeição completa.",
         "fome": 25,
-        "sede": 0
+        "sede": 0,
+        "preco": 3
       }
     }
   },
@@ -1739,7 +1803,8 @@
         "categoria": "suprimento",
         "notas": "Remove penalidade de fome por 6h.",
         "fome": 35,
-        "sede": 0
+        "sede": 0,
+        "preco": 4
       }
     }
   },
@@ -1768,7 +1833,8 @@
         "categoria": "suprimento",
         "notas": "Necessária para cura natural. Torneiras B2+ contaminadas.",
         "fome": 0,
-        "sede": 40
+        "sede": 40,
+        "preco": 2
       }
     }
   },
@@ -1797,7 +1863,8 @@
         "categoria": "suprimento",
         "notas": "Necessária para cura natural. Hidratação completa.",
         "fome": 0,
-        "sede": 45
+        "sede": 45,
+        "preco": 2
       }
     }
   },
@@ -1826,7 +1893,8 @@
         "categoria": "suprimento",
         "notas": "Leve. Copa ou vending. Sedento + fome leve.",
         "fome": 10,
-        "sede": 25
+        "sede": 25,
+        "preco": 2
       }
     }
   },
@@ -1855,7 +1923,8 @@
         "categoria": "suprimento",
         "notas": "+15 sede agora, −5 depois (açúcar). Cafeína: remove fadiga por 1h.",
         "fome": 5,
-        "sede": 15
+        "sede": 15,
+        "preco": 3
       }
     }
   },
@@ -1884,7 +1953,8 @@
         "categoria": "suprimento",
         "notas": "+20 fome, −5 sede (açúcar seca boca). Calorias rápidas.",
         "fome": 20,
-        "sede": -5
+        "sede": -5,
+        "preco": 4
       }
     }
   },
@@ -1913,7 +1983,8 @@
         "categoria": "suprimento",
         "notas": "+15 fome, −5 sede. Vending machine.",
         "fome": 15,
-        "sede": -5
+        "sede": -5,
+        "preco": 3
       }
     }
   },
@@ -1942,7 +2013,8 @@
         "categoria": "suprimento",
         "notas": "+20 fome, −10 sede (salgado). Proteína rápida.",
         "fome": 20,
-        "sede": -10
+        "sede": -10,
+        "preco": 5
       }
     }
   },
@@ -1971,7 +2043,8 @@
         "categoria": "suprimento",
         "notas": "Suprime fome por 2h. Remove fadiga. Requer água. Aumenta sede depois.",
         "fome": 15,
-        "sede": 10
+        "sede": 10,
+        "preco": 2
       }
     }
   },
@@ -2000,7 +2073,8 @@
         "categoria": "suprimento",
         "notas": "Melhor custo-benefício: fome + sede. Natural.",
         "fome": 20,
-        "sede": 20
+        "sede": 20,
+        "preco": 1
       }
     }
   },
@@ -2029,7 +2103,8 @@
         "categoria": "suprimento",
         "notas": "Suprime fome/fadiga 3h. Crash: −10% por 1h depois. Vending B1.",
         "fome": 10,
-        "sede": 10
+        "sede": 10,
+        "preco": 7
       }
     }
   },
@@ -2058,7 +2133,8 @@
         "categoria": "suprimento",
         "notas": "+30 fome. Encontrado na cozinha B1.",
         "fome": 30,
-        "sede": 0
+        "sede": 0,
+        "preco": 5
       }
     }
   },
@@ -2087,7 +2163,8 @@
         "categoria": "suprimento",
         "notas": "12h fome. +10 sede (vem com pacote de água). Encontrada em B1.",
         "fome": 60,
-        "sede": 10
+        "sede": 10,
+        "preco": 75
       }
     }
   },
@@ -2114,7 +2191,8 @@
         "slots": 1,
         "usos": 3,
         "categoria": "suprimento",
-        "notas": "Antisséptico. Fogo improvisado: 1D6. PERIGO em B3/B4 (gases inflamáveis)."
+        "notas": "Antisséptico. Fogo improvisado: 1D6. PERIGO em B3/B4 (gases inflamáveis).",
+        "preco": 12
       }
     }
   },
@@ -2140,7 +2218,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "municao",
-        "notas": "50 cart. / ~8 recargas do .38 Taurus."
+        "notas": "50 cart. / ~8 recargas do .38 Taurus.",
+        "preco": 85
       }
     }
   },
@@ -2166,7 +2245,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "municao",
-        "notas": "50 cart. Escassa no complexo. ~8 recargas do .357."
+        "notas": "50 cart. Escassa no complexo. ~8 recargas do .357.",
+        "preco": 110
       }
     }
   },
@@ -2192,7 +2272,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "municao",
-        "notas": "50 cart. / ~3 pentes do PT92. Mais comum na segurança."
+        "notas": "50 cart. / ~3 pentes do PT92. Mais comum na segurança.",
+        "preco": 95
       }
     }
   },
@@ -2218,7 +2299,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "municao",
-        "notas": "25 cart. / ~4 recargas. ESCASSO. Dano varia por distância (4D6/2D6/1D6)."
+        "notas": "25 cart. / ~4 recargas. ESCASSO. Dano varia por distância (4D6/2D6/1D6).",
+        "preco": 55
       }
     }
   },
@@ -2244,7 +2326,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "municao",
-        "notas": "2D6+4 (projétil único). Mais preciso. Sem dispersão. Muito escasso."
+        "notas": "2D6+4 (projétil único). Mais preciso. Sem dispersão. Muito escasso.",
+        "preco": 70
       }
     }
   },
@@ -2270,7 +2353,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "ferramenta",
-        "notas": "1D6+DB improviso"
+        "notas": "1D6+DB improviso",
+        "preco": 35
       }
     }
   },
@@ -2296,7 +2380,8 @@
         "gridH": 2,
         "slots": 2,
         "categoria": "ferramenta",
-        "notas": "1D8+2+DB. Ruído."
+        "notas": "1D8+2+DB. Ruído.",
+        "preco": 120
       }
     }
   },
@@ -2323,7 +2408,8 @@
         "slots": 4,
         "usos": 3,
         "categoria": "medico",
-        "notas": "Estabiliza 0HP. 3 usos."
+        "notas": "Estabiliza 0HP. 3 usos.",
+        "preco": 2800
       }
     }
   },
@@ -2350,7 +2436,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "medico",
-        "notas": "Para hemorragia."
+        "notas": "Para hemorragia.",
+        "preco": 45
       }
     }
   },
@@ -2377,7 +2464,8 @@
         "slots": 1,
         "usos": 7,
         "categoria": "medico",
-        "notas": "Previne infecção. 7 doses."
+        "notas": "Previne infecção. 7 doses.",
+        "preco": 25
       }
     }
   },
@@ -2404,7 +2492,8 @@
         "slots": 1,
         "usos": 10,
         "categoria": "sobrevivencia",
-        "notas": "Purifica água."
+        "notas": "Purifica água.",
+        "preco": 18
       }
     }
   },
@@ -2430,7 +2519,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "navegacao",
-        "notas": "+20% Navigate."
+        "notas": "+20% Navigate.",
+        "preco": 55
       }
     }
   },
@@ -2456,7 +2546,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "navegacao",
-        "notas": "+40% Navigate."
+        "notas": "+40% Navigate.",
+        "preco": 380
       }
     }
   },
@@ -2482,7 +2573,8 @@
         "gridH": 2,
         "slots": 4,
         "categoria": "escalada",
-        "notas": "Descida 30m."
+        "notas": "Descida 30m.",
+        "preco": 450
       }
     }
   },
@@ -2509,7 +2601,8 @@
         "slots": 1,
         "usos": 2,
         "categoria": "explosivo",
-        "notas": "3D10 raio 3m."
+        "notas": "3D10 raio 3m.",
+        "preco": 0
       }
     }
   },
@@ -2536,7 +2629,8 @@
         "slots": 1,
         "usos": 1,
         "categoria": "especial",
-        "notas": "Reduz Aurora 1D3."
+        "notas": "Reduz Aurora 1D3.",
+        "preco": 0
       }
     }
   },
@@ -2562,7 +2656,8 @@
         "gridH": 1,
         "slots": 1,
         "categoria": "documento",
-        "notas": "Item narrativo."
+        "notas": "Item narrativo.",
+        "preco": 0
       }
     }
   },
@@ -2575,7 +2670,8 @@
         "gridW": 2,
         "gridH": 1,
         "quickBonus": 1,
-        "categoria": "correia"
+        "categoria": "correia",
+        "preco": 220
       }
     },
     "system": {
@@ -2601,7 +2697,8 @@
         "gridH": 2,
         "quickBonus": 2,
         "bagBonus": 1,
-        "categoria": "colete"
+        "categoria": "colete",
+        "preco": 480
       }
     },
     "system": {
@@ -2626,7 +2723,8 @@
         "gridW": 1,
         "gridH": 2,
         "bagBonus": 1,
-        "categoria": "bolsa"
+        "categoria": "bolsa",
+        "preco": 85
       }
     },
     "system": {
@@ -2651,7 +2749,8 @@
         "gridW": 2,
         "gridH": 2,
         "bagBonus": 3,
-        "categoria": "mochila"
+        "categoria": "mochila",
+        "preco": 380
       }
     },
     "system": {
@@ -2676,7 +2775,8 @@
         "gridW": 1,
         "gridH": 1,
         "quickBonus": 1,
-        "categoria": "coldre"
+        "categoria": "coldre",
+        "preco": 150
       }
     },
     "system": {
@@ -2701,7 +2801,8 @@
         "gridW": 2,
         "gridH": 1,
         "quickBonus": 1,
-        "categoria": "correia"
+        "categoria": "correia",
+        "preco": 95
       }
     },
     "system": {
@@ -2725,7 +2826,8 @@
       "debaixo-da-pele": {
         "gridW": 1,
         "gridH": 2,
-        "categoria": "equipamento"
+        "categoria": "equipamento",
+        "preco": 320
       }
     },
     "system": {
@@ -2749,7 +2851,8 @@
       "debaixo-da-pele": {
         "gridW": 1,
         "gridH": 2,
-        "categoria": "medico"
+        "categoria": "medico",
+        "preco": 180
       }
     },
     "system": {
@@ -2773,7 +2876,8 @@
       "debaixo-da-pele": {
         "gridW": 1,
         "gridH": 1,
-        "categoria": "comunicacao"
+        "categoria": "comunicacao",
+        "preco": 120
       }
     },
     "system": {
@@ -2797,7 +2901,8 @@
       "debaixo-da-pele": {
         "gridW": 2,
         "gridH": 1,
-        "categoria": "documento"
+        "categoria": "documento",
+        "preco": 22
       }
     },
     "system": {
@@ -2821,7 +2926,8 @@
       "debaixo-da-pele": {
         "gridW": 2,
         "gridH": 2,
-        "categoria": "sobrevivencia"
+        "categoria": "sobrevivencia",
+        "preco": 280
       }
     },
     "system": {
@@ -2845,7 +2951,8 @@
       "debaixo-da-pele": {
         "gridW": 2,
         "gridH": 1,
-        "categoria": "alimentacao"
+        "categoria": "alimentacao",
+        "preco": 45
       }
     },
     "system": {

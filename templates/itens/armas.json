@@ -11,30 +11,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Armas de Fogo (Pistola)", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Armas de Fogo (Pistola)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 15, "units": "", "damage": "1D10" },
-        "long":    { "value": 30, "units": "", "damage": "1D10" },
-        "extreme": { "value": 60, "units": "", "damage": "1D10" }
+        "normal": {
+          "value": 15,
+          "units": "",
+          "damage": "1D10"
+        },
+        "long": {
+          "value": 30,
+          "units": "",
+          "damage": "1D10"
+        },
+        "extreme": {
+          "value": 60,
+          "units": "",
+          "damage": "1D10"
+        }
       },
       "wpnType": "ranged",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 6, "max": 6 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 6,
+        "max": 6
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   1
+      "weight": 1
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 3,
         "categoria": "arma",
-        "notas": "Recarga: 2 ações. Sem modo semiautomático."
+        "notas": "Recarga: 2 ações. Sem modo semiautomático.",
+        "preco": 1200
       }
     }
   },
@@ -50,30 +82,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Armas de Fogo (Pistola)", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Armas de Fogo (Pistola)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 15, "units": "", "damage": "1D10" },
-        "long":    { "value": 30, "units": "", "damage": "1D10" },
-        "extreme": { "value": 60, "units": "", "damage": "1D10" }
+        "normal": {
+          "value": 15,
+          "units": "",
+          "damage": "1D10"
+        },
+        "long": {
+          "value": 30,
+          "units": "",
+          "damage": "1D10"
+        },
+        "extreme": {
+          "value": 60,
+          "units": "",
+          "damage": "1D10"
+        }
       },
       "wpnType": "ranged",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 17, "max": 17 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 17,
+        "max": 17
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   1
+      "weight": 1
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 3,
         "categoria": "arma",
-        "notas": "Recarga: 1 ação (pente). Disparo simples ou rápido."
+        "notas": "Recarga: 1 ação (pente). Disparo simples ou rápido.",
+        "preco": 1400
       }
     }
   },
@@ -89,30 +153,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Armas de Fogo (Espingarda)", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Armas de Fogo (Espingarda)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 10, "units": "", "damage": "4D6" },
-        "long":    { "value": 20, "units": "", "damage": "2D6" },
-        "extreme": { "value": 40, "units": "", "damage": "1D6" }
+        "normal": {
+          "value": 10,
+          "units": "",
+          "damage": "4D6"
+        },
+        "long": {
+          "value": 20,
+          "units": "",
+          "damage": "2D6"
+        },
+        "extreme": {
+          "value": 40,
+          "units": "",
+          "damage": "1D6"
+        }
       },
       "wpnType": "ranged",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 6, "max": 6 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 6,
+        "max": 6
+      },
       "blastRadius": "",
       "malfunction": 99,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   4
+      "weight": 4
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 3,
+        "gridW": 1,
+        "gridH": 3,
         "slots": 6,
         "categoria": "arma",
-        "notas": "Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação."
+        "notas": "Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação.",
+        "preco": 900
       }
     }
   },
@@ -128,30 +224,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D6" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D6"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 0, "max": 0 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 0,
+        "max": 0
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   0
+      "weight": 0
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 2,
         "categoria": "arma",
-        "notas": "Silenciosa. Ataque pelas costas: +bônus de dados."
+        "notas": "Silenciosa. Ataque pelas costas: +bônus de dados.",
+        "preco": 85
       }
     }
   },
@@ -167,30 +295,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D6+2" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D6+2"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 0, "max": 0 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 0,
+        "max": 0
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": true
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   2
+      "weight": 2
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 3,
         "categoria": "ferramenta-arma",
-        "notas": "Uso duplo: arma e ferramenta. +20% em testes de arrombar portas."
+        "notas": "Uso duplo: arma e ferramenta. +20% em testes de arrombar portas.",
+        "preco": 35
       }
     }
   },
@@ -206,30 +366,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D8+1D4" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D8+1D4"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 1, "max": 1 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 1,
+        "max": 1
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": true
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   4
+      "weight": 4
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 3,
+        "gridW": 1,
+        "gridH": 3,
         "slots": 5,
         "categoria": "ferramenta-arma",
-        "notas": "Pesado (−10% DEX enquanto carregado). Descarga: névoa CO₂ cobre 3m, teste CON ou cego+sufoca por 1D3 rodadas."
+        "notas": "Pesado (−10% DEX enquanto carregado). Descarga: névoa CO₂ cobre 3m, teste CON ou cego+sufoca por 1D3 rodadas.",
+        "preco": 120
       }
     }
   },
@@ -245,30 +437,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D8+1D4" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D8+1D4"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 0, "max": 0 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 0,
+        "max": 0
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   2
+      "weight": 2
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 4,
         "categoria": "arma",
-        "notas": "Pode arrombar portas de madeira em 1D3 rodadas."
+        "notas": "Pode arrombar portas de madeira em 1D3 rodadas.",
+        "preco": 80
       }
     }
   },
@@ -284,30 +508,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D6+1" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D6+1"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 0, "max": 0 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 0,
+        "max": 0
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": true },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": true
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   1
+      "weight": 1
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 2,
+        "gridW": 1,
+        "gridH": 2,
         "slots": 3,
         "categoria": "ferramenta-arma",
-        "notas": "Encontrado em salas de manutenção. Pode ser dobrado para criar gancho ou alavanca (teste Mecânica)."
+        "notas": "Encontrado em salas de manutenção. Pode ser dobrado para criar gancho ou alavanca (teste Mecânica).",
+        "preco": 0
       }
     }
   },
@@ -323,30 +579,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Briga", "id": "" },
-        "alternativ": { "name": "Medicina", "id": "" }
+        "main": {
+          "name": "Briga",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "Medicina",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 0, "units": "", "damage": "1D3" },
-        "long":    { "value": 0, "units": "", "damage": "" },
-        "extreme": { "value": 0, "units": "", "damage": "" }
+        "normal": {
+          "value": 0,
+          "units": "",
+          "damage": "1D3"
+        },
+        "long": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        },
+        "extreme": {
+          "value": 0,
+          "units": "",
+          "damage": ""
+        }
       },
       "wpnType": "melee",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 0, "max": 0 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 0,
+        "max": 0
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   0
+      "weight": 0
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 1,
+        "gridW": 1,
+        "gridH": 1,
         "slots": 0.5,
         "categoria": "arma",
-        "notas": "Crítico: causa hemorragia (1 PV/rodada, requer bandagem ou teste Medicina). Encontrado em B2."
+        "notas": "Crítico: causa hemorragia (1 PV/rodada, requer bandagem ou teste Medicina). Encontrado em B2.",
+        "preco": 45
       }
     }
   },
@@ -362,30 +650,62 @@
         "keeper": ""
       },
       "skill": {
-        "main":      { "name": "Arremesso", "id": "" },
-        "alternativ": { "name": "", "id": "" }
+        "main": {
+          "name": "Arremesso",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
       },
       "range": {
-        "normal":  { "value": 2,  "units": "", "damage": "0" },
-        "long":    { "value": 4,  "units": "", "damage": "0" },
-        "extreme": { "value": 6,  "units": "", "damage": "0" }
+        "normal": {
+          "value": 2,
+          "units": "",
+          "damage": "0"
+        },
+        "long": {
+          "value": 4,
+          "units": "",
+          "damage": "0"
+        },
+        "extreme": {
+          "value": 6,
+          "units": "",
+          "damage": "0"
+        }
       },
       "wpnType": "ranged",
-      "usesPerRound": { "value": 1, "max": 1, "period": "" },
-      "bullets":      { "value": 6, "max": 6 },
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 6,
+        "max": 6
+      },
       "blastRadius": "",
       "malfunction": 100,
-      "properties": { "improv": false },
-      "price":    { "value": 0, "level": "" },
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
       "quantity": 1,
-      "weight":   0
+      "weight": 0
     },
     "flags": {
       "debaixo-da-pele": {
-        "gridW": 1, "gridH": 1,
+        "gridW": 1,
+        "gridH": 1,
         "slots": 1,
         "categoria": "arma",
-        "notas": "6 usos. Ineficaz contra criaturas sem olhos normais. Vento desfavorável: teste AGI ou afeta o próprio usuário."
+        "notas": "6 usos. Ineficaz contra criaturas sem olhos normais. Vento desfavorável: teste AGI ou afeta o próprio usuário.",
+        "preco": 35
       }
     }
   }

@@ -12,6 +12,7 @@ import "./gm-panel.js";
 import "./campaign-panel.js";
 import "./player-hud.js";
 import "./roll-request.js";
+import { handleTransferSocket } from "./item-transfer.js";
 
 const MODULE_ID = "debaixo-da-pele";
 const VERSION   = "1.8.0";
@@ -102,6 +103,12 @@ Hooks.once("init", () => {
 // (setup usa optional-chain silencioso; ready é o momento seguro)
 
 async function _handleSocket(data) {
+  // Delega transferências de itens para o módulo especializado
+  if (data.action?.startsWith("itemTransfer")) {
+    await handleTransferSocket(data);
+    return;
+  }
+
   switch (data.action) {
     case "revelarComposto": {
       // Refresh visual para todos os clientes

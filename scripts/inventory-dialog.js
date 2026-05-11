@@ -3,6 +3,8 @@
 // Debaixo da Pele | Foundry VTT v11/v12
 // ============================================================
 
+import { showTransferPicker } from "./item-transfer.js";
+
 const MODULE_ID = "debaixo-da-pele";
 
 const GRID_COLS       = 5;   // colunas da mochila
@@ -318,6 +320,7 @@ export class DDPInventoryDialog extends Application {
         const isWeapon = item.type === "weapon";
         const isFood   = _isConsumable(item);
         const flags    = item.flags?.[MODULE_ID] ?? {};
+        const preco    = flags.preco ?? null;
         const { ammoValue, ammoMax } = isWeapon ? _getAmmo(item) : { ammoValue: 0, ammoMax: 0 };
         items.push({
           id:           itemId,
@@ -330,6 +333,8 @@ export class DDPInventoryDialog extends Application {
           isFood,
           fomeRestore:  flags.fome ?? 0,
           sedeRestore:  flags.sede ?? 0,
+          preco,
+          precoLabel:   preco !== null ? (preco > 0 ? `R$ ${preco}` : "Encontrado") : "",
           ammoValue,
           ammoMax,
           styleLeft:    pos.col * CELL_PX,
@@ -374,6 +379,7 @@ export class DDPInventoryDialog extends Application {
         const isWeapon = i.type === "weapon";
         const isFood   = _isConsumable(i);
         const flags    = i.flags?.[MODULE_ID] ?? {};
+        const preco    = flags.preco ?? null;
         const { ammoValue, ammoMax } = isWeapon ? _getAmmo(i) : { ammoValue: 0, ammoMax: 0 };
         return {
           id:          i.id,
@@ -385,6 +391,8 @@ export class DDPInventoryDialog extends Application {
           isFood,
           fomeRestore: flags.fome ?? 0,
           sedeRestore: flags.sede ?? 0,
+          preco,
+          precoLabel:  preco !== null ? (preco > 0 ? `R$ ${preco}` : "Encontrado") : "",
           ammoValue,
           ammoMax
         };
@@ -779,6 +787,8 @@ export class DDPInventoryDialog extends Application {
     }
 
     addEntry("Girar", "fa-sync-alt", () => this._rotateItem(zone, itemId), "#8888ff");
+    addEntry("Enviar para…", "fa-share", () => showTransferPicker(this.actor.id, itemId), "#88ddff");
+    addSep();
     addEntry("Remover do grid", "fa-times", () => { delete this._layout[zone][itemId]; this.render(false); }, "#ff8888");
 
     attach();
@@ -807,6 +817,9 @@ export class DDPInventoryDialog extends Application {
     if (isWear) {
       addEntry("Equipar", "fa-shield-alt", () => { this._equipItem(itemId); this.render(false); }, "#88ff88");
     }
+
+    if (isFood || isWear) addSep();
+    addEntry("Enviar para…", "fa-share", () => showTransferPicker(this.actor.id, itemId), "#88ddff");
 
     attach();
   }
