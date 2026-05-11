@@ -1608,7 +1608,8 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
 .ddp-bar-hp     { color: #66cc66; }
 .ddp-bar-san    { color: #6688dd; }
 .ddp-bar-aurora { color: #aa66dd; }
-.ddp-bar-fome   { color: #cc8833; }
+.ddp-bar-fome   { color: #cc8833; font-size: 0.85em; }
+.ddp-bar-sede   { color: #44aacc; font-size: 0.85em; }
 
 .ddp-inv-bar-track {
   flex: 1;
@@ -1629,6 +1630,7 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
 .ddp-bar-fill-san    { background: #4466cc; }
 .ddp-bar-fill-aurora { background: #8844cc; }
 .ddp-bar-fill-fome   { background: #cc7722; }
+.ddp-bar-fill-sede   { background: #2299bb; }
 
 .ddp-inv-bar-val {
   font-size: 0.7em;
@@ -1698,6 +1700,48 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   font-size: 0.7em;
   color: #ffaa44;
   margin-top: 1px;
+}
+
+/* Comida/bebida na lista não alocados */
+.ddp-inv-unass-food {
+  font-size: 0.7em;
+  color: #ddcc66;
+  margin-top: 1px;
+}
+
+/* Badge de comida no item do grid */
+.ddp-inv-food-badge {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 0.65em;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 0.8;
+  text-shadow: 0 0 3px rgba(0,0,0,0.9);
+}
+
+/* Botões de ajuste nas barras de fome/sede */
+.ddp-bar-adj {
+  all: unset;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  font-size: 0.85em;
+  line-height: 14px;
+  cursor: pointer;
+  color: #aaa;
+  background: #1a1a1a;
+  border-radius: 2px;
+  border: 1px solid #333;
+  flex-shrink: 0;
+  transition: color 0.1s, border-color 0.1s;
+}
+
+.ddp-bar-adj:hover {
+  color: #eee;
+  border-color: #666;
+  background: #252525;
 }
 
 /* Corpo */

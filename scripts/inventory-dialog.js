@@ -287,6 +287,14 @@ export class DDPInventoryDialog extends Application {
       ...Object.keys(this._layout.equipped ?? {})
     ]);
 
+    // ── Detecta item consumível (comida/bebida) ───────────
+    const _isConsumable = (item) => {
+      const f = item.flags?.[MODULE_ID];
+      if (f?.categoria === "suprimento") return true;
+      if ((f?.fome ?? 0) !== 0 || (f?.sede ?? 0) !== 0) return true;
+      return /biscoito|barra de energia|barra de cereal|garrafa|água|agua|suco|refrigerante|chocolate|amendoim|café|cafe|maçã|maca|energético|energetico|pão|pao|ração|racao|mre|comida|lanche/i.test(item.name ?? "");
+    };
+
     // ── Helper de munição para um item arma ──────────────
     const _getAmmo = (item) => {
       const max = item.system?.bullets?.max ?? 0;
@@ -308,21 +316,26 @@ export class DDPInventoryDialog extends Application {
         const h  = pos.rotated ? sz.w : sz.h;
         used += w * h;
         const isWeapon = item.type === "weapon";
+        const isFood   = _isConsumable(item);
+        const flags    = item.flags?.[MODULE_ID] ?? {};
         const { ammoValue, ammoMax } = isWeapon ? _getAmmo(item) : { ammoValue: 0, ammoMax: 0 };
         items.push({
-          id:          itemId,
-          name:        item.name,
-          img:         item.img,
-          rotated:     pos.rotated,
-          sizeLabel:   `${sz.w}×${sz.h}`,
-          isWearable:  _isWearable(item),
-          isWeapon:    isWeapon && ammoMax > 0,
+          id:           itemId,
+          name:         item.name,
+          img:          item.img,
+          rotated:      pos.rotated,
+          sizeLabel:    `${sz.w}×${sz.h}`,
+          isWearable:   _isWearable(item),
+          isWeapon:     isWeapon && ammoMax > 0,
+          isFood,
+          fomeRestore:  flags.fome ?? 0,
+          sedeRestore:  flags.sede ?? 0,
           ammoValue,
           ammoMax,
-          styleLeft:   pos.col * CELL_PX,
-          styleTop:    pos.row * CELL_PX,
-          styleWidth:  w * CELL_PX,
-          styleHeight: h * CELL_PX,
+          styleLeft:    pos.col * CELL_PX,
+          styleTop:     pos.row * CELL_PX,
+          styleWidth:   w * CELL_PX,
+          styleHeight:  h * CELL_PX,
           zone
         });
       }
@@ -359,14 +372,19 @@ export class DDPInventoryDialog extends Application {
       .map(i => {
         const sz = _getItemSize(i);
         const isWeapon = i.type === "weapon";
+        const isFood   = _isConsumable(i);
+        const flags    = i.flags?.[MODULE_ID] ?? {};
         const { ammoValue, ammoMax } = isWeapon ? _getAmmo(i) : { ammoValue: 0, ammoMax: 0 };
         return {
-          id:        i.id,
-          name:      i.name,
-          img:       i.img,
-          sizeLabel: `${sz.w}×${sz.h}`,
-          isWearable: _isWearable(i),
-          isWeapon:   isWeapon && ammoMax > 0,
+          id:          i.id,
+          name:        i.name,
+          img:         i.img,
+          sizeLabel:   `${sz.w}×${sz.h}`,
+          isWearable:  _isWearable(i),
+          isWeapon:    isWeapon && ammoMax > 0,
+          isFood,
+          fomeRestore: flags.fome ?? 0,
+          sedeRestore: flags.sede ?? 0,
           ammoValue,
           ammoMax
         };
@@ -375,12 +393,14 @@ export class DDPInventoryDialog extends Application {
     // ── Barras de status ──────────────────────────────────
     const hp  = this.actor.system?.attribs?.hp  ?? { value: 10, max: 10 };
     const san = this.actor.system?.attribs?.san ?? { value: 50, max: 99 };
-    const auroraVal  = this.actor.getFlag(MODULE_ID, "aurora") ?? 0;
-    const fomeVal    = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "fome") ?? 100));
-    const hpPct      = Math.round(Math.max(0, Math.min(100, (hp.value / Math.max(1, hp.max))  * 100)));
-    const sanPct     = Math.round(Math.max(0, Math.min(100, (san.value / Math.max(1, san.max ?? 99)) * 100)));
-    const auroraPct  = Math.round((auroraVal / 10) * 100);
-    const fomePct    = fomeVal;
+    const auroraVal = this.actor.getFlag(MODULE_ID, "aurora") ?? 0;
+    const fomeVal   = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "fome") ?? 100));
+    const sedeVal   = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "sede") ?? 100));
+    const hpPct     = Math.round(Math.max(0, Math.min(100, (hp.value / Math.max(1, hp.max)) * 100)));
+    const sanPct    = Math.round(Math.max(0, Math.min(100, (san.value / Math.max(1, san.max ?? 99)) * 100)));
+    const auroraPct = Math.round((auroraVal / 10) * 100);
+    const fomePct   = fomeVal;
+    const sedePct   = sedeVal;
 
     return {
       actorName:   this.actor.name,
@@ -388,11 +408,12 @@ export class DDPInventoryDialog extends Application {
       canEdit:     this.actor.isOwner || game.user.isGM,
 
       // Barras de status
-      hp:       { value: hp.value, max: hp.max },
-      san:      { value: san.value, max: san.max ?? 99 },
-      aurora:   { value: auroraVal, max: 10 },
-      fome:     { value: fomeVal, max: 100 },
-      hpPct, sanPct, auroraPct, fomePct,
+      hp:     { value: hp.value,    max: hp.max },
+      san:    { value: san.value,   max: san.max ?? 99 },
+      aurora: { value: auroraVal,   max: 10 },
+      fome:   { value: fomeVal,     max: 100 },
+      sede:   { value: sedeVal,     max: 100 },
+      hpPct, sanPct, auroraPct, fomePct, sedePct,
 
       // Zona rápida
       quickItems,
@@ -452,6 +473,11 @@ export class DDPInventoryDialog extends Application {
 
     // ── Drag: item DO grid ──
     html.find(".ddp-inv-placed-item").on("dragstart", (e) => {
+      // Não inicia drag se o clique veio de um botão interativo dentro do item
+      if (e.originalEvent?.target?.closest?.(".ddp-inv-ammo-badge, .ddp-inv-rotate-icon")) {
+        e.preventDefault();
+        return;
+      }
       const itemId  = e.currentTarget.dataset.itemId;
       const fromZone = e.currentTarget.dataset.zone;
       const rect    = e.currentTarget.getBoundingClientRect();
@@ -521,7 +547,8 @@ export class DDPInventoryDialog extends Application {
       });
     }
 
-    // ── Munição: botões +/− ──
+    // ── Munição: mousedown stop (previne drag) + clique +/− ──
+    html.find(".ddp-ammo-btn").on("mousedown", (e) => e.stopPropagation());
     html.find(".ddp-ammo-dec, .ddp-ammo-inc").on("click", async (e) => {
       e.stopPropagation();
       e.preventDefault();
@@ -535,6 +562,27 @@ export class DDPInventoryDialog extends Application {
       const nova   = Math.max(0, Math.min(max, cur + delta));
       await item.setFlag(MODULE_ID, "ammo", nova);
       this.render(false);
+    });
+
+    // ── Ajuste manual de fome/sede nas barras ──
+    html.find(".ddp-bar-adj").on("click", async (e) => {
+      e.stopPropagation();
+      const stat  = e.currentTarget.dataset.stat;          // "fome" | "sede"
+      const delta = parseInt(e.currentTarget.dataset.delta, 10);
+      const cur   = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, stat) ?? 100));
+      const nova  = Math.max(0, Math.min(100, cur + delta));
+      await this.actor.setFlag(MODULE_ID, stat, nova);
+      this.render(false);
+    });
+
+    // ── Botão direito em item NÃO alocado → menu contextual ──
+    html.find(".ddp-inv-unass-item").on("contextmenu", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const itemId = e.currentTarget.dataset.itemId;
+      const item   = this.actor.items.get(itemId);
+      if (!item) return;
+      this._showUnassContextMenu(e.originalEvent, itemId, item);
     });
 
     // ── Botões ──
@@ -632,61 +680,135 @@ export class DDPInventoryDialog extends Application {
     });
   }
 
-  // ── Menu contextual para itens no grid ────────────────
-  _showGridContextMenu(event, itemId, zone, isWearable) {
-    // Remove menus anteriores
-    document.querySelectorAll(".ddp-context-menu").forEach(m => m.remove());
+  // ── Consome item de comida/bebida ─────────────────────
+  async _consumeItem(itemId) {
+    const item = this.actor.items.get(itemId);
+    if (!item) return;
 
+    const flags       = item.flags?.[MODULE_ID] ?? {};
+    const fomeGanho   = flags.fome ?? 0;
+    const sedeGanho   = flags.sede ?? 0;
+    const curFome     = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "fome") ?? 100));
+    const curSede     = Math.max(0, Math.min(100, this.actor.getFlag(MODULE_ID, "sede") ?? 100));
+    const novaFome    = Math.max(0, Math.min(100, curFome + fomeGanho));
+    const novaSede    = Math.max(0, Math.min(100, curSede + sedeGanho));
+
+    // Atualiza flags do ator
+    if (fomeGanho !== 0) await this.actor.setFlag(MODULE_ID, "fome", novaFome);
+    if (sedeGanho !== 0) await this.actor.setFlag(MODULE_ID, "sede", novaSede);
+
+    // Remove do layout e reduz quantidade / deleta o item
+    const qty = item.system?.quantity ?? 1;
+    if (qty <= 1) {
+      this._removeFromAllZones(itemId);
+      await item.delete();
+    } else {
+      await item.update({ "system.quantity": qty - 1 });
+    }
+
+    // Monta mensagem de feedback
+    const partes = [];
+    if (fomeGanho > 0)  partes.push(`🍞 Fome ${curFome}% → ${novaFome}%`);
+    if (fomeGanho < 0)  partes.push(`🍞 Fome ${curFome}% → ${novaFome}% (aumentou fome)`);
+    if (sedeGanho > 0)  partes.push(`💧 Sede ${curSede}% → ${novaSede}%`);
+    if (sedeGanho < 0)  partes.push(`💧 Sede ${curSede}% → ${novaSede}% (aumentou sede)`);
+    const msg = partes.length ? partes.join(" | ") : "Consumido.";
+    ui.notifications.info(`${item.name}: ${msg}`);
+
+    this.render(false);
+  }
+
+  // ── Helper para construir menu contextual ─────────────
+  _buildContextMenu(event, minWidth = 140) {
+    document.querySelectorAll(".ddp-context-menu").forEach(m => m.remove());
     const menu = document.createElement("div");
     menu.className = "ddp-context-menu";
     menu.style.cssText = `
-      position: fixed;
-      left: ${event.clientX}px;
-      top:  ${event.clientY}px;
-      z-index: 99999;
-      background: #111;
-      border: 1px solid #444;
-      border-radius: 4px;
-      padding: 3px 0;
-      min-width: 140px;
+      position: fixed; left: ${event.clientX}px; top: ${event.clientY}px;
+      z-index: 99999; background: #111; border: 1px solid #444;
+      border-radius: 4px; padding: 3px 0; min-width: ${minWidth}px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.8);
-      font-family: 'Signika', sans-serif;
-      font-size: 12px;
-    `;
+      font-family: 'Signika', sans-serif; font-size: 12px;`;
 
-    const addItem = (label, icon, onClick, color) => {
+    const addEntry = (label, icon, onClick, color) => {
       const li = document.createElement("div");
-      li.innerHTML = `<i class="fas ${icon}" style="width:14px;text-align:center;margin-right:6px;color:${color || '#888'};"></i>${label}`;
-      li.style.cssText = `padding:6px 12px;cursor:pointer;color:#ccc;white-space:nowrap;`;
+      li.innerHTML = `<i class="fas ${icon}" style="width:14px;text-align:center;margin-right:6px;color:${color||'#888'};"></i>${label}`;
+      li.style.cssText = "padding:6px 12px;cursor:pointer;color:#ccc;white-space:nowrap;";
       li.addEventListener("mouseenter", () => li.style.background = "#222");
       li.addEventListener("mouseleave", () => li.style.background = "");
       li.addEventListener("click", () => { menu.remove(); onClick(); });
       menu.appendChild(li);
     };
+    const addSep = () => {
+      const sep = document.createElement("div");
+      sep.style.cssText = "border-top:1px solid #2a2a2a;margin:2px 0;";
+      menu.appendChild(sep);
+    };
+    const attach = () => {
+      document.body.appendChild(menu);
+      const close = (e) => {
+        if (!menu.contains(e.target)) { menu.remove(); document.removeEventListener("click", close); }
+      };
+      setTimeout(() => document.addEventListener("click", close), 0);
+    };
+    return { menu, addEntry, addSep, attach };
+  }
 
-    if (isWearable) {
-      addItem("Equipar", "fa-shield-alt", () => {
-        this._equipItem(itemId);
-        this.render(false);
-      }, "#88ff88");
+  // ── Menu contextual para itens no grid ────────────────
+  _showGridContextMenu(event, itemId, zone, isWearable) {
+    const item = this.actor.items.get(itemId);
+    const isFood = item && (() => {
+      const f = item.flags?.[MODULE_ID] ?? {};
+      if (f.categoria === "suprimento") return true;
+      if ((f.fome ?? 0) !== 0 || (f.sede ?? 0) !== 0) return true;
+      return /biscoito|barra de energia|garrafa|água|agua|suco|refrigerante|chocolate|amendoim|café|cafe|maçã|maca|energético|pão|pao|ração|racao/i.test(item.name ?? "");
+    })();
+
+    const { addEntry, addSep, attach } = this._buildContextMenu(event);
+
+    if (isFood) {
+      const f = item.flags?.[MODULE_ID] ?? {};
+      const fLabel = (f.fome ?? 0) !== 0 ? ` +${f.fome}🍞` : "";
+      const sLabel = (f.sede ?? 0) > 0   ? ` +${f.sede}💧` : (f.sede ?? 0) < 0 ? ` ${f.sede}💧` : "";
+      addEntry(`Consumir${fLabel}${sLabel}`, "fa-utensils", () => this._consumeItem(itemId), "#ffcc44");
+      addSep();
     }
 
-    addItem("Girar", "fa-sync-alt", () => {
-      this._rotateItem(zone, itemId);
-    }, "#8888ff");
+    if (isWearable) {
+      addEntry("Equipar", "fa-shield-alt", () => { this._equipItem(itemId); this.render(false); }, "#88ff88");
+    }
 
-    addItem("Remover do grid", "fa-times", () => {
-      delete this._layout[zone][itemId];
-      this.render(false);
-    }, "#ff8888");
+    addEntry("Girar", "fa-sync-alt", () => this._rotateItem(zone, itemId), "#8888ff");
+    addEntry("Remover do grid", "fa-times", () => { delete this._layout[zone][itemId]; this.render(false); }, "#ff8888");
 
-    document.body.appendChild(menu);
+    attach();
+  }
 
-    // Fecha ao clicar fora
-    const close = (e) => {
-      if (!menu.contains(e.target)) { menu.remove(); document.removeEventListener("click", close); }
-    };
-    setTimeout(() => document.addEventListener("click", close), 0);
+  // ── Menu contextual para itens NÃO alocados ───────────
+  _showUnassContextMenu(event, itemId, item) {
+    const flags  = item.flags?.[MODULE_ID] ?? {};
+    const isFood = flags.categoria === "suprimento"
+      || (flags.fome ?? 0) !== 0 || (flags.sede ?? 0) !== 0
+      || /biscoito|barra de energia|garrafa|água|agua|suco|refrigerante|chocolate|amendoim|café|cafe|maçã|maca|energético|pão|pao|ração|racao/i.test(item.name ?? "");
+    const isWear = _isWearable(item);
+
+    if (!isFood && !isWear) return; // sem opções relevantes — não mostra menu
+
+    const { addEntry, addSep, attach } = this._buildContextMenu(event);
+
+    if (isFood) {
+      const fLabel = (flags.fome ?? 0) !== 0 ? ` +${flags.fome}🍞` : "";
+      const sLabel = (flags.sede ?? 0) > 0   ? ` +${flags.sede}💧` : (flags.sede ?? 0) < 0 ? ` ${flags.sede}💧` : "";
+      addEntry(`Consumir${fLabel}${sLabel}`, "fa-utensils", () => this._consumeItem(itemId), "#ffcc44");
+    }
+
+    if (isFood && isWear) addSep();
+
+    if (isWear) {
+      addEntry("Equipar", "fa-shield-alt", () => { this._equipItem(itemId); this.render(false); }, "#88ff88");
+    }
+
+    attach();
   }
 
   // ── Menu contextual para itens equipados ──────────────

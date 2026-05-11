@@ -30,15 +30,15 @@
 
   {{!-- Barras de Status --}}
   <div class="ddp-inv-status-bars">
-    {{!-- HP --}}
-    <div class="ddp-inv-bar-row" title="Pontos de Vida: {{hp.value}} / {{hp.max}}">
+    {{!-- HP (read-only) --}}
+    <div class="ddp-inv-bar-row" title="HP: {{hp.value}} / {{hp.max}}">
       <span class="ddp-inv-bar-lbl ddp-bar-hp">HP</span>
       <div class="ddp-inv-bar-track">
         <div class="ddp-inv-bar-fill ddp-bar-fill-hp" style="width:{{hpPct}}%;"></div>
       </div>
       <span class="ddp-inv-bar-val">{{hp.value}}<span class="ddp-inv-bar-max">/{{hp.max}}</span></span>
     </div>
-    {{!-- SAN --}}
+    {{!-- SAN (read-only) --}}
     <div class="ddp-inv-bar-row" title="Sanidade: {{san.value}} / {{san.max}}">
       <span class="ddp-inv-bar-lbl ddp-bar-san">SAN</span>
       <div class="ddp-inv-bar-track">
@@ -46,21 +46,33 @@
       </div>
       <span class="ddp-inv-bar-val">{{san.value}}<span class="ddp-inv-bar-max">/{{san.max}}</span></span>
     </div>
-    {{!-- AURORA --}}
-    <div class="ddp-inv-bar-row" title="Aurora: {{aurora.value}} / {{aurora.max}}">
+    {{!-- AURORA (read-only) --}}
+    <div class="ddp-inv-bar-row" title="Exposição Aurora: {{aurora.value}} / 10">
       <span class="ddp-inv-bar-lbl ddp-bar-aurora">AUR</span>
       <div class="ddp-inv-bar-track">
         <div class="ddp-inv-bar-fill ddp-bar-fill-aurora" style="width:{{auroraPct}}%;"></div>
       </div>
-      <span class="ddp-inv-bar-val">{{aurora.value}}<span class="ddp-inv-bar-max">/{{aurora.max}}</span></span>
+      <span class="ddp-inv-bar-val">{{aurora.value}}<span class="ddp-inv-bar-max">/10</span></span>
     </div>
-    {{!-- FOME --}}
-    <div class="ddp-inv-bar-row" title="Fome: {{fome.value}} / {{fome.max}}">
-      <span class="ddp-inv-bar-lbl ddp-bar-fome">FOME</span>
+    {{!-- FOME (ajustável) --}}
+    <div class="ddp-inv-bar-row" title="Fome: {{fome.value}}% (100 = saciado, 0 = faminto)">
+      <span class="ddp-inv-bar-lbl ddp-bar-fome">🍞</span>
+      <button class="ddp-bar-adj" data-stat="fome" data-delta="-10" title="−10 fome">−</button>
       <div class="ddp-inv-bar-track">
         <div class="ddp-inv-bar-fill ddp-bar-fill-fome" style="width:{{fomePct}}%;"></div>
       </div>
-      <span class="ddp-inv-bar-val">{{fome.value}}<span class="ddp-inv-bar-max">/{{fome.max}}</span></span>
+      <button class="ddp-bar-adj" data-stat="fome" data-delta="10" title="+10 fome">+</button>
+      <span class="ddp-inv-bar-val">{{fome.value}}<span class="ddp-inv-bar-max">%</span></span>
+    </div>
+    {{!-- SEDE (ajustável) --}}
+    <div class="ddp-inv-bar-row" title="Sede: {{sede.value}}% (100 = hidratado, 0 = desidratado)">
+      <span class="ddp-inv-bar-lbl ddp-bar-sede">💧</span>
+      <button class="ddp-bar-adj" data-stat="sede" data-delta="-10" title="−10 sede">−</button>
+      <div class="ddp-inv-bar-track">
+        <div class="ddp-inv-bar-fill ddp-bar-fill-sede" style="width:{{sedePct}}%;"></div>
+      </div>
+      <button class="ddp-bar-adj" data-stat="sede" data-delta="10" title="+10 sede">+</button>
+      <span class="ddp-inv-bar-val">{{sede.value}}<span class="ddp-inv-bar-max">%</span></span>
     </div>
   </div>
 
@@ -119,11 +131,14 @@
             <div class="ddp-inv-item-name">{{name}}</div>
             <div class="ddp-inv-item-size">{{sizeLabel}}</div>
             {{#if isWeapon}}
-            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}">
-              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala">−</button>
+            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}" draggable="false">
+              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala" draggable="false">−</button>
               <span class="ddp-ammo-count">{{ammoValue}}/{{ammoMax}}</span>
-              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala">+</button>
+              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala" draggable="false">+</button>
             </div>
+            {{/if}}
+            {{#if isFood}}
+            <div class="ddp-inv-food-badge" title="Consumível{{#if fomeRestore}} · +{{fomeRestore}}🍞{{/if}}{{#if sedeRestore}} · {{#if (gt sedeRestore 0)}}+{{/if}}{{sedeRestore}}💧{{/if}}">🍽</div>
             {{/if}}
             <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
           </div>
@@ -165,11 +180,14 @@
             <div class="ddp-inv-item-name">{{name}}</div>
             <div class="ddp-inv-item-size">{{sizeLabel}}</div>
             {{#if isWeapon}}
-            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}">
-              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala">−</button>
+            <div class="ddp-inv-ammo-badge" data-item-id="{{id}}" title="Munição: {{ammoValue}}/{{ammoMax}}" draggable="false">
+              <button class="ddp-ammo-btn ddp-ammo-dec" data-item-id="{{id}}" title="−1 bala" draggable="false">−</button>
               <span class="ddp-ammo-count">{{ammoValue}}/{{ammoMax}}</span>
-              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala">+</button>
+              <button class="ddp-ammo-btn ddp-ammo-inc" data-item-id="{{id}}" title="+1 bala" draggable="false">+</button>
             </div>
+            {{/if}}
+            {{#if isFood}}
+            <div class="ddp-inv-food-badge" title="Consumível{{#if fomeRestore}} · +{{fomeRestore}}🍞{{/if}}{{#if sedeRestore}} · {{#if (gt sedeRestore 0)}}+{{/if}}{{sedeRestore}}💧{{/if}}">🍽</div>
             {{/if}}
             <div class="ddp-inv-rotate-icon"><i class="fas fa-sync-alt"></i></div>
           </div>
@@ -192,8 +210,13 @@
           <img src="{{img}}" />
           <div class="ddp-inv-unass-info">
             <span class="ddp-inv-unass-name">{{name}}</span>
-            <span class="ddp-inv-unass-size">{{sizeLabel}}{{#if isWearable}} <i class="fas fa-shield-alt" style="color:#88cc88;font-size:0.8em;" title="Equipável"></i>{{/if}}</span>
+            <span class="ddp-inv-unass-size">
+              {{sizeLabel}}
+              {{#if isWearable}} <i class="fas fa-shield-alt" style="color:#88cc88;font-size:0.8em;" title="Equipável"></i>{{/if}}
+              {{#if isFood}} <span title="Consumível — Dir. para consumir" style="font-size:0.85em;">🍽</span>{{/if}}
+            </span>
             {{#if isWeapon}}<span class="ddp-inv-unass-ammo"><i class="fas fa-circle" style="color:#ffaa44;font-size:0.7em;"></i> {{ammoValue}}/{{ammoMax}}</span>{{/if}}
+            {{#if isFood}}<span class="ddp-inv-unass-food">{{#if fomeRestore}}🍞+{{fomeRestore}}{{/if}}{{#if sedeRestore}} 💧{{#if (gt sedeRestore 0)}}+{{/if}}{{sedeRestore}}{{/if}}</span>{{/if}}
           </div>
         </div>
         {{else}}
