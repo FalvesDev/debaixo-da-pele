@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- M4 Carbine 5.56mm -->
+  <!-- Cano com flash hider -->
+  <rect x="5" y="38" width="48" height="5" rx="1" fill="#777"/>
+  <rect x="5" y="36" width="4" height="9" rx="1" fill="#555"/>
+  <!-- Corpo (receiver) -->
+  <rect x="42" y="33" width="32" height="14" rx="2" fill="#555"/>
+  <!-- Coronha retrátil -->
+  <rect x="74" y="37" width="18" height="6" rx="1" fill="#444"/>
+  <rect x="90" y="34" width="4" height="12" rx="1" fill="#444"/>
+  <!-- Punho pistola -->
+  <path d="M60 47 L63 47 L65 58 L58 58 Z" fill="#4a4a4a"/>
+  <!-- Pente de munição -->
+  <rect x="54" y="47" width="10" height="16" rx="2" fill="#5a5a3a"/>
+  <!-- Guardamão/Handguard -->
+  <rect x="22" y="36" width="22" height="11" rx="1" fill="#666"/>
+  <!-- Trilho picatinny (linha) -->
+  <line x1="22" y1="33" x2="52" y2="33" stroke="#888" stroke-width="1.5"/>
+  <!-- Gatilho -->
+  <path d="M63 47 Q65 52 62 54" stroke="#888" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Mira dianteira -->
+  <rect x="24" y="34" width="2" height="3" rx="0.5" fill="#aaa"/>
+</svg>

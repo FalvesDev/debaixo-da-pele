@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Carabina Lever-Action .30-30 -->
+  <!-- Cano longo -->
+  <rect x="8" y="36" width="62" height="6" rx="2" fill="#8a7a6a"/>
+  <!-- Câmara/corpo -->
+  <rect x="58" y="30" width="22" height="16" rx="3" fill="#6a5a4a"/>
+  <!-- Coronha -->
+  <path d="M80 32 Q95 34 94 46 Q93 52 82 50 L80 46 Z" fill="#5a4535"/>
+  <!-- Alavanca (lever) -->
+  <path d="M62 46 Q68 60 62 64 Q56 60 58 46" stroke="#aaa" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Gatilho -->
+  <line x1="66" y1="46" x2="70" y2="54" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+  <!-- Mira dianteira -->
+  <rect x="10" y="34" width="2" height="4" rx="1" fill="#ccc"/>
+  <!-- Mira traseira -->
+  <rect x="55" y="32" width="3" height="2" rx="1" fill="#ccc"/>
+</svg>

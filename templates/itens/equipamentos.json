@@ -2967,5 +2967,150 @@
       "notes": "Conserva itens térmicos por 6h.",
       "attributes": {}
     }
+  },
+  {
+    "name": "Munição .38 Special (20 cartuchos)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",
+    "system": {
+      "description": {
+        "value": "<p>Caixa com 20 cartuchos .38 Special. Compatível com o Revólver .38 Taurus. Cada cartucho usado no revólver consome 1 unidade desta caixa.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 20,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "munição",
+        "isAmmo": true,
+        "caliber": ".38",
+        "notas": "20 cartuchos .38 Special. Para o Revólver .38 Taurus.",
+        "preco": 55
+      }
+    }
+  },
+  {
+    "name": "Munição 9mm (50 cartuchos)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",
+    "system": {
+      "description": {
+        "value": "<p>Caixa com 50 cartuchos 9mm Parabellum. Compatível com a Pistola PT92. Padrão policial e de segurança privada no Brasil.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 50,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "munição",
+        "isAmmo": true,
+        "caliber": "9mm",
+        "notas": "50 cartuchos 9mm. Para a Pistola PT92.",
+        "preco": 120
+      }
+    }
+  },
+  {
+    "name": "Cartuchos Cal.12 (10 unidades)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",
+    "system": {
+      "description": {
+        "value": "<p>10 cartuchos calibre 12 com chumbo grosso. Compatíveis com a Espingarda 12 Pump e a Espingarda Cano Curto. Efeito devastador em curta distância.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 10,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "munição",
+        "isAmmo": true,
+        "caliber": "cal12",
+        "notas": "10 cartuchos Cal.12. Para Espingarda Pump e Cano Curto.",
+        "preco": 35
+      }
+    }
+  },
+  {
+    "name": "Munição .30-30 (20 cartuchos)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",
+    "system": {
+      "description": {
+        "value": "<p>20 cartuchos .30-30 Winchester em caixa de papelão. Compatível com a Carabina .30-30. Encontrado em casas de fazenda e postos de caça.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 20,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "munição",
+        "isAmmo": true,
+        "caliber": ".30-30",
+        "notas": "20 cartuchos .30-30. Para a Carabina lever-action.",
+        "preco": 60
+      }
+    }
+  },
+  {
+    "name": "Munição 5.56mm NATO (30 cartuchos)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",
+    "system": {
+      "description": {
+        "value": "<p>30 cartuchos 5.56mm NATO em pente STANAG. Compatível com o M4 Carbine. Munição exclusivamente militar — altamente ilegal para civis no Brasil.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 30,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "munição",
+        "isAmmo": true,
+        "caliber": "5.56",
+        "notas": "Pente 30 cartuchos 5.56mm. Para o M4 Carbine. Munição militar.",
+        "preco": 0
+      }
+    }
   }
 ]

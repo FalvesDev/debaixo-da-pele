@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Caixa de Munição -->
+  <!-- Caixa de papelão -->
+  <rect x="15" y="45" width="70" height="40" rx="3" fill="#8a7040"/>
+  <rect x="15" y="45" width="70" height="8" rx="3" fill="#a08040"/>
+  <!-- Tampa aberta -->
+  <path d="M15 45 L22 28 L78 28 L85 45" stroke="#6a5030" stroke-width="1.5" fill="#c0a060"/>
+  <!-- Texto na caixa -->
+  <rect x="25" y="58" width="50" height="18" rx="2" fill="#7a6030" opacity="0.6"/>
+  <!-- Cartuchos visíveis dentro -->
+  <rect x="28" y="32" width="7" height="14" rx="3" fill="#c8b060"/>
+  <rect x="38" y="32" width="7" height="14" rx="3" fill="#c8b060"/>
+  <rect x="48" y="32" width="7" height="14" rx="3" fill="#c8b060"/>
+  <rect x="58" y="32" width="7" height="14" rx="3" fill="#c8b060"/>
+  <!-- Ponta dos cartuchos -->
+  <ellipse cx="31.5" cy="31" rx="3.5" ry="2" fill="#e0d090"/>
+  <ellipse cx="41.5" cy="31" rx="3.5" ry="2" fill="#e0d090"/>
+  <ellipse cx="51.5" cy="31" rx="3.5" ry="2" fill="#e0d090"/>
+  <ellipse cx="61.5" cy="31" rx="3.5" ry="2" fill="#e0d090"/>
+</svg>

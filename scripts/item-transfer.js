@@ -97,11 +97,16 @@ export function showTransferPicker(sourceActorId, itemId) {
   const source   = game.actors.get(sourceActorId);
   if (!source) return;
 
-  const targets = game.actors.filter(a =>
-    a.type === "character" &&
-    a.id !== sourceActorId &&
-    (game.user.isGM || a.testUserPermission(game.user, "OBSERVER"))
-  );
+  const targets = game.actors.filter(a => {
+    if (a.type !== "character") return false;
+    if (a.id === sourceActorId) return false;
+    if (game.user.isGM) return true;
+    // Mostra qualquer personagem que tenha pelo menos um dono de player
+    const hasPlayerOwner = Object.entries(a.ownership ?? {}).some(
+      ([uid, lvl]) => uid !== "default" && lvl >= 3 && game.users.get(uid)?.isGM === false
+    );
+    return hasPlayerOwner;
+  });
 
   if (targets.length === 0) {
     ui.notifications.warn("Nenhum outro investigador disponível.");

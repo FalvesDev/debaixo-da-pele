@@ -560,15 +560,36 @@ export class DDPInventoryDialog extends Application {
     html.find(".ddp-ammo-dec, .ddp-ammo-inc").on("click", async (e) => {
       e.stopPropagation();
       e.preventDefault();
+      const isInc  = e.currentTarget.classList.contains("ddp-ammo-inc");
       const itemId = e.currentTarget.dataset.itemId;
       const item   = this.actor.items.get(itemId);
       if (!item) return;
       const max    = item.system?.bullets?.max ?? 0;
       const saved  = item.flags?.[MODULE_ID]?.ammo;
       const cur    = saved !== undefined ? saved : (item.system?.bullets?.value ?? max);
-      const delta  = e.currentTarget.classList.contains("ddp-ammo-inc") ? 1 : -1;
-      const nova   = Math.max(0, Math.min(max, cur + delta));
-      await item.setFlag(MODULE_ID, "ammo", nova);
+
+      if (isInc) {
+        // Recarregar: consome da caixa de munição correspondente
+        if (cur >= max) return;
+        const caliber = item.flags?.[MODULE_ID]?.caliber;
+        if (caliber) {
+          const ammoBox = this.actor.items.find(i =>
+            i.flags?.[MODULE_ID]?.isAmmo &&
+            i.flags?.[MODULE_ID]?.caliber === caliber &&
+            (i.system?.quantity ?? 0) > 0
+          );
+          if (!ammoBox) {
+            ui.notifications.warn(`Sem munição ${caliber} disponível no inventário!`);
+            return;
+          }
+          await ammoBox.update({ "system.quantity": (ammoBox.system.quantity ?? 1) - 1 });
+        }
+        await item.setFlag(MODULE_ID, "ammo", cur + 1);
+      } else {
+        // Disparar: bala gasta, não volta para a caixa
+        if (cur <= 0) return;
+        await item.setFlag(MODULE_ID, "ammo", cur - 1);
+      }
       this.render(false);
     });
 

@@ -65,6 +65,7 @@
         "gridH": 2,
         "slots": 3,
         "categoria": "arma",
+        "caliber": ".38",
         "notas": "Recarga: 2 ações. Sem modo semiautomático.",
         "preco": 1200
       }
@@ -136,6 +137,7 @@
         "gridH": 2,
         "slots": 3,
         "categoria": "arma",
+        "caliber": "9mm",
         "notas": "Recarga: 1 ação (pente). Disparo simples ou rápido.",
         "preco": 1400
       }
@@ -207,6 +209,7 @@
         "gridH": 3,
         "slots": 6,
         "categoria": "arma",
+        "caliber": "cal12",
         "notas": "Knockback automático em alvos de tamanho normal. Recarga lenta: 1 cartucho por ação.",
         "preco": 900
       }
@@ -706,6 +709,222 @@
         "categoria": "arma",
         "notas": "6 usos. Ineficaz contra criaturas sem olhos normais. Vento desfavorável: teste AGI ou afeta o próprio usuário.",
         "preco": 35
+      }
+    }
+  },
+  {
+    "name": "Carabina .30-30 Winchester",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
+    "system": {
+      "description": {
+        "value": "<p>Carabina lever-action calibre .30-30. Clássica e robusta, encontrada em sítios e casas de segurança no interior. Potente em médio alcance. Recarga pelo ferrolho alavanca — 1 cartucho por ação.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Rifle)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 50,
+          "units": "",
+          "damage": "2D6+4"
+        },
+        "long": {
+          "value": 100,
+          "units": "",
+          "damage": "2D6+4"
+        },
+        "extreme": {
+          "value": 200,
+          "units": "",
+          "damage": "2D6+4"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 7,
+        "max": 7
+      },
+      "blastRadius": "",
+      "malfunction": 100,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 3
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 3,
+        "slots": 7,
+        "categoria": "arma",
+        "caliber": ".30-30",
+        "notas": "Lever-action: 1 tiro/rodada. Recarga: 1 cartucho/ação (tubular). Alto dano, baixa cadência.",
+        "preco": 1800
+      }
+    }
+  },
+  {
+    "name": "M4 Carbine 5.56mm",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+    "system": {
+      "description": {
+        "value": "<p>Carabina tática M4 calibre 5.56mm NATO. Arma de uso militar/policial — posse ilegal no Brasil, encontrada apenas em contextos muito específicos. Modo semi ou rajada de 3. Pente de 30 cartuchos.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Rifle)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 50,
+          "units": "",
+          "damage": "2D6+4"
+        },
+        "long": {
+          "value": 110,
+          "units": "",
+          "damage": "2D6+4"
+        },
+        "extreme": {
+          "value": 220,
+          "units": "",
+          "damage": "2D6+4"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 3,
+        "max": 3,
+        "period": ""
+      },
+      "bullets": {
+        "value": 30,
+        "max": 30
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 3
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 3,
+        "slots": 7,
+        "categoria": "arma",
+        "caliber": "5.56",
+        "notas": "Semi ou rajada de 3. Recarga: 1 ação (pente 30). Arma militar — ilegal no Brasil.",
+        "preco": 0
+      }
+    }
+  },
+  {
+    "name": "Espingarda Cano Curto Cal.12",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
+    "system": {
+      "description": {
+        "value": "<p>Espingarda calibre 12 com cano serrado (sawed-off). Devastadora a queima-roupa — spread enorme. Dois canos lado a lado, 2 cartuchos. Descartável como arma de fuga. Recarga lenta.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Espingarda)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 5,
+          "units": "",
+          "damage": "4D6"
+        },
+        "long": {
+          "value": 10,
+          "units": "",
+          "damage": "2D6"
+        },
+        "extreme": {
+          "value": 20,
+          "units": "",
+          "damage": "1D6"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 2,
+        "max": 2,
+        "period": ""
+      },
+      "bullets": {
+        "value": 2,
+        "max": 2
+      },
+      "blastRadius": "3",
+      "malfunction": 100,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 2
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 5,
+        "categoria": "arma",
+        "caliber": "cal12",
+        "notas": "2 canos, 2 tiros antes de recarregar. Spread: +20% para acertar, dano decresce com distância. A queima-roupa: knockback automático.",
+        "preco": 0
       }
     }
   }
