@@ -63,22 +63,38 @@ export async function executeTransfer(sourceActorId, itemId, targetActorId) {
 // Chamado pelo inventário quando o jogador escolhe "Enviar para..."
 export async function requestTransfer(sourceActorId, itemId, targetActorId) {
   const source = game.actors.get(sourceActorId);
-  const target = game.actors.get(targetActorId);
   const item   = source?.items.get(itemId);
-  if (!source || !target || !item) return;
+  if (!source || !item) return;
 
-  // Se GM ou tem permissão de Owner sobre o alvo: executa direto
-  if (game.user.isGM || target.isOwner) {
+  // Tenta acessar o ator destino — pode ser undefined para não-GM
+  const target = game.actors.get(targetActorId);
+
+  // GM executa direto (tem acesso total)
+  if (game.user.isGM) {
+    if (!target) { ui.notifications.error("Ator destino não encontrado."); return; }
     await executeTransfer(sourceActorId, itemId, targetActorId);
     return;
   }
 
-  // Descobre quem é o dono do ator destino
-  const targetOwners = Object.entries(target.ownership ?? {})
-    .filter(([uid, lvl]) => uid !== "default" && lvl >= 3)
-    .map(([uid]) => uid);
+  // Jogador que também é dono do destino: executa direto
+  if (target?.isOwner) {
+    await executeTransfer(sourceActorId, itemId, targetActorId);
+    return;
+  }
 
-  // Emite pedido via socket
+  // Não-GM sem acesso ao ator destino: envia socket com targetOwners vazio.
+  // O GM faz o relay e resolve quem é o dono via handleTransferSocket.
+  const targetOwners = target
+    ? Object.entries(target.ownership ?? {})
+        .filter(([uid, lvl]) => uid !== "default" && lvl >= 3)
+        .map(([uid]) => uid)
+    : [];
+
+  // Busca nome do destino no roster (sem precisar do actor object)
+  const roster      = game.settings.get(MODULE_ID, "partyRoster") ?? { actors: [] };
+  const rosterEntry = (roster.actors ?? []).find(r => r.id === targetActorId);
+  const targetName  = target?.name ?? rosterEntry?.name ?? "investigador";
+
   game.socket.emit(`module.${MODULE_ID}`, {
     action:       "itemTransferRequest",
     fromUserId:   game.user.id,
@@ -89,7 +105,7 @@ export async function requestTransfer(sourceActorId, itemId, targetActorId) {
     itemData:     item.toObject()
   });
 
-  ui.notifications.info(`📨 Pedido de transferência de "${item.name}" enviado para ${target.name}…`);
+  ui.notifications.info(`📨 Pedido de transferência de "${item.name}" enviado para ${targetName}…`);
 }
 
 // ─── Mostra picker de destino ─────────────────────────────────
@@ -158,8 +174,30 @@ export async function handleTransferSocket(data) {
 
   // ── Pedido recebido: mostra dialog de aceitar/recusar ──
   if (data.action === "itemTransferRequest") {
+    const targetOwners = data.targetOwners ?? [];
+
+    // GM relay: jogador não conseguiu resolver os donos → GM faz o relay
+    if (game.user.isGM && targetOwners.length === 0) {
+      const target = game.actors.get(data.toActorId);
+      if (!target) return;
+      const owners = Object.entries(target.ownership ?? {})
+        .filter(([uid, lvl]) => uid !== "default" && lvl >= 3)
+        .map(([uid]) => uid);
+      if (owners.length === 0) {
+        // Nenhum dono de jogador: GM executa diretamente
+        await executeTransfer(data.fromActorId, data.itemId, data.toActorId);
+        game.socket.emit(`module.${MODULE_ID}`, {
+          action: "itemTransferDone", fromUserId: data.fromUserId, toActorId: data.toActorId
+        });
+      } else {
+        // Re-emite com os donos corretos para que o jogador certo veja o dialog
+        game.socket.emit(`module.${MODULE_ID}`, { ...data, targetOwners: owners });
+      }
+      return;
+    }
+
     // Só processa quem é dono do ator destino ou o GM
-    const isOwner = data.targetOwners.includes(game.user.id);
+    const isOwner = targetOwners.includes(game.user.id);
     if (!isOwner && !game.user.isGM) return;
     // GM não mostra dialog (quem mostra é o jogador dono do destino)
     if (game.user.isGM && !isOwner) return;
