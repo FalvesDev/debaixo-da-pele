@@ -19,7 +19,7 @@ const MAX_ROWS        = 8;
 const TIPOS_EXCLUIDOS = new Set(["skill", "occupation", "archetype", "talent", "setup"]);
 
 // Regex de itens equipáveis (wearables)
-const WEARABLE_RE = /colete|capacete|hazmat|luvas|máscara|mascara|respirador|óculos|oculos|n95/i;
+const WEARABLE_RE = /colete|capacete|hazmat|luvas|máscara|mascara|respirador|óculos|oculos|n95|correia|coldre|cinto de ferramenta/i;
 
 // ─── Helpers ──────────────────────────────────────────────
 function _isWearable(item) {

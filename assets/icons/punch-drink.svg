@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- PUNCH! Energético (lata) -->
+  <!-- Corpo da lata -->
+  <rect x="30" y="22" width="40" height="58" rx="4" fill="#cc2200"/>
+  <!-- Topo da lata (metal) -->
+  <ellipse cx="50" cy="22" rx="20" ry="5" fill="#aaa"/>
+  <!-- Base da lata -->
+  <ellipse cx="50" cy="80" rx="20" ry="5" fill="#888"/>
+  <!-- Faixa decorativa central -->
+  <rect x="30" y="40" width="40" height="22" fill="#ff3300"/>
+  <!-- Texto PUNCH! -->
+  <text x="50" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="white" font-family="sans-serif">PUNCH!</text>
+  <!-- Raios de energia -->
+  <path d="M38 42 L42 50 L38 50 L44 58" stroke="#ffee00" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M56 42 L60 50 L56 50 L62 58" stroke="#ffee00" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Aba de abertura -->
+  <path d="M46 20 L54 20 L52 22 L48 22 Z" fill="#999"/>
+  <circle cx="50" cy="20" r="2" fill="#777"/>
+</svg>

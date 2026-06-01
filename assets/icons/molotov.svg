@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Molotov Cocktail -->
+  <!-- Chamas no topo -->
+  <path d="M42 38 Q38 28 44 22 Q46 30 50 26 Q52 18 58 22 Q56 30 62 28 Q58 36 55 38" fill="#ff8800"/>
+  <path d="M44 38 Q40 30 46 25 Q48 32 52 28 Q54 22 60 26 Q57 33 60 38" fill="#ffcc00" opacity="0.8"/>
+  <!-- Pavio -->
+  <line x1="50" y1="38" x2="50" y2="44" stroke="#8a6a30" stroke-width="3" stroke-linecap="round"/>
+  <!-- Gargalo da garrafa -->
+  <rect x="44" y="44" width="12" height="10" rx="2" fill="#8aaa66"/>
+  <!-- Corpo da garrafa -->
+  <path d="M34 54 Q32 58 33 70 Q34 82 50 83 Q66 82 67 70 Q68 58 66 54 Z" fill="#7a9a55"/>
+  <!-- Líquido inflamável (laranja visível) -->
+  <path d="M34 65 Q32 70 33 75 Q34 82 50 83 Q66 82 67 75 Q68 70 66 65 Z" fill="#cc6600" opacity="0.6"/>
+  <!-- Reflexo na garrafa -->
+  <path d="M37 55 Q35 65 36 73" stroke="#aaccaa" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

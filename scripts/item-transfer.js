@@ -97,16 +97,19 @@ export function showTransferPicker(sourceActorId, itemId) {
   const source   = game.actors.get(sourceActorId);
   if (!source) return;
 
-  const targets = game.actors.filter(a => {
-    if (a.type !== "character") return false;
-    if (a.id === sourceActorId) return false;
-    if (game.user.isGM) return true;
-    // Mostra qualquer personagem que tenha pelo menos um dono de player
-    const hasPlayerOwner = Object.entries(a.ownership ?? {}).some(
-      ([uid, lvl]) => uid !== "default" && lvl >= 3 && game.users.get(uid)?.isGM === false
-    );
-    return hasPlayerOwner;
-  });
+  // Lê o roster — world setting acessível a todos os players
+  const roster     = game.settings.get(MODULE_ID, "partyRoster") ?? { actors: [] };
+  const rosterList = (roster.actors ?? []).filter(r => r.id !== sourceActorId);
+
+  // GM vê também personagens fora do roster (que ainda estão em game.actors)
+  let targets = rosterList;
+  if (game.user.isGM) {
+    const rosterIds = new Set(rosterList.map(r => r.id));
+    const extra = game.actors
+      .filter(a => a.type === "character" && a.id !== sourceActorId && !rosterIds.has(a.id))
+      .map(a => ({ id: a.id, name: a.name, img: a.img }));
+    targets = [...rosterList, ...extra];
+  }
 
   if (targets.length === 0) {
     ui.notifications.warn("Nenhum outro investigador disponível.");

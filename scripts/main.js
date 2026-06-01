@@ -96,6 +96,10 @@ Hooks.once("init", () => {
     name: "Token HUD — Barras HP/SAN/Aurora",
     scope: "client", config: true, type: Boolean, default: true
   });
+  // Roster visível no painel — gerenciado pelo GM, lido por todos
+  game.settings.register(MODULE_ID, "partyRoster", {
+    scope: "world", config: false, type: Object, default: { actors: [] }
+  });
 });
 
 // ─── SOCKET — Revelações em tempo real ──────────────────────

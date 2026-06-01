@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Armadilha Sonora -->
+  <!-- Corpo do dispositivo -->
+  <rect x="28" y="45" width="44" height="32" rx="4" fill="#555"/>
+  <rect x="30" y="47" width="40" height="28" rx="3" fill="#444"/>
+  <!-- Grade do alto-falante -->
+  <circle cx="50" cy="61" r="12" fill="none" stroke="#777" stroke-width="2"/>
+  <circle cx="50" cy="61" r="7" fill="none" stroke="#777" stroke-width="1.5"/>
+  <circle cx="50" cy="61" r="2" fill="#888"/>
+  <!-- LED indicador -->
+  <circle cx="38" cy="50" r="3" fill="#ff4444"/>
+  <!-- Ondas sonoras -->
+  <path d="M70 48 Q78 55 70 62" stroke="#ffaa44" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M74 44 Q85 55 74 66" stroke="#ffaa44" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Base -->
+  <rect x="35" y="77" width="30" height="5" rx="2" fill="#666"/>
+  <!-- Sensor de movimento (pequena antena) -->
+  <line x1="50" y1="45" x2="50" y2="35" stroke="#777" stroke-width="2"/>
+  <circle cx="50" cy="33" r="3" fill="#777"/>
+</svg>

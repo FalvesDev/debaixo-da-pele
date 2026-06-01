@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Coldre de Ombro -->
+  <!-- Tira de ombro -->
+  <path d="M20 15 Q50 10 80 15 Q82 30 75 35" stroke="#8a7a6a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Corpo do coldre -->
+  <rect x="60" y="35" width="20" height="32" rx="4" fill="#6a5a4a"/>
+  <rect x="62" y="37" width="16" height="24" rx="2" fill="#5a4535"/>
+  <!-- Fivela/clip -->
+  <rect x="63" y="60" width="14" height="5" rx="2" fill="#aaa"/>
+  <!-- Pistola dentro (visível) -->
+  <rect x="64" y="40" width="10" height="18" rx="2" fill="#444"/>
+  <rect x="64" y="40" width="5" height="8" rx="1" fill="#333"/>
+</svg>

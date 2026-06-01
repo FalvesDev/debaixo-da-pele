@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Luva de Laboratório (nitrilo azul) -->
+  <path d="M30 70 L28 40 Q28 30 35 28 Q42 26 44 34 L44 42 L48 30 Q50 22 56 24 Q62 26 60 34 L58 44 L62 34 Q64 26 70 28 Q76 30 74 38 L70 55 L72 48 Q74 40 80 42 Q86 44 83 52 L75 72 Q70 82 60 82 L40 82 Q30 82 30 70 Z" fill="#5588cc" opacity="0.9"/>
+  <!-- Borda da luva -->
+  <rect x="25" y="68" width="50" height="10" rx="3" fill="#4470aa"/>
+  <!-- Linhas de nitrilo -->
+  <line x1="44" y1="42" x2="44" y2="78" stroke="#3355aa" stroke-width="1" opacity="0.5"/>
+  <line x1="58" y1="44" x2="58" y2="78" stroke="#3355aa" stroke-width="1" opacity="0.5"/>
+  <line x1="70" y1="55" x2="70" y2="78" stroke="#3355aa" stroke-width="1" opacity="0.5"/>
+</svg>

@@ -643,6 +643,29 @@
   background: rgba(255,255,255,0.15);
 }
 
+/* Botão de visibilidade do roster (GM only) */
+.ddp-pf-roster-toggle {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.75em;
+  line-height: 1;
+  padding: 2px 3px;
+  border-radius: 3px;
+  color: #88cc88;
+  transition: color 0.15s, background 0.15s;
+  margin-top: 2px;
+}
+.ddp-pf-roster-toggle:hover {
+  background: rgba(255,255,255,0.1);
+  color: #aaffaa;
+}
+.ddp-pf-roster-toggle.ddp-pf-hidden-from-players {
+  color: #886644;
+}
+.ddp-pf-roster-toggle.ddp-pf-hidden-from-players:hover {
+  color: #ffaa66;
+}
+
 .ddp-pf-status-icon {
   font-size: 0.8em;
   line-height: 1;

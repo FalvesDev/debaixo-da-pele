@@ -33,10 +33,15 @@ class DDPPartyFrame extends Application {
       game.settings.get(MODULE_ID, "auroraVisivelJogadores")
     );
 
+    const roster    = game.settings.get(MODULE_ID, "partyRoster") ?? { actors: [] };
+    const rosterIds = new Set((roster.actors ?? []).map(r => r.id));
+
     const personagens = game.actors
       .filter(a => a.type === "character" && (
         a.getFlag(MODULE_ID, "tipo") === "pj" || a.hasPlayerOwner
       ))
+      // Não-GM só vê quem o GM colocou no roster
+      .filter(a => isGM || rosterIds.has(a.id))
       .map(a => {
         const hp    = a.system?.attribs?.hp  ?? { value: 10, max: 10 };
         const san   = a.system?.attribs?.san ?? { value: 50, max: 99 };
@@ -94,11 +99,12 @@ class DDPPartyFrame extends Application {
           mascaraLabel: MASCARA_LABELS[mascaraTipo] ?? "Proteção",
           hemorragia,
           inconsciente,
-          statusClass
+          statusClass,
+          inRoster: rosterIds.has(a.id)
         };
       });
 
-    return { personagens, minimized: this._minimized, hpSanVisivel, auroraVisivel };
+    return { personagens, minimized: this._minimized, hpSanVisivel, auroraVisivel, isGM };
   }
 
   // ─── Listeners ──────────────────────────────────────────────
@@ -137,6 +143,28 @@ class DDPPartyFrame extends Application {
       const actorId = e.currentTarget.dataset.actorId;
       DDPInventoryDialog.open(actorId);
     });
+
+    // Toggle visibilidade no roster (GM only)
+    html.find(".ddp-pf-roster-toggle").on("click", async (e) => {
+      e.stopPropagation();
+      if (!game.user.isGM) return;
+      const actorId = e.currentTarget.dataset.actorId;
+      const actor   = game.actors.get(actorId);
+      if (!actor) return;
+
+      const roster  = game.settings.get(MODULE_ID, "partyRoster") ?? { actors: [] };
+      const actors  = [...(roster.actors ?? [])];
+      const idx     = actors.findIndex(r => r.id === actorId);
+
+      if (idx >= 0) {
+        actors.splice(idx, 1);
+      } else {
+        actors.push({ id: actorId, name: actor.name, img: actor.img });
+      }
+
+      await game.settings.set(MODULE_ID, "partyRoster", { actors });
+      this.render(false);
+    });
   }
 }
 
@@ -152,8 +180,24 @@ function _shouldShow() {
   return game.settings.get(MODULE_ID, "partyFrameVisible");
 }
 
+// ─── Auto-popula roster com personagens de jogador na 1ª carga ─
+async function _initRoster() {
+  if (!game.user.isGM) return;
+  const existing = game.settings.get(MODULE_ID, "partyRoster");
+  if (existing?.actors?.length > 0) return;
+
+  const playerChars = game.actors
+    .filter(a => a.type === "character" && a.hasPlayerOwner)
+    .map(a => ({ id: a.id, name: a.name, img: a.img }));
+
+  if (playerChars.length > 0) {
+    await game.settings.set(MODULE_ID, "partyRoster", { actors: playerChars });
+  }
+}
+
 // ─── Hooks ─────────────────────────────────────────────────
 Hooks.once("ready", () => {
+  _initRoster();
   if (_shouldShow()) _getFrame().render(true);
 });
 
@@ -201,7 +245,8 @@ Hooks.on("updateSetting", (setting) => {
   const refreshKeys = [
     `${MODULE_ID}.hpSanVisivelJogadores`,
     `${MODULE_ID}.auroraRevelado`,
-    `${MODULE_ID}.auroraVisivelJogadores`
+    `${MODULE_ID}.auroraVisivelJogadores`,
+    `${MODULE_ID}.partyRoster`
   ];
   if (refreshKeys.includes(key) && _partyFrame?.rendered) _partyFrame.render(false);
 });

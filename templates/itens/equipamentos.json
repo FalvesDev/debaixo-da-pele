@@ -2969,6 +2969,252 @@
     }
   },
   {
+    "name": "Coldre de Ombro",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/coldre-ombro.svg",
+    "system": {
+      "description": {
+        "value": "<p>Coldre de ombro com tira cruzada. Permite portar uma pistola de forma oculta sob um casaco ou jaqueta. Adiciona <strong>+1 linha</strong> ao Acesso Rápido. Sacar arma é uma ação gratuita — ideal para ação surpresa.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "+1 linha rápido. Porte oculto.",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "quickBonus": 1,
+        "categoria": "coldre",
+        "notas": "+1 linha Acesso Rápido. Porte oculto de pistola. Sacar = ação gratuita (surpresa).",
+        "preco": 185
+      }
+    }
+  },
+  {
+    "name": "Luva de Laboratório",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/luva-lab.svg",
+    "system": {
+      "description": {
+        "value": "<p>Luvas de nitrilo descartáveis para manuseio de substâncias químicas e biológicas. Protege contra contaminação por contato direto com amostras. Não protege contra inalação ou Aurora aerossol.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 0.5,
+        "categoria": "protecao",
+        "notas": "Protege contato com amostras. Sem proteção contra inalação/Aurora gasoso.",
+        "preco": 12
+      }
+    }
+  },
+  {
+    "name": "Óculos de Laboratório",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/oculos-lab.svg",
+    "system": {
+      "description": {
+        "value": "<p>Óculos de segurança de policarbonato. Proteção total contra respingos e partículas. Combinado com máscara e luvas: +20% em testes de resistência a substâncias químicas.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "protecao",
+        "notas": "+20% resistência química quando combinado com máscara + luvas. Proteção ocular total.",
+        "preco": 22
+      }
+    }
+  },
+  {
+    "name": "Armadilha Sonora",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/armadilha-sonora.svg",
+    "system": {
+      "description": {
+        "value": "<p>Dispositivo com sensor de movimento e alto-falante de impacto. Ativado ao pisarem, emite som alto por 30 segundos. Distrai Refinados por 1D6 rodadas (eles vão investigar a fonte). Instalação: 1 ação.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "armadilha",
+        "notas": "Distrai Refinados 1D6 rodadas. Instalação: 1 ação. Percepção para detectar antes de acionar.",
+        "preco": 65
+      }
+    }
+  },
+  {
+    "name": "Molotov",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/molotov.svg",
+    "system": {
+      "description": {
+        "value": "<p>Garrafa com combustível e pavio improvisado. Ao ser arremessada e quebrar, cria uma zona de fogo de 2m por 1D6 rodadas. Dano: 1D6 por rodada em contato. Refinados têm medo de fogo — Moral ou recuam.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "arma",
+        "notas": "Arremesso (Arremesso 25%). Zona fogo 2m, 1D6 rod. Dano 1D6/rod. Refinados: Moral ou recuam.",
+        "preco": 5
+      }
+    }
+  },
+  {
+    "name": "Flames Disengage",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/flames-disengage.svg",
+    "system": {
+      "description": {
+        "value": "<p>Cartucho pirotécnico de uso tático. Ao ser ativado, projeta chamas em cone de 2m por 1 rodada, forçando recuo imediato. Ideal para se desengajar de um inimigo corpo-a-corpo. Uso único.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "arma",
+        "notas": "Cone de fogo 2m, 1 rodada. Força recuo. Uso único — excelente para fuga de corpo a corpo.",
+        "preco": 120
+      }
+    }
+  },
+  {
+    "name": "Tablet Resistente (Toughpad)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/tablet.svg",
+    "system": {
+      "description": {
+        "value": "<p>Tablet militar reforçado com bateria de 12h. Acessa rede interna da Elara via Wi-Fi ou cabo. Contém plantas da instalação, logs de acesso e registros médicos. +20% Computadores.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "eletronico",
+        "notas": "+20% Computadores. Acessa rede Elara. Plantas da instalação e logs.",
+        "preco": 3500
+      }
+    }
+  },
+  {
+    "name": "Gadget de Análise Química",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/gadget-analise.svg",
+    "system": {
+      "description": {
+        "value": "<p>Espectômetro portátil de campo. Identifica compostos químicos em amostras sólidas ou líquidas em 2 minutos. +30% em testes de Química. Revela a composição parcial do Composto Aurora se usado em amostra.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 3,
+        "categoria": "cientifico",
+        "notas": "+30% Química. Análise de amostra: 2 min. Revela composição parcial do Aurora.",
+        "preco": 4200
+      }
+    }
+  },
+  {
+    "name": "PUNCH! (Energético)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/punch-drink.svg",
+    "system": {
+      "description": {
+        "value": "<p>Lata de energético PUNCH! sabor frutas vermelhas. Alta concentração de cafeína e taurina. Restaura <strong>+20% Sede</strong> e <strong>+10% Fome</strong>. Efeito colateral: −5 SAN se consumido com Aurora ≥ 5 (interação química desconhecida).</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "categoria": "alimentacao",
+        "fome": 10,
+        "sede": 20,
+        "notas": "+20% sede, +10% fome. Efeito colateral com Aurora ≥ 5: −5 SAN.",
+        "preco": 7
+      }
+    }
+  },
+  {
     "name": "Munição .38 Special (20 cartuchos)",
     "type": "item",
     "img": "modules/debaixo-da-pele/assets/icons/ammo-caixa.svg",

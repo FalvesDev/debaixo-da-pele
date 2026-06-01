@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Flames Disengage — cartucho pirotécnico -->
+  <!-- Corpo do cartucho -->
+  <rect x="38" y="45" width="24" height="38" rx="3" fill="#777"/>
+  <rect x="40" y="47" width="20" height="34" rx="2" fill="#666"/>
+  <!-- Tampa com pino de ativação -->
+  <rect x="38" y="40" width="24" height="7" rx="2" fill="#cc4400"/>
+  <circle cx="50" cy="43" r="4" fill="#ff5500"/>
+  <circle cx="50" cy="43" r="2" fill="#ffaa00"/>
+  <!-- Chamas saindo do topo -->
+  <path d="M40 40 Q34 28 40 20 Q42 30 46 24 Q48 16 54 20 Q52 30 58 24 Q60 16 66 22 Q60 32 60 40" fill="#ff6600"/>
+  <path d="M42 40 Q36 30 42 22 Q44 32 48 26 Q50 18 56 22 Q54 32 58 26 Q56 36 58 40" fill="#ffcc00" opacity="0.7"/>
+  <!-- Striped warning label -->
+  <rect x="38" y="55" width="24" height="8" fill="#ffcc00"/>
+  <path d="M38 55 L42 55 L38 63 Z" fill="#333"/>
+  <path d="M44 55 L52 55 L44 63 Z" fill="#333"/>
+  <path d="M54 55 L62 55 L62 58 Z" fill="#333"/>
+</svg>

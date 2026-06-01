@@ -59,6 +59,13 @@
         <span title="Inconsciente" class="ddp-pf-status-icon">💤</span>
         {{/if}}
         <button class="ddp-pf-inv-btn" data-actor-id="{{id}}" title="Abrir Inventário de {{nome}}">🎒</button>
+        {{#if @root.isGM}}
+        <button class="ddp-pf-roster-toggle {{#unless inRoster}}ddp-pf-hidden-from-players{{/unless}}"
+                data-actor-id="{{id}}"
+                title="{{#if inRoster}}Visível para jogadores — clique para ocultar{{else}}Oculto dos jogadores — clique para mostrar{{/if}}">
+          <i class="fas {{#if inRoster}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>
+        </button>
+        {{/if}}
       </div>
 
     </div>
