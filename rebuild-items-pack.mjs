@@ -16,7 +16,8 @@ function makeId() {
 // Carrega e merge os JSONs de itens
 const sources = [
   "templates/itens/armas.json",
-  "templates/itens/equipamentos.json"
+  "templates/itens/equipamentos.json",
+  "templates/itens/upgrades.json"
 ];
 
 const allItems = [];

@@ -5,6 +5,7 @@
 
 import { getFaseAurora } from "./aurora-system.js";
 import { DDPInventoryDialog } from "./inventory-dialog.js";
+import { DDPVehicleSheet } from "./vehicle-sheet.js";
 
 const MODULE_ID = "debaixo-da-pele";
 
@@ -104,7 +105,11 @@ class DDPPartyFrame extends Application {
         };
       });
 
-    return { personagens, minimized: this._minimized, hpSanVisivel, auroraVisivel, isGM };
+    const veiculos = game.actors
+      .filter(a => a.getFlag(MODULE_ID, "tipo") === "veiculo")
+      .map(a => ({ id: a.id, nome: a.name, img: a.img }));
+
+    return { personagens, veiculos, minimized: this._minimized, hpSanVisivel, auroraVisivel, isGM };
   }
 
   // ─── Listeners ──────────────────────────────────────────────
@@ -142,6 +147,13 @@ class DDPPartyFrame extends Application {
       e.stopPropagation();
       const actorId = e.currentTarget.dataset.actorId;
       DDPInventoryDialog.open(actorId);
+    });
+
+    // Abrir ficha de veículo
+    html.find(".ddp-pf-veh-btn").on("click", (e) => {
+      e.stopPropagation();
+      const actorId = e.currentTarget.dataset.actorId;
+      DDPVehicleSheet.open(actorId);
     });
 
     // Toggle visibilidade no roster (GM only)

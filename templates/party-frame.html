@@ -74,6 +74,20 @@
     {{#unless personagens.length}}
     <div class="ddp-pf-empty">Nenhum investigador ativo.</div>
     {{/unless}}
+
+    {{#if veiculos.length}}
+    <div class="ddp-pf-veh-section">
+      <div class="ddp-pf-veh-label"><i class="fas fa-car"></i> Veículos</div>
+      {{#each veiculos}}
+      <div class="ddp-pf-veh-row">
+        <img class="ddp-pf-veh-img" src="{{img}}" alt="{{nome}}" />
+        <span class="ddp-pf-veh-nome">{{nome}}</span>
+        <button class="ddp-pf-veh-btn" data-actor-id="{{id}}" title="Abrir Ficha do Veículo">🚐</button>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
   </div>
 
 </div>

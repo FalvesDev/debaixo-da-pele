@@ -1,0 +1,219 @@
+<div class="ddp-vehicle-wrapper">
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <div class="ddp-veh-header">
+    <img class="ddp-veh-portrait" src="{{img}}" alt="{{name}}" />
+    <div class="ddp-veh-header-info">
+      <div class="ddp-veh-name">{{name}}</div>
+      <div class="ddp-veh-estado-label {{#if emChamas}}ddp-veh-chamas{{else}}{{#if motorDanificado}}ddp-veh-alerta{{/if}}{{/if}}">
+        {{estadoLabel}}
+      </div>
+      <div class="ddp-veh-placa-row">
+        <span class="ddp-veh-placa-label">Placa:</span>
+        {{#if canEdit}}
+        <input class="ddp-placa-input" type="text" value="{{placa}}" placeholder="ABC-1234" maxlength="10" />
+        {{else}}
+        <span class="ddp-veh-placa-val">{{placa}}</span>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BARRAS ─────────────────────────────────────────── -->
+  <div class="ddp-veh-barras">
+
+    <!-- HP -->
+    <div class="ddp-veh-bar-row">
+      <span class="ddp-veh-bar-lbl">HP</span>
+      <div class="ddp-veh-bar-track">
+        <div class="ddp-veh-bar-fill" style="width:{{hpPct}}%; background:{{hpCor}};"></div>
+      </div>
+      <span class="ddp-veh-bar-val" style="color:{{hpCor}}">{{hp}}/{{hpMax}}</span>
+      {{#if canEdit}}
+      <button class="ddp-veh-hp-adj" data-delta="-1" title="Reduzir HP">−</button>
+      <button class="ddp-veh-hp-adj" data-delta="1"  title="Aumentar HP">+</button>
+      {{/if}}
+    </div>
+
+    <!-- Combustível -->
+    <div class="ddp-veh-bar-row">
+      <span class="ddp-veh-bar-lbl">⛽</span>
+      <div class="ddp-veh-bar-track">
+        <div class="ddp-veh-bar-fill ddp-veh-fuel-fill" style="width:{{combustivel}}%;"></div>
+      </div>
+      <span class="ddp-veh-bar-val">{{combustivel}}%</span>
+      {{#if canEdit}}
+      <button class="ddp-veh-fuel-adj" data-delta="-10" title="Reduzir combustível">−</button>
+      <button class="ddp-veh-fuel-adj" data-delta="10"  title="Aumentar combustível">+</button>
+      {{/if}}
+    </div>
+
+  </div>
+
+  <!-- ── STATS ──────────────────────────────────────────── -->
+  <div class="ddp-veh-stats">
+    <div class="ddp-veh-stat">
+      <span class="ddp-veh-stat-ico">🏎</span>
+      <span class="ddp-veh-stat-val">{{velocidade}} km/h</span>
+    </div>
+    <div class="ddp-veh-stat ddp-veh-stat-estrelas">
+      <span>{{{estrelasHtml}}}</span>
+    </div>
+    <div class="ddp-veh-stat">
+      <span class="ddp-veh-stat-ico">🎯</span>
+      <span class="ddp-veh-stat-val">{{manobrabilidade}}% Dirigir</span>
+    </div>
+    <div class="ddp-veh-stat">
+      <span class="ddp-veh-stat-ico">🛡</span>
+      <span class="ddp-veh-stat-val">Blindagem</span>
+    </div>
+  </div>
+
+  <!-- ── ESTADOS ────────────────────────────────────────── -->
+  {{#if canEdit}}
+  <div class="ddp-veh-estados">
+    <div class="ddp-veh-estados-label">Estados de Dano</div>
+    <div class="ddp-veh-estados-grid">
+
+      <button class="ddp-estado-toggle {{#if pneuFurado}}ddp-estado-ativo{{/if}}"
+              data-estado="pneuFurado" title="Pneu Furado — vel/2, -30% Dirigir">
+        🛞 Pneu Furado
+      </button>
+
+      <button class="ddp-estado-toggle {{#if motorDanificado}}ddp-estado-ativo{{/if}}"
+              data-estado="motorDanificado" title="Motor Danificado — velocidade ×0.5">
+        🔧 Motor Danif.
+      </button>
+
+      <button class="ddp-estado-toggle {{#if vidroQuebrado}}ddp-estado-ativo{{/if}}"
+              data-estado="vidroQuebrado" title="Vidros Quebrados — ocupantes expostos">
+        🪟 Vidro Quebrado
+      </button>
+
+      <button class="ddp-estado-toggle {{#if emChamas}}ddp-estado-ativo ddp-estado-chamas{{/if}}"
+              data-estado="emChamas" title="Em Chamas — veículo em perigo">
+        🔥 Em Chamas
+      </button>
+
+      <button class="ddp-estado-toggle {{#if combustivelVazando}}ddp-estado-ativo{{/if}}"
+              data-estado="combustivelVazando" title="Combustível Vazando — perda por turno">
+        💧 Comb. Vazando
+      </button>
+
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- ── UPGRADES + PASSAGEIROS (lado a lado) ──────────── -->
+  <div class="ddp-veh-dual">
+
+    <!-- Upgrades -->
+    <div class="ddp-veh-section ddp-veh-upgrades-section">
+      <div class="ddp-veh-section-title">
+        <i class="fas fa-wrench"></i> Upgrades
+        <span class="ddp-veh-section-count">({{upgrades.length}})</span>
+      </div>
+      <div class="ddp-veh-list">
+        {{#each upgrades}}
+        <div class="ddp-veh-list-item">
+          <img class="ddp-veh-item-img" src="{{img}}" alt="{{name}}" />
+          <div class="ddp-veh-item-info">
+            <div class="ddp-veh-item-name">{{name}}</div>
+            <div class="ddp-veh-item-sub">{{categoriaLabel}}</div>
+          </div>
+          {{#if @root.canEdit}}
+          <button class="ddp-upgrade-remove" data-item-id="{{id}}" title="Remover upgrade">✕</button>
+          {{/if}}
+        </div>
+        {{/each}}
+        {{#unless upgrades.length}}
+        <div class="ddp-veh-empty-hint">Arraste upgrades do compêndio aqui</div>
+        {{/unless}}
+      </div>
+    </div>
+
+    <!-- Passageiros -->
+    <div class="ddp-veh-section ddp-veh-assentos-section">
+      <div class="ddp-veh-section-title">
+        <i class="fas fa-users"></i> Passageiros
+      </div>
+      <div class="ddp-veh-assentos-list">
+        {{#each assentos}}
+        <div class="ddp-veh-assento-row">
+          <span class="ddp-veh-assento-lbl">{{label}}</span>
+          {{#if @root.canEdit}}
+          <input class="ddp-assento-input" type="text" data-idx="{{idx}}"
+                 value="{{nome}}" placeholder="—" />
+          {{else}}
+          <span class="ddp-veh-assento-val">{{nome}}</span>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CARGA ──────────────────────────────────────────── -->
+  <div class="ddp-veh-section ddp-veh-cargo-section">
+    <div class="ddp-veh-section-title">
+      <i class="fas fa-box"></i> Carga
+      <span class="ddp-veh-section-count ddp-veh-cargo-count {{#if cargoUsed}}{{/if}}">
+        {{cargoUsed}}/{{cargoTotal}} slots
+      </span>
+    </div>
+    <div class="ddp-veh-list">
+      {{#each cargo}}
+      <div class="ddp-veh-list-item">
+        <img class="ddp-veh-item-img" src="{{img}}" alt="{{name}}" />
+        <div class="ddp-veh-item-info">
+          <div class="ddp-veh-item-name">{{name}}</div>
+          <div class="ddp-veh-item-sub">{{slots}} slot(s)</div>
+        </div>
+        {{#if @root.canEdit}}
+        <button class="ddp-cargo-remove" data-item-id="{{id}}" title="Remover da carga">✕</button>
+        {{/if}}
+      </div>
+      {{/each}}
+      {{#unless cargo.length}}
+      <div class="ddp-veh-empty-hint">Arraste itens aqui para adicionar à carga</div>
+      {{/unless}}
+    </div>
+  </div>
+
+  <!-- ── COMBATE ────────────────────────────────────────── -->
+  {{#if canEdit}}
+  <div class="ddp-veh-combate">
+    <div class="ddp-veh-section-title">
+      <i class="fas fa-crosshairs"></i> Combate
+    </div>
+    <div class="ddp-veh-combate-grid">
+      <button class="ddp-veh-btn ddp-veh-btn-ram" title="Abalroar outro veículo ou obstáculo">
+        💥 Abalroar
+      </button>
+      <button class="ddp-veh-btn ddp-veh-btn-flee" title="Manobra de fuga">
+        🏃 Fugir
+      </button>
+      <button class="ddp-veh-btn ddp-veh-btn-shoot" title="Atirar de dentro do veículo">
+        🔫 Atirar
+      </button>
+      <button class="ddp-veh-btn ddp-veh-btn-fuel" title="Abastecer o veículo">
+        ⛽ Abastecer
+      </button>
+    </div>
+  </div>
+  {{/if}}
+
+  <!-- ── RUN-FLAT / RAM BONUS INFO ──────────────────────── -->
+  {{#if runFlat}}
+  <div class="ddp-veh-info-badge ddp-veh-badge-runflat">
+    🛞 Run-flat: Pneus reforçados — sem penalidade de pneu furado
+  </div>
+  {{/if}}
+  {{#if ramBonusDice}}
+  <div class="ddp-veh-info-badge ddp-veh-badge-ram">
+    💥 Abalroamento: {{ramBonusDice}} dado(s) extra
+  </div>
+  {{/if}}
+
+</div>

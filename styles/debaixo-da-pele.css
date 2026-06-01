@@ -2604,3 +2604,574 @@ li.control-tool[data-tool="ddp-gm-panel"] i {
   gap: 8px;
   overflow: hidden;
 }
+
+/* ============================================================
+   FICHA DE VEÍCULO — .ddp-vehicle-wrapper
+   Tema: escuro/industrial, bordas verde-militar, acento laranja
+   ============================================================ */
+
+.ddp-vehicle-wrapper {
+  font-family: "Signika", serif;
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.ddp-veh-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-bottom: 2px solid #3a4a3a;
+  padding-bottom: 10px;
+}
+
+.ddp-veh-portrait {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #3a4a3a;
+  flex-shrink: 0;
+}
+
+.ddp-veh-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ddp-veh-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #eee;
+  letter-spacing: 1px;
+}
+
+.ddp-veh-estado-label {
+  font-size: 0.82em;
+  color: #88bb88;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ddp-veh-estado-label.ddp-veh-chamas {
+  color: #ff4422;
+  animation: pulsar 0.8s infinite;
+}
+
+.ddp-veh-estado-label.ddp-veh-alerta {
+  color: #ffaa00;
+}
+
+.ddp-veh-placa-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.ddp-veh-placa-label {
+  font-size: 0.78em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.ddp-placa-input {
+  background: #2a2a2a;
+  border: 1px solid #3a4a3a;
+  border-radius: 4px;
+  color: #cc7722;
+  font-family: monospace;
+  font-size: 0.95em;
+  padding: 2px 8px;
+  width: 110px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ddp-placa-input:focus {
+  outline: none;
+  border-color: #cc7722;
+}
+
+.ddp-veh-placa-val {
+  font-family: monospace;
+  color: #cc7722;
+  letter-spacing: 2px;
+}
+
+/* ── Barras ─────────────────────────────────────────────── */
+.ddp-veh-barras {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ddp-veh-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ddp-veh-bar-lbl {
+  font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.ddp-veh-bar-track {
+  flex: 1;
+  height: 14px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.ddp-veh-bar-fill {
+  height: 100%;
+  border-radius: 7px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.ddp-veh-fuel-fill {
+  background: linear-gradient(90deg, #cc7722, #ee9933);
+}
+
+.ddp-veh-bar-val {
+  font-size: 0.82em;
+  font-weight: bold;
+  min-width: 56px;
+  text-align: right;
+}
+
+.ddp-veh-hp-adj,
+.ddp-veh-fuel-adj {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #ccc;
+  border-radius: 3px;
+  width: 22px;
+  height: 22px;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ddp-veh-hp-adj:hover,
+.ddp-veh-fuel-adj:hover {
+  background: #3a3a3a;
+  border-color: #cc7722;
+  color: #cc7722;
+}
+
+/* ── Stats ──────────────────────────────────────────────── */
+.ddp-veh-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #111;
+  border: 1px solid #2a3a2a;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.ddp-veh-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.88em;
+}
+
+.ddp-veh-stat-ico {
+  font-size: 1em;
+}
+
+.ddp-veh-stat-val {
+  color: #cc7722;
+  font-weight: bold;
+}
+
+.ddp-veh-stat-estrelas {
+  font-size: 1.1em;
+}
+
+/* ── Estados de Dano ────────────────────────────────────── */
+.ddp-veh-estados {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ddp-veh-estados-label {
+  font-size: 0.72em;
+  text-transform: uppercase;
+  color: #668;
+  letter-spacing: 1px;
+}
+
+.ddp-veh-estados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ddp-estado-toggle {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #888;
+  font-size: 0.78em;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ddp-estado-toggle:hover {
+  border-color: #cc7722;
+  color: #ccc;
+}
+
+.ddp-estado-toggle.ddp-estado-ativo {
+  background: #3a1a1a;
+  border-color: #cc3322;
+  color: #ff7755;
+  font-weight: bold;
+}
+
+.ddp-estado-toggle.ddp-estado-ativo.ddp-estado-chamas {
+  background: #4a1a00;
+  border-color: #ff4422;
+  color: #ff6644;
+  animation: pulsar 0.8s infinite;
+}
+
+/* ── Layout duplo (upgrades + assentos) ─────────────────── */
+.ddp-veh-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ── Seções genéricas ────────────────────────────────────── */
+.ddp-veh-section {
+  background: #111;
+  border: 1px solid #2a3a2a;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ddp-veh-section-title {
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #88aa88;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-bottom: 1px solid #2a3a2a;
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+.ddp-veh-section-count {
+  font-weight: normal;
+  color: #668;
+  font-size: 0.9em;
+}
+
+.ddp-veh-cargo-count {
+  margin-left: auto;
+}
+
+/* ── Lista de itens (upgrades / cargo) ──────────────────── */
+.ddp-veh-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.ddp-veh-list-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 3px 5px;
+}
+
+.ddp-veh-list-item:hover {
+  border-color: #3a4a3a;
+}
+
+.ddp-veh-item-img {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.ddp-veh-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.ddp-veh-item-name {
+  font-size: 0.82em;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ddp-veh-item-sub {
+  font-size: 0.68em;
+  color: #668;
+}
+
+.ddp-veh-empty-hint {
+  font-size: 0.76em;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.ddp-upgrade-remove,
+.ddp-cargo-remove {
+  background: none;
+  border: none;
+  color: #553333;
+  font-size: 0.8em;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ddp-upgrade-remove:hover,
+.ddp-cargo-remove:hover {
+  background: #3a1a1a;
+  color: #ff5555;
+}
+
+/* ── Assentos ────────────────────────────────────────────── */
+.ddp-veh-assentos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.ddp-veh-assento-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8em;
+}
+
+.ddp-veh-assento-lbl {
+  color: #778;
+  min-width: 72px;
+  font-size: 0.85em;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ddp-assento-input {
+  flex: 1;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 3px;
+  color: #ddd;
+  font-size: 0.85em;
+  padding: 2px 5px;
+  min-width: 0;
+}
+
+.ddp-assento-input:focus {
+  outline: none;
+  border-color: #3a5a3a;
+}
+
+.ddp-veh-assento-val {
+  flex: 1;
+  color: #ccc;
+  font-size: 0.85em;
+}
+
+/* ── Cargo (seção completa) ─────────────────────────────── */
+.ddp-veh-cargo-section .ddp-veh-list {
+  max-height: 140px;
+}
+
+/* ── Combate ─────────────────────────────────────────────── */
+.ddp-veh-combate {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ddp-veh-combate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.ddp-veh-btn {
+  padding: 8px 10px;
+  font-size: 0.88em;
+  font-family: "Signika", serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+  letter-spacing: 0.5px;
+}
+
+.ddp-veh-btn:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.ddp-veh-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.9);
+}
+
+.ddp-veh-btn-ram {
+  background: linear-gradient(135deg, #8b0000, #cc2222);
+  color: #fff;
+  border: 1px solid #aa0000;
+}
+
+.ddp-veh-btn-flee {
+  background: linear-gradient(135deg, #003366, #2255aa);
+  color: #fff;
+  border: 1px solid #1144aa;
+}
+
+.ddp-veh-btn-shoot {
+  background: linear-gradient(135deg, #7a3300, #cc7722);
+  color: #fff;
+  border: 1px solid #995500;
+}
+
+.ddp-veh-btn-fuel {
+  background: linear-gradient(135deg, #1a4a1a, #336633);
+  color: #fff;
+  border: 1px solid #225522;
+}
+
+/* ── Badges informativos ─────────────────────────────────── */
+.ddp-veh-info-badge {
+  font-size: 0.78em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border-left: 3px solid;
+}
+
+.ddp-veh-badge-runflat {
+  background: #1a2a1a;
+  border-color: #44aa44;
+  color: #88dd88;
+}
+
+.ddp-veh-badge-ram {
+  background: #2a1a1a;
+  border-color: #cc4422;
+  color: #ff8866;
+}
+
+/* ── Party Frame — Seção de Veículos ──────────────────────── */
+.ddp-pf-veh-section {
+  margin-top: 6px;
+  border-top: 1px solid #2a3a2a;
+  padding-top: 6px;
+}
+
+.ddp-pf-veh-label {
+  font-size: 0.68em;
+  color: #88aa88;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ddp-pf-veh-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  border-bottom: 1px solid #111;
+}
+
+.ddp-pf-veh-img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.ddp-pf-veh-nome {
+  flex: 1;
+  font-size: 0.78em;
+  color: #bbb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ddp-pf-veh-btn {
+  background: #1a2a1a;
+  border: 1px solid #3a5a3a;
+  border-radius: 3px;
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 2px 5px;
+  line-height: 1;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.ddp-pf-veh-btn:hover {
+  background: #2a4a2a;
+  border-color: #cc7722;
+}

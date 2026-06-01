@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Kit Turbo",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-motor.svg",
+    "system": {
+      "description": { "value": "<p>Kit de turbocompressor instalado no motor da Kombi. Aumenta velocidade máxima e aceleração significativamente.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 3500, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "motor", "velocidadeBonus": 20, "aceleracaoBonus": 1, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 3500
+      }
+    }
+  },
+  {
+    "name": "Motor 1.8 AP Reforçado",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-motor.svg",
+    "system": {
+      "description": { "value": "<p>Substituição do motor original por um 1.8 AP reforçado. Mais confiável e com melhor desempenho em rodovias.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 2800, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "motor", "velocidadeBonus": 15, "aceleracaoBonus": 1, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 2800
+      }
+    }
+  },
+  {
+    "name": "Blindagem Lateral (Chapa de Aço)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-blindagem.svg",
+    "system": {
+      "description": { "value": "<p>Chapas de aço soldadas nas laterais da carroceria. Aumenta o HP do veículo mas reduz a velocidade máxima pelo peso adicional.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 1800, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "blindagem", "velocidadeBonus": -10, "aceleracaoBonus": 0, "hpMaxBonus": 8, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 1800
+      }
+    }
+  },
+  {
+    "name": "Vidros Reforçados",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-blindagem.svg",
+    "system": {
+      "description": { "value": "<p>Vidros laminados balísticos. Ocupantes ganham cobertura contra tiros disparados de fora do veículo.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 2500, "level": "" },
+      "notes": "Ocupantes ganham cobertura contra tiros", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "blindagem", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 2500
+      }
+    }
+  },
+  {
+    "name": "Para-choque Reforçado",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-parachoque.svg",
+    "system": {
+      "description": { "value": "<p>Para-choque de aço pesado soldado na frente da Kombi. Adiciona um dado extra de dano em abalroamentos.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 450, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "estrutura", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "+1D6", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 450
+      }
+    }
+  },
+  {
+    "name": "Pneus Run-flat",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rodas.svg",
+    "system": {
+      "description": { "value": "<p>Pneus de reforço interno que permitem continuar rodando mesmo após furar. Elimina a penalidade de pneu furado.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 800, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "rodas", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": true, "offRoad": false, "escotilha": false },
+        "preco": 800
+      }
+    }
+  },
+  {
+    "name": "Pneus Off-road",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rodas.svg",
+    "system": {
+      "description": { "value": "<p>Pneus de alta tração para terreno irregular. Melhora a manobrabilidade em terrenos acidentados.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 600, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "rodas", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 20, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": true, "escotilha": false },
+        "preco": 600
+      }
+    }
+  },
+  {
+    "name": "Suspensão Elevada",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rodas.svg",
+    "system": {
+      "description": { "value": "<p>Kit de elevação de suspensão. Permite passar por terrenos mais acidentados mas piora levemente a manobrabilidade em asfalto.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 1200, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "rodas", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": -5, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": true, "escotilha": false },
+        "preco": 1200
+      }
+    }
+  },
+  {
+    "name": "Escotilha no Teto",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-escotilha.svg",
+    "system": {
+      "description": { "value": "<p>Abertura no teto da Kombi com escotilha rebatível. Permite atirar de dentro do veículo com penalidade reduzida.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 350, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "estrutura", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": true },
+        "preco": 350
+      }
+    }
+  },
+  {
+    "name": "Rack de Teto",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rack.svg",
+    "system": {
+      "description": { "value": "<p>Grade metálica instalada no teto para carregar equipamentos extras. Adiciona 4 slots de carga.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 280, "level": "" },
+      "notes": "", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "carga", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 4, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 280
+      }
+    }
+  },
+  {
+    "name": "Compartimento Secreto",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rack.svg",
+    "system": {
+      "description": { "value": "<p>Compartimento oculto no assoalho ou paredes da carroceria. Hidden slots — busca detecta apenas em resultado Extremo.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 600, "level": "" },
+      "notes": "Hidden slots — busca detecta apenas em Extremo", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "carga", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 2, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 600
+      }
+    }
+  },
+  {
+    "name": "Suporte de Armas",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/upgrade-rack.svg",
+    "system": {
+      "description": { "value": "<p>Suportes e coletes fixados nas paredes internas. Armas armazenadas na carga contam como Acesso Rápido.</p>", "chat": "", "keeper": "" },
+      "quantity": 1, "weight": 0,
+      "price": { "value": 450, "level": "" },
+      "notes": "Armas na carga contam como Acesso Rápido", "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1, "gridH": 1, "slots": 1,
+        "isUpgrade": true,
+        "categoria": "upgrade",
+        "upgrade": { "categoria": "tatico", "velocidadeBonus": 0, "aceleracaoBonus": 0, "hpMaxBonus": 0, "manobrabilidadeBonus": 0, "cargoBonus": 0, "ramBonus": "", "runFlat": false, "offRoad": false, "escotilha": false },
+        "preco": 450
+      }
+    }
+  }
+]

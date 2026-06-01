@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Shield shape -->
+  <path d="M50 10 L85 25 L85 55 Q85 78 50 90 Q15 78 15 55 L15 25 Z"
+        fill="#2a3a2a" stroke="#cc7722" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Inner shield -->
+  <path d="M50 20 L76 32 L76 55 Q76 72 50 82 Q24 72 24 55 L24 32 Z"
+        fill="#1a2a1a" stroke="#888" stroke-width="1.5"/>
+  <!-- Cross / plate lines -->
+  <line x1="50" y1="20" x2="50" y2="82" stroke="#cc7722" stroke-width="2"/>
+  <line x1="24" y1="51" x2="76" y2="51" stroke="#cc7722" stroke-width="2"/>
+  <!-- Rivets -->
+  <circle cx="36" cy="36" r="3" fill="#cc7722"/>
+  <circle cx="64" cy="36" r="3" fill="#cc7722"/>
+  <circle cx="36" cy="65" r="3" fill="#cc7722"/>
+  <circle cx="64" cy="65" r="3" fill="#cc7722"/>
+</svg>

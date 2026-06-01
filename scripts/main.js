@@ -13,6 +13,7 @@ import "./campaign-panel.js";
 import "./player-hud.js";
 import "./roll-request.js";
 import { handleTransferSocket } from "./item-transfer.js";
+import { DDPVehicleSheet } from "./vehicle-sheet.js";
 
 const MODULE_ID = "debaixo-da-pele";
 const VERSION   = "1.8.0";
@@ -20,6 +21,9 @@ const VERSION   = "1.8.0";
 // ─── SETTINGS ───────────────────────────────────────────────
 Hooks.once("init", () => {
   console.log(`${MODULE_ID} | Inicializando módulo Debaixo da Pele...`);
+
+  // Pré-carrega templates da ficha de veículo
+  loadTemplates(["modules/debaixo-da-pele/templates/vehicle-sheet.html"]);
 
   // Sessão
   game.settings.register(MODULE_ID, "geradorDias", {
@@ -179,7 +183,8 @@ Hooks.once("ready", () => {
     ...(window.DebaixoDaPele ?? {}),
     MODULE_ID,
     version:    VERSION,
-    emitSocket: (data) => game.socket?.emit(`module.${MODULE_ID}`, data)
+    emitSocket:  (data) => game.socket?.emit(`module.${MODULE_ID}`, data),
+    abrirVeiculo: (actorId) => DDPVehicleSheet.open(actorId)
   };
 
   // ── Prompt de importação de macros (primeira vez) ──

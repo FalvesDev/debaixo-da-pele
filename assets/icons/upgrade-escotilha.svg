@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Roof / vehicle top -->
+  <rect x="10" y="55" width="80" height="20" rx="3" fill="#3a3a3a" stroke="#888" stroke-width="2"/>
+  <!-- Hatch opening in roof -->
+  <rect x="30" y="48" width="40" height="28" rx="3" fill="#1a3a5a" stroke="#cc7722" stroke-width="2.5"/>
+  <!-- Hatch panel (open position) -->
+  <path d="M30 48 L50 20 L70 48" fill="#2a2a2a" stroke="#cc7722" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Hatch hinges -->
+  <rect x="28" y="46" width="6" height="4" rx="1" fill="#888"/>
+  <rect x="66" y="46" width="6" height="4" rx="1" fill="#888"/>
+  <!-- Person silhouette -->
+  <circle cx="50" cy="38" r="6" fill="#cc7722"/>
+  <path d="M44 50 L50 44 L56 50" fill="#cc7722"/>
+  <!-- Stars / shooting arrows -->
+  <line x1="50" y1="28" x2="50" y2="18" stroke="#ffaa44" stroke-width="2" stroke-dasharray="2,2"/>
+</svg>

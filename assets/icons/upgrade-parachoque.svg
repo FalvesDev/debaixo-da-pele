@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Main bumper bar -->
+  <rect x="5" y="38" width="90" height="24" rx="5" fill="#444" stroke="#cc7722" stroke-width="3"/>
+  <!-- Reinforcement ridges -->
+  <rect x="5" y="43" width="90" height="4" rx="2" fill="#555" stroke="#888" stroke-width="0.5"/>
+  <rect x="5" y="55" width="90" height="4" rx="2" fill="#555" stroke="#888" stroke-width="0.5"/>
+  <!-- Impact plates (left and right) -->
+  <rect x="5" y="34" width="20" height="32" rx="4" fill="#3a3a3a" stroke="#cc7722" stroke-width="2"/>
+  <rect x="75" y="34" width="20" height="32" rx="4" fill="#3a3a3a" stroke="#cc7722" stroke-width="2"/>
+  <!-- Bolts -->
+  <circle cx="15" cy="42" r="3" fill="#cc7722"/>
+  <circle cx="15" cy="58" r="3" fill="#cc7722"/>
+  <circle cx="85" cy="42" r="3" fill="#cc7722"/>
+  <circle cx="85" cy="58" r="3" fill="#cc7722"/>
+  <!-- Center plate  -->
+  <rect x="32" y="34" width="36" height="32" rx="3" fill="#3a3a3a" stroke="#888" stroke-width="1.5"/>
+  <!-- Winch hook suggestion -->
+  <circle cx="50" cy="50" r="5" fill="none" stroke="#cc7722" stroke-width="2"/>
+  <line x1="50" y1="45" x2="50" y2="38" stroke="#cc7722" stroke-width="2"/>
+</svg>
