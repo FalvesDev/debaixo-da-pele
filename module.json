@@ -2,7 +2,7 @@
   "id": "debaixo-da-pele",
   "title": "Debaixo da Pele — CoC7 Sistema de Inventário e Macros",
   "description": "Módulo completo para a campanha 'Debaixo da Pele' (Call of Cthulhu 7e). Inclui sistema de inventário por slots, rastreador de Exposição Aurora integrado na ficha, token HUD com HP/SAN/Aurora, painel de investigadores persistente, painel GM com revelações e macros de mesa.",
-  "version": "1.9.17",
+  "version": "1.9.18",
   "socket": true,
   "thumbnail": "modules/debaixo-da-pele/assets/icons/module-thumbnail.svg",
   "url": "https://github.com/FalvesDev/debaixo-da-pele",
@@ -56,6 +56,24 @@
       "label": "DDP — Personagens e Adversários",
       "path": "packs/actors",
       "type": "Actor"
+    },
+    {
+      "name": "ecorp-actors",
+      "label": "ÂMBAR — Operadores E CORP",
+      "path": "packs/ecorp-actors",
+      "type": "Actor"
+    },
+    {
+      "name": "ecorp-items",
+      "label": "ÂMBAR — Equipamento Tático E CORP",
+      "path": "packs/ecorp-items",
+      "type": "Item"
+    },
+    {
+      "name": "ecorp-journals",
+      "label": "ÂMBAR — Dossiês Operacionais",
+      "path": "packs/ecorp-journals",
+      "type": "JournalEntry"
     }
   ],
   "flags": {

@@ -1,0 +1,1040 @@
+[
+  {
+    "name": "AI Arctic Warfare .338 LM (E CORP)",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
+    "system": {
+      "description": {
+        "value": "<p>Rifle de ferrolho britânico calibre .338 Lapua Magnum, unidade modificada pela oficina interna da E CORP. Alcance efetivo real de 1.100 m. O supressor reduz a assinatura sonora o suficiente para que a origem do disparo não seja localizável acima de 300 m.</p><p><strong>Desvantagem:</strong> 6,9 kg com acessórios. Inútil em corredor. Recarga de ferrolho custa a ação de movimento.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Rifle)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 180,
+          "units": "",
+          "damage": "2D8+1D6"
+        },
+        "long": {
+          "value": 360,
+          "units": "",
+          "damage": "2D8+1D6"
+        },
+        "extreme": {
+          "value": 720,
+          "units": "",
+          "damage": "2D8+1D6"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 5,
+        "max": 5
+      },
+      "blastRadius": "",
+      "malfunction": 98,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 6.9
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 5,
+        "slots": 8,
+        "categoria": "arma",
+        "caliber": ".338 Lapua Magnum",
+        "notas": "Ferrolho. 1 tiro/rodada. Bipé obrigatório para alcance longo — sem apoio, penalidade de um nível de dificuldade.",
+        "preco": 25375,
+        "precoUSD": 14500,
+        "ecorp": {
+          "classe": "RECON",
+          "acessorios": "Luneta Schmidt & Bender 5-25×56 PM II · supressor Surefire SOCOM · bipé Harris · capa ghillie modular"
+        }
+      }
+    }
+  },
+  {
+    "name": "SIG P226 9mm (supressa)",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+    "system": {
+      "description": {
+        "value": "<p>Pistola secundária padrão da E CORP para operadores de reconhecimento. Munição subsônica de 147 grãos combinada ao supressor — o som dominante passa a ser o próprio ferrolho.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Pistola)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 15,
+          "units": "",
+          "damage": "1D10"
+        },
+        "long": {
+          "value": 30,
+          "units": "",
+          "damage": "1D10"
+        },
+        "extreme": {
+          "value": 60,
+          "units": "",
+          "damage": "1D10"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 3,
+        "max": 3,
+        "period": ""
+      },
+      "bullets": {
+        "value": 15,
+        "max": 15
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 1.4
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "arma",
+        "caliber": "9×19mm Parabellum",
+        "notas": "Com supressor: quem escuta o disparo faz Escutar com um nível de dificuldade a mais.",
+        "preco": 3325,
+        "precoUSD": 1900,
+        "ecorp": {
+          "classe": "RECON",
+          "acessorios": "Supressor Gemtech Tundra · cano rosqueado · miras de trítio"
+        }
+      }
+    }
+  },
+  {
+    "name": "Binóculo Térmico FLIR HS-324 Command",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/binoculo.svg",
+    "system": {
+      "description": {
+        "value": "<p>Monóculo térmico de mão, microbolômetro não refrigerado 320×240. Detecta assinatura humana a até 700 m. Grava vídeo em cartão SD.</p><p><strong>Uso:</strong> concede um nível de bônus em Perceber contra alvos vivos ocultos no escuro. Não funciona contra o que não gera calor.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.8,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "usos": 0,
+        "categoria": "eletronico",
+        "notas": "Detecta calor através de fumaça e escuridão total. NÃO enxerga através de parede ou vidro. Bateria: 5 h.",
+        "preco": 17150,
+        "precoUSD": 9800,
+        "ecorp": {
+          "classe": "RECON"
+        }
+      }
+    }
+  },
+  {
+    "name": "Óculos de Visão Noturna AN/PVS-14",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/capacete.svg",
+    "system": {
+      "description": {
+        "value": "<p>Intensificador de imagem Gen 3 monocular, montado em capacete. Anula penalidades de escuridão parcial. Requer alguma luz ambiente — em escuridão absoluta, precisa do iluminador IR embutido, que é visível para quem também tiver NVG.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.35,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 1,
+        "slots": 2,
+        "usos": 0,
+        "categoria": "eletronico",
+        "notas": "Monocular Gen 3. Campo de visão reduzido a 40° — penalidade de um nível em Perceber periférico. Luz forte cega por 1D3 rodadas.",
+        "preco": 6300,
+        "precoUSD": 3600,
+        "ecorp": {
+          "classe": "RECON"
+        }
+      }
+    }
+  },
+  {
+    "name": "Drone de Reconhecimento RQ-11B Raven",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/camera-video.svg",
+    "system": {
+      "description": {
+        "value": "<p>Drone de asa fixa lançado à mão, com câmera EO/IR e link de vídeo em tempo real para o terminal do operador. Padrão militar americano desde 2006.</p><p><strong>Limitação crítica:</strong> é um avião. Não voa dentro de prédios, não paira, não sobe escada. Para uso interno a equipe carrega o <em>Recon Scout</em>.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.9,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 3,
+        "gridH": 2,
+        "slots": 5,
+        "usos": 3,
+        "categoria": "eletronico",
+        "notas": "Lançado à mão. Autonomia 80 min. Alcance 10 km. Requer Pilotar (Drone). Barulhento — não é furtivo em ambiente fechado.",
+        "preco": 59500,
+        "precoUSD": 34000,
+        "ecorp": {
+          "classe": "RECON"
+        }
+      }
+    }
+  },
+  {
+    "name": "Recon Scout XT (drone de arremesso)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/camera-compacta.svg",
+    "system": {
+      "description": {
+        "value": "<p>Robô cilíndrico de duas rodas, jogado por baixo da porta ou pela janela. Transmite vídeo infravermelho sem fio. Sobrevive a queda de dois andares. Usado por SWAT americano desde 2008.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.6,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "usos": 0,
+        "categoria": "eletronico",
+        "notas": "Arremessável até 9 m. Rola. Câmera IR. Autonomia 60 min. Silencioso.",
+        "preco": 15750,
+        "precoUSD": 9000,
+        "ecorp": {
+          "classe": "RECON"
+        }
+      }
+    }
+  },
+  {
+    "name": "HK416 D10RS 5.56mm",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+    "system": {
+      "description": {
+        "value": "<p>Carabina modular alemã de operação a pistão, calibre 5,56. O trilho Picatinny de quatro faces permite reconfigurar a arma entre CQB e média distância em campo.</p><p><strong>Desvantagem:</strong> 5,56 tem penetração excelente e poder de parada mediano. Contra alvo com massa muito acima do humano, o Guardião pode aplicar redução de dano.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Rifle)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 90,
+          "units": "",
+          "damage": "2D8"
+        },
+        "long": {
+          "value": 180,
+          "units": "",
+          "damage": "2D8"
+        },
+        "extreme": {
+          "value": 360,
+          "units": "",
+          "damage": "2D8"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 3,
+        "period": ""
+      },
+      "bullets": {
+        "value": 30,
+        "max": 30
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 3.6
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 4,
+        "slots": 6,
+        "categoria": "arma",
+        "caliber": "5,56×45mm NATO",
+        "notas": "Semi ou rajada de 3. Pistão de gás — funciona sujo, funciona molhado.",
+        "preco": 7350,
+        "precoUSD": 4200,
+        "ecorp": {
+          "classe": "ASSAULT",
+          "acessorios": "Mira holográfica EOTech 552 · lanterna Surefire M600 · laser IR PEQ-15 · empunhadura vertical · bandoleira de 3 pontos"
+        }
+      }
+    }
+  },
+  {
+    "name": "Glock 17 Gen4 9mm",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+    "system": {
+      "description": {
+        "value": "<p>Pistola secundária padrão. Polímero, 17 tiros, sem trava manual. É a arma que continua funcionando quando o rifle emperra.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Pistola)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 15,
+          "units": "",
+          "damage": "1D10"
+        },
+        "long": {
+          "value": 30,
+          "units": "",
+          "damage": "1D10"
+        },
+        "extreme": {
+          "value": 60,
+          "units": "",
+          "damage": "1D10"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 3,
+        "max": 3,
+        "period": ""
+      },
+      "bullets": {
+        "value": 17,
+        "max": 17
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 0.9
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "categoria": "arma",
+        "caliber": "9×19mm Parabellum",
+        "notas": "Coldre de coxa Safariland 6004. Saque rápido — não custa ação se já estiver com a mão livre.",
+        "preco": 1138,
+        "precoUSD": 650,
+        "ecorp": {
+          "classe": "ASSAULT",
+          "acessorios": "Lanterna Streamlight TLR-1 · miras noturnas · três carregadores extras"
+        }
+      }
+    }
+  },
+  {
+    "name": "Granada de Concussão M84 (Flashbang)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/dinamite.svg",
+    "system": {
+      "description": {
+        "value": "<p>Granada não letal: 175 dB e 6 milhões de candelas. Padrão de entrada tática. Em ambiente fechado o efeito é brutal — inclusive para quem jogou, se calcular mal.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 4,
+      "weight": 0.25,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 0,
+        "categoria": "explosivo",
+        "notas": "Arremesso. Alvos em 3 m: teste de CON ou ficam Atordoados por 1D3 rodadas. Não causa dano.",
+        "preco": 79,
+        "precoUSD": 45,
+        "ecorp": {
+          "classe": "ASSAULT"
+        }
+      }
+    }
+  },
+  {
+    "name": "Benelli M4 Super 90 Cal.12",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
+    "system": {
+      "description": {
+        "value": "<p>Espingarda semiautomática italiana de operação a gás ARGO, adotada pelos Marines em 1999. Sete tiros, ciclo confiável com qualquer carga.</p><p><strong>Desvantagem:</strong> recarga cartucho a cartucho. Uma rodada = 2 cartuchos.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Espingarda)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 10,
+          "units": "",
+          "damage": "4D6/2D6/1D6"
+        },
+        "long": {
+          "value": 20,
+          "units": "",
+          "damage": "4D6/2D6/1D6"
+        },
+        "extreme": {
+          "value": 50,
+          "units": "",
+          "damage": "4D6/2D6/1D6"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 2,
+        "period": ""
+      },
+      "bullets": {
+        "value": 7,
+        "max": 7
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 3.8
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 4,
+        "slots": 6,
+        "categoria": "arma",
+        "caliber": "Calibre 12 / 2¾\"",
+        "notas": "Semiautomática. Dano por faixa de alcance. Munição de arrombamento (Hatton) disponível: destrói dobradiça, não serve contra alvo.",
+        "preco": 3675,
+        "precoUSD": 2100,
+        "ecorp": {
+          "classe": "BREACHER",
+          "acessorios": "Mira ghost ring · lanterna Surefire · coronha telescópica · porta-cartuchos lateral"
+        }
+      }
+    }
+  },
+  {
+    "name": "Escudo Balístico Point Blank Level IIIA",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/colete-tatico.svg",
+    "system": {
+      "description": {
+        "value": "<p>Escudo de mão em aramida com visor blindado e lanterna integrada de 500 lumens. Detém 9mm, .44 Magnum e fragmentos. NÃO detém rifle.</p><p><strong>Peso real:</strong> 11,5 kg. Segurar por mais de três rodadas seguidas exige teste de CON para quem tem STR abaixo de 70.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 11.5,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 3,
+        "gridH": 4,
+        "slots": 8,
+        "usos": 0,
+        "categoria": "protecao",
+        "notas": "Armadura +10 contra ataques frontais enquanto empunhado. Ocupa uma mão. Penalidade de um nível em Esquiva e Furtividade.",
+        "preco": 6650,
+        "precoUSD": 3800,
+        "ecorp": {
+          "classe": "BREACHER"
+        }
+      }
+    }
+  },
+  {
+    "name": "Hydra-Ram HR-1 (aríete hidráulico)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/alicate.svg",
+    "system": {
+      "description": {
+        "value": "<p>Ferramenta hidráulica manual de arrombamento: 4.500 kg de força de separação aplicada no batente. Abre porta de aço comercial sem explosivo e sem barulho de impacto.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 7.7,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "usos": 0,
+        "categoria": "ferramenta",
+        "notas": "Abre porta trancada em 1 rodada com sucesso em Consertos Mecânicos ou STR. Silencioso comparado a marreta.",
+        "preco": 2888,
+        "precoUSD": 1650,
+        "ecorp": {
+          "classe": "BREACHER"
+        }
+      }
+    }
+  },
+  {
+    "name": "Marreta de Arrombamento Thunderbolt 4,5 kg",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/machado-bombeiro.svg",
+    "system": {
+      "description": {
+        "value": "<p>Marreta com cabo de fibra e cabeça de aço temperado. Quando o Hydra-Ram não encaixa, isto encaixa.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 4.5,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 3,
+        "slots": 3,
+        "usos": 0,
+        "categoria": "ferramenta",
+        "notas": "Também é arma improvisada: 1D8 + bônus de dano, Briga.",
+        "preco": 315,
+        "precoUSD": 180,
+        "ecorp": {
+          "classe": "BREACHER"
+        }
+      }
+    }
+  },
+  {
+    "name": "HK MP7A1 4.6mm",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+    "system": {
+      "description": {
+        "value": "<p>Arma pessoal de defesa compacta, 2,1 kg carregada. Projetada para quem tem as mãos ocupadas com outra coisa — exatamente o caso da Íris.</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Armas de Fogo (Submetralhadora)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 20,
+          "units": "",
+          "damage": "1D8"
+        },
+        "long": {
+          "value": 40,
+          "units": "",
+          "damage": "1D8"
+        },
+        "extreme": {
+          "value": 80,
+          "units": "",
+          "damage": "1D8"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 4,
+        "period": ""
+      },
+      "bullets": {
+        "value": 40,
+        "max": 40
+      },
+      "blastRadius": "",
+      "malfunction": 99,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 2.1
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "categoria": "arma",
+        "caliber": "4,6×30mm",
+        "notas": "Operável com uma mão. Perfura colete Nível IIIA. Dano baixo por projétil — compensa em volume.",
+        "preco": 5950,
+        "precoUSD": 3400,
+        "ecorp": {
+          "classe": "SPECIALIST",
+          "acessorios": "Red dot Aimpoint Micro T-1 · supressor B&T · bandoleira de peito · coronha retrátil"
+        }
+      }
+    }
+  },
+  {
+    "name": "Panasonic Toughbook CF-19 (terminal de campo)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/notebook.svg",
+    "system": {
+      "description": {
+        "value": "<p>Notebook conversível militarizado (MIL-STD-810G). Roda o pacote de análise da E CORP, recebe vídeo dos drones e do scanner, e mantém o banco de referência de anomalias offline.</p><p><strong>Nota 2010:</strong> não é holográfico. É pesado, tem tela de 10 polegadas e demora 40 segundos para ligar.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 2.3,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 3,
+        "gridH": 2,
+        "slots": 4,
+        "usos": 0,
+        "categoria": "eletronico",
+        "notas": "Tela sensível a toque, resistente a queda e água. Bateria 8 h. Requer Usar Computadores.",
+        "preco": 8575,
+        "precoUSD": 4900,
+        "ecorp": {
+          "classe": "SPECIALIST"
+        }
+      }
+    }
+  },
+  {
+    "name": "Espectrômetro Portátil Thermo TruDefender FT",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/gadget-analise.svg",
+    "system": {
+      "description": {
+        "value": "<p>Espectrômetro de infravermelho por transformada de Fourier, de mão. Compara a assinatura molecular da amostra contra uma biblioteca de 10.000 substâncias.</p><p><strong>Uso em jogo:</strong> quando o resultado volta sem correspondência, a Íris sabe que está lidando com algo fora do catálogo humano. Primeira leitura assim: teste de Sanidade 0/1D4.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.3,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "usos": 0,
+        "categoria": "cientifico",
+        "notas": "Identifica composto químico desconhecido em 60 s. Teste de Ciência (Química). Resultado 'NÃO CATALOGADO' é o gatilho narrativo.",
+        "preco": 49000,
+        "precoUSD": 28000,
+        "ecorp": {
+          "classe": "SPECIALIST"
+        }
+      }
+    }
+  },
+  {
+    "name": "Kit de Coleta e Contenção Biológica",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/aurora-amostra.svg",
+    "system": {
+      "description": {
+        "value": "<p>Kit padrão de recuperação de artefato biológico. Frascos de borossilicato com vedação tripla, etiquetas de cadeia de custódia da E CORP e um dewar criogênico pequeno para amostras que não podem aquecer.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 3.1,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 3,
+        "slots": 4,
+        "usos": 12,
+        "categoria": "cientifico",
+        "notas": "12 frascos selados, pinças, seringas, sacos de risco biológico, nitrogênio líquido em dewar de 500 ml.",
+        "preco": 3850,
+        "precoUSD": 2200,
+        "ecorp": {
+          "classe": "SPECIALIST"
+        }
+      }
+    }
+  },
+  {
+    "name": "Detector Multigás + Contador Geiger (Ludlum 3)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/gadget-analise.svg",
+    "system": {
+      "description": {
+        "value": "<p>Dois instrumentos presos ao arnês peitoral. Confiáveis, calibrados, e completamente cegos para qualquer coisa que não seja química ou radiação conhecida.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.6,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "usos": 0,
+        "categoria": "cientifico",
+        "notas": "Alarme sonoro. Mede O₂, CO, H₂S, LEL e radiação ionizante. Não detecta nada anômalo — e é isso que assusta.",
+        "preco": 5425,
+        "precoUSD": 3100,
+        "ecorp": {
+          "classe": "SPECIALIST"
+        }
+      }
+    }
+  },
+  {
+    "name": "Rádio Thales AN/PRC-148 MBITR + Peltor ComTac II",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/radio-portatil.svg",
+    "system": {
+      "description": {
+        "value": "<p>Rádio tático multibanda criptografado com headset de condução óssea e proteção auditiva ativa — comprime sons acima de 82 dB e amplifica sons baixos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.2,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 2,
+        "usos": 0,
+        "categoria": "eletronico",
+        "notas": "Criptografado. Alcance 8 km em campo aberto, muito menos sob estrutura de concreto. O headset também protege audição de flashbang.",
+        "preco": 9450,
+        "precoUSD": 5400,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  },
+  {
+    "name": "Conjunto de Armadura E CORP Padrão 2009",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/colete.svg",
+    "system": {
+      "description": {
+        "value": "<p><strong>Capacete:</strong> Ops-Core FAST ballistic com trilho lateral, suporte NVG e almofadas de impacto.<br><strong>Colete:</strong> plate carrier Crye JPC com placas ESAPI Nível III (RECON/SPECIALIST) ou Nível IV com placas laterais (ASSAULT/BREACHER).<br><strong>Braços:</strong> cotoveleiras rígidas e luvas Mechanix com reforço de couro de cabra.<br><strong>Pernas:</strong> joelheiras rígidas, calça de combate ripstop com reforço em Cordura.<br><strong>Peso total:</strong> 13,4 kg (padrão) a 22 kg (configuração BREACHER).<br><strong>Capacidade de carga:</strong> 8 pontos MOLLE frontais, 6 laterais.<br><strong>Comunicação:</strong> PTT no ombro esquerdo, cabo roteado por dentro do colete.<br><strong>Visão noturna:</strong> suporte Wilcox L4 G24 no capacete.<br><strong>HUD:</strong> não existe. É 2010. O que existe é um bastão químico verde preso no ombro e fita adesiva com o tipo sanguíneo escrito a caneta.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 13.4,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 3,
+        "gridH": 4,
+        "slots": 0,
+        "usos": 0,
+        "categoria": "protecao",
+        "notas": "Armadura 5 (ASSAULT) / 3 (RECON e SPECIALIST, placas leves) / 8 (BREACHER, placas Nível IV + proteções). Vestida, não ocupa slot de mochila.",
+        "preco": 15225,
+        "precoUSD": 8700,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  },
+  {
+    "name": "Kit Médico de Combate IFAK",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-pa-avancado.svg",
+    "system": {
+      "description": {
+        "value": "<p>Kit individual de primeiros socorros de trauma, preso na cintura traseira. Todo operador carrega o seu — e a regra da E CORP é usar o kit da vítima, nunca o próprio.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.9,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 2,
+        "usos": 3,
+        "categoria": "medico",
+        "notas": "Torniquete CAT, gaze hemostática QuikClot, selo torácico, cânula nasofaríngea. Primeiros Socorros: 1D6 HP, ou estabiliza Morrendo automaticamente.",
+        "preco": 385,
+        "precoUSD": 220,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  },
+  {
+    "name": "Faca Ka-Bar USMC",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-faca.svg",
+    "system": {
+      "description": {
+        "value": "<p>Faca de combate de lâmina fixa 18 cm, aço 1095. Bainha de couro no colete.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.32,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 2,
+        "slots": 1,
+        "usos": 0,
+        "categoria": "arma",
+        "notas": "1D4+2 + bônus de dano, Briga. Também é ferramenta.",
+        "preco": 158,
+        "precoUSD": 90,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  },
+  {
+    "name": "Lanterna Surefire G2X + bastões químicos",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/lanterna-tatica.svg",
+    "system": {
+      "description": {
+        "value": "<p>Lanterna tática de mão em alumínio anodizado, mais um pacote de bastões químicos para marcação de rota e sinalização silenciosa.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 0.2,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 6,
+        "categoria": "utilitario",
+        "notas": "320 lumens, 2 h de bateria. 6 bastões químicos (verde, vermelho, IR) de 12 h cada.",
+        "preco": 131,
+        "precoUSD": 75,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  },
+  {
+    "name": "Corda Estática 60 m + kit de rapel",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/kit-rappel.svg",
+    "system": {
+      "description": {
+        "value": "<p>Corda estática de 11 mm com kit completo de descida. Escalar recebe um nível de bônus quando usada corretamente.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 4.8,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 3,
+        "slots": 4,
+        "usos": 0,
+        "categoria": "utilitario",
+        "notas": "Corda 11 mm, cadeirinha, oito, dois mosquetões trava, fita tubular 5 m.",
+        "preco": 595,
+        "precoUSD": 340,
+        "ecorp": {
+          "classe": "TODOS"
+        }
+      }
+    }
+  }
+]
