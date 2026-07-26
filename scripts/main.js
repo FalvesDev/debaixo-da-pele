@@ -66,6 +66,11 @@ Hooks.once("init", () => {
     name: "Macros DDP importadas",
     scope: "world", config: false, type: Boolean, default: false
   });
+  // Versão do setup automático — quando sobe, o ready re-sincroniza o que faltar
+  game.settings.register(MODULE_ID, "setupVersion", {
+    name: "Versão do setup automático",
+    scope: "world", config: false, type: Number, default: 0
+  });
 
   // Aventura / progresso
   game.settings.register(MODULE_ID, "aventuraAto", {
@@ -230,34 +235,44 @@ Hooks.once("ready", () => {
   if (game.user.isGM) setupAutomatico();
 });
 
+// Sobe este número sempre que o conteúdo do setup mudar (novas macros etc.).
+// Worlds antigas com setupVersion menor re-sincronizam sozinhas no ready.
+const SETUP_VERSION = 2;
+
 async function setupAutomatico() {
   const pack = game.packs.get(`${MODULE_ID}.macros`);
   if (!pack) return;
 
-  const jaImportadas = game.settings.get(MODULE_ID, "macrosImportadas");
-  if (jaImportadas) return;
+  const versaoAtual = game.settings.get(MODULE_ID, "setupVersion");
+  if (versaoAtual >= SETUP_VERSION) return;  // já sincronizado nesta versão
 
   try {
     const docs = await pack.getDocuments();
-    let criadas = 0, criarOperadorMacro = null;
+    const OBS = CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER;
+    let criadas = 0, atualizadas = 0, criarOperadorMacro = null;
 
     for (const doc of docs) {
       let macro = game.macros.find(m => m.name === doc.name);
       if (!macro) {
+        // Cria a macro que falta
         macro = await Macro.create({
           name: doc.name, type: doc.type, command: doc.command, img: doc.img,
-          // OBSERVER no default deixa qualquer jogador ver/executar a macro
-          ownership: { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER }
+          ownership: { default: OBS }  // jogadores podem ver/executar
         });
         criadas++;
+      } else {
+        // Já existe: garante conteúdo atualizado + acesso de execução aos jogadores
+        const patch = {};
+        if (macro.command !== doc.command) patch.command = doc.command;
+        if ((macro.ownership?.default ?? 0) < OBS) patch["ownership.default"] = OBS;
+        if (Object.keys(patch).length) { await macro.update(patch); atualizadas++; }
       }
       if (doc.name.startsWith("14 —")) criarOperadorMacro = macro;
     }
 
-    // Coloca o criador de operador no primeiro slot livre da hotbar
+    // Fixa o criador de operador no primeiro slot livre da hotbar (se não estiver)
     if (criarOperadorMacro) {
-      const hotbar = game.user.getHotbarMacros();
-      const ocupado = new Set(hotbar.map(h => h.macro?.id).filter(Boolean));
+      const ocupado = new Set(game.user.getHotbarMacros().map(h => h.macro?.id).filter(Boolean));
       if (!ocupado.has(criarOperadorMacro.id)) {
         let slot = 1;
         while (slot <= 50 && game.user.hotbar[slot]) slot++;
@@ -266,8 +281,10 @@ async function setupAutomatico() {
     }
 
     await game.settings.set(MODULE_ID, "macrosImportadas", true);
-    if (criadas > 0) {
-      ui.notifications.info(`✅ Debaixo da Pele: ${criadas} macro(s) instalada(s) automaticamente. O criador de operadores está na barra de macros.`);
+    await game.settings.set(MODULE_ID, "setupVersion", SETUP_VERSION);
+
+    if (criadas > 0 || atualizadas > 0) {
+      ui.notifications.info(`✅ Debaixo da Pele: ${criadas} macro(s) instalada(s), ${atualizadas} atualizada(s). Criador de operadores na barra de macros.`);
     }
   } catch (err) {
     console.error(`${MODULE_ID} | Erro no setup automático:`, err);
