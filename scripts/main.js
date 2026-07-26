@@ -161,6 +161,42 @@ async function _handleSocket(data) {
       Hooks.callAll("ddp:rollRequest", data);
       break;
     }
+    case "criarOperador": {
+      // Só o GM cria de fato (jogadores não têm permissão de criar atores).
+      if (!game.user.isGM) break;
+      await criarOperadorECorp(data.classe, data.nome, data.ownerId);
+      break;
+    }
+  }
+}
+
+// ─── Criador de Operador E CORP (compartilhado GM/socket) ───
+async function criarOperadorECorp(classe, nomeCustom, ownerId) {
+  const pack = game.packs.get(`${MODULE_ID}.ecorp-actors`);
+  if (!pack) { ui.notifications.error("Compendium de operadores E CORP não encontrado."); return null; }
+
+  await pack.getIndex();
+  const docs = await pack.getDocuments();
+  const doc = docs.find(d => (d.flags?.[MODULE_ID]?.ecorp?.classe) === classe);
+  if (!doc) { ui.notifications.error(`Operador da classe ${classe} não encontrado.`); return null; }
+
+  const dados = doc.toObject();
+  delete dados._id;
+  if (nomeCustom) dados.name = nomeCustom;
+  const owner = ownerId ?? game.user.id;
+  dados.ownership = { default: 0, [owner]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER };
+
+  try {
+    const ator = await Actor.create(dados);
+    const nomeJogador = game.users.get(owner)?.name ?? "—";
+    ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador}.`);
+    // Abre a ficha para quem pediu (o GM abre local; o dono abre via refresh próprio)
+    if (owner === game.user.id) ator.sheet.render(true);
+    return ator;
+  } catch (e) {
+    console.error(`${MODULE_ID} | Falha ao criar operador:`, e);
+    ui.notifications.error(`Falha ao criar operador: ${e.message}`);
+    return null;
   }
 }
 
@@ -184,54 +220,56 @@ Hooks.once("ready", () => {
     MODULE_ID,
     version:    VERSION,
     emitSocket:  (data) => game.socket?.emit(`module.${MODULE_ID}`, data),
-    abrirVeiculo: (actorId) => DDPVehicleSheet.open(actorId)
+    abrirVeiculo: (actorId) => DDPVehicleSheet.open(actorId),
+    criarOperador: criarOperadorECorp
   };
 
-  // ── Prompt de importação de macros (primeira vez) ──
-  if (game.user.isGM) {
-    const jaImportadas = game.settings.get(MODULE_ID, "macrosImportadas");
-    const pack = game.packs.get(`${MODULE_ID}.macros`);
-    if (!jaImportadas && pack) {
-      setTimeout(() => {
-        new Dialog({
-          title: "📦 Debaixo da Pele — Configuração Inicial",
-          content: `
-            <div style="padding:12px; font-family:'Signika',serif">
-              <p style="margin-bottom:8px">As <b>13 macros da campanha</b> (SAN, Aurora, Override, Inventário, Itens utilizáveis...) estão disponíveis no compêndio do módulo.</p>
-              <p style="color:#aaa; font-style:italic; font-size:0.9em">Deseja importá-las para sua world agora?</p>
-            </div>
-          `,
-          buttons: {
-            sim: {
-              icon: '<i class="fas fa-download"></i>',
-              label: "Sim, importar macros",
-              callback: async () => {
-                const docs = await pack.getDocuments();
-                let criadas = 0;
-                try {
-                  for (const doc of docs) {
-                    if (!game.macros.find(m => m.name === doc.name)) {
-                      await Macro.create({ name: doc.name, type: doc.type, command: doc.command, img: doc.img });
-                      criadas++;
-                    }
-                  }
-                  await game.settings.set(MODULE_ID, "macrosImportadas", true);
-                  ui.notifications.info(`✅ ${criadas} macro(s) DDP importada(s) com sucesso!`);
-                } catch (err) {
-                  console.error("DDP | Erro ao importar macros:", err);
-                  ui.notifications.error("Erro ao importar macros. Verifique o console.");
-                }
-              }
-            },
-            depois: {
-              icon: '<i class="fas fa-clock"></i>',
-              label: "Depois",
-              callback: () => {}
-            }
-          },
-          default: "sim"
-        }).render(true);
-      }, 1500);
-    }
-  }
+  // ── Setup automático (GM, uma vez) ──
+  // Importa todas as macros da campanha, dá acesso de execução aos jogadores
+  // e garante o macro "Criar Operador E CORP" na hotbar. Sem perguntar.
+  if (game.user.isGM) setupAutomatico();
 });
+
+async function setupAutomatico() {
+  const pack = game.packs.get(`${MODULE_ID}.macros`);
+  if (!pack) return;
+
+  const jaImportadas = game.settings.get(MODULE_ID, "macrosImportadas");
+  if (jaImportadas) return;
+
+  try {
+    const docs = await pack.getDocuments();
+    let criadas = 0, criarOperadorMacro = null;
+
+    for (const doc of docs) {
+      let macro = game.macros.find(m => m.name === doc.name);
+      if (!macro) {
+        macro = await Macro.create({
+          name: doc.name, type: doc.type, command: doc.command, img: doc.img,
+          // OBSERVER no default deixa qualquer jogador ver/executar a macro
+          ownership: { default: CONST.DOCUMENT_OWNERSHIP_LEVELS.OBSERVER }
+        });
+        criadas++;
+      }
+      if (doc.name.startsWith("14 —")) criarOperadorMacro = macro;
+    }
+
+    // Coloca o criador de operador no primeiro slot livre da hotbar
+    if (criarOperadorMacro) {
+      const hotbar = game.user.getHotbarMacros();
+      const ocupado = new Set(hotbar.map(h => h.macro?.id).filter(Boolean));
+      if (!ocupado.has(criarOperadorMacro.id)) {
+        let slot = 1;
+        while (slot <= 50 && game.user.hotbar[slot]) slot++;
+        if (slot <= 50) await game.user.assignHotbarMacro(criarOperadorMacro, slot);
+      }
+    }
+
+    await game.settings.set(MODULE_ID, "macrosImportadas", true);
+    if (criadas > 0) {
+      ui.notifications.info(`✅ Debaixo da Pele: ${criadas} macro(s) instalada(s) automaticamente. O criador de operadores está na barra de macros.`);
+    }
+  } catch (err) {
+    console.error(`${MODULE_ID} | Erro no setup automático:`, err);
+  }
+}

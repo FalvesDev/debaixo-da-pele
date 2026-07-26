@@ -139,26 +139,30 @@ new Dialog({
         const doc = porClasse[classe];
         if (!doc) return ui.notifications.error("Operador desta classe não encontrado no compendium.");
 
-        const nomeCustom = html.find("#ecorp-nome").val()?.trim();
+        const nomeCustom = html.find("#ecorp-nome").val()?.trim() || null;
         const ownerId = html.find("#ecorp-owner").val() ?? game.user.id;
 
-        // Importa uma CÓPIA independente do compendium para o mundo.
-        const dados = doc.toObject();
-        delete dados._id;
-        if (nomeCustom) dados.name = nomeCustom;
-        dados.ownership = { default: 0, [ownerId]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER };
-
-        let ator;
-        try {
-          ator = await Actor.create(dados);
-        } catch (e) {
-          console.error("[DDP] Falha ao criar operador:", e);
-          return ui.notifications.error(`Falha ao criar operador: ${e.message}`);
+        // O GM cria direto. Jogadores (sem permissão de criar atores) pedem
+        // ao GM via socket — o handler em main.js cria e atribui a posse.
+        if (game.user.isGM) {
+          const api = window.DebaixoDaPele;
+          if (api?.criarOperador) {
+            await api.criarOperador(classe, nomeCustom, ownerId);
+          } else {
+            // Fallback: cria localmente se a API do módulo não estiver disponível
+            const dados = doc.toObject();
+            delete dados._id;
+            if (nomeCustom) dados.name = nomeCustom;
+            dados.ownership = { default: 0, [ownerId]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER };
+            const ator = await Actor.create(dados);
+            ator.sheet.render(true);
+          }
+        } else {
+          window.DebaixoDaPele?.emitSocket?.({
+            action: "criarOperador", classe, nome: nomeCustom, ownerId: game.user.id
+          });
+          ui.notifications.info(`⏳ Solicitação enviada ao GM. Seu operador ${classe} aparecerá em instantes.`);
         }
-
-        const nomeJogador = game.users.get(ownerId)?.name ?? "—";
-        ui.notifications.info(`✅ ${CLASSES[classe].emoji} ${ator.name} criado para ${nomeJogador}.`);
-        ator.sheet.render(true);
       }
     },
     cancelar: { icon: '<i class="fas fa-times"></i>', label: "Cancelar" }
