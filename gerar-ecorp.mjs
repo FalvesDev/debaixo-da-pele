@@ -16,56 +16,72 @@ const MOD = "modules/debaixo-da-pele";
 const ico = (n) => `${MOD}/assets/icons/${n}`;
 
 // ─────────────────────────────────────────────────────────────
-// CATÁLOGO DE PERÍCIAS (nomes pt-BR, consistentes com armas.json)
-// base: número, ou função (chars) para bases derivadas
+// CATÁLOGO DE PERÍCIAS
+// As chaves em pt-BR são só para referência interna dos operadores.
+// Cada entrada define o nome/estrutura EM INGLÊS que o CoC7 usa, mais
+// o cocidFlag oficial (extraído de cesar-medeiros-clean.json) para que
+// a perícia case com a perícia nativa do sistema em vez de duplicar.
+//   en  = nome exibido        sk = skillName (parte específica)
+//   sp  = specialization      cocid = id oficial CoC7 (null = custom)
+//   base= valor base          props = properties do CoC7
 // ─────────────────────────────────────────────────────────────
+const FIRE  = { firearm: true, combat: true, special: true };
+const FIGHT = { fighting: true, combat: true, special: true };
+
 const PERICIAS = {
-  "Armas de Fogo (Pistola)":        { base: 20, spec: "Armas de Fogo", props: { combat: true, firearm: true } },
-  "Armas de Fogo (Rifle)":          { base: 25, spec: "Armas de Fogo", props: { combat: true, firearm: true } },
-  "Armas de Fogo (Espingarda)":     { base: 25, spec: "Armas de Fogo", props: { combat: true, firearm: true } },
-  "Armas de Fogo (Submetralhadora)":{ base: 15, spec: "Armas de Fogo", props: { combat: true, firearm: true } },
-  "Armas Pesadas":                  { base: 10, spec: "",              props: { combat: true, firearm: true } },
-  "Briga":                          { base: 25, spec: "Lutar",         props: { combat: true, fighting: true } },
-  "Arremesso":                      { base: 20, spec: "Lutar",         props: { combat: true, fighting: true } },
-  "Esquiva":                        { base: (c) => Math.floor(c.dex / 2), spec: "", props: { special: true } },
-  "Furtividade":                    { base: 20 },
-  "Perceber":                       { base: 25 },
-  "Escutar":                        { base: 20 },
-  "Navegar":                        { base: 10 },
-  "Psicologia":                     { base: 10 },
-  "Medicina":                       { base: 1 },
-  "Primeiros Socorros":             { base: 30 },
-  "Consertos Mecânicos":            { base: 10 },
-  "Consertos Elétricos":            { base: 10 },
-  "Eletrônica":                     { base: 1 },
-  "Usar Computadores":              { base: 5 },
-  "Ciência (Biologia)":             { base: 1, spec: "Ciência" },
-  "Ciência (Química)":              { base: 1, spec: "Ciência" },
-  "Ciência (Física)":               { base: 1, spec: "Ciência" },
-  "Ocultismo":                      { base: 5 },
-  "Sobrevivência (Urbana)":         { base: 10, spec: "Sobrevivência" },
-  "Escalar":                        { base: 20 },
-  "Saltar":                         { base: 20 },
-  "Nadar":                          { base: 20 },
-  "Rastrear":                       { base: 10 },
-  "Persuasão":                      { base: 10 },
-  "Intimidação":                    { base: 15 },
-  "Lábia":                          { base: 5 },
-  "Charme":                         { base: 15 },
-  "Chaveiro":                       { base: 1 },
-  "Disfarce":                       { base: 5 },
-  "Dirigir Automóvel":              { base: 20 },
-  "Pilotar (Drone)":                { base: 1,  spec: "Pilotar" },
-  "Demolições":                     { base: 1 },
-  "Operar Maquinário Pesado":       { base: 1 },
-  "Usar Bibliotecas":               { base: 20 },
-  "História":                       { base: 5 },
-  "Antropologia":                   { base: 1 },
-  "Mundo Natural":                  { base: 10 },
-  "Língua (Inglês)":                { base: 1,  spec: "Língua" },
-  "Língua (Português)":             { base: 1,  spec: "Língua" },
-  "Crédito":                        { base: 0,  props: { special: true } },
-  "Mitos de Cthulhu":               { base: 0,  props: { special: true, push: false } }
+  "Armas de Fogo (Pistola)":        { base: 20, en: "Firearms (Handgun)",        sk: "Handgun",      sp: "Firearms", cocid: "firearms-handgun",        props: FIRE },
+  "Armas de Fogo (Rifle)":          { base: 25, en: "Firearms (Rifle/Shotgun)",  sk: "Rifle/Shotgun",sp: "Firearms", cocid: "firearms-rifle-shotgun",  props: FIRE },
+  "Armas de Fogo (Espingarda)":     { base: 25, en: "Firearms (Rifle/Shotgun)",  sk: "Rifle/Shotgun",sp: "Firearms", cocid: "firearms-rifle-shotgun",  props: FIRE },
+  "Armas de Fogo (Submetralhadora)":{ base: 15, en: "Firearms (Submachine Gun)", sk: "Submachine Gun",sp:"Firearms", cocid: "firearms-submachine-gun",  props: FIRE },
+  "Armas Pesadas":                  { base: 10, en: "Firearms (Heavy Weapons)",  sk: "Heavy Weapons",sp: "Firearms", cocid: null,                       props: FIRE },
+  "Briga":                          { base: 25, en: "Fighting (Brawl)",          sk: "Brawl",        sp: "Fighting", cocid: "fighting-brawl",          props: FIGHT },
+  "Arremesso":                      { base: 20, en: "Fighting (Throw)",          sk: "Throw",        sp: "Fighting", cocid: "fighting-throw",          props: FIGHT },
+  "Esquiva":                        { base: (c) => Math.floor(c.dex / 2), en: "Dodge", sk: "Dodge",  sp: "",         cocid: "dodge",                   props: {} },
+  "Furtividade":                    { base: 20, en: "Stealth",             sk: "Stealth",             sp: "", cocid: "stealth",              props: { push: true } },
+  "Perceber":                       { base: 25, en: "Spot Hidden",         sk: "Spot Hidden",         sp: "", cocid: "spot-hidden",          props: { push: true } },
+  "Escutar":                        { base: 20, en: "Listen",              sk: "Listen",              sp: "", cocid: "listen",               props: { push: true } },
+  "Navegar":                        { base: 10, en: "Navigate",            sk: "Navigate",            sp: "", cocid: "navigate",             props: { push: true } },
+  "Psicologia":                     { base: 10, en: "Psychology",          sk: "Psychology",          sp: "", cocid: "psychology",           props: { push: true } },
+  "Medicina":                       { base: 1,  en: "Medicine",            sk: "Medicine",            sp: "", cocid: "medicine",             props: { push: true } },
+  "Primeiros Socorros":             { base: 30, en: "First Aid",           sk: "First Aid",           sp: "", cocid: "first-aid",            props: { push: true } },
+  "Consertos Mecânicos":            { base: 10, en: "Mechanical Repair",   sk: "Mechanical Repair",   sp: "", cocid: "mechanical-repair",    props: { push: true } },
+  "Consertos Elétricos":            { base: 10, en: "Electrical Repair",   sk: "Electrical Repair",   sp: "", cocid: "electrical-repair",    props: { push: true } },
+  "Eletrônica":                     { base: 1,  en: "Electronics",         sk: "Electronics",         sp: "", cocid: "electronics",          props: { push: true } },
+  "Usar Computadores":              { base: 5,  en: "Computer Use",        sk: "Computer Use",        sp: "", cocid: "computer-use",         props: { push: true } },
+  "Ciência (Biologia)":             { base: 1,  en: "Science (Biology)",   sk: "Biology",   sp: "Science", cocid: null,                     props: { push: true } },
+  "Ciência (Química)":              { base: 1,  en: "Science (Chemistry)", sk: "Chemistry", sp: "Science", cocid: null,                     props: { push: true } },
+  "Ciência (Física)":               { base: 1,  en: "Science (Physics)",   sk: "Physics",   sp: "Science", cocid: null,                     props: { push: true } },
+  "Ocultismo":                      { base: 5,  en: "Occult",              sk: "Occult",              sp: "", cocid: "occult",               props: { push: true } },
+  "Sobrevivência (Urbana)":         { base: 10, en: "Survival (Urban)",    sk: "Urban",     sp: "Survival", cocid: null,                     props: { push: true } },
+  "Escalar":                        { base: 20, en: "Climb",               sk: "Climb",               sp: "", cocid: "climb",                props: { push: true } },
+  "Saltar":                         { base: 20, en: "Jump",                sk: "Jump",                sp: "", cocid: "jump",                 props: { push: true } },
+  "Nadar":                          { base: 20, en: "Swim",                sk: "Swim",                sp: "", cocid: "swim",                 props: { push: true } },
+  "Rastrear":                       { base: 10, en: "Track",               sk: "Track",               sp: "", cocid: "track",                props: { push: true } },
+  "Persuasão":                      { base: 10, en: "Persuade",            sk: "Persuade",            sp: "", cocid: "persuade",             props: { push: true } },
+  "Intimidação":                    { base: 15, en: "Intimidate",          sk: "Intimidate",          sp: "", cocid: "intimidate",           props: { push: true } },
+  "Lábia":                          { base: 5,  en: "Fast Talk",           sk: "Fast Talk",           sp: "", cocid: "fast-talk",            props: { push: true } },
+  "Charme":                         { base: 15, en: "Charm",               sk: "Charm",               sp: "", cocid: "charm",                props: { push: true } },
+  "Chaveiro":                       { base: 1,  en: "Locksmith",           sk: "Locksmith",           sp: "", cocid: "locksmith",            props: { push: true } },
+  "Disfarce":                       { base: 5,  en: "Disguise",            sk: "Disguise",            sp: "", cocid: "disguise",             props: { push: true } },
+  "Dirigir Automóvel":              { base: 20, en: "Drive Auto",          sk: "Drive Auto",          sp: "", cocid: "drive-auto",           props: { push: true } },
+  "Pilotar (Drone)":                { base: 1,  en: "Pilot (Drone)",       sk: "Drone",     sp: "Pilot",    cocid: null,                     props: { push: true } },
+  "Demolições":                     { base: 1,  en: "Demolitions",         sk: "Demolitions",         sp: "", cocid: null,                   props: { push: true } },
+  "Operar Maquinário Pesado":       { base: 1,  en: "Operate Heavy Machinery", sk: "Operate Heavy Machinery", sp: "", cocid: "operate-heavy-machinery", props: { push: true } },
+  "Usar Bibliotecas":               { base: 20, en: "Library Use",         sk: "Library Use",         sp: "", cocid: "library-use",          props: { push: true } },
+  "História":                       { base: 5,  en: "History",             sk: "History",             sp: "", cocid: "history",              props: { push: true } },
+  "Antropologia":                   { base: 1,  en: "Anthropology",        sk: "Anthropology",        sp: "", cocid: "anthropology",         props: { push: true } },
+  "Mundo Natural":                  { base: 10, en: "Natural World",       sk: "Natural World",       sp: "", cocid: "natural-world",        props: { push: true } },
+  "Língua (Inglês)":                { base: 1,  en: "Language (English)",  sk: "English",   sp: "Language", cocid: null,                     props: { push: true } },
+  "Língua (Português)":             { base: 1,  en: "Language (Portuguese)",sk: "Portuguese",sp: "Language",cocid: null,                     props: { push: true } },
+  "Crédito":                        { base: 0,  en: "Credit Rating",       sk: "Credit Rating",       sp: "", cocid: "credit-rating",        props: { push: true, noxpgain: true } },
+  "Mitos de Cthulhu":               { base: 0,  en: "Cthulhu Mythos",      sk: "Cthulhu Mythos",      sp: "", cocid: "cthulhu-mythos",       props: { noxpgain: true, noadjustments: true } }
+};
+
+// eras padrão do cocidFlag (copiado de cesar-medeiros-clean.json)
+const ERAS = {
+  standard: true, downDarkerTrails: true, downDarkerTrailsPulp: true,
+  modernPulp: true, modern: true, pulp: true,
+  regencyPulp: true, regency: true, reignOfTerror: true
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -95,30 +111,51 @@ function skillItem(nome, valor, chars) {
   const def = PERICIAS[nome];
   if (!def) throw new Error(`Perícia desconhecida: ${nome}`);
   const base = typeof def.base === "function" ? def.base(chars) : def.base;
+  // O CoC7 calcula o total = base + adjustments (value fica null).
+  // Guardamos a diferença em "personal" para o total exibido bater com o valor.
+  const personal = valor > base ? valor - base : null;
+
+  const flags = def.cocid
+    ? { CoC7: { cocidFlag: { id: `i.skill.${def.cocid}`, lang: "en", priority: 5, eras: ERAS } } }
+    : {};
+
   return {
-    name: nome,
+    name: def.en,
     type: "skill",
     img: "icons/svg/aura.svg",
     system: {
-      skillName: nome,
-      specialization: def.spec ?? "",
+      skillName: def.sk,
+      specialization: def.sp ?? "",
       description: { value: "", opposingDifficulty: "", pushedFaillureConsequences: "", chat: "", keeper: "" },
       base: String(base),
       bonusDice: 0,
-      adjustments: { personal: null, occupation: null, archetype: null, experiencePackage: null, experience: null },
-      value: valor,
+      adjustments: { personal, occupation: null, archetype: null, experiencePackage: null, experience: null },
+      value: null,
       attributes: {},
-      properties: { push: true, ...(def.props ?? {}) },
+      properties: { ...(def.props ?? {}) },
       flags: {}
     },
-    flags: {}
+    flags,
+    effects: [],
+    sort: 0,
+    ownership: { default: 0 }
   };
 }
 
 function operador(o) {
   const c = o.chars;
   const d = derivados(c, o.idade);
-  const skills = Object.entries(o.pericias).map(([n, v]) => skillItem(n, v, c));
+
+  // Perícias diferentes em pt-BR podem mapear para a MESMA perícia do CoC7
+  // (ex.: Rifle e Espingarda → Firearms (Rifle/Shotgun)). Mesclamos pelo
+  // nome em inglês, mantendo o maior valor, para não duplicar na ficha.
+  const porNome = new Map();
+  for (const [n, v] of Object.entries(o.pericias)) {
+    const en = PERICIAS[n]?.en;
+    if (!en) throw new Error(`Perícia desconhecida: ${n}`);
+    if (!porNome.has(en) || v > porNome.get(en).v) porNome.set(en, { n, v });
+  }
+  const skills = [...porNome.values()].map(({ n, v }) => skillItem(n, v, c));
 
   return {
     name: o.nome,
@@ -462,7 +499,7 @@ const arma = (o) => ({
   img: o.img,
   system: {
     description: { value: o.desc, chat: "", special: "", keeper: "" },
-    skill: { main: { name: o.skill, id: "" }, alternativ: { name: "", id: "" } },
+    skill: { main: { name: PERICIAS[o.skill]?.en ?? o.skill, id: "" }, alternativ: { name: "", id: "" } },
     range: {
       normal:  { value: o.r[0], units: "", damage: o.dano },
       long:    { value: o.r[1], units: "", damage: o.dano },

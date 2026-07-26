@@ -12,7 +12,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Rifle)",
+          "name": "Firearms (Rifle/Shotgun)",
           "id": ""
         },
         "alternativ": {
@@ -89,7 +89,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Pistola)",
+          "name": "Firearms (Handgun)",
           "id": ""
         },
         "alternativ": {
@@ -294,7 +294,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Rifle)",
+          "name": "Firearms (Rifle/Shotgun)",
           "id": ""
         },
         "alternativ": {
@@ -371,7 +371,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Pistola)",
+          "name": "Firearms (Handgun)",
           "id": ""
         },
         "alternativ": {
@@ -480,7 +480,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Espingarda)",
+          "name": "Firearms (Rifle/Shotgun)",
           "id": ""
         },
         "alternativ": {
@@ -653,7 +653,7 @@
       },
       "skill": {
         "main": {
-          "name": "Armas de Fogo (Submetralhadora)",
+          "name": "Firearms (Submachine Gun)",
           "id": ""
         },
         "alternativ": {
