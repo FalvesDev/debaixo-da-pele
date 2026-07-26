@@ -4,3 +4,7 @@ module.zip
 Thumbs.db
 debaixo-da-pele
 node_modules/
+
+# LevelDB lock/transitorios (nunca versionar)
+packs/*/LOCK
+packs/*/LOG.old

@@ -6,57 +6,152 @@
     "system": {
       "characteristics": {
         "str": {
-          "value": 55
+          "value": 55,
+          "tempValue": null,
+          "short": "CHARAC.STR",
+          "label": "CHARAC.Strength",
+          "formula": null,
+          "bonusDice": 0
         },
         "con": {
-          "value": 65
+          "value": 65,
+          "tempValue": null,
+          "short": "CHARAC.CON",
+          "label": "CHARAC.Constitution",
+          "formula": null,
+          "bonusDice": 0
         },
         "siz": {
-          "value": 50
+          "value": 50,
+          "tempValue": null,
+          "short": "CHARAC.SIZ",
+          "label": "CHARAC.Size",
+          "formula": null,
+          "bonusDice": 0
         },
         "dex": {
-          "value": 80
+          "value": 80,
+          "tempValue": null,
+          "short": "CHARAC.DEX",
+          "label": "CHARAC.Dexterity",
+          "formula": null,
+          "bonusDice": 0
         },
         "app": {
-          "value": 60
+          "value": 60,
+          "tempValue": null,
+          "short": "CHARAC.APP",
+          "label": "CHARAC.Appearance",
+          "formula": null,
+          "bonusDice": 0
         },
         "int": {
-          "value": 75
+          "value": 75,
+          "tempValue": null,
+          "short": "CHARAC.INT",
+          "label": "CHARAC.Intelligence",
+          "formula": null,
+          "bonusDice": 0
         },
         "pow": {
-          "value": 70
+          "value": 70,
+          "tempValue": null,
+          "short": "CHARAC.POW",
+          "label": "CHARAC.Power",
+          "formula": null,
+          "bonusDice": 0
         },
         "edu": {
-          "value": 65
+          "value": 65,
+          "tempValue": null,
+          "short": "CHARAC.EDU",
+          "label": "CHARAC.Education",
+          "formula": null,
+          "bonusDice": 0
         }
       },
       "attribs": {
         "hp": {
-          "value": 22,
-          "max": 22
+          "value": 20,
+          "max": 20,
+          "short": "HP",
+          "label": "Hit points",
+          "auto": true
         },
         "mp": {
-          "value": 14,
-          "max": 14
+          "value": 10,
+          "max": 10,
+          "short": "HP",
+          "label": "Magic points",
+          "auto": true
+        },
+        "lck": {
+          "value": 65,
+          "short": "LCK",
+          "label": "Luck",
+          "max": 99,
+          "bonusDice": 0
         },
         "san": {
           "value": 70,
-          "max": 70
-        },
-        "lck": {
-          "value": 65
+          "max": 99,
+          "short": "SAN",
+          "label": "Sanity",
+          "auto": true,
+          "dailyLoss": 3,
+          "oneFifthSanity": " / 0",
+          "bonusDice": 0,
+          "dailyLimit": 10
         },
         "mov": {
-          "value": 9
+          "value": null,
+          "max": null,
+          "short": "MOV",
+          "label": "Movement rate",
+          "auto": true,
+          "type": "walk"
         },
         "db": {
-          "value": "0"
+          "value": null,
+          "short": "DB",
+          "label": "Damage bonus",
+          "auto": true
         },
         "build": {
-          "value": 0
+          "current": null,
+          "value": null,
+          "short": "BLD",
+          "label": "Build",
+          "auto": true
         },
         "armor": {
-          "value": 3
+          "value": "3",
+          "localized": false,
+          "locations": [],
+          "auto": false
+        }
+      },
+      "conditions": {
+        "criticalWounds": {
+          "value": false
+        },
+        "unconscious": {
+          "value": false
+        },
+        "dying": {
+          "value": false
+        },
+        "dead": {
+          "value": false
+        },
+        "prone": {
+          "value": false
+        },
+        "tempoInsane": {
+          "value": false
+        },
+        "indefInsane": {
+          "value": false
         }
       },
       "infos": {
@@ -69,10 +164,306 @@
         "organization": "E CORP — Divisão de Contenção de Campo",
         "playername": ""
       },
+      "flags": {
+        "locked": false,
+        "manualCredit": false
+      },
+      "monetary": {
+        "format": "decimalLeft",
+        "symbol": "$",
+        "values": [
+          {
+            "name": "Penniless",
+            "min": null,
+            "max": 0,
+            "cashType": "value",
+            "cashValue": 10,
+            "assetsType": "value",
+            "assetsValue": 0,
+            "spendingType": "value",
+            "spendingValue": 10
+          },
+          {
+            "name": "Poor",
+            "min": 1,
+            "max": 9,
+            "cashType": "multiplier",
+            "cashValue": 20,
+            "assetsType": "multiplier",
+            "assetsValue": 200,
+            "spendingType": "value",
+            "spendingValue": 40
+          },
+          {
+            "name": "Average",
+            "min": 10,
+            "max": 49,
+            "cashType": "multiplier",
+            "cashValue": 40,
+            "assetsType": "multiplier",
+            "assetsValue": 1000,
+            "spendingType": "value",
+            "spendingValue": 200
+          },
+          {
+            "name": "Wealthy",
+            "min": 50,
+            "max": 89,
+            "cashType": "multiplier",
+            "cashValue": 100,
+            "assetsType": "multiplier",
+            "assetsValue": 10000,
+            "spendingType": "value",
+            "spendingValue": 1000
+          },
+          {
+            "name": "Rich",
+            "min": 90,
+            "max": 98,
+            "cashType": "multiplier",
+            "cashValue": 400,
+            "assetsType": "multiplier",
+            "assetsValue": 40000,
+            "spendingType": "value",
+            "spendingValue": 5000
+          },
+          {
+            "name": "Super Rich",
+            "min": 99,
+            "max": null,
+            "cashType": "value",
+            "cashValue": 1000000,
+            "assetsType": "value",
+            "assetsValue": 100000000,
+            "spendingType": "value",
+            "spendingValue": 100000
+          }
+        ],
+        "spent": "",
+        "assetsDetails": "",
+        "spendingLevel": "",
+        "cash": "",
+        "assets": ""
+      },
+      "development": {
+        "personal": 160,
+        "occupation": 320,
+        "archetype": 100,
+        "experiencePackage": null
+      },
+      "biography": [],
+      "sanityLossEvents": [],
       "backstory": "<p>Ingrid cresceu numa casa a nove quilômetros do vizinho mais próximo, acima do Círculo Polar Ártico. Aprendeu a atirar antes de aprender a andar de bicicleta. Entrou no exército norueguês aos 19 e foi uma das primeiras mulheres admitidas na seleção do FSK.</p><p>Saiu em 2004 depois de uma missão no Afeganistão em que passou onze dias sozinha numa posição de observação. Ela nunca contou o que viu no décimo dia. O relatório oficial diz \"sem contato\". A E CORP a recrutou em 2005, e o recrutador sabia exatamente o que tinha acontecido no décimo dia.</p><p><strong>Falha:</strong> confia mais no que vê pela luneta do que no que a equipe diz por rádio.</p><p><strong>Frase marcante:</strong> <em>\"Eu já estou olhando pra isso há quarenta minutos. Vocês acabaram de chegar.\"</em></p>",
+      "indefiniteInsanityLevel": {
+        "value": 0,
+        "max": 0
+      },
       "description": {
         "keeper": "<p>Vesper sabe que a E CORP tem arquivos sobre o Afeganistão. Ela nunca pediu para lê-los. Se algum jogador conseguir acesso ao arquivo dela, a revelação vale 1/1D4 de Sanidade — para ela.</p>"
+      },
+      "notes": "",
+      "adjustments": {
+        "personal": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "experience": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "archetype": [
+          null,
+          50,
+          20,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "occupation": [
+          40,
+          10,
+          50,
+          30,
+          50,
+          20,
+          20,
+          60,
+          40
+        ]
       }
+    },
+    "prototypeToken": {
+      "name": "Ingrid Halvorsen \"Vesper\"",
+      "actorLink": true,
+      "texture": {
+        "src": "tokenizer/pc-images/cesar_medeiros_nascimento.Token.webp?1774304257230",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "disposition": 1,
+      "sight": {
+        "enabled": true,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "displayName": 0,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "hexagonalShape": 0,
+      "lockRotation": false,
+      "rotation": 0,
+      "alpha": 1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attribs.hp"
+      },
+      "bar2": {
+        "attribute": "attribs.san"
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "detectionModes": [],
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false
     },
     "items": [
       {
@@ -2549,57 +2940,152 @@
     "system": {
       "characteristics": {
         "str": {
-          "value": 70
+          "value": 70,
+          "tempValue": null,
+          "short": "CHARAC.STR",
+          "label": "CHARAC.Strength",
+          "formula": null,
+          "bonusDice": 0
         },
         "con": {
-          "value": 75
+          "value": 75,
+          "tempValue": null,
+          "short": "CHARAC.CON",
+          "label": "CHARAC.Constitution",
+          "formula": null,
+          "bonusDice": 0
         },
         "siz": {
-          "value": 70
+          "value": 70,
+          "tempValue": null,
+          "short": "CHARAC.SIZ",
+          "label": "CHARAC.Size",
+          "formula": null,
+          "bonusDice": 0
         },
         "dex": {
-          "value": 65
+          "value": 65,
+          "tempValue": null,
+          "short": "CHARAC.DEX",
+          "label": "CHARAC.Dexterity",
+          "formula": null,
+          "bonusDice": 0
         },
         "app": {
-          "value": 55
+          "value": 55,
+          "tempValue": null,
+          "short": "CHARAC.APP",
+          "label": "CHARAC.Appearance",
+          "formula": null,
+          "bonusDice": 0
         },
         "int": {
-          "value": 70
+          "value": 70,
+          "tempValue": null,
+          "short": "CHARAC.INT",
+          "label": "CHARAC.Intelligence",
+          "formula": null,
+          "bonusDice": 0
         },
         "pow": {
-          "value": 65
+          "value": 65,
+          "tempValue": null,
+          "short": "CHARAC.POW",
+          "label": "CHARAC.Power",
+          "formula": null,
+          "bonusDice": 0
         },
         "edu": {
-          "value": 60
+          "value": 60,
+          "tempValue": null,
+          "short": "CHARAC.EDU",
+          "label": "CHARAC.Education",
+          "formula": null,
+          "bonusDice": 0
         }
       },
       "attribs": {
         "hp": {
-          "value": 28,
-          "max": 28
+          "value": 20,
+          "max": 20,
+          "short": "HP",
+          "label": "Hit points",
+          "auto": true
         },
         "mp": {
-          "value": 13,
-          "max": 13
+          "value": 10,
+          "max": 10,
+          "short": "HP",
+          "label": "Magic points",
+          "auto": true
+        },
+        "lck": {
+          "value": 60,
+          "short": "LCK",
+          "label": "Luck",
+          "max": 99,
+          "bonusDice": 0
         },
         "san": {
           "value": 65,
-          "max": 65
-        },
-        "lck": {
-          "value": 60
+          "max": 99,
+          "short": "SAN",
+          "label": "Sanity",
+          "auto": true,
+          "dailyLoss": 3,
+          "oneFifthSanity": " / 0",
+          "bonusDice": 0,
+          "dailyLimit": 10
         },
         "mov": {
-          "value": 8
+          "value": null,
+          "max": null,
+          "short": "MOV",
+          "label": "Movement rate",
+          "auto": true,
+          "type": "walk"
         },
         "db": {
-          "value": "1D4"
+          "value": null,
+          "short": "DB",
+          "label": "Damage bonus",
+          "auto": true
         },
         "build": {
-          "value": 1
+          "current": null,
+          "value": null,
+          "short": "BLD",
+          "label": "Build",
+          "auto": true
         },
         "armor": {
-          "value": 5
+          "value": "5",
+          "localized": false,
+          "locations": [],
+          "auto": false
+        }
+      },
+      "conditions": {
+        "criticalWounds": {
+          "value": false
+        },
+        "unconscious": {
+          "value": false
+        },
+        "dying": {
+          "value": false
+        },
+        "dead": {
+          "value": false
+        },
+        "prone": {
+          "value": false
+        },
+        "tempoInsane": {
+          "value": false
+        },
+        "indefInsane": {
+          "value": false
         }
       },
       "infos": {
@@ -2612,10 +3098,306 @@
         "organization": "E CORP — Divisão de Contenção de Campo",
         "playername": ""
       },
+      "flags": {
+        "locked": false,
+        "manualCredit": false
+      },
+      "monetary": {
+        "format": "decimalLeft",
+        "symbol": "$",
+        "values": [
+          {
+            "name": "Penniless",
+            "min": null,
+            "max": 0,
+            "cashType": "value",
+            "cashValue": 10,
+            "assetsType": "value",
+            "assetsValue": 0,
+            "spendingType": "value",
+            "spendingValue": 10
+          },
+          {
+            "name": "Poor",
+            "min": 1,
+            "max": 9,
+            "cashType": "multiplier",
+            "cashValue": 20,
+            "assetsType": "multiplier",
+            "assetsValue": 200,
+            "spendingType": "value",
+            "spendingValue": 40
+          },
+          {
+            "name": "Average",
+            "min": 10,
+            "max": 49,
+            "cashType": "multiplier",
+            "cashValue": 40,
+            "assetsType": "multiplier",
+            "assetsValue": 1000,
+            "spendingType": "value",
+            "spendingValue": 200
+          },
+          {
+            "name": "Wealthy",
+            "min": 50,
+            "max": 89,
+            "cashType": "multiplier",
+            "cashValue": 100,
+            "assetsType": "multiplier",
+            "assetsValue": 10000,
+            "spendingType": "value",
+            "spendingValue": 1000
+          },
+          {
+            "name": "Rich",
+            "min": 90,
+            "max": 98,
+            "cashType": "multiplier",
+            "cashValue": 400,
+            "assetsType": "multiplier",
+            "assetsValue": 40000,
+            "spendingType": "value",
+            "spendingValue": 5000
+          },
+          {
+            "name": "Super Rich",
+            "min": 99,
+            "max": null,
+            "cashType": "value",
+            "cashValue": 1000000,
+            "assetsType": "value",
+            "assetsValue": 100000000,
+            "spendingType": "value",
+            "spendingValue": 100000
+          }
+        ],
+        "spent": "",
+        "assetsDetails": "",
+        "spendingLevel": "",
+        "cash": "",
+        "assets": ""
+      },
+      "development": {
+        "personal": 160,
+        "occupation": 320,
+        "archetype": 100,
+        "experiencePackage": null
+      },
+      "biography": [],
+      "sanityLossEvents": [],
       "backstory": "<p>Rafael passou onze anos no BOPE. Entrou acreditando que ia consertar a cidade e saiu entendendo que não ia. O que o segurou foi a equipe — sempre foi a equipe.</p><p>Em 2006 comandou uma entrada num galpão em Duque de Caxias onde a E CORP já estava, de macacão branco, recolhendo alguma coisa em caixas lacradas. Foi instruído a não fazer relatório. Seis meses depois recebeu uma proposta com um número que resolvia a vida das filhas dele. Aceitou. Ainda não sabe se foi recrutamento ou compra de silêncio.</p><p><strong>Falha:</strong> assume responsabilidade por tudo, inclusive pelo que não pode controlar. Não delega quando deveria.</p><p><strong>Frase marcante:</strong> <em>\"Ninguém entra sozinho. Ninguém sai sozinho. Isso não é negociável.\"</em></p>",
+      "indefiniteInsanityLevel": {
+        "value": 0,
+        "max": 0
+      },
       "description": {
         "keeper": "<p>Âncora é o elo social da equipe. Se ele cair, a coesão do grupo vira teste de POW. Ele guarda uma foto plastificada das filhas dentro do colete — se for destruída em combate, vale 0/1D3 de Sanidade.</p>"
+      },
+      "notes": "",
+      "adjustments": {
+        "personal": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "experience": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "archetype": [
+          null,
+          50,
+          20,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "occupation": [
+          40,
+          10,
+          50,
+          30,
+          50,
+          20,
+          20,
+          60,
+          40
+        ]
       }
+    },
+    "prototypeToken": {
+      "name": "Rafael Duarte Nogueira \"Âncora\"",
+      "actorLink": true,
+      "texture": {
+        "src": "tokenizer/pc-images/cesar_medeiros_nascimento.Token.webp?1774304257230",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "disposition": 1,
+      "sight": {
+        "enabled": true,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "displayName": 0,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "hexagonalShape": 0,
+      "lockRotation": false,
+      "rotation": 0,
+      "alpha": 1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attribs.hp"
+      },
+      "bar2": {
+        "attribute": "attribs.san"
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "detectionModes": [],
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false
     },
     "items": [
       {
@@ -5110,57 +5892,152 @@
     "system": {
       "characteristics": {
         "str": {
-          "value": 90
+          "value": 90,
+          "tempValue": null,
+          "short": "CHARAC.STR",
+          "label": "CHARAC.Strength",
+          "formula": null,
+          "bonusDice": 0
         },
         "con": {
-          "value": 85
+          "value": 85,
+          "tempValue": null,
+          "short": "CHARAC.CON",
+          "label": "CHARAC.Constitution",
+          "formula": null,
+          "bonusDice": 0
         },
         "siz": {
-          "value": 85
+          "value": 85,
+          "tempValue": null,
+          "short": "CHARAC.SIZ",
+          "label": "CHARAC.Size",
+          "formula": null,
+          "bonusDice": 0
         },
         "dex": {
-          "value": 50
+          "value": 50,
+          "tempValue": null,
+          "short": "CHARAC.DEX",
+          "label": "CHARAC.Dexterity",
+          "formula": null,
+          "bonusDice": 0
         },
         "app": {
-          "value": 45
+          "value": 45,
+          "tempValue": null,
+          "short": "CHARAC.APP",
+          "label": "CHARAC.Appearance",
+          "formula": null,
+          "bonusDice": 0
         },
         "int": {
-          "value": 55
+          "value": 55,
+          "tempValue": null,
+          "short": "CHARAC.INT",
+          "label": "CHARAC.Intelligence",
+          "formula": null,
+          "bonusDice": 0
         },
         "pow": {
-          "value": 60
+          "value": 60,
+          "tempValue": null,
+          "short": "CHARAC.POW",
+          "label": "CHARAC.Power",
+          "formula": null,
+          "bonusDice": 0
         },
         "edu": {
-          "value": 50
+          "value": 50,
+          "tempValue": null,
+          "short": "CHARAC.EDU",
+          "label": "CHARAC.Education",
+          "formula": null,
+          "bonusDice": 0
         }
       },
       "attribs": {
         "hp": {
-          "value": 34,
-          "max": 34
+          "value": 20,
+          "max": 20,
+          "short": "HP",
+          "label": "Hit points",
+          "auto": true
         },
         "mp": {
-          "value": 12,
-          "max": 12
+          "value": 10,
+          "max": 10,
+          "short": "HP",
+          "label": "Magic points",
+          "auto": true
+        },
+        "lck": {
+          "value": 55,
+          "short": "LCK",
+          "label": "Luck",
+          "max": 99,
+          "bonusDice": 0
         },
         "san": {
           "value": 60,
-          "max": 60
-        },
-        "lck": {
-          "value": 55
+          "max": 99,
+          "short": "SAN",
+          "label": "Sanity",
+          "auto": true,
+          "dailyLoss": 3,
+          "oneFifthSanity": " / 0",
+          "bonusDice": 0,
+          "dailyLimit": 10
         },
         "mov": {
-          "value": 8
+          "value": null,
+          "max": null,
+          "short": "MOV",
+          "label": "Movement rate",
+          "auto": true,
+          "type": "walk"
         },
         "db": {
-          "value": "1D6"
+          "value": null,
+          "short": "DB",
+          "label": "Damage bonus",
+          "auto": true
         },
         "build": {
-          "value": 2
+          "current": null,
+          "value": null,
+          "short": "BLD",
+          "label": "Build",
+          "auto": true
         },
         "armor": {
-          "value": 8
+          "value": "8",
+          "localized": false,
+          "locations": [],
+          "auto": false
+        }
+      },
+      "conditions": {
+        "criticalWounds": {
+          "value": false
+        },
+        "unconscious": {
+          "value": false
+        },
+        "dying": {
+          "value": false
+        },
+        "dead": {
+          "value": false
+        },
+        "prone": {
+          "value": false
+        },
+        "tempoInsane": {
+          "value": false
+        },
+        "indefInsane": {
+          "value": false
         }
       },
       "infos": {
@@ -5173,10 +6050,306 @@
         "organization": "E CORP — Divisão de Contenção de Campo",
         "playername": ""
       },
+      "flags": {
+        "locked": false,
+        "manualCredit": false
+      },
+      "monetary": {
+        "format": "decimalLeft",
+        "symbol": "$",
+        "values": [
+          {
+            "name": "Penniless",
+            "min": null,
+            "max": 0,
+            "cashType": "value",
+            "cashValue": 10,
+            "assetsType": "value",
+            "assetsValue": 0,
+            "spendingType": "value",
+            "spendingValue": 10
+          },
+          {
+            "name": "Poor",
+            "min": 1,
+            "max": 9,
+            "cashType": "multiplier",
+            "cashValue": 20,
+            "assetsType": "multiplier",
+            "assetsValue": 200,
+            "spendingType": "value",
+            "spendingValue": 40
+          },
+          {
+            "name": "Average",
+            "min": 10,
+            "max": 49,
+            "cashType": "multiplier",
+            "cashValue": 40,
+            "assetsType": "multiplier",
+            "assetsValue": 1000,
+            "spendingType": "value",
+            "spendingValue": 200
+          },
+          {
+            "name": "Wealthy",
+            "min": 50,
+            "max": 89,
+            "cashType": "multiplier",
+            "cashValue": 100,
+            "assetsType": "multiplier",
+            "assetsValue": 10000,
+            "spendingType": "value",
+            "spendingValue": 1000
+          },
+          {
+            "name": "Rich",
+            "min": 90,
+            "max": 98,
+            "cashType": "multiplier",
+            "cashValue": 400,
+            "assetsType": "multiplier",
+            "assetsValue": 40000,
+            "spendingType": "value",
+            "spendingValue": 5000
+          },
+          {
+            "name": "Super Rich",
+            "min": 99,
+            "max": null,
+            "cashType": "value",
+            "cashValue": 1000000,
+            "assetsType": "value",
+            "assetsValue": 100000000,
+            "spendingType": "value",
+            "spendingValue": 100000
+          }
+        ],
+        "spent": "",
+        "assetsDetails": "",
+        "spendingLevel": "",
+        "cash": "",
+        "assets": ""
+      },
+      "development": {
+        "personal": 160,
+        "occupation": 320,
+        "archetype": 100,
+        "experiencePackage": null
+      },
+      "biography": [],
+      "sanityLossEvents": [],
       "backstory": "<p>Samuel é filho de uma enfermeira nigeriana que criou três filhos sozinha em Peckham. Entrou nos Royal Marines aos 18. Iraque, 2003. Em 2005 uma viga caiu sobre ele num prédio em Basra; três vértebras fraturadas, dispensa médica, e a informação de que ele nunca mais carregaria peso.</p><p>A E CORP pagou a cirurgia experimental de fusão que o NHS negou. Ele nunca perguntou de onde veio a técnica. Anda com dor todos os dias e nunca menciona.</p><p><strong>Falha:</strong> vai à frente sempre. Não porque é corajoso — porque não suporta a ideia de outra pessoa entrar primeiro.</p><p><strong>Frase marcante:</strong> <em>\"Porta é sugestão.\"</em></p>",
+      "indefiniteInsanityLevel": {
+        "value": 0,
+        "max": 0
+      },
       "description": {
         "keeper": "<p>A coluna do Aríete tem implante. Sob exposição prolongada a anomalias (ou ao Composto Aurora, se cruzar com a campanha principal), o Guardião pode narrar que o metal \"esquenta\". Não é sugestão — é literal.</p>"
+      },
+      "notes": "",
+      "adjustments": {
+        "personal": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "experience": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "archetype": [
+          null,
+          50,
+          20,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "occupation": [
+          40,
+          10,
+          50,
+          30,
+          50,
+          20,
+          20,
+          60,
+          40
+        ]
       }
+    },
+    "prototypeToken": {
+      "name": "Samuel Okonkwo \"Aríete\"",
+      "actorLink": true,
+      "texture": {
+        "src": "tokenizer/pc-images/cesar_medeiros_nascimento.Token.webp?1774304257230",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "disposition": 1,
+      "sight": {
+        "enabled": true,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "displayName": 0,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "hexagonalShape": 0,
+      "lockRotation": false,
+      "rotation": 0,
+      "alpha": 1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attribs.hp"
+      },
+      "bar2": {
+        "attribute": "attribs.san"
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "detectionModes": [],
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false
     },
     "items": [
       {
@@ -7451,57 +8624,152 @@
     "system": {
       "characteristics": {
         "str": {
-          "value": 45
+          "value": 45,
+          "tempValue": null,
+          "short": "CHARAC.STR",
+          "label": "CHARAC.Strength",
+          "formula": null,
+          "bonusDice": 0
         },
         "con": {
-          "value": 60
+          "value": 60,
+          "tempValue": null,
+          "short": "CHARAC.CON",
+          "label": "CHARAC.Constitution",
+          "formula": null,
+          "bonusDice": 0
         },
         "siz": {
-          "value": 55
+          "value": 55,
+          "tempValue": null,
+          "short": "CHARAC.SIZ",
+          "label": "CHARAC.Size",
+          "formula": null,
+          "bonusDice": 0
         },
         "dex": {
-          "value": 70
+          "value": 70,
+          "tempValue": null,
+          "short": "CHARAC.DEX",
+          "label": "CHARAC.Dexterity",
+          "formula": null,
+          "bonusDice": 0
         },
         "app": {
-          "value": 65
+          "value": 65,
+          "tempValue": null,
+          "short": "CHARAC.APP",
+          "label": "CHARAC.Appearance",
+          "formula": null,
+          "bonusDice": 0
         },
         "int": {
-          "value": 85
+          "value": 85,
+          "tempValue": null,
+          "short": "CHARAC.INT",
+          "label": "CHARAC.Intelligence",
+          "formula": null,
+          "bonusDice": 0
         },
         "pow": {
-          "value": 75
+          "value": 75,
+          "tempValue": null,
+          "short": "CHARAC.POW",
+          "label": "CHARAC.Power",
+          "formula": null,
+          "bonusDice": 0
         },
         "edu": {
-          "value": 85
+          "value": 85,
+          "tempValue": null,
+          "short": "CHARAC.EDU",
+          "label": "CHARAC.Education",
+          "formula": null,
+          "bonusDice": 0
         }
       },
       "attribs": {
         "hp": {
-          "value": 22,
-          "max": 22
+          "value": 20,
+          "max": 20,
+          "short": "HP",
+          "label": "Hit points",
+          "auto": true
         },
         "mp": {
-          "value": 15,
-          "max": 15
+          "value": 10,
+          "max": 10,
+          "short": "HP",
+          "label": "Magic points",
+          "auto": true
+        },
+        "lck": {
+          "value": 70,
+          "short": "LCK",
+          "label": "Luck",
+          "max": 99,
+          "bonusDice": 0
         },
         "san": {
           "value": 75,
-          "max": 75
-        },
-        "lck": {
-          "value": 70
+          "max": 99,
+          "short": "SAN",
+          "label": "Sanity",
+          "auto": true,
+          "dailyLoss": 3,
+          "oneFifthSanity": " / 0",
+          "bonusDice": 0,
+          "dailyLimit": 10
         },
         "mov": {
-          "value": 8
+          "value": null,
+          "max": null,
+          "short": "MOV",
+          "label": "Movement rate",
+          "auto": true,
+          "type": "walk"
         },
         "db": {
-          "value": "0"
+          "value": null,
+          "short": "DB",
+          "label": "Damage bonus",
+          "auto": true
         },
         "build": {
-          "value": 0
+          "current": null,
+          "value": null,
+          "short": "BLD",
+          "label": "Build",
+          "auto": true
         },
         "armor": {
-          "value": 3
+          "value": "3",
+          "localized": false,
+          "locations": [],
+          "auto": false
+        }
+      },
+      "conditions": {
+        "criticalWounds": {
+          "value": false
+        },
+        "unconscious": {
+          "value": false
+        },
+        "dying": {
+          "value": false
+        },
+        "dead": {
+          "value": false
+        },
+        "prone": {
+          "value": false
+        },
+        "tempoInsane": {
+          "value": false
+        },
+        "indefInsane": {
+          "value": false
         }
       },
       "infos": {
@@ -7514,10 +8782,306 @@
         "organization": "E CORP — Divisão de Contenção de Campo",
         "playername": ""
       },
+      "flags": {
+        "locked": false,
+        "manualCredit": false
+      },
+      "monetary": {
+        "format": "decimalLeft",
+        "symbol": "$",
+        "values": [
+          {
+            "name": "Penniless",
+            "min": null,
+            "max": 0,
+            "cashType": "value",
+            "cashValue": 10,
+            "assetsType": "value",
+            "assetsValue": 0,
+            "spendingType": "value",
+            "spendingValue": 10
+          },
+          {
+            "name": "Poor",
+            "min": 1,
+            "max": 9,
+            "cashType": "multiplier",
+            "cashValue": 20,
+            "assetsType": "multiplier",
+            "assetsValue": 200,
+            "spendingType": "value",
+            "spendingValue": 40
+          },
+          {
+            "name": "Average",
+            "min": 10,
+            "max": 49,
+            "cashType": "multiplier",
+            "cashValue": 40,
+            "assetsType": "multiplier",
+            "assetsValue": 1000,
+            "spendingType": "value",
+            "spendingValue": 200
+          },
+          {
+            "name": "Wealthy",
+            "min": 50,
+            "max": 89,
+            "cashType": "multiplier",
+            "cashValue": 100,
+            "assetsType": "multiplier",
+            "assetsValue": 10000,
+            "spendingType": "value",
+            "spendingValue": 1000
+          },
+          {
+            "name": "Rich",
+            "min": 90,
+            "max": 98,
+            "cashType": "multiplier",
+            "cashValue": 400,
+            "assetsType": "multiplier",
+            "assetsValue": 40000,
+            "spendingType": "value",
+            "spendingValue": 5000
+          },
+          {
+            "name": "Super Rich",
+            "min": 99,
+            "max": null,
+            "cashType": "value",
+            "cashValue": 1000000,
+            "assetsType": "value",
+            "assetsValue": 100000000,
+            "spendingType": "value",
+            "spendingValue": 100000
+          }
+        ],
+        "spent": "",
+        "assetsDetails": "",
+        "spendingLevel": "",
+        "cash": "",
+        "assets": ""
+      },
+      "development": {
+        "personal": 160,
+        "occupation": 320,
+        "archetype": 100,
+        "experiencePackage": null
+      },
+      "biography": [],
+      "sanityLossEvents": [],
       "backstory": "<p>Mei-Lin defendeu doutorado em bioquímica aos 25 e foi contratada pelo USAMRIID em Fort Detrick como consultora externa. Trabalhou dois anos com amostras cujo número de catálogo começava com uma letra que não existia no sistema.</p><p>Em 2008 ela publicou — sem autorização — um artigo sobre cinética de replicação anômala. O artigo foi retirado da revista em setenta e duas horas. Três semanas depois a E CORP ofereceu a ela um laboratório com orçamento ilimitado e uma cláusula de exclusividade que não expira nem com a morte. Ela leu a cláusula inteira. Assinou mesmo assim.</p><p><strong>Falha:</strong> curiosidade acima da autopreservação. Já abriu contêiner que devia permanecer fechado.</p><p><strong>Frase marcante:</strong> <em>\"Não me peça pra dizer que é impossível. Me dá dez minutos e eu te digo o que é.\"</em></p>",
+      "indefiniteInsanityLevel": {
+        "value": 0,
+        "max": 0
+      },
       "description": {
         "keeper": "<p>Íris é a única com Mitos de Cthulhu acima de zero (6%). Ela já sabe que algumas coisas não seguem física conhecida e trata isso como problema de engenharia. É o vetor principal de exposição do grupo ao Mitos — e o único personagem capaz de traduzir horror em procedimento.</p>"
+      },
+      "notes": "",
+      "adjustments": {
+        "personal": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          50,
+          60,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "experience": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "archetype": [
+          null,
+          50,
+          20,
+          null,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "occupation": [
+          40,
+          10,
+          50,
+          30,
+          50,
+          20,
+          20,
+          60,
+          40
+        ]
       }
+    },
+    "prototypeToken": {
+      "name": "Dra. Mei-Lin Chao \"Íris\"",
+      "actorLink": true,
+      "texture": {
+        "src": "tokenizer/pc-images/cesar_medeiros_nascimento.Token.webp?1774304257230",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "contain",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "disposition": 1,
+      "sight": {
+        "enabled": true,
+        "range": 0,
+        "angle": 360,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "brightness": 0,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "displayName": 0,
+      "appendNumber": false,
+      "prependAdjective": false,
+      "width": 1,
+      "height": 1,
+      "hexagonalShape": 0,
+      "lockRotation": false,
+      "rotation": 0,
+      "alpha": 1,
+      "displayBars": 0,
+      "bar1": {
+        "attribute": "attribs.hp"
+      },
+      "bar2": {
+        "attribute": "attribs.san"
+      },
+      "light": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 1,
+        "dim": 0,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "detectionModes": [],
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 1,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "flags": {},
+      "randomImg": false
     },
     "items": [
       {

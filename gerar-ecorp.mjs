@@ -7,13 +7,21 @@
 //   templates/itens/ecorp-equipamento.json
 //   templates/jornais/ecorp-dossies.json
 // ============================================================
-import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const MOD = "modules/debaixo-da-pele";
 const ico = (n) => `${MOD}/assets/icons/${n}`;
+
+// MOLDE: usamos a estrutura completa de um ator CoC7 real (que funciona no
+// mundo do usuário) como base, garantindo que TODOS os campos que o sistema
+// espera existam. Sobrescrevemos só o que muda por operador.
+const _molde = JSON.parse(readFileSync(resolve(__dir, "cesar-medeiros-clean.json"), "utf8"));
+const MOLDE_SYSTEM = JSON.parse(JSON.stringify(_molde.system));
+const MOLDE_TOKEN  = JSON.parse(JSON.stringify(_molde.prototypeToken));
+const clone = (o) => JSON.parse(JSON.stringify(o));
 
 // ─────────────────────────────────────────────────────────────
 // CATÁLOGO DE PERÍCIAS
@@ -144,7 +152,6 @@ function skillItem(nome, valor, chars) {
 
 function operador(o) {
   const c = o.chars;
-  const d = derivados(c, o.idade);
 
   // Perícias diferentes em pt-BR podem mapear para a MESMA perícia do CoC7
   // (ex.: Rifle e Espingarda → Firearms (Rifle/Shotgun)). Mesclamos pelo
@@ -157,38 +164,47 @@ function operador(o) {
   }
   const skills = [...porNome.values()].map(({ n, v }) => skillItem(n, v, c));
 
+  // Parte da estrutura COMPLETA do CoC7 (molde) e sobrescreve o necessário.
+  const system = clone(MOLDE_SYSTEM);
+
+  // Características: mantém subcampos (short/label/formula) e troca só o valor.
+  for (const k of ["str", "con", "siz", "dex", "app", "int", "pow", "edu"]) {
+    system.characteristics[k] = { ...system.characteristics[k], value: c[k] };
+  }
+
+  // Atributos derivados: hp/mp/mov/db/build/san ficam com auto:true — o CoC7
+  // calcula a partir das características. Só cravamos Sorte e Armadura.
+  system.attribs.lck   = { ...system.attribs.lck, value: o.luck, max: 99 };
+  system.attribs.armor = { ...system.attribs.armor, value: String(o.armadura), auto: false };
+  // Sanidade inicial = POD (o auto já calcula isso); garantimos o máximo.
+  system.attribs.san   = { ...system.attribs.san, value: o.san, max: 99 };
+
+  system.infos = {
+    ...system.infos,
+    occupation: o.funcao,
+    age: String(o.idade),
+    sex: o.sexo,
+    residence: o.residencia,
+    birthplace: o.natural,
+    archetype: o.arquetipo,
+    organization: "E CORP — Divisão de Contenção de Campo",
+    playername: ""
+  };
+  system.backstory = o.background;
+  system.biography = [];
+  system.sanityLossEvents = [];
+  system.notes = "";
+  system.description = { ...(system.description ?? {}), keeper: o.notasKeeper };
+  system.flags = { locked: false, manualCredit: false };
+
+  const prototypeToken = { ...clone(MOLDE_TOKEN), name: o.nome, actorLink: true };
+
   return {
     name: o.nome,
     type: "character",
     img: o.img ?? "icons/svg/mystery-man.svg",
-    system: {
-      characteristics: {
-        str: { value: c.str }, con: { value: c.con }, siz: { value: c.siz }, dex: { value: c.dex },
-        app: { value: c.app }, int: { value: c.int }, pow: { value: c.pow }, edu: { value: c.edu }
-      },
-      attribs: {
-        hp:  { value: d.hp, max: d.hp },
-        mp:  { value: d.mp, max: d.mp },
-        san: { value: o.san, max: o.san },
-        lck: { value: o.luck },
-        mov: { value: d.mov },
-        db:  { value: d.db },
-        build: { value: d.build },
-        armor: { value: o.armadura }
-      },
-      infos: {
-        occupation: o.funcao,
-        age: String(o.idade),
-        sex: o.sexo,
-        residence: o.residencia,
-        birthplace: o.natural,
-        archetype: o.arquetipo,
-        organization: "E CORP — Divisão de Contenção de Campo",
-        playername: ""
-      },
-      backstory: o.background,
-      description: { keeper: o.notasKeeper }
-    },
+    system,
+    prototypeToken,
     items: skills,
     effects: [],
     flags: {
@@ -749,9 +765,16 @@ function dossieCorpo(op) {
   const s = op.system;
   const c = s.characteristics;
   const a = s.attribs;
-  const topo = Object.entries(op.items.reduce((m, i) => (m[i.name] = i.system.value, m), {}))
-    .sort((x, y) => y[1] - x[1]).slice(0, 10)
-    .map(([n, v]) => `${n} ${v}%`).join(" · ");
+  // Derivados calculados (na ficha ficam em auto e são preenchidos pelo CoC7).
+  const chars = { str: c.str.value, con: c.con.value, siz: c.siz.value, dex: c.dex.value,
+                  app: c.app.value, int: c.int.value, pow: c.pow.value, edu: c.edu.value };
+  const d = derivados(chars, Number(s.infos.age) || 30);
+  // Valor total de cada perícia = base + personal (value fica null na ficha).
+  const total = (i) => Number(i.system.base) + (i.system.adjustments.personal || 0);
+  const topo = op.items.filter(i => i.type === "skill")
+    .map(i => ({ n: i.name, v: total(i) }))
+    .sort((x, y) => y.v - x.v).slice(0, 10)
+    .map(({ n, v }) => `${n} ${v}%`).join(" · ");
 
   return `
 <p><em>E CORP — Divisão de Contenção de Campo · Dossiê de Pessoal · Clearance ${e.clearance}</em></p>
@@ -764,7 +787,7 @@ function dossieCorpo(op) {
 
 <h3>Atributos</h3>
 <p>FOR ${c.str.value} · CON ${c.con.value} · TAM ${c.siz.value} · DES ${c.dex.value} · APA ${c.app.value} · INT ${c.int.value} · POD ${c.pow.value} · EDU ${c.edu.value}</p>
-<p><strong>PV</strong> ${a.hp.value} (Pulp: dobrado) · <strong>PM</strong> ${a.mp.value} · <strong>Sorte</strong> ${a.lck.value} · <strong>Sanidade</strong> ${a.san.value} · <strong>MOV</strong> ${a.mov.value} · <strong>Corpo</strong> ${a.build.value} · <strong>Bônus de Dano</strong> ${a.db.value} · <strong>Armadura</strong> ${a.armor.value}</p>
+<p><strong>PV</strong> ${d.hp} · <strong>PM</strong> ${d.mp} · <strong>Sorte</strong> ${a.lck.value} · <strong>Sanidade</strong> ${a.san.value} · <strong>MOV</strong> ${d.mov} · <strong>Corpo</strong> ${d.build} · <strong>Bônus de Dano</strong> ${d.db} · <strong>Armadura</strong> ${a.armor.value}</p>
 
 <h3>Perícias de destaque</h3>
 <p>${topo}</p>
