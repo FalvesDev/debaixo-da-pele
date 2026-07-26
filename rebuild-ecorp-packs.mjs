@@ -29,25 +29,18 @@ for (const { src, path, prefix } of PACKS) {
     const _id = raw._id ?? makeId();
     const doc = { ...raw, _id };
 
-    // Documentos embutidos viram registros próprios no LevelDB do Foundry
-    // (formato do foundryvtt-cli) e saem do documento pai.
+    // Documentos embutidos ficam INLINE no documento pai — mesmo formato dos
+    // packs originais deste módulo (o CoC7 lê os items/pages pelo array).
+    // Cada embutido só precisa de _id próprio.
     if (Array.isArray(doc.items)) {
-      const items = doc.items.map((i, sort) => ({ ...i, _id: i._id ?? makeId(), sort: sort * 100000 }));
-      delete doc.items;
-      for (const i of items) {
-        await db.put(`!actors.items!${_id}.${i._id}`, JSON.stringify(i));
-      }
+      doc.items = doc.items.map((i, sort) => ({ ...i, _id: i._id ?? makeId(), sort: sort * 100000 }));
     }
     if (Array.isArray(doc.pages)) {
-      const pages = doc.pages.map((p, sort) => ({ ...p, _id: p._id ?? makeId(), sort: sort * 100000 }));
-      delete doc.pages;
-      for (const p of pages) {
-        await db.put(`!journal.pages!${_id}.${p._id}`, JSON.stringify(p));
-      }
+      doc.pages = doc.pages.map((p, sort) => ({ ...p, _id: p._id ?? makeId(), sort: sort * 100000 }));
     }
 
     await db.put(`${prefix}${_id}`, JSON.stringify(doc));
-    console.log(`  ✓ ${doc.name}`);
+    console.log(`  ✓ ${doc.name} (${(doc.items || doc.pages || []).length} embutidos)`);
   }
 
   await db.close();
