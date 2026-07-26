@@ -26,7 +26,8 @@ const MACROS = [
   { arquivo: "10-codeina.js",            nome: "10 — Usar: Codeína",               img: "icons/svg/pill.svg" },
   { arquivo: "11-morfina-item.js",       nome: "11 — Usar: Morfina",               img: "icons/svg/pill.svg" },
   { arquivo: "12-adrenalina.js",         nome: "12 — Usar: Adrenalina",            img: "icons/svg/lightning.svg" },
-  { arquivo: "13-mascara-toggle.js",     nome: "13 — Máscara: Equipar/Remover",    img: "icons/svg/shield.svg" }
+  { arquivo: "13-mascara-toggle.js",     nome: "13 — Máscara: Equipar/Remover",    img: "icons/svg/shield.svg" },
+  { arquivo: "14-criar-operador.js",     nome: "14 — Criar Operador E CORP",       img: "icons/svg/mystery-man.svg" }
 ];
 
 // ─────────────────────────────────────────────────────────────
