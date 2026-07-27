@@ -17,7 +17,7 @@ import { DDPVehicleSheet } from "./vehicle-sheet.js";
 import "./ecorp-creator.js";
 
 const MODULE_ID = "debaixo-da-pele";
-const VERSION   = "1.9.30";
+const VERSION   = "1.9.31";
 
 // ─── SETTINGS ───────────────────────────────────────────────
 Hooks.once("init", () => {

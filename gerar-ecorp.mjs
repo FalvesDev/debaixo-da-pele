@@ -23,6 +23,11 @@ const MOLDE_SYSTEM = JSON.parse(JSON.stringify(_molde.system));
 const MOLDE_TOKEN  = JSON.parse(JSON.stringify(_molde.prototypeToken));
 const clone = (o) => JSON.parse(JSON.stringify(o));
 
+// Perícias EXATAS do ator real (43), indexadas pelo nome completo em inglês.
+// São a fonte de verdade: o CoC7 as reconhece sem pedir "base value".
+const CESAR_SKILLS = {};
+for (const it of _molde.items) if (it.type === "skill") CESAR_SKILLS[it.name] = it;
+
 // ─────────────────────────────────────────────────────────────
 // CATÁLOGO DE PERÍCIAS
 // As chaves em pt-BR são só para referência interna dos operadores.
@@ -80,7 +85,7 @@ const PERICIAS = {
   "Antropologia":                   { base: 1,  en: "Anthropology",        sk: "Anthropology",        sp: "", cocid: "anthropology",         props: { push: true } },
   "Mundo Natural":                  { base: 10, en: "Natural World",       sk: "Natural World",       sp: "", cocid: "natural-world",        props: { push: true } },
   "Língua (Inglês)":                { base: 1,  en: "Language (English)",  sk: "English",   sp: "Language", cocid: null,                     props: { push: true } },
-  "Língua (Português)":             { base: 1,  en: "Language (Portuguese)",sk: "Portuguese",sp: "Language",cocid: null,                     props: { push: true } },
+  "Língua (Português)":             { base: 1,  en: "Language (Portugues)",sk: "Portugues",sp: "Language",cocid: null,                     props: { push: true } },
   "Crédito":                        { base: 0,  en: "Credit Rating",       sk: "Credit Rating",       sp: "", cocid: "credit-rating",        props: { push: true, noxpgain: true } },
   "Mitos de Cthulhu":               { base: 0,  en: "Cthulhu Mythos",      sk: "Cthulhu Mythos",      sp: "", cocid: "cthulhu-mythos",       props: { noxpgain: true, noadjustments: true } }
 };
@@ -115,54 +120,80 @@ function derivados(c, idade, pulp = true) {
   return { hp, mp: Math.floor(c.pow / 5), mov, db, build };
 }
 
-function skillItem(nome, valor, chars) {
-  const def = PERICIAS[nome];
-  if (!def) throw new Error(`Perícia desconhecida: ${nome}`);
-  const base = typeof def.base === "function" ? def.base(chars) : def.base;
-  // O CoC7 calcula o total = base + adjustments (value fica null).
-  // Guardamos a diferença em "personal" para o total exibido bater com o valor.
-  const personal = valor > base ? valor - base : null;
+// Limpa uma perícia clonada do ator real: zera os ajustes/flags dele,
+// mantendo TODA a estrutura que o CoC7 reconhece (img, _stats, cocidFlag,
+// properties) — é isso que impede o popup "Select base value".
+function limparSkill(s) {
+  const c = clone(s);
+  delete c._id;
+  c.system.adjustments = { personal: null, occupation: null, archetype: null, experiencePackage: null, experience: null };
+  c.system.value = null;
+  c.system.flags = {};
+  return c;
+}
 
-  const flags = def.cocid
-    ? { CoC7: { cocidFlag: { id: `i.skill.${def.cocid}`, lang: "en", priority: 5, eras: ERAS } } }
+// Cria uma perícia que NÃO existe no ator real, replicando a estrutura de uma
+// perícia real como molde (para herdar _stats/img/formato que evitam o popup).
+function extraSkill(tplName, o) {
+  const s = limparSkill(CESAR_SKILLS[tplName]);
+  s.name = o.name;
+  s.system.skillName = o.skillName;
+  s.system.specialization = o.spec ?? "";
+  s.system.base = String(o.base);
+  s.system.description = { value: "", opposingDifficulty: "", pushedFaillureConsequences: "", chat: "", keeper: "" };
+  if (o.props) s.system.properties = { ...o.props };
+  s.flags = o.cocid
+    ? { CoC7: { cocidFlag: { id: `i.skill.${o.cocid}`, lang: "en", priority: 5, eras: clone(CESAR_SKILLS[tplName].flags.CoC7.cocidFlag.eras) } } }
     : {};
+  return s;
+}
 
-  return {
-    name: def.en,
-    type: "skill",
-    img: "icons/svg/aura.svg",
-    system: {
-      skillName: def.sk,
-      specialization: def.sp ?? "",
-      description: { value: "", opposingDifficulty: "", pushedFaillureConsequences: "", chat: "", keeper: "" },
-      base: String(base),
-      bonusDice: 0,
-      adjustments: { personal, occupation: null, archetype: null, experiencePackage: null, experience: null },
-      value: null,
-      attributes: {},
-      properties: { ...(def.props ?? {}) },
-      flags: {}
-    },
-    flags,
-    effects: [],
-    sort: 0,
-    ownership: { default: 0 }
-  };
+// Perícias usadas pelos operadores que não existem no ator real molde.
+// (FIRE já definido no catálogo PERICIAS acima)
+const PUSH  = { push: true };
+const SKILL_EXTRAS = {
+  "Firearms (Submachine Gun)": extraSkill("Firearms (Handgun)", { name: "Firearms (Submachine Gun)", skillName: "Submachine Gun", spec: "Firearms", base: 15, cocid: "firearms-submachine-gun", props: FIRE }),
+  "Firearms (Heavy Weapons)":  extraSkill("Firearms (Handgun)", { name: "Firearms (Heavy Weapons)",  skillName: "Heavy Weapons",  spec: "Firearms", base: 10, cocid: null, props: FIRE }),
+  "Science (Biology)":         extraSkill("Accounting", { name: "Science (Biology)",   skillName: "Biology",   spec: "Science", base: 1, cocid: "science", props: PUSH }),
+  "Science (Chemistry)":       extraSkill("Accounting", { name: "Science (Chemistry)", skillName: "Chemistry", spec: "Science", base: 1, cocid: "science", props: PUSH }),
+  "Science (Physics)":         extraSkill("Accounting", { name: "Science (Physics)",   skillName: "Physics",   spec: "Science", base: 1, cocid: "science", props: PUSH }),
+  "Survival (Urban)":          extraSkill("Accounting", { name: "Survival (Urban)",    skillName: "Urban",     spec: "Survival", base: 10, cocid: "survival", props: PUSH }),
+  "Pilot (Drone)":             extraSkill("Accounting", { name: "Pilot (Drone)",       skillName: "Drone",     spec: "Pilot", base: 1, cocid: "pilot", props: PUSH }),
+  "Demolitions":               extraSkill("Accounting", { name: "Demolitions",         skillName: "Demolitions", spec: "", base: 1, cocid: "demolitions", props: PUSH }),
+  "Language (English)":        extraSkill("Language (Portugues)", { name: "Language (English)", skillName: "English", spec: "Language", base: 1, cocid: "language-other", props: PUSH })
+};
+
+// LISTA MESTRE: TODAS as perícias que cada operador terá na ficha —
+// as 43 do ator real (padrões: Listen, Spot Hidden, etc) + as extras.
+const MESTRE = [...Object.keys(CESAR_SKILLS)];
+for (const en of Object.keys(SKILL_EXTRAS)) if (!MESTRE.includes(en)) MESTRE.push(en);
+
+// Cria a perícia final para um operador: base do molde (Dodge = DES/2),
+// valor treinado aplicado em personal (não treinada fica no base).
+function mkSkill(en, valor, chars) {
+  const src = CESAR_SKILLS[en] ? limparSkill(CESAR_SKILLS[en]) : clone(SKILL_EXTRAS[en]);
+  // Dodge depende de DES; recalcula o base para este operador
+  if (en === "Dodge") src.system.base = String(Math.floor(chars.dex / 2));
+  const base = Number(src.system.base);
+  if (valor != null && valor > base) src.system.adjustments.personal = valor - base;
+  return src;
 }
 
 function operador(o) {
   const c = o.chars;
 
-  // Perícias diferentes em pt-BR podem mapear para a MESMA perícia do CoC7
-  // (ex.: Rifle e Espingarda → Firearms (Rifle/Shotgun)). Mesclamos pelo
-  // nome em inglês, mantendo o maior valor, para não duplicar na ficha.
-  const porNome = new Map();
+  // Mapa de valor treinado por nome em inglês. Perícias pt-BR diferentes podem
+  // apontar para a mesma perícia CoC7 (Rifle/Espingarda → Firearms Rifle/Shotgun);
+  // mantemos o maior valor.
+  const valEn = {};
   for (const [n, v] of Object.entries(o.pericias)) {
     const en = PERICIAS[n]?.en;
     if (!en) throw new Error(`Perícia desconhecida: ${n}`);
-    if (!porNome.has(en) || v > porNome.get(en).v) porNome.set(en, { n, v });
+    if (valEn[en] == null || v > valEn[en]) valEn[en] = v;
   }
-  const skills = [...porNome.values()].map(({ n, v }) => skillItem(n, v, c));
+  // TODA perícia da lista mestre entra na ficha: as treinadas com seu valor,
+  // as demais com o valor-base padrão do CoC7 (Listen, Spot Hidden, etc).
+  const skills = MESTRE.map(en => mkSkill(en, valEn[en] ?? null, c));
 
   // Parte da estrutura COMPLETA do CoC7 (molde) e sobrescreve o necessário.
   const system = clone(MOLDE_SYSTEM);
