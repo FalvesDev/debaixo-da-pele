@@ -1573,160 +1573,6 @@
         }
       },
       {
-        "name": "AI Arctic Warfare .338 LM (E CORP)",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
-        "system": {
-          "description": {
-            "value": "<p>Rifle de ferrolho britânico calibre .338 Lapua Magnum, unidade modificada pela oficina interna da E CORP. Alcance efetivo real de 1.100 m. O supressor reduz a assinatura sonora o suficiente para que a origem do disparo não seja localizável acima de 300 m.</p><p><strong>Desvantagem:</strong> 6,9 kg com acessórios. Inútil em corredor. Recarga de ferrolho custa a ação de movimento.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Rifle/Shotgun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 180,
-              "units": "",
-              "damage": "2D8+1D6"
-            },
-            "long": {
-              "value": 360,
-              "units": "",
-              "damage": "2D8+1D6"
-            },
-            "extreme": {
-              "value": 720,
-              "units": "",
-              "damage": "2D8+1D6"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 1,
-            "max": 1,
-            "period": ""
-          },
-          "bullets": {
-            "value": 5,
-            "max": 5
-          },
-          "blastRadius": "",
-          "malfunction": 98,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 6.9
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 2,
-            "gridH": 5,
-            "slots": 8,
-            "categoria": "arma",
-            "caliber": ".338 Lapua Magnum",
-            "notas": "Ferrolho. 1 tiro/rodada. Bipé obrigatório para alcance longo — sem apoio, penalidade de um nível de dificuldade.",
-            "preco": 25375,
-            "precoUSD": 14500,
-            "ecorp": {
-              "classe": "RECON",
-              "acessorios": "Luneta Schmidt & Bender 5-25×56 PM II · supressor Surefire SOCOM · bipé Harris · capa ghillie modular"
-            }
-          }
-        }
-      },
-      {
-        "name": "SIG P226 9mm (supressa)",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
-        "system": {
-          "description": {
-            "value": "<p>Pistola secundária padrão da E CORP para operadores de reconhecimento. Munição subsônica de 147 grãos combinada ao supressor — o som dominante passa a ser o próprio ferrolho.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Handgun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 15,
-              "units": "",
-              "damage": "1D10"
-            },
-            "long": {
-              "value": 30,
-              "units": "",
-              "damage": "1D10"
-            },
-            "extreme": {
-              "value": 60,
-              "units": "",
-              "damage": "1D10"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 3,
-            "max": 3,
-            "period": ""
-          },
-          "bullets": {
-            "value": 15,
-            "max": 15
-          },
-          "blastRadius": "",
-          "malfunction": 99,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 1.4
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 1,
-            "gridH": 2,
-            "slots": 3,
-            "categoria": "arma",
-            "caliber": "9×19mm Parabellum",
-            "notas": "Com supressor: quem escuta o disparo faz Escutar com um nível de dificuldade a mais.",
-            "preco": 3325,
-            "precoUSD": 1900,
-            "ecorp": {
-              "classe": "RECON",
-              "acessorios": "Supressor Gemtech Tundra · cano rosqueado · miras de trítio"
-            }
-          }
-        }
-      },
-      {
         "name": "Binóculo Térmico FLIR HS-324 Command",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/binoculo.svg",
@@ -2077,6 +1923,162 @@
             }
           }
         }
+      },
+      {
+        "name": "AI Arctic Warfare .338 LM (E CORP)",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
+        "system": {
+          "description": {
+            "value": "<p>Rifle de ferrolho britânico calibre .338 Lapua Magnum, unidade modificada pela oficina interna da E CORP. Alcance efetivo real de 1.100 m. O supressor reduz a assinatura sonora o suficiente para que a origem do disparo não seja localizável acima de 300 m.</p><p><strong>Desvantagem:</strong> 6,9 kg com acessórios. Inútil em corredor. Recarga de ferrolho custa a ação de movimento.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Rifle/Shotgun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 180,
+              "units": "",
+              "damage": "2D8+1D6"
+            },
+            "long": {
+              "value": 360,
+              "units": "",
+              "damage": "2D8+1D6"
+            },
+            "extreme": {
+              "value": 720,
+              "units": "",
+              "damage": "2D8+1D6"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 1,
+            "max": 1,
+            "period": ""
+          },
+          "bullets": {
+            "value": 5,
+            "max": 5
+          },
+          "blastRadius": "",
+          "malfunction": 98,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 6.9
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 5,
+            "slots": 8,
+            "categoria": "arma",
+            "caliber": ".338 Lapua Magnum",
+            "notas": "Ferrolho. 1 tiro/rodada. Bipé obrigatório para alcance longo — sem apoio, penalidade de um nível de dificuldade.",
+            "preco": 25375,
+            "precoUSD": 14500,
+            "ecorp": {
+              "classe": "RECON",
+              "acessorios": "Luneta Schmidt & Bender 5-25×56 PM II · supressor Surefire SOCOM · bipé Harris · capa ghillie modular",
+              "grupoEscolha": 0
+            }
+          }
+        }
+      },
+      {
+        "name": "SIG P226 9mm (supressa)",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+        "system": {
+          "description": {
+            "value": "<p>Pistola secundária padrão da E CORP para operadores de reconhecimento. Munição subsônica de 147 grãos combinada ao supressor — o som dominante passa a ser o próprio ferrolho.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Handgun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 15,
+              "units": "",
+              "damage": "1D10"
+            },
+            "long": {
+              "value": 30,
+              "units": "",
+              "damage": "1D10"
+            },
+            "extreme": {
+              "value": 60,
+              "units": "",
+              "damage": "1D10"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 3,
+            "max": 3,
+            "period": ""
+          },
+          "bullets": {
+            "value": 15,
+            "max": 15
+          },
+          "blastRadius": "",
+          "malfunction": 99,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 1.4
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 1,
+            "gridH": 2,
+            "slots": 3,
+            "categoria": "arma",
+            "caliber": "9×19mm Parabellum",
+            "notas": "Com supressor: quem escuta o disparo faz Escutar com um nível de dificuldade a mais.",
+            "preco": 3325,
+            "precoUSD": 1900,
+            "ecorp": {
+              "classe": "RECON",
+              "acessorios": "Supressor Gemtech Tundra · cano rosqueado · miras de trítio",
+              "grupoEscolha": 1
+            }
+          }
+        }
       }
     ],
     "effects": [],
@@ -2102,6 +2104,342 @@
           "especiais": [
             "Armas de Fogo (Rifle)",
             "Furtividade"
+          ],
+          "escolhas": [
+            {
+              "label": "Rifle de Precisão",
+              "opcoes": [
+                {
+                  "nome": "AI Arctic Warfare .338 LM (E CORP)",
+                  "item": {
+                    "name": "AI Arctic Warfare .338 LM (E CORP)",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Rifle de ferrolho britânico calibre .338 Lapua Magnum, unidade modificada pela oficina interna da E CORP. Alcance efetivo real de 1.100 m. O supressor reduz a assinatura sonora o suficiente para que a origem do disparo não seja localizável acima de 300 m.</p><p><strong>Desvantagem:</strong> 6,9 kg com acessórios. Inútil em corredor. Recarga de ferrolho custa a ação de movimento.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Rifle/Shotgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 180,
+                          "units": "",
+                          "damage": "2D8+1D6"
+                        },
+                        "long": {
+                          "value": 360,
+                          "units": "",
+                          "damage": "2D8+1D6"
+                        },
+                        "extreme": {
+                          "value": 720,
+                          "units": "",
+                          "damage": "2D8+1D6"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 5,
+                        "max": 5
+                      },
+                      "blastRadius": "",
+                      "malfunction": 98,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 6.9
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 5,
+                        "slots": 8,
+                        "categoria": "arma",
+                        "caliber": ".338 Lapua Magnum",
+                        "notas": "Ferrolho. 1 tiro/rodada. Bipé obrigatório para alcance longo — sem apoio, penalidade de um nível de dificuldade.",
+                        "preco": 25375,
+                        "precoUSD": 14500,
+                        "ecorp": {
+                          "classe": "RECON",
+                          "acessorios": "Luneta Schmidt & Bender 5-25×56 PM II · supressor Surefire SOCOM · bipé Harris · capa ghillie modular",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "M110 SASS 7.62mm (semiautomático)",
+                  "item": {
+                    "name": "M110 SASS 7.62mm (semiautomático)",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-carabina.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Rifle de precisão semiautomático 7.62. Troca o alcance extremo e o dano da AWM por cadência — ideal quando há mais de um alvo ou a distância é média.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Rifle/Shotgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 110,
+                          "units": "",
+                          "damage": "2D8"
+                        },
+                        "long": {
+                          "value": 220,
+                          "units": "",
+                          "damage": "2D8"
+                        },
+                        "extreme": {
+                          "value": 440,
+                          "units": "",
+                          "damage": "2D8"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 2,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 20,
+                        "max": 20
+                      },
+                      "blastRadius": "",
+                      "malfunction": 98,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 6.9
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 4,
+                        "slots": 6,
+                        "categoria": "arma",
+                        "caliber": "7,62×51mm NATO",
+                        "notas": "Semiautomático: até 2 tiros/rodada. Menos dano por tiro que a AWM, mas responde a alvos múltiplos.",
+                        "preco": 21000,
+                        "precoUSD": 12000,
+                        "ecorp": {
+                          "classe": "RECON",
+                          "acessorios": "Luneta Leupold 3.5-10× · supressor · bipé",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Pistola Secundária",
+              "opcoes": [
+                {
+                  "nome": "SIG P226 9mm (supressa)",
+                  "item": {
+                    "name": "SIG P226 9mm (supressa)",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Pistola secundária padrão da E CORP para operadores de reconhecimento. Munição subsônica de 147 grãos combinada ao supressor — o som dominante passa a ser o próprio ferrolho.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Handgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 15,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "long": {
+                          "value": 30,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "extreme": {
+                          "value": 60,
+                          "units": "",
+                          "damage": "1D10"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 3,
+                        "max": 3,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 15,
+                        "max": 15
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 1.4
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": "9×19mm Parabellum",
+                        "notas": "Com supressor: quem escuta o disparo faz Escutar com um nível de dificuldade a mais.",
+                        "preco": 3325,
+                        "precoUSD": 1900,
+                        "ecorp": {
+                          "classe": "RECON",
+                          "acessorios": "Supressor Gemtech Tundra · cano rosqueado · miras de trítio",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "Revólver .357 Magnum (supresso)",
+                  "item": {
+                    "name": "Revólver .357 Magnum (supresso)",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-revolver.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Revólver de precisão com supressor. Cada tiro dói mais, mas são só seis — a escolha de quem prefere um disparo certeiro a volume de fogo.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Handgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 15,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        },
+                        "long": {
+                          "value": 30,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        },
+                        "extreme": {
+                          "value": 60,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 6,
+                        "max": 6
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 1
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": ".357 Magnum",
+                        "notas": "Mais dano por tiro que a SIG, mas só 6 tiros e recarga lenta. Supressor reduz a assinatura.",
+                        "preco": 2450,
+                        "precoUSD": 1400,
+                        "ecorp": {
+                          "classe": "RECON",
+                          "acessorios": "Supressor · munição subsônica · miras de trítio",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
           ]
         }
       }
@@ -3625,160 +3963,6 @@
         }
       },
       {
-        "name": "HK416 D10RS 5.56mm",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
-        "system": {
-          "description": {
-            "value": "<p>Carabina modular alemã de operação a pistão, calibre 5,56. O trilho Picatinny de quatro faces permite reconfigurar a arma entre CQB e média distância em campo.</p><p><strong>Desvantagem:</strong> 5,56 tem penetração excelente e poder de parada mediano. Contra alvo com massa muito acima do humano, o Guardião pode aplicar redução de dano.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Rifle/Shotgun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 90,
-              "units": "",
-              "damage": "2D8"
-            },
-            "long": {
-              "value": 180,
-              "units": "",
-              "damage": "2D8"
-            },
-            "extreme": {
-              "value": 360,
-              "units": "",
-              "damage": "2D8"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 1,
-            "max": 3,
-            "period": ""
-          },
-          "bullets": {
-            "value": 30,
-            "max": 30
-          },
-          "blastRadius": "",
-          "malfunction": 99,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 3.6
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 2,
-            "gridH": 4,
-            "slots": 6,
-            "categoria": "arma",
-            "caliber": "5,56×45mm NATO",
-            "notas": "Semi ou rajada de 3. Pistão de gás — funciona sujo, funciona molhado.",
-            "preco": 7350,
-            "precoUSD": 4200,
-            "ecorp": {
-              "classe": "ASSAULT",
-              "acessorios": "Mira holográfica EOTech 552 · lanterna Surefire M600 · laser IR PEQ-15 · empunhadura vertical · bandoleira de 3 pontos"
-            }
-          }
-        }
-      },
-      {
-        "name": "Glock 17 Gen4 9mm",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
-        "system": {
-          "description": {
-            "value": "<p>Pistola secundária padrão. Polímero, 17 tiros, sem trava manual. É a arma que continua funcionando quando o rifle emperra.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Handgun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 15,
-              "units": "",
-              "damage": "1D10"
-            },
-            "long": {
-              "value": 30,
-              "units": "",
-              "damage": "1D10"
-            },
-            "extreme": {
-              "value": 60,
-              "units": "",
-              "damage": "1D10"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 3,
-            "max": 3,
-            "period": ""
-          },
-          "bullets": {
-            "value": 17,
-            "max": 17
-          },
-          "blastRadius": "",
-          "malfunction": 99,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 0.9
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 1,
-            "gridH": 2,
-            "slots": 2,
-            "categoria": "arma",
-            "caliber": "9×19mm Parabellum",
-            "notas": "Coldre de coxa Safariland 6004. Saque rápido — não custa ação se já estiver com a mão livre.",
-            "preco": 1138,
-            "precoUSD": 650,
-            "ecorp": {
-              "classe": "ASSAULT",
-              "acessorios": "Lanterna Streamlight TLR-1 · miras noturnas · três carregadores extras"
-            }
-          }
-        }
-      },
-      {
         "name": "Granada de Concussão M84 (Flashbang)",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/dinamite.svg",
@@ -4142,6 +4326,162 @@
             }
           }
         }
+      },
+      {
+        "name": "HK416 D10RS 5.56mm",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+        "system": {
+          "description": {
+            "value": "<p>Carabina modular alemã de operação a pistão, calibre 5,56. O trilho Picatinny de quatro faces permite reconfigurar a arma entre CQB e média distância em campo.</p><p><strong>Desvantagem:</strong> 5,56 tem penetração excelente e poder de parada mediano. Contra alvo com massa muito acima do humano, o Guardião pode aplicar redução de dano.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Rifle/Shotgun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 90,
+              "units": "",
+              "damage": "2D8"
+            },
+            "long": {
+              "value": 180,
+              "units": "",
+              "damage": "2D8"
+            },
+            "extreme": {
+              "value": 360,
+              "units": "",
+              "damage": "2D8"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 1,
+            "max": 3,
+            "period": ""
+          },
+          "bullets": {
+            "value": 30,
+            "max": 30
+          },
+          "blastRadius": "",
+          "malfunction": 99,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 3.6
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 4,
+            "slots": 6,
+            "categoria": "arma",
+            "caliber": "5,56×45mm NATO",
+            "notas": "Semi ou rajada de 3. Pistão de gás — funciona sujo, funciona molhado.",
+            "preco": 7350,
+            "precoUSD": 4200,
+            "ecorp": {
+              "classe": "ASSAULT",
+              "acessorios": "Mira holográfica EOTech 552 · lanterna Surefire M600 · laser IR PEQ-15 · empunhadura vertical · bandoleira de 3 pontos",
+              "grupoEscolha": 0
+            }
+          }
+        }
+      },
+      {
+        "name": "Glock 17 Gen4 9mm",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+        "system": {
+          "description": {
+            "value": "<p>Pistola secundária padrão. Polímero, 17 tiros, sem trava manual. É a arma que continua funcionando quando o rifle emperra.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Handgun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 15,
+              "units": "",
+              "damage": "1D10"
+            },
+            "long": {
+              "value": 30,
+              "units": "",
+              "damage": "1D10"
+            },
+            "extreme": {
+              "value": 60,
+              "units": "",
+              "damage": "1D10"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 3,
+            "max": 3,
+            "period": ""
+          },
+          "bullets": {
+            "value": 17,
+            "max": 17
+          },
+          "blastRadius": "",
+          "malfunction": 99,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 0.9
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 1,
+            "gridH": 2,
+            "slots": 2,
+            "categoria": "arma",
+            "caliber": "9×19mm Parabellum",
+            "notas": "Coldre de coxa Safariland 6004. Saque rápido — não custa ação se já estiver com a mão livre.",
+            "preco": 1138,
+            "precoUSD": 650,
+            "ecorp": {
+              "classe": "ASSAULT",
+              "acessorios": "Lanterna Streamlight TLR-1 · miras noturnas · três carregadores extras",
+              "grupoEscolha": 1
+            }
+          }
+        }
       }
     ],
     "effects": [],
@@ -4167,6 +4507,342 @@
           "especiais": [
             "Armas de Fogo (Rifle)",
             "Psicologia"
+          ],
+          "escolhas": [
+            {
+              "label": "Rifle Principal",
+              "opcoes": [
+                {
+                  "nome": "HK416 D10RS 5.56mm",
+                  "item": {
+                    "name": "HK416 D10RS 5.56mm",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Carabina modular alemã de operação a pistão, calibre 5,56. O trilho Picatinny de quatro faces permite reconfigurar a arma entre CQB e média distância em campo.</p><p><strong>Desvantagem:</strong> 5,56 tem penetração excelente e poder de parada mediano. Contra alvo com massa muito acima do humano, o Guardião pode aplicar redução de dano.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Rifle/Shotgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 90,
+                          "units": "",
+                          "damage": "2D8"
+                        },
+                        "long": {
+                          "value": 180,
+                          "units": "",
+                          "damage": "2D8"
+                        },
+                        "extreme": {
+                          "value": 360,
+                          "units": "",
+                          "damage": "2D8"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 3,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 30,
+                        "max": 30
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 3.6
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 4,
+                        "slots": 6,
+                        "categoria": "arma",
+                        "caliber": "5,56×45mm NATO",
+                        "notas": "Semi ou rajada de 3. Pistão de gás — funciona sujo, funciona molhado.",
+                        "preco": 7350,
+                        "precoUSD": 4200,
+                        "ecorp": {
+                          "classe": "ASSAULT",
+                          "acessorios": "Mira holográfica EOTech 552 · lanterna Surefire M600 · laser IR PEQ-15 · empunhadura vertical · bandoleira de 3 pontos",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "FN SCAR-H 7.62mm",
+                  "item": {
+                    "name": "FN SCAR-H 7.62mm",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Fuzil de batalha 7.62. Poder de parada superior ao 5.56 — melhor contra alvos grandes — ao custo de munição e controle em rajada.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Rifle/Shotgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 100,
+                          "units": "",
+                          "damage": "2D8+2"
+                        },
+                        "long": {
+                          "value": 200,
+                          "units": "",
+                          "damage": "2D8+2"
+                        },
+                        "extreme": {
+                          "value": 400,
+                          "units": "",
+                          "damage": "2D8+2"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 3,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 20,
+                        "max": 20
+                      },
+                      "blastRadius": "",
+                      "malfunction": 98,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 4
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 4,
+                        "slots": 6,
+                        "categoria": "arma",
+                        "caliber": "7,62×51mm NATO",
+                        "notas": "Mais dano e alcance que a HK416, mas só 20 tiros e mais recuo (recarrega mais cedo).",
+                        "preco": 9100,
+                        "precoUSD": 5200,
+                        "ecorp": {
+                          "classe": "ASSAULT",
+                          "acessorios": "Red dot · empunhadura vertical · supressor",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Pistola Secundária",
+              "opcoes": [
+                {
+                  "nome": "Glock 17 Gen4 9mm",
+                  "item": {
+                    "name": "Glock 17 Gen4 9mm",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Pistola secundária padrão. Polímero, 17 tiros, sem trava manual. É a arma que continua funcionando quando o rifle emperra.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Handgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 15,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "long": {
+                          "value": 30,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "extreme": {
+                          "value": 60,
+                          "units": "",
+                          "damage": "1D10"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 3,
+                        "max": 3,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 17,
+                        "max": 17
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 0.9
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 2,
+                        "categoria": "arma",
+                        "caliber": "9×19mm Parabellum",
+                        "notas": "Coldre de coxa Safariland 6004. Saque rápido — não custa ação se já estiver com a mão livre.",
+                        "preco": 1138,
+                        "precoUSD": 650,
+                        "ecorp": {
+                          "classe": "ASSAULT",
+                          "acessorios": "Lanterna Streamlight TLR-1 · miras noturnas · três carregadores extras",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "Revólver .357 Magnum",
+                  "item": {
+                    "name": "Revólver .357 Magnum",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-revolver.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Revólver de mão pesado. Troca os 17 tiros da Glock por seis tiros que derrubam.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Handgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 15,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        },
+                        "long": {
+                          "value": 30,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        },
+                        "extreme": {
+                          "value": 60,
+                          "units": "",
+                          "damage": "1D8+1D4"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 6,
+                        "max": 6
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 1
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 2,
+                        "categoria": "arma",
+                        "caliber": ".357 Magnum",
+                        "notas": "Mais dano por tiro que a Glock, mas 6 tiros e recarga lenta.",
+                        "preco": 1575,
+                        "precoUSD": 900,
+                        "ecorp": {
+                          "classe": "ASSAULT",
+                          "acessorios": "Coldre de coxa · speedloaders",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
           ]
         }
       }
@@ -5750,83 +6426,6 @@
         }
       },
       {
-        "name": "Benelli M4 Super 90 Cal.12",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
-        "system": {
-          "description": {
-            "value": "<p>Espingarda semiautomática italiana de operação a gás ARGO, adotada pelos Marines em 1999. Sete tiros, ciclo confiável com qualquer carga.</p><p><strong>Desvantagem:</strong> recarga cartucho a cartucho. Uma rodada = 2 cartuchos.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Rifle/Shotgun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 10,
-              "units": "",
-              "damage": "4D6/2D6/1D6"
-            },
-            "long": {
-              "value": 20,
-              "units": "",
-              "damage": "4D6/2D6/1D6"
-            },
-            "extreme": {
-              "value": 50,
-              "units": "",
-              "damage": "4D6/2D6/1D6"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 1,
-            "max": 2,
-            "period": ""
-          },
-          "bullets": {
-            "value": 7,
-            "max": 7
-          },
-          "blastRadius": "",
-          "malfunction": 99,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 3.8
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 2,
-            "gridH": 4,
-            "slots": 6,
-            "categoria": "arma",
-            "caliber": "Calibre 12 / 2¾\"",
-            "notas": "Semiautomática. Dano por faixa de alcance. Munição de arrombamento (Hatton) disponível: destrói dobradiça, não serve contra alvo.",
-            "preco": 3675,
-            "precoUSD": 2100,
-            "ecorp": {
-              "classe": "BREACHER",
-              "acessorios": "Mira ghost ring · lanterna Surefire · coronha telescópica · porta-cartuchos lateral"
-            }
-          }
-        }
-      },
-      {
         "name": "Escudo Balístico Point Blank Level IIIA",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/colete-tatico.svg",
@@ -6145,6 +6744,162 @@
             }
           }
         }
+      },
+      {
+        "name": "Marreta de Arrombamento",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/machado-bombeiro.svg",
+        "system": {
+          "description": {
+            "value": "<p>Marreta pesada. Golpe contundente que quebra portas e ossos. Lenta de erguer, devastadora ao acertar.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Fighting (Brawl)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 0,
+              "units": "",
+              "damage": "1D8"
+            },
+            "long": {
+              "value": 0,
+              "units": "",
+              "damage": "1D8"
+            },
+            "extreme": {
+              "value": 0,
+              "units": "",
+              "damage": "1D8"
+            }
+          },
+          "wpnType": "melee",
+          "usesPerRound": {
+            "value": 1,
+            "max": 1,
+            "period": ""
+          },
+          "bullets": {
+            "value": 0,
+            "max": 0
+          },
+          "blastRadius": "",
+          "malfunction": 100,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 4.5
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 1,
+            "gridH": 3,
+            "slots": 3,
+            "categoria": "arma",
+            "caliber": "—",
+            "notas": "1D8 + bônus de dano. Contundente: ótima para atordoar e arrombar. Lenta.",
+            "preco": 315,
+            "precoUSD": 180,
+            "ecorp": {
+              "classe": "BREACHER",
+              "acessorios": "Cabo de fibra · cabeça de aço temperado",
+              "grupoEscolha": 0
+            }
+          }
+        }
+      },
+      {
+        "name": "Benelli M4 Super 90 Cal.12",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
+        "system": {
+          "description": {
+            "value": "<p>Espingarda semiautomática italiana de operação a gás ARGO, adotada pelos Marines em 1999. Sete tiros, ciclo confiável com qualquer carga.</p><p><strong>Desvantagem:</strong> recarga cartucho a cartucho. Uma rodada = 2 cartuchos.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Rifle/Shotgun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 10,
+              "units": "",
+              "damage": "4D6/2D6/1D6"
+            },
+            "long": {
+              "value": 20,
+              "units": "",
+              "damage": "4D6/2D6/1D6"
+            },
+            "extreme": {
+              "value": 50,
+              "units": "",
+              "damage": "4D6/2D6/1D6"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 1,
+            "max": 2,
+            "period": ""
+          },
+          "bullets": {
+            "value": 7,
+            "max": 7
+          },
+          "blastRadius": "",
+          "malfunction": 99,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 3.8
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 4,
+            "slots": 6,
+            "categoria": "arma",
+            "caliber": "Calibre 12 / 2¾\"",
+            "notas": "Semiautomática. Dano por faixa de alcance. Munição de arrombamento (Hatton) disponível: destrói dobradiça, não serve contra alvo.",
+            "preco": 3675,
+            "precoUSD": 2100,
+            "ecorp": {
+              "classe": "BREACHER",
+              "acessorios": "Mira ghost ring · lanterna Surefire · coronha telescópica · porta-cartuchos lateral",
+              "grupoEscolha": 1
+            }
+          }
+        }
       }
     ],
     "effects": [],
@@ -6170,6 +6925,423 @@
           "especiais": [
             "Briga",
             "Intimidação"
+          ],
+          "escolhas": [
+            {
+              "label": "Arma de Impacto",
+              "opcoes": [
+                {
+                  "nome": "Marreta de Arrombamento",
+                  "item": {
+                    "name": "Marreta de Arrombamento",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/machado-bombeiro.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Marreta pesada. Golpe contundente que quebra portas e ossos. Lenta de erguer, devastadora ao acertar.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Fighting (Brawl)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "long": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "extreme": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        }
+                      },
+                      "wpnType": "melee",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 0,
+                        "max": 0
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 4.5
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 3,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": "—",
+                        "notas": "1D8 + bônus de dano. Contundente: ótima para atordoar e arrombar. Lenta.",
+                        "preco": 315,
+                        "precoUSD": 180,
+                        "ecorp": {
+                          "classe": "BREACHER",
+                          "acessorios": "Cabo de fibra · cabeça de aço temperado",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "Machado de Bombeiro Tático",
+                  "item": {
+                    "name": "Machado de Bombeiro Tático",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/machado-bombeiro.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Machado de resgate reforçado. Corta, arromba e engancha. Mais versátil que a marreta, com fio que empala.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Fighting (Brawl)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8+1"
+                        },
+                        "long": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8+1"
+                        },
+                        "extreme": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8+1"
+                        }
+                      },
+                      "wpnType": "melee",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 0,
+                        "max": 0
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 3
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 3,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": "—",
+                        "notas": "1D8+1 + bônus de dano. Cortante (pode empalar). Também abre portas e travas.",
+                        "preco": 385,
+                        "precoUSD": 220,
+                        "ecorp": {
+                          "classe": "BREACHER",
+                          "acessorios": "Lâmina + pico · cabo emborrachado",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "Facão Tático Pesado",
+                  "item": {
+                    "name": "Facão Tático Pesado",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-faca.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Facão de combate pesado. Menos dano bruto que a marreta, mas rápido o bastante para dois golpes — e libera a outra mão.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Fighting (Brawl)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "long": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "extreme": {
+                          "value": 0,
+                          "units": "",
+                          "damage": "1D8"
+                        }
+                      },
+                      "wpnType": "melee",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 2,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 0,
+                        "max": 0
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 1.2
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 2,
+                        "categoria": "arma",
+                        "caliber": "—",
+                        "notas": "1D8 + bônus de dano. Leve e rápido: pode atacar 2×/rodada. Cortante (empala).",
+                        "preco": 280,
+                        "precoUSD": 160,
+                        "ecorp": {
+                          "classe": "BREACHER",
+                          "acessorios": "Aço de alto carbono · bainha MOLLE",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "label": "Arma de Fogo",
+              "opcoes": [
+                {
+                  "nome": "Benelli M4 Super 90 Cal.12",
+                  "item": {
+                    "name": "Benelli M4 Super 90 Cal.12",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Espingarda semiautomática italiana de operação a gás ARGO, adotada pelos Marines em 1999. Sete tiros, ciclo confiável com qualquer carga.</p><p><strong>Desvantagem:</strong> recarga cartucho a cartucho. Uma rodada = 2 cartuchos.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Rifle/Shotgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 10,
+                          "units": "",
+                          "damage": "4D6/2D6/1D6"
+                        },
+                        "long": {
+                          "value": 20,
+                          "units": "",
+                          "damage": "4D6/2D6/1D6"
+                        },
+                        "extreme": {
+                          "value": 50,
+                          "units": "",
+                          "damage": "4D6/2D6/1D6"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 2,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 7,
+                        "max": 7
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 3.8
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 4,
+                        "slots": 6,
+                        "categoria": "arma",
+                        "caliber": "Calibre 12 / 2¾\"",
+                        "notas": "Semiautomática. Dano por faixa de alcance. Munição de arrombamento (Hatton) disponível: destrói dobradiça, não serve contra alvo.",
+                        "preco": 3675,
+                        "precoUSD": 2100,
+                        "ecorp": {
+                          "classe": "BREACHER",
+                          "acessorios": "Mira ghost ring · lanterna Surefire · coronha telescópica · porta-cartuchos lateral",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "Revólver .44 Magnum",
+                  "item": {
+                    "name": "Revólver .44 Magnum",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-revolver.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Revólver de grosso calibre. A escolha do Juggernaut que quer manter o escudo erguido e ainda ter poder de fogo na mão livre.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Handgun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 15,
+                          "units": "",
+                          "damage": "1D10+1D4"
+                        },
+                        "long": {
+                          "value": 30,
+                          "units": "",
+                          "damage": "1D10+1D4"
+                        },
+                        "extreme": {
+                          "value": 60,
+                          "units": "",
+                          "damage": "1D10+1D4"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 1,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 6,
+                        "max": 6
+                      },
+                      "blastRadius": "",
+                      "malfunction": 100,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 1.4
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 1,
+                        "gridH": 2,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": ".44 Magnum",
+                        "notas": "Operável com UMA mão — libera a outra para o escudo. Muito dano, 6 tiros, recuo forte.",
+                        "preco": 2100,
+                        "precoUSD": 1200,
+                        "ecorp": {
+                          "classe": "BREACHER",
+                          "acessorios": "Coldre reforçado · speedloaders",
+                          "grupoEscolha": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
           ]
         }
       }
@@ -7726,83 +8898,6 @@
         }
       },
       {
-        "name": "HK MP7A1 4.6mm",
-        "type": "weapon",
-        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
-        "system": {
-          "description": {
-            "value": "<p>Arma pessoal de defesa compacta, 2,1 kg carregada. Projetada para quem tem as mãos ocupadas com outra coisa — exatamente o caso da Íris.</p>",
-            "chat": "",
-            "special": "",
-            "keeper": ""
-          },
-          "skill": {
-            "main": {
-              "name": "Firearms (Submachine Gun)",
-              "id": ""
-            },
-            "alternativ": {
-              "name": "",
-              "id": ""
-            }
-          },
-          "range": {
-            "normal": {
-              "value": 20,
-              "units": "",
-              "damage": "1D8"
-            },
-            "long": {
-              "value": 40,
-              "units": "",
-              "damage": "1D8"
-            },
-            "extreme": {
-              "value": 80,
-              "units": "",
-              "damage": "1D8"
-            }
-          },
-          "wpnType": "ranged",
-          "usesPerRound": {
-            "value": 1,
-            "max": 4,
-            "period": ""
-          },
-          "bullets": {
-            "value": 40,
-            "max": 40
-          },
-          "blastRadius": "",
-          "malfunction": 99,
-          "properties": {
-            "improv": false
-          },
-          "price": {
-            "value": 0,
-            "level": ""
-          },
-          "quantity": 1,
-          "weight": 2.1
-        },
-        "flags": {
-          "debaixo-da-pele": {
-            "gridW": 2,
-            "gridH": 2,
-            "slots": 3,
-            "categoria": "arma",
-            "caliber": "4,6×30mm",
-            "notas": "Operável com uma mão. Perfura colete Nível IIIA. Dano baixo por projétil — compensa em volume.",
-            "preco": 5950,
-            "precoUSD": 3400,
-            "ecorp": {
-              "classe": "SPECIALIST",
-              "acessorios": "Red dot Aimpoint Micro T-1 · supressor B&T · bandoleira de peito · coronha retrátil"
-            }
-          }
-        }
-      },
-      {
         "name": "Panasonic Toughbook CF-19 (terminal de campo)",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/notebook.svg",
@@ -8121,6 +9216,84 @@
             }
           }
         }
+      },
+      {
+        "name": "HK MP7A1 4.6mm",
+        "type": "weapon",
+        "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+        "system": {
+          "description": {
+            "value": "<p>Arma pessoal de defesa compacta, 2,1 kg carregada. Projetada para quem tem as mãos ocupadas com outra coisa — exatamente o caso da Íris.</p>",
+            "chat": "",
+            "special": "",
+            "keeper": ""
+          },
+          "skill": {
+            "main": {
+              "name": "Firearms (Submachine Gun)",
+              "id": ""
+            },
+            "alternativ": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "range": {
+            "normal": {
+              "value": 20,
+              "units": "",
+              "damage": "1D8"
+            },
+            "long": {
+              "value": 40,
+              "units": "",
+              "damage": "1D8"
+            },
+            "extreme": {
+              "value": 80,
+              "units": "",
+              "damage": "1D8"
+            }
+          },
+          "wpnType": "ranged",
+          "usesPerRound": {
+            "value": 1,
+            "max": 4,
+            "period": ""
+          },
+          "bullets": {
+            "value": 40,
+            "max": 40
+          },
+          "blastRadius": "",
+          "malfunction": 99,
+          "properties": {
+            "improv": false
+          },
+          "price": {
+            "value": 0,
+            "level": ""
+          },
+          "quantity": 1,
+          "weight": 2.1
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 2,
+            "slots": 3,
+            "categoria": "arma",
+            "caliber": "4,6×30mm",
+            "notas": "Operável com uma mão. Perfura colete Nível IIIA. Dano baixo por projétil — compensa em volume.",
+            "preco": 5950,
+            "precoUSD": 3400,
+            "ecorp": {
+              "classe": "SPECIALIST",
+              "acessorios": "Red dot Aimpoint Micro T-1 · supressor B&T · bandoleira de peito · coronha retrátil",
+              "grupoEscolha": 0
+            }
+          }
+        }
       }
     ],
     "effects": [],
@@ -8146,6 +9319,175 @@
           "especiais": [
             "Ciência (Biologia)",
             "Primeiros Socorros"
+          ],
+          "escolhas": [
+            {
+              "label": "Arma Compacta",
+              "opcoes": [
+                {
+                  "nome": "HK MP7A1 4.6mm",
+                  "item": {
+                    "name": "HK MP7A1 4.6mm",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Arma pessoal de defesa compacta, 2,1 kg carregada. Projetada para quem tem as mãos ocupadas com outra coisa — exatamente o caso da Íris.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Submachine Gun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 20,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "long": {
+                          "value": 40,
+                          "units": "",
+                          "damage": "1D8"
+                        },
+                        "extreme": {
+                          "value": 80,
+                          "units": "",
+                          "damage": "1D8"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 4,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 40,
+                        "max": 40
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 2.1
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 2,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": "4,6×30mm",
+                        "notas": "Operável com uma mão. Perfura colete Nível IIIA. Dano baixo por projétil — compensa em volume.",
+                        "preco": 5950,
+                        "precoUSD": 3400,
+                        "ecorp": {
+                          "classe": "SPECIALIST",
+                          "acessorios": "Red dot Aimpoint Micro T-1 · supressor B&T · bandoleira de peito · coronha retrátil",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "nome": "HK MP5A5 9mm",
+                  "item": {
+                    "name": "HK MP5A5 9mm",
+                    "type": "weapon",
+                    "img": "modules/debaixo-da-pele/assets/icons/arma-pistola.svg",
+                    "system": {
+                      "description": {
+                        "value": "<p>Submetralhadora clássica 9mm. Mais impacto por projétil que a MP7, ao custo de penetração. Fácil de controlar em rajada.</p>",
+                        "chat": "",
+                        "special": "",
+                        "keeper": ""
+                      },
+                      "skill": {
+                        "main": {
+                          "name": "Firearms (Submachine Gun)",
+                          "id": ""
+                        },
+                        "alternativ": {
+                          "name": "",
+                          "id": ""
+                        }
+                      },
+                      "range": {
+                        "normal": {
+                          "value": 20,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "long": {
+                          "value": 40,
+                          "units": "",
+                          "damage": "1D10"
+                        },
+                        "extreme": {
+                          "value": 80,
+                          "units": "",
+                          "damage": "1D10"
+                        }
+                      },
+                      "wpnType": "ranged",
+                      "usesPerRound": {
+                        "value": 1,
+                        "max": 3,
+                        "period": ""
+                      },
+                      "bullets": {
+                        "value": 30,
+                        "max": 30
+                      },
+                      "blastRadius": "",
+                      "malfunction": 99,
+                      "properties": {
+                        "improv": false
+                      },
+                      "price": {
+                        "value": 0,
+                        "level": ""
+                      },
+                      "quantity": 1,
+                      "weight": 2.9
+                    },
+                    "flags": {
+                      "debaixo-da-pele": {
+                        "gridW": 2,
+                        "gridH": 2,
+                        "slots": 3,
+                        "categoria": "arma",
+                        "caliber": "9×19mm Parabellum",
+                        "notas": "Mais dano por tiro que a MP7, mas não perfura colete. Confiável e controlável.",
+                        "preco": 4550,
+                        "precoUSD": 2600,
+                        "ecorp": {
+                          "classe": "SPECIALIST",
+                          "acessorios": "Red dot · lanterna · supressor",
+                          "grupoEscolha": 0
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
           ]
         }
       }

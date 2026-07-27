@@ -841,19 +841,160 @@ function corpoExtra(classe) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// INJEÇÃO DE INVENTÁRIO — cada operador já vem com a ficha pronta:
-// perícias + armas/equipamento da sua classe + itens comuns (TODOS).
-// Clona os itens para que cada ator tenha cópias independentes.
+// ARMAS VARIANTES (opções de loadout, balanceadas)
+// ─────────────────────────────────────────────────────────────
+const VARIANTES = [
+  // RECON
+  arma({
+    classe: "RECON", name: "M110 SASS 7.62mm (semiautomático)",
+    img: ico("arma-carabina.svg"), skill: "Armas de Fogo (Rifle)",
+    dano: "2D8", r: [110, 220, 440], tipo: "ranged", rof: [1, 2], mag: 20, mal: 98, pesoKg: 6.9,
+    calibre: "7,62×51mm NATO", grid: [2, 4], slots: 6, usd: 12000,
+    notas: "Semiautomático: até 2 tiros/rodada. Menos dano por tiro que a AWM, mas responde a alvos múltiplos.",
+    acessorios: "Luneta Leupold 3.5-10× · supressor · bipé",
+    desc: "<p>Rifle de precisão semiautomático 7.62. Troca o alcance extremo e o dano da AWM por cadência — ideal quando há mais de um alvo ou a distância é média.</p>"
+  }),
+  arma({
+    classe: "RECON", name: "Revólver .357 Magnum (supresso)",
+    img: ico("arma-revolver.svg"), skill: "Armas de Fogo (Pistola)",
+    dano: "1D8+1D4", r: [15, 30, 60], tipo: "ranged", rof: [1, 1], mag: 6, mal: 100, pesoKg: 1.0,
+    calibre: ".357 Magnum", grid: [1, 2], slots: 3, usd: 1400,
+    notas: "Mais dano por tiro que a SIG, mas só 6 tiros e recarga lenta. Supressor reduz a assinatura.",
+    acessorios: "Supressor · munição subsônica · miras de trítio",
+    desc: "<p>Revólver de precisão com supressor. Cada tiro dói mais, mas são só seis — a escolha de quem prefere um disparo certeiro a volume de fogo.</p>"
+  }),
+  // ASSAULT
+  arma({
+    classe: "ASSAULT", name: "FN SCAR-H 7.62mm",
+    img: ico("arma-m4.svg"), skill: "Armas de Fogo (Rifle)",
+    dano: "2D8+2", r: [100, 200, 400], tipo: "ranged", rof: [1, 3], mag: 20, mal: 98, pesoKg: 4.0,
+    calibre: "7,62×51mm NATO", grid: [2, 4], slots: 6, usd: 5200,
+    notas: "Mais dano e alcance que a HK416, mas só 20 tiros e mais recuo (recarrega mais cedo).",
+    acessorios: "Red dot · empunhadura vertical · supressor",
+    desc: "<p>Fuzil de batalha 7.62. Poder de parada superior ao 5.56 — melhor contra alvos grandes — ao custo de munição e controle em rajada.</p>"
+  }),
+  arma({
+    classe: "ASSAULT", name: "Revólver .357 Magnum",
+    img: ico("arma-revolver.svg"), skill: "Armas de Fogo (Pistola)",
+    dano: "1D8+1D4", r: [15, 30, 60], tipo: "ranged", rof: [1, 1], mag: 6, mal: 100, pesoKg: 1.0,
+    calibre: ".357 Magnum", grid: [1, 2], slots: 2, usd: 900,
+    notas: "Mais dano por tiro que a Glock, mas 6 tiros e recarga lenta.",
+    acessorios: "Coldre de coxa · speedloaders",
+    desc: "<p>Revólver de mão pesado. Troca os 17 tiros da Glock por seis tiros que derrubam.</p>"
+  }),
+  // BREACHER — armas de impacto (corpo-a-corpo)
+  arma({
+    classe: "BREACHER", name: "Marreta de Arrombamento",
+    img: ico("machado-bombeiro.svg"), skill: "Briga",
+    dano: "1D8", r: [0, 0, 0], tipo: "melee", rof: [1, 1], mag: 0, mal: 100, pesoKg: 4.5,
+    calibre: "—", grid: [1, 3], slots: 3, usd: 180,
+    notas: "1D8 + bônus de dano. Contundente: ótima para atordoar e arrombar. Lenta.",
+    acessorios: "Cabo de fibra · cabeça de aço temperado",
+    desc: "<p>Marreta pesada. Golpe contundente que quebra portas e ossos. Lenta de erguer, devastadora ao acertar.</p>"
+  }),
+  arma({
+    classe: "BREACHER", name: "Machado de Bombeiro Tático",
+    img: ico("machado-bombeiro.svg"), skill: "Briga",
+    dano: "1D8+1", r: [0, 0, 0], tipo: "melee", rof: [1, 1], mag: 0, mal: 100, pesoKg: 3.0,
+    calibre: "—", grid: [1, 3], slots: 3, usd: 220,
+    notas: "1D8+1 + bônus de dano. Cortante (pode empalar). Também abre portas e travas.",
+    acessorios: "Lâmina + pico · cabo emborrachado",
+    desc: "<p>Machado de resgate reforçado. Corta, arromba e engancha. Mais versátil que a marreta, com fio que empala.</p>"
+  }),
+  arma({
+    classe: "BREACHER", name: "Facão Tático Pesado",
+    img: ico("arma-faca.svg"), skill: "Briga",
+    dano: "1D8", r: [0, 0, 0], tipo: "melee", rof: [1, 2], mag: 0, mal: 100, pesoKg: 1.2,
+    calibre: "—", grid: [1, 2], slots: 2, usd: 160,
+    notas: "1D8 + bônus de dano. Leve e rápido: pode atacar 2×/rodada. Cortante (empala).",
+    acessorios: "Aço de alto carbono · bainha MOLLE",
+    desc: "<p>Facão de combate pesado. Menos dano bruto que a marreta, mas rápido o bastante para dois golpes — e libera a outra mão.</p>"
+  }),
+  arma({
+    classe: "BREACHER", name: "Revólver .44 Magnum",
+    img: ico("arma-revolver.svg"), skill: "Armas de Fogo (Pistola)",
+    dano: "1D10+1D4", r: [15, 30, 60], tipo: "ranged", rof: [1, 1], mag: 6, mal: 100, pesoKg: 1.4,
+    calibre: ".44 Magnum", grid: [1, 2], slots: 3, usd: 1200,
+    notas: "Operável com UMA mão — libera a outra para o escudo. Muito dano, 6 tiros, recuo forte.",
+    acessorios: "Coldre reforçado · speedloaders",
+    desc: "<p>Revólver de grosso calibre. A escolha do Juggernaut que quer manter o escudo erguido e ainda ter poder de fogo na mão livre.</p>"
+  }),
+  // SPECIALIST
+  arma({
+    classe: "SPECIALIST", name: "HK MP5A5 9mm",
+    img: ico("arma-pistola.svg"), skill: "Armas de Fogo (Submetralhadora)",
+    dano: "1D10", r: [20, 40, 80], tipo: "ranged", rof: [1, 3], mag: 30, mal: 99, pesoKg: 2.9,
+    calibre: "9×19mm Parabellum", grid: [2, 2], slots: 3, usd: 2600,
+    notas: "Mais dano por tiro que a MP7, mas não perfura colete. Confiável e controlável.",
+    acessorios: "Red dot · lanterna · supressor",
+    desc: "<p>Submetralhadora clássica 9mm. Mais impacto por projétil que a MP7, ao custo de penetração. Fácil de controlar em rajada.</p>"
+  })
+];
+
+// ─────────────────────────────────────────────────────────────
+// GRUPOS DE ESCOLHA (loadout) por classe — referenciam armas por nome
+// A 1ª opção de cada grupo é o padrão. Balanceadas entre si.
+// ─────────────────────────────────────────────────────────────
+const ESCOLHAS = {
+  RECON: [
+    { label: "Rifle de Precisão", opcoes: ["AI Arctic Warfare .338 LM (E CORP)", "M110 SASS 7.62mm (semiautomático)"] },
+    { label: "Pistola Secundária", opcoes: ["SIG P226 9mm (supressa)", "Revólver .357 Magnum (supresso)"] }
+  ],
+  ASSAULT: [
+    { label: "Rifle Principal", opcoes: ["HK416 D10RS 5.56mm", "FN SCAR-H 7.62mm"] },
+    { label: "Pistola Secundária", opcoes: ["Glock 17 Gen4 9mm", "Revólver .357 Magnum"] }
+  ],
+  BREACHER: [
+    { label: "Arma de Impacto", opcoes: ["Marreta de Arrombamento", "Machado de Bombeiro Tático", "Facão Tático Pesado"] },
+    { label: "Arma de Fogo", opcoes: ["Benelli M4 Super 90 Cal.12", "Revólver .44 Magnum"] }
+  ],
+  SPECIALIST: [
+    { label: "Arma Compacta", opcoes: ["HK MP7A1 4.6mm", "HK MP5A5 9mm"] }
+  ]
+};
+
+// Pool de todas as armas (equipamento fixo + variantes), indexado por nome
+const POOL = {};
+for (const it of [...EQUIPAMENTO, ...VARIANTES]) POOL[it.name] = it;
+
+// Nomes que são "de escolha" por classe (não entram como fixo)
+const nomesEscolha = (classe) =>
+  new Set((ESCOLHAS[classe] ?? []).flatMap(g => g.opcoes));
+
+// ─────────────────────────────────────────────────────────────
+// INJEÇÃO DE INVENTÁRIO — perícias + equipamento fixo + loadout escolhível.
+// O ator recebe: skills + itens fixos + a opção PADRÃO de cada grupo (marcada
+// com grupoEscolha, para o wizard poder trocar). Os grupos completos ficam em
+// flags.ecorp.escolhas para o wizard oferecer as alternativas.
 // ─────────────────────────────────────────────────────────────
 for (const op of OPERADORES) {
   const classe = op.flags["debaixo-da-pele"].ecorp.classe;
-  const gear = EQUIPAMENTO
+  const excluir = nomesEscolha(classe);
+
+  // Itens fixos: equipamento da classe/TODOS que NÃO são armas de escolha
+  const fixos = EQUIPAMENTO
     .filter(i => {
       const cl = i.flags["debaixo-da-pele"].ecorp.classe;
-      return cl === classe || cl === "TODOS";
+      return (cl === classe || cl === "TODOS") && !excluir.has(i.name);
     })
-    .map(i => JSON.parse(JSON.stringify(i)));  // cópia profunda independente
-  op.items.push(...gear);
+    .map(clone);
+  op.items.push(...fixos);
+
+  // Grupos de escolha (com item completo em cada opção)
+  const grupos = (ESCOLHAS[classe] ?? []).map((g, gi) => ({
+    label: g.label,
+    opcoes: g.opcoes.map(nome => {
+      const item = clone(POOL[nome]);
+      // marca a que grupo pertence (para o wizard remover a padrão ao trocar)
+      item.flags["debaixo-da-pele"].ecorp.grupoEscolha = gi;
+      return { nome, item };
+    })
+  }));
+
+  // Adiciona a opção PADRÃO (primeira) de cada grupo ao inventário base
+  for (const g of grupos) op.items.push(clone(g.opcoes[0].item));
+
+  op.flags["debaixo-da-pele"].ecorp.escolhas = grupos;
 }
 
 const DOSSIES = [{

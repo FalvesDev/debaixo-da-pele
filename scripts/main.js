@@ -17,7 +17,7 @@ import { DDPVehicleSheet } from "./vehicle-sheet.js";
 import "./ecorp-creator.js";
 
 const MODULE_ID = "debaixo-da-pele";
-const VERSION   = "1.9.29";
+const VERSION   = "1.9.30";
 
 // ─── SETTINGS ───────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -170,7 +170,7 @@ async function _handleSocket(data) {
     case "criarOperador": {
       // Só o GM cria de fato (jogadores não têm permissão de criar atores).
       if (!game.user.isGM) break;
-      await criarOperadorECorp(data.classe, data.nome, data.ownerId);
+      await criarOperadorECorp(data.classe, data.nome, data.ownerId, data.escolhas);
       break;
     }
   }
@@ -188,7 +188,7 @@ async function carregarOperadores() {
   return _cacheOperadores;
 }
 
-async function criarOperadorECorp(classe, nomeCustom, ownerId) {
+async function criarOperadorECorp(classe, nomeCustom, ownerId, escolhas = {}) {
   let base;
   try {
     const operadores = await carregarOperadores();
@@ -210,11 +210,30 @@ async function criarOperadorECorp(classe, nomeCustom, ownerId) {
   // Separa os items do documento do ator — o CoC7 espera que perícias/armas
   // sejam adicionadas DEPOIS, via createEmbeddedDocuments (dispara os hooks
   // create-item do sistema, que processam as skills corretamente).
-  const items = (dados.items ?? []).map(i => {
-    const it = foundry.utils.deepClone(i);
-    delete it._id;   // deixa o Foundry gerar IDs novos
-    return it;
+  // Remove as opções PADRÃO de loadout (marcadas com grupoEscolha): elas serão
+  // substituídas pela escolha do jogador logo abaixo.
+  const items = (dados.items ?? [])
+    .filter(i => i.flags?.[MODULE_ID]?.ecorp?.grupoEscolha === undefined)
+    .map(i => {
+      const it = foundry.utils.deepClone(i);
+      delete it._id;
+      return it;
+    });
+
+  // Aplica o loadout escolhido: para cada grupo, adiciona a opção selecionada
+  // (ou a primeira, se nada foi escolhido).
+  const grupos = dados.flags?.[MODULE_ID]?.ecorp?.escolhas ?? [];
+  grupos.forEach((g, gi) => {
+    const idx = Number(escolhas?.[gi] ?? 0);
+    const opt = g.opcoes?.[idx] ?? g.opcoes?.[0];
+    if (opt?.item) {
+      const it = foundry.utils.deepClone(opt.item);
+      delete it._id;
+      delete it.flags?.[MODULE_ID]?.ecorp?.grupoEscolha;
+      items.push(it);
+    }
   });
+
   delete dados.items;
   delete dados._id;
   if (nomeCustom) dados.name = nomeCustom;
@@ -281,7 +300,8 @@ Hooks.once("ready", () => {
     version:    VERSION,
     emitSocket:  (data) => game.socket?.emit(`module.${MODULE_ID}`, data),
     abrirVeiculo: (actorId) => DDPVehicleSheet.open(actorId),
-    criarOperador: criarOperadorECorp
+    criarOperador: criarOperadorECorp,
+    carregarOperadores
   };
 
   // ── Setup automático (GM, uma vez) ──
