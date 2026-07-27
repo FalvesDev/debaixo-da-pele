@@ -175,15 +175,24 @@ for (const en of Object.keys(SKILL_EXTRAS)) if (!MESTRE.includes(en)) MESTRE.pus
 // Removê-las deixa a perícia entrar direto, com o valor já setado.
 const PROPS_INTERATIVAS = ["special", "requiresname", "picknameonly", "onlyone", "keepbasevalue"];
 
-// Cria a perícia final para um operador: base do molde (Dodge = DES/2),
-// valor treinado aplicado em personal (não treinada fica no base).
+// Cria a perícia final para um operador.
+// CHAVE: o CoC7 lê o base de system.adjustments.base (NÚMERO). Se esse campo
+// não existe, ele abre o popup "Select base value". Nós SETAMOS o valor direto
+// ali — nada de depender de cálculo/migração.
 function mkSkill(en, valor, chars) {
   const src = CESAR_SKILLS[en] ? limparSkill(CESAR_SKILLS[en]) : clone(SKILL_EXTRAS[en]);
-  // Dodge depende de DES; recalcula o base para este operador
+  // Dodge depende de DES; base = DES/2 para este operador
   if (en === "Dodge") src.system.base = String(Math.floor(chars.dex / 2));
-  const base = Number(src.system.base);
-  if (valor != null && valor > base) src.system.adjustments.personal = valor - base;
-  // Remove as properties que disparam popups; mantém o resto (firearm, fighting, push…)
+  const base = Number(src.system.base) || 0;
+  const treino = (valor != null && valor > base) ? valor - base : 0;
+
+  // Valor setado explicitamente: base numérico + treino. Total = base + treino.
+  src.system.adjustments = {
+    base, personal: treino, occupation: 0, archetype: 0, experiencePackage: 0, experience: 0
+  };
+  src.system.value = null;
+
+  // Remove as properties que disparam popups (special/requiresname/etc)
   const p = { ...(src.system.properties ?? {}) };
   for (const k of PROPS_INTERATIVAS) delete p[k];
   src.system.properties = p;

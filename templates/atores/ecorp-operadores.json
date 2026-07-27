@@ -482,11 +482,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -549,11 +550,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -616,11 +618,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -686,11 +689,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -754,11 +758,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -825,11 +830,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -896,11 +902,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -956,11 +963,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
+            "base": 0,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1026,11 +1034,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 0,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1099,11 +1108,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1170,11 +1180,12 @@
           "base": "40",
           "bonusDice": 0,
           "adjustments": {
+            "base": 40,
             "personal": 15,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1239,11 +1250,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1301,11 +1313,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1363,11 +1376,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 29,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1423,11 +1437,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1495,11 +1510,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 15,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1567,11 +1583,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1637,11 +1654,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1704,11 +1722,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 45,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1771,11 +1790,12 @@
           "base": "30",
           "bonusDice": 0,
           "adjustments": {
+            "base": 30,
             "personal": 15,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1843,11 +1863,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1912,11 +1933,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -1983,11 +2005,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2052,11 +2075,12 @@
           "base": "80",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 80,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2124,11 +2148,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2193,11 +2218,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2262,11 +2288,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2331,11 +2358,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2400,11 +2428,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2466,11 +2495,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2536,11 +2566,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2603,11 +2634,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2674,11 +2706,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
+            "base": 5,
             "personal": 10,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2745,11 +2778,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2814,11 +2848,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2876,11 +2911,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -2945,11 +2981,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3010,11 +3047,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3079,11 +3117,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3151,11 +3190,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 50,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3223,11 +3263,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3290,11 +3331,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3362,11 +3404,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3428,11 +3471,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3495,11 +3539,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3562,11 +3607,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3629,11 +3675,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3696,11 +3743,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3763,11 +3811,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3830,11 +3879,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 49,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3897,11 +3947,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -3964,11 +4015,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 49,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5408,11 +5460,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5475,11 +5528,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5542,11 +5596,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5612,11 +5667,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5680,11 +5736,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5751,11 +5808,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5822,11 +5880,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5882,11 +5941,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
+            "base": 0,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -5952,11 +6012,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 0,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6025,11 +6086,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6096,11 +6158,12 @@
           "base": "32",
           "bonusDice": 0,
           "adjustments": {
+            "base": 32,
             "personal": 18,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6165,11 +6228,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6227,11 +6291,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6289,11 +6354,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6349,11 +6415,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6421,11 +6488,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6493,11 +6561,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6563,11 +6632,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6630,11 +6700,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 45,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6697,11 +6768,12 @@
           "base": "30",
           "bonusDice": 0,
           "adjustments": {
+            "base": 30,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6769,11 +6841,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6838,11 +6911,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
+            "base": 15,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6909,11 +6983,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -6978,11 +7053,12 @@
           "base": "80",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 80,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7050,11 +7126,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7119,11 +7196,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7188,11 +7266,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7257,11 +7336,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7326,11 +7406,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7392,11 +7473,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7462,11 +7544,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7529,11 +7612,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7600,11 +7684,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
+            "base": 5,
             "personal": 10,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7671,11 +7756,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 45,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7740,11 +7826,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7802,11 +7889,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 60,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7871,11 +7959,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -7936,11 +8025,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8005,11 +8095,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8077,11 +8168,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8149,11 +8241,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8216,11 +8309,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8288,11 +8382,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8354,11 +8449,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8421,11 +8517,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8488,11 +8585,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8555,11 +8653,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8622,11 +8721,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8689,11 +8789,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8756,11 +8857,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8823,11 +8925,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 29,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -8890,11 +8993,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 44,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10347,11 +10451,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10414,11 +10519,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10481,11 +10587,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10551,11 +10658,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10619,11 +10727,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10690,11 +10799,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10761,11 +10871,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10821,11 +10932,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
+            "base": 0,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10891,11 +11003,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 0,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -10964,11 +11077,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11035,11 +11149,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11104,11 +11219,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11166,11 +11282,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11228,11 +11345,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11288,11 +11406,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11360,11 +11479,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 45,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11432,11 +11552,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11502,11 +11623,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11569,11 +11691,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11636,11 +11759,12 @@
           "base": "30",
           "bonusDice": 0,
           "adjustments": {
+            "base": 30,
             "personal": 15,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11708,11 +11832,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11777,11 +11902,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
+            "base": 15,
             "personal": 55,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11848,11 +11974,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11917,11 +12044,12 @@
           "base": "80",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 80,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -11989,11 +12117,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12058,11 +12187,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12127,11 +12257,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12196,11 +12327,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 44,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12265,11 +12397,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12331,11 +12464,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12401,11 +12535,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12468,11 +12603,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12539,11 +12675,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
+            "base": 5,
             "personal": 5,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12610,11 +12747,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12679,11 +12817,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12741,11 +12880,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12810,11 +12950,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12875,11 +13016,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -12944,11 +13086,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 20,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13016,11 +13159,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13088,11 +13232,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13155,11 +13300,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13227,11 +13373,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 44,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13293,11 +13440,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13360,11 +13508,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13427,11 +13576,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13494,11 +13644,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13561,11 +13712,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13628,11 +13780,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13695,11 +13848,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13762,11 +13916,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 49,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -13829,11 +13984,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 54,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15322,11 +15478,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15389,11 +15546,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 29,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15456,11 +15614,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15526,11 +15685,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15594,11 +15754,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15665,11 +15826,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15736,11 +15898,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
+            "base": 5,
             "personal": 55,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15796,11 +15959,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
+            "base": 0,
             "personal": 40,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15866,11 +16030,12 @@
           "base": "0",
           "bonusDice": 0,
           "adjustments": {
+            "base": 0,
             "personal": 6,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -15939,11 +16104,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16010,11 +16176,12 @@
           "base": "35",
           "bonusDice": 0,
           "adjustments": {
+            "base": 35,
             "personal": 15,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16079,11 +16246,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16141,11 +16309,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16203,11 +16372,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 49,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16263,11 +16433,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16335,11 +16506,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 25,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16407,11 +16579,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16477,11 +16650,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16544,11 +16718,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 25,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16611,11 +16786,12 @@
           "base": "30",
           "bonusDice": 0,
           "adjustments": {
+            "base": 30,
             "personal": 40,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16683,11 +16859,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16752,11 +16929,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 15,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16823,11 +17001,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16892,11 +17071,12 @@
           "base": "80",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 80,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -16964,11 +17144,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17033,11 +17214,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
+            "base": 20,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17102,11 +17284,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17171,11 +17354,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17240,11 +17424,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17306,11 +17491,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 54,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17376,11 +17562,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17443,11 +17630,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17514,11 +17702,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
+            "base": 5,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17585,11 +17774,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 35,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17654,11 +17844,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17716,11 +17907,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
+            "base": 10,
             "personal": 40,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17785,11 +17977,12 @@
           "base": "5",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 5,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17850,11 +18043,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17919,11 +18113,12 @@
           "base": "25",
           "bonusDice": 0,
           "adjustments": {
+            "base": 25,
             "personal": 25,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -17991,11 +18186,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18063,11 +18259,12 @@
           "base": "20",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 20,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18130,11 +18327,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18202,11 +18400,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18268,11 +18467,12 @@
           "base": "15",
           "bonusDice": 0,
           "adjustments": {
+            "base": 15,
             "personal": 30,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18335,11 +18535,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18402,11 +18603,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 69,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18469,11 +18671,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 54,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18536,11 +18739,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 39,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18603,11 +18807,12 @@
           "base": "10",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 10,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18670,11 +18875,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18737,11 +18943,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
-            "personal": null,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "base": 1,
+            "personal": 0,
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
@@ -18804,11 +19011,12 @@
           "base": "1",
           "bonusDice": 0,
           "adjustments": {
+            "base": 1,
             "personal": 59,
-            "occupation": null,
-            "archetype": null,
-            "experiencePackage": null,
-            "experience": null
+            "occupation": 0,
+            "archetype": 0,
+            "experiencePackage": 0,
+            "experience": 0
           },
           "value": null,
           "attributes": {},
