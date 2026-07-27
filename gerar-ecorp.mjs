@@ -610,6 +610,12 @@ const EQUIPAMENTO = [
     notas: "Arremessável até 9 m. Rola. Câmera IR. Autonomia 60 min. Silencioso.",
     desc: "<p>Robô cilíndrico de duas rodas, jogado por baixo da porta ou pela janela. Transmite vídeo infravermelho sem fio. Sobrevive a queda de dois andares. Usado por SWAT americano desde 2008.</p>"
   }),
+  equip({
+    classe: "RECON", name: "Manto de Camuflagem Multiespectral",
+    img: ico("colete-tatico.svg"), cat: "protecao", grid: [2, 2], slots: 3, pesoKg: 1.8, usd: 6500,
+    notas: "Parado e em cobertura: um nível de bônus em Furtividade e reduz assinatura térmica. Inútil em movimento rápido.",
+    desc: "<p>Capa ghillie de malha multiespectral que quebra a silhueta e atenua a assinatura de calor. Enquanto o operador permanece imóvel em posição de tocaia, é quase indetectável — mas qualquer movimento brusco anula o efeito.</p>"
+  }),
 
   // ── ASSAULT ────────────────────────────────────────────────
   arma({
@@ -636,6 +642,27 @@ const EQUIPAMENTO = [
     notas: "Arremesso. Alvos em 3 m: teste de CON ou ficam Atordoados por 1D3 rodadas. Não causa dano.",
     desc: "<p>Granada não letal: 175 dB e 6 milhões de candelas. Padrão de entrada tática. Em ambiente fechado o efeito é brutal — inclusive para quem jogou, se calcular mal.</p>"
   }),
+  arma({
+    classe: "ASSAULT", name: "Lança-granadas M320 40mm",
+    img: ico("arma-m4.svg"), skill: "Armas Pesadas",
+    dano: "3D6", r: [50, 100, 150], tipo: "ranged", rof: [1, 1], mag: 1, mal: 98, pesoKg: 1.5,
+    calibre: "40×46mm", grid: [2, 2], slots: 4, usd: 3200, blast: "2",
+    notas: "Raio de explosão 2 m. Recarga cartucho a cartucho (1 ação). Munição HE ou fumígena.",
+    acessorios: "Módulo acoplável ao HK416 ou uso autônomo · mira quadrante · 6 granadas 40mm",
+    desc: "<p>Lançador de granadas 40mm, acoplável sob o rifle ou operado como arma independente. Munição HE para área ou fumígena para cobertura.</p><p><strong>Desvantagem:</strong> tiro único, recarga lenta. Perigoso em curta distância (o próprio raio de explosão alcança quem atira).</p>"
+  }),
+  equip({
+    classe: "ASSAULT", name: "Granada de Fumaça AN-M8",
+    img: ico("dinamite.svg"), cat: "explosivo", grid: [1, 1], slots: 1, pesoKg: 0.3, usd: 25, qtd: 4,
+    notas: "Cortina de fumaça em 3 m por 1D3+2 rodadas. Bloqueia linha de visão (não a térmica).",
+    desc: "<p>Granada fumígena para quebra de contato e cobertura de avanço. A fumaça densa impede mira à distância, mas não engana sensores térmicos.</p>"
+  }),
+  equip({
+    classe: "ASSAULT", name: "Drone Tático Quadricóptero",
+    img: ico("camera-video.svg"), cat: "eletronico", grid: [2, 2], slots: 3, pesoKg: 1.1, usd: 12000, usos: 3,
+    notas: "Paira e voa dentro de ambientes fechados. Câmera EO/IR ao vivo. Autonomia 25 min. Requer Pilotar (Drone).",
+    desc: "<p>Quadricóptero compacto de reconhecimento interno: paira, sobe escadas e cruza portas. Transmite vídeo em tempo real ao terminal da equipe. Barulhento — não é furtivo.</p>"
+  }),
 
   // ── BREACHER ───────────────────────────────────────────────
   arma({
@@ -652,6 +679,12 @@ const EQUIPAMENTO = [
     img: ico("colete-tatico.svg"), cat: "protecao", grid: [3, 4], slots: 8, pesoKg: 11.5, usd: 3800,
     notas: "Armadura +10 contra ataques frontais enquanto empunhado. Ocupa uma mão. Penalidade de um nível em Esquiva e Furtividade.",
     desc: "<p>Escudo de mão em aramida com visor blindado e lanterna integrada de 500 lumens. Detém 9mm, .44 Magnum e fragmentos. NÃO detém rifle.</p><p><strong>Peso real:</strong> 11,5 kg. Segurar por mais de três rodadas seguidas exige teste de CON para quem tem STR abaixo de 70.</p>"
+  }),
+  equip({
+    classe: "BREACHER", name: "Granada de Atordoamento (Stun)",
+    img: ico("dinamite.svg"), cat: "explosivo", grid: [1, 1], slots: 1, pesoKg: 0.3, usd: 50, qtd: 4,
+    notas: "Arremesso. Alvos em 3 m: teste de CON ou Atordoados 1D3 rodadas. Uso padrão antes do arrombamento.",
+    desc: "<p>Granada de efeito moral de nona geração, múltiplas detonações. O BREACHER a usa para saturar o ambiente imediatamente antes de abrir a porta e entrar atrás do escudo.</p>"
   }),
   equip({
     classe: "BREACHER", name: "Hydra-Ram HR-1 (aríete hidráulico)",

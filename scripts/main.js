@@ -176,16 +176,34 @@ async function _handleSocket(data) {
 }
 
 // ─── Criador de Operador E CORP (compartilhado GM/socket) ───
+// Busca os dados direto do JSON do módulo (não depende do compendium abrir).
+let _cacheOperadores = null;
+async function carregarOperadores() {
+  if (_cacheOperadores) return _cacheOperadores;
+  const url = `modules/${MODULE_ID}/templates/atores/ecorp-operadores.json`;
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} ao carregar ${url}`);
+  _cacheOperadores = await resp.json();
+  return _cacheOperadores;
+}
+
 async function criarOperadorECorp(classe, nomeCustom, ownerId) {
-  const pack = game.packs.get(`${MODULE_ID}.ecorp-actors`);
-  if (!pack) { ui.notifications.error("Compendium de operadores E CORP não encontrado."); return null; }
+  let base;
+  try {
+    const operadores = await carregarOperadores();
+    base = operadores.find(o => o.flags?.[MODULE_ID]?.ecorp?.classe === classe);
+  } catch (e) {
+    console.error(`${MODULE_ID} | Falha ao ler operadores:`, e);
+    // Fallback: tenta o compendium se o fetch falhar
+    const pack = game.packs.get(`${MODULE_ID}.ecorp-actors`);
+    if (pack) {
+      const docs = await pack.getDocuments();
+      base = docs.find(d => d.flags?.[MODULE_ID]?.ecorp?.classe === classe)?.toObject();
+    }
+  }
+  if (!base) { ui.notifications.error(`Operador da classe ${classe} não encontrado.`); return null; }
 
-  await pack.getIndex();
-  const docs = await pack.getDocuments();
-  const doc = docs.find(d => (d.flags?.[MODULE_ID]?.ecorp?.classe) === classe);
-  if (!doc) { ui.notifications.error(`Operador da classe ${classe} não encontrado.`); return null; }
-
-  const dados = doc.toObject();
+  const dados = foundry.utils.deepClone(base);
   delete dados._id;
   if (nomeCustom) dados.name = nomeCustom;
   const owner = ownerId ?? game.user.id;
@@ -195,7 +213,6 @@ async function criarOperadorECorp(classe, nomeCustom, ownerId) {
     const ator = await Actor.create(dados);
     const nomeJogador = game.users.get(owner)?.name ?? "—";
     ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador}.`);
-    // Abre a ficha para quem pediu (o GM abre local; o dono abre via refresh próprio)
     if (owner === game.user.id) ator.sheet.render(true);
     return ator;
   } catch (e) {
@@ -237,7 +254,7 @@ Hooks.once("ready", () => {
 
 // Sobe este número sempre que o conteúdo do setup mudar (novas macros etc.).
 // Worlds antigas com setupVersion menor re-sincronizam sozinhas no ready.
-const SETUP_VERSION = 2;
+const SETUP_VERSION = 3;
 
 async function setupAutomatico() {
   const pack = game.packs.get(`${MODULE_ID}.macros`);

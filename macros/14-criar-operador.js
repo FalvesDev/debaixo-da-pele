@@ -2,132 +2,77 @@
 // MACRO 14 — Criar Operador E CORP (PROTOCOLO ÂMBAR)
 // Debaixo da Pele | Call of Cthulhu 7e + Pulp Cthulhu
 // ============================================================
-// "Criador de personagem" por classe: o jogador escolhe RECON,
-// ASSAULT, BREACHER ou SPECIALIST e recebe uma cópia da ficha
-// pronta (perícias + armas + equipamento) já com posse atribuída.
+// "Wizard" de criação: o jogador escolhe a classe e recebe a ficha
+// pronta (perícias + armas + equipamento). Não depende do compendium
+// abrir — os dados vêm do JSON do módulo via window.DebaixoDaPele.
 // ============================================================
 
-const MODULE_ID  = "debaixo-da-pele";
-const PACK_LABEL = "ÂMBAR — Operadores E CORP";
+const MODULE_ID = "debaixo-da-pele";
 
-// Metadados das classes (visual do dialog). O ator real vem do compendium.
-const CLASSES = {
-  RECON: {
-    emoji: "🎯", cor: "#4a9d7f",
-    papel: "Reconhecimento e Tiro de Precisão",
-    resumo: "Sniper de longo alcance, furtividade e observação. Enxerga o problema antes de todos — inútil em corredor.",
-    destaques: "Rifle · Furtividade · Perceber · Drones"
-  },
-  ASSAULT: {
-    emoji: "🛡️", cor: "#b5893a",
-    papel: "Assalto e Liderança de Equipe",
-    resumo: "O operador padrão e coração do grupo. Combate geral, suporte e comando. Segundo melhor em tudo, insubstituível na coesão.",
-    destaques: "Rifle · Pistola · Briga · Psicologia"
-  },
-  BREACHER: {
-    emoji: "🔨", cor: "#a44a4a",
-    papel: "Arrombamento e Contenção Física",
-    resumo: "O tanque. Abre caminho, absorve o contato inicial e protege os aliados. Lento e previsível — vulnerável ao que é rápido.",
-    destaques: "Espingarda · Briga · Intimidação · Demolições"
-  },
-  SPECIALIST: {
-    emoji: "🔬", cor: "#7a5ba6",
-    papel: "Contenção de Anomalias",
-    resumo: "A cientista. Análise, medicina e recuperação de artefatos — o motivo de a missão existir. Frágil: precisa de escolta.",
-    destaques: "Biologia · Primeiros Socorros · Computadores · Química"
-  }
-};
+const CLASSES = [
+  { id: "RECON", emoji: "🎯", cor: "#8fb9a8", papel: "RECON / SNIPER",
+    tag: "Eliminação a Longa Distância",
+    equip: "Rifle de precisão · Visão térmica/noturna · Drone · Camuflagem · Pistola silenciada",
+    resumo: "Sniper e olheiro. Enxerga o problema antes de todos. Inútil em corredor." },
+  { id: "ASSAULT", emoji: "🔫", cor: "#c9a227", papel: "ASSAULT",
+    tag: "Versátil · Linha de Frente",
+    equip: "Rifle de assalto · Lança-granadas · Granadas flash/fumaça · Drone tático · Pistola",
+    resumo: "O operador padrão e líder. Combate geral e suporte. Segundo melhor em tudo." },
+  { id: "BREACHER", emoji: "🛡️", cor: "#b05a4a", papel: "BREACHER / JUGGERNAUT",
+    tag: "Domínio de Curta Distância",
+    equip: "Shotgun automática · Marreta de arrombamento · Escudo balístico · Stun/flashbang · Armadura pesada",
+    resumo: "O tanque. Abre caminho e protege os aliados. Lento — vulnerável ao que é rápido." },
+  { id: "SPECIALIST", emoji: "🔬", cor: "#7d8fc4", papel: "SPECIALIST / TECH",
+    tag: "Análise de Anomalias · Suporte",
+    equip: "SMG compacta · Scanner de anomalias · Ferramentas de contenção · Kit de trauma · Case de recuperação",
+    resumo: "A cientista. Análise, medicina e recuperação de artefatos. Frágil: precisa de escolta." }
+];
 
-// ─────────────────────────────────────────────────────────────
-// 1. Localizar o compendium de operadores
-// ─────────────────────────────────────────────────────────────
-const pack = game.packs.find(p => p.metadata.label === PACK_LABEL)
-          ?? game.packs.find(p => p.metadata.name === "ecorp-actors");
-
-if (!pack) {
-  return ui.notifications.error(
-    `Compendium "${PACK_LABEL}" não encontrado. Verifique se o módulo Debaixo da Pele está ativo.`
-  );
-}
-
-await pack.getIndex();
-const operadores = pack.index.contents;
-
-if (!operadores.length) {
-  return ui.notifications.error("O compendium de operadores está vazio.");
-}
-
-// Casa cada entrada do compendium com sua classe (pela flag ecorp.classe).
-// Como o índice pode não trazer flags, carregamos os documentos.
-const docs = await Promise.all(operadores.map(e => pack.getDocument(e._id)));
-const porClasse = {};
-for (const doc of docs) {
-  const classe = doc.getFlag(MODULE_ID, "ecorp")?.classe
-              ?? doc.flags?.[MODULE_ID]?.ecorp?.classe;
-  if (classe) porClasse[classe] = doc;
-}
-
-// ─────────────────────────────────────────────────────────────
-// 2. Montar o dialog de seleção
-// ─────────────────────────────────────────────────────────────
-const cards = Object.entries(CLASSES).map(([classe, m]) => {
-  const doc = porClasse[classe];
-  const nomeReal = doc ? doc.name : "(não encontrado no compendium)";
-  const desativado = doc ? "" : "opacity:0.4; pointer-events:none";
-  return `
-    <label class="ecorp-card" data-classe="${classe}" style="
-        display:block; border:2px solid #333; border-left:5px solid ${m.cor};
-        border-radius:6px; padding:10px 12px; margin-bottom:8px; cursor:pointer;
-        background:#1b1b1b; ${desativado}">
-      <div style="display:flex; align-items:center; gap:10px">
-        <input type="radio" name="ecorp-classe" value="${classe}" style="margin:0">
-        <span style="font-size:1.5em">${m.emoji}</span>
-        <div style="flex:1">
-          <div style="font-weight:bold; color:${m.cor}; font-size:1.05em">${classe}
-            <span style="color:#888; font-weight:normal; font-size:0.85em">— ${m.papel}</span>
-          </div>
-          <div style="color:#ccc; font-size:0.82em; margin-top:2px">${nomeReal}</div>
-        </div>
-      </div>
-      <div style="color:#aaa; font-size:0.8em; margin-top:6px; line-height:1.35">${m.resumo}</div>
-      <div style="color:#777; font-size:0.75em; margin-top:4px">
-        <b style="color:#999">Perícias-chave:</b> ${m.destaques}
-      </div>
-    </label>`;
-}).join("");
-
-// Se o GM roda, pode escolher para qual jogador criar a ficha.
+// GM pode escolher para qual jogador criar
 const jogadores = game.users.filter(u => u.active && !u.isGM);
-const opcoesJogador = game.user.isGM && jogadores.length
-  ? `<div style="margin-top:10px">
-       <label style="color:#ccc; font-size:0.85em; display:block; margin-bottom:4px">
-         Atribuir posse a:
-       </label>
-       <select id="ecorp-owner" style="width:100%">
+const opcoesJogador = (game.user.isGM && jogadores.length)
+  ? `<div style="margin-top:12px">
+       <label style="color:#ccc; font-size:0.85em; display:block; margin-bottom:4px">Atribuir a:</label>
+       <select id="ecorp-owner" style="width:100%; padding:4px; background:#111; color:#ddd; border:1px solid #444">
          <option value="${game.user.id}">— Eu (GM) —</option>
          ${jogadores.map(u => `<option value="${u.id}">${u.name}</option>`).join("")}
        </select>
      </div>`
   : "";
 
+const cards = CLASSES.map(m => `
+  <label class="ecorp-card" style="
+      display:block; border:1px solid #2a2a2a; border-left:4px solid ${m.cor};
+      border-radius:5px; padding:10px 12px; margin-bottom:8px; cursor:pointer; background:#161616">
+    <div style="display:flex; align-items:center; gap:10px">
+      <input type="radio" name="ecorp-classe" value="${m.id}" style="margin:0">
+      <span style="font-size:1.4em">${m.emoji}</span>
+      <div style="flex:1">
+        <div style="font-weight:bold; color:${m.cor}; letter-spacing:0.05em">${m.papel}</div>
+        <div style="color:#888; font-size:0.78em">${m.tag}</div>
+      </div>
+    </div>
+    <div style="color:#aaa; font-size:0.8em; margin-top:6px; line-height:1.4">${m.resumo}</div>
+    <div style="color:#6f6f6f; font-size:0.74em; margin-top:5px"><b style="color:#888">Equipamento:</b> ${m.equip}</div>
+  </label>`).join("");
+
 new Dialog({
-  title: "⬡ PROTOCOLO ÂMBAR — Criar Operador E CORP",
+  title: "⬡ E CORP — Extermination Division · Criar Operador",
   content: `
-    <div style="min-width:460px; max-height:520px; overflow-y:auto; padding-right:4px">
-      <p style="color:#999; font-size:0.85em; margin-bottom:10px">
-        Escolha uma classe. A ficha vem <b>pronta para jogar</b>: atributos,
-        perícias, armas e equipamento já configurados.
+    <div style="min-width:480px; max-height:560px; overflow-y:auto; padding-right:4px; font-family:'Signika',sans-serif">
+      <p style="color:#999; font-size:0.85em; margin:4px 0 12px">
+        Escolha uma classe. A ficha vem <b>pronta para jogar</b> — atributos, perícias, armas e equipamento configurados.
       </p>
       ${cards}
       <div style="margin-top:10px">
         <label style="color:#ccc; font-size:0.85em; display:block; margin-bottom:4px">
-          Nome do personagem <span style="color:#777">(opcional — em branco usa o nome de origem)</span>:
+          Nome do personagem <span style="color:#777">(opcional)</span>:
         </label>
-        <input type="text" id="ecorp-nome" placeholder="Ex.: Vesper — Ingrid Halvorsen" style="width:100%">
+        <input type="text" id="ecorp-nome" placeholder="deixe em branco para usar o nome padrão"
+               style="width:100%; padding:4px; background:#111; color:#ddd; border:1px solid #444">
       </div>
       ${opcoesJogador}
-    </div>
-  `,
+    </div>`,
   buttons: {
     criar: {
       icon: '<i class="fas fa-user-plus"></i>',
@@ -136,32 +81,17 @@ new Dialog({
         const classe = html.find('input[name="ecorp-classe"]:checked').val();
         if (!classe) return ui.notifications.warn("Selecione uma classe.");
 
-        const doc = porClasse[classe];
-        if (!doc) return ui.notifications.error("Operador desta classe não encontrado no compendium.");
+        const nome = html.find("#ecorp-nome").val()?.trim() || null;
+        const ownerSel = html.find("#ecorp-owner").val() ?? game.user.id;
+        const api = window.DebaixoDaPele;
 
-        const nomeCustom = html.find("#ecorp-nome").val()?.trim() || null;
-        const ownerId = html.find("#ecorp-owner").val() ?? game.user.id;
-
-        // O GM cria direto. Jogadores (sem permissão de criar atores) pedem
-        // ao GM via socket — o handler em main.js cria e atribui a posse.
         if (game.user.isGM) {
-          const api = window.DebaixoDaPele;
-          if (api?.criarOperador) {
-            await api.criarOperador(classe, nomeCustom, ownerId);
-          } else {
-            // Fallback: cria localmente se a API do módulo não estiver disponível
-            const dados = doc.toObject();
-            delete dados._id;
-            if (nomeCustom) dados.name = nomeCustom;
-            dados.ownership = { default: 0, [ownerId]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER };
-            const ator = await Actor.create(dados);
-            ator.sheet.render(true);
-          }
+          if (!api?.criarOperador) return ui.notifications.error("Módulo Debaixo da Pele não carregado.");
+          await api.criarOperador(classe, nome, ownerSel);
         } else {
-          window.DebaixoDaPele?.emitSocket?.({
-            action: "criarOperador", classe, nome: nomeCustom, ownerId: game.user.id
-          });
-          ui.notifications.info(`⏳ Solicitação enviada ao GM. Seu operador ${classe} aparecerá em instantes.`);
+          // Jogador não cria ator direto: pede ao GM por socket.
+          api?.emitSocket?.({ action: "criarOperador", classe, nome, ownerId: game.user.id });
+          ui.notifications.info(`⏳ Solicitação enviada. Seu operador ${classe} aparecerá em instantes.`);
         }
       }
     },
@@ -169,11 +99,10 @@ new Dialog({
   },
   default: "criar",
   render: (html) => {
-    // Realce visual do card selecionado.
     html.on("change", 'input[name="ecorp-classe"]', () => {
-      html.find(".ecorp-card").css("border-color", "#333");
-      html.find('input[name="ecorp-classe"]:checked')
-          .closest(".ecorp-card").css("border-color", "#888");
+      html.find(".ecorp-card").css("border-color", "#2a2a2a");
+      html.find('input[name="ecorp-classe"]:checked').closest(".ecorp-card")
+          .css("border-color", "#aaa");
     });
   }
-}, { width: 500 }).render(true);
+}, { width: 520 }).render(true);

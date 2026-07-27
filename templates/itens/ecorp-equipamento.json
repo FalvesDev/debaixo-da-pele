@@ -282,6 +282,38 @@
     }
   },
   {
+    "name": "Manto de Camuflagem Multiespectral",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/colete-tatico.svg",
+    "system": {
+      "description": {
+        "value": "<p>Capa ghillie de malha multiespectral que quebra a silhueta e atenua a assinatura de calor. Enquanto o operador permanece imóvel em posição de tocaia, é quase indetectável — mas qualquer movimento brusco anula o efeito.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.8,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "usos": 0,
+        "categoria": "protecao",
+        "notas": "Parado e em cobertura: um nível de bônus em Furtividade e reduz assinatura térmica. Inútil em movimento rápido.",
+        "preco": 11375,
+        "precoUSD": 6500,
+        "ecorp": {
+          "classe": "RECON"
+        }
+      }
+    }
+  },
+  {
     "name": "HK416 D10RS 5.56mm",
     "type": "weapon",
     "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
@@ -468,6 +500,147 @@
     }
   },
   {
+    "name": "Lança-granadas M320 40mm",
+    "type": "weapon",
+    "img": "modules/debaixo-da-pele/assets/icons/arma-m4.svg",
+    "system": {
+      "description": {
+        "value": "<p>Lançador de granadas 40mm, acoplável sob o rifle ou operado como arma independente. Munição HE para área ou fumígena para cobertura.</p><p><strong>Desvantagem:</strong> tiro único, recarga lenta. Perigoso em curta distância (o próprio raio de explosão alcança quem atira).</p>",
+        "chat": "",
+        "special": "",
+        "keeper": ""
+      },
+      "skill": {
+        "main": {
+          "name": "Firearms (Heavy Weapons)",
+          "id": ""
+        },
+        "alternativ": {
+          "name": "",
+          "id": ""
+        }
+      },
+      "range": {
+        "normal": {
+          "value": 50,
+          "units": "",
+          "damage": "3D6"
+        },
+        "long": {
+          "value": 100,
+          "units": "",
+          "damage": "3D6"
+        },
+        "extreme": {
+          "value": 150,
+          "units": "",
+          "damage": "3D6"
+        }
+      },
+      "wpnType": "ranged",
+      "usesPerRound": {
+        "value": 1,
+        "max": 1,
+        "period": ""
+      },
+      "bullets": {
+        "value": 1,
+        "max": 1
+      },
+      "blastRadius": "2",
+      "malfunction": 98,
+      "properties": {
+        "improv": false
+      },
+      "price": {
+        "value": 0,
+        "level": ""
+      },
+      "quantity": 1,
+      "weight": 1.5
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 4,
+        "categoria": "arma",
+        "caliber": "40×46mm",
+        "notas": "Raio de explosão 2 m. Recarga cartucho a cartucho (1 ação). Munição HE ou fumígena.",
+        "preco": 5600,
+        "precoUSD": 3200,
+        "ecorp": {
+          "classe": "ASSAULT",
+          "acessorios": "Módulo acoplável ao HK416 ou uso autônomo · mira quadrante · 6 granadas 40mm"
+        }
+      }
+    }
+  },
+  {
+    "name": "Granada de Fumaça AN-M8",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/dinamite.svg",
+    "system": {
+      "description": {
+        "value": "<p>Granada fumígena para quebra de contato e cobertura de avanço. A fumaça densa impede mira à distância, mas não engana sensores térmicos.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 4,
+      "weight": 0.3,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 0,
+        "categoria": "explosivo",
+        "notas": "Cortina de fumaça em 3 m por 1D3+2 rodadas. Bloqueia linha de visão (não a térmica).",
+        "preco": 44,
+        "precoUSD": 25,
+        "ecorp": {
+          "classe": "ASSAULT"
+        }
+      }
+    }
+  },
+  {
+    "name": "Drone Tático Quadricóptero",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/camera-video.svg",
+    "system": {
+      "description": {
+        "value": "<p>Quadricóptero compacto de reconhecimento interno: paira, sobe escadas e cruza portas. Transmite vídeo em tempo real ao terminal da equipe. Barulhento — não é furtivo.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 1,
+      "weight": 1.1,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 2,
+        "gridH": 2,
+        "slots": 3,
+        "usos": 3,
+        "categoria": "eletronico",
+        "notas": "Paira e voa dentro de ambientes fechados. Câmera EO/IR ao vivo. Autonomia 25 min. Requer Pilotar (Drone).",
+        "preco": 21000,
+        "precoUSD": 12000,
+        "ecorp": {
+          "classe": "ASSAULT"
+        }
+      }
+    }
+  },
+  {
     "name": "Benelli M4 Super 90 Cal.12",
     "type": "weapon",
     "img": "modules/debaixo-da-pele/assets/icons/arma-espingarda-curta.svg",
@@ -570,6 +743,38 @@
         "notas": "Armadura +10 contra ataques frontais enquanto empunhado. Ocupa uma mão. Penalidade de um nível em Esquiva e Furtividade.",
         "preco": 6650,
         "precoUSD": 3800,
+        "ecorp": {
+          "classe": "BREACHER"
+        }
+      }
+    }
+  },
+  {
+    "name": "Granada de Atordoamento (Stun)",
+    "type": "item",
+    "img": "modules/debaixo-da-pele/assets/icons/dinamite.svg",
+    "system": {
+      "description": {
+        "value": "<p>Granada de efeito moral de nona geração, múltiplas detonações. O BREACHER a usa para saturar o ambiente imediatamente antes de abrir a porta e entrar atrás do escudo.</p>",
+        "chat": "",
+        "keeper": ""
+      },
+      "quantity": 4,
+      "weight": 0.3,
+      "price": 0,
+      "notes": "",
+      "attributes": {}
+    },
+    "flags": {
+      "debaixo-da-pele": {
+        "gridW": 1,
+        "gridH": 1,
+        "slots": 1,
+        "usos": 0,
+        "categoria": "explosivo",
+        "notas": "Arremesso. Alvos em 3 m: teste de CON ou Atordoados 1D3 rodadas. Uso padrão antes do arrombamento.",
+        "preco": 88,
+        "precoUSD": 50,
         "ecorp": {
           "classe": "BREACHER"
         }
