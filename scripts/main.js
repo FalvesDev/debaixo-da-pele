@@ -14,6 +14,7 @@ import "./player-hud.js";
 import "./roll-request.js";
 import { handleTransferSocket } from "./item-transfer.js";
 import { DDPVehicleSheet } from "./vehicle-sheet.js";
+import "./ecorp-creator.js";
 
 const MODULE_ID = "debaixo-da-pele";
 const VERSION   = "1.8.0";
