@@ -65,7 +65,7 @@ const PERICIAS = {
   "Ciência (Química)":              { base: 1,  en: "Science (Chemistry)", sk: "Chemistry", sp: "Science", cocid: null,                     props: { push: true } },
   "Ciência (Física)":               { base: 1,  en: "Science (Physics)",   sk: "Physics",   sp: "Science", cocid: null,                     props: { push: true } },
   "Ocultismo":                      { base: 5,  en: "Occult",              sk: "Occult",              sp: "", cocid: "occult",               props: { push: true } },
-  "Sobrevivência (Urbana)":         { base: 10, en: "Survival (Urban)",    sk: "Urban",     sp: "Survival", cocid: null,                     props: { push: true } },
+  "Sobrevivência (Urbana)":         { base: 10, en: "Survival (Any)",     sk: "Any",       sp: "Survival", cocid: null,                     props: { push: true } },
   "Escalar":                        { base: 20, en: "Climb",               sk: "Climb",               sp: "", cocid: "climb",                props: { push: true } },
   "Saltar":                         { base: 20, en: "Jump",                sk: "Jump",                sp: "", cocid: "jump",                 props: { push: true } },
   "Nadar":                          { base: 20, en: "Swim",                sk: "Swim",                sp: "", cocid: "swim",                 props: { push: true } },
@@ -77,7 +77,7 @@ const PERICIAS = {
   "Chaveiro":                       { base: 1,  en: "Locksmith",           sk: "Locksmith",           sp: "", cocid: "locksmith",            props: { push: true } },
   "Disfarce":                       { base: 5,  en: "Disguise",            sk: "Disguise",            sp: "", cocid: "disguise",             props: { push: true } },
   "Dirigir Automóvel":              { base: 20, en: "Drive Auto",          sk: "Drive Auto",          sp: "", cocid: "drive-auto",           props: { push: true } },
-  "Pilotar (Drone)":                { base: 1,  en: "Pilot (Drone)",       sk: "Drone",     sp: "Pilot",    cocid: null,                     props: { push: true } },
+  "Pilotar (Drone)":                { base: 1,  en: "Pilot (Any)",        sk: "Any",       sp: "Pilot",    cocid: null,                     props: { push: true } },
   "Demolições":                     { base: 1,  en: "Demolitions",         sk: "Demolitions",         sp: "", cocid: null,                   props: { push: true } },
   "Operar Maquinário Pesado":       { base: 1,  en: "Operate Heavy Machinery", sk: "Operate Heavy Machinery", sp: "", cocid: "operate-heavy-machinery", props: { push: true } },
   "Usar Bibliotecas":               { base: 20, en: "Library Use",         sk: "Library Use",         sp: "", cocid: "library-use",          props: { push: true } },
@@ -151,16 +151,18 @@ function extraSkill(tplName, o) {
 // Perícias usadas pelos operadores que não existem no ator real molde.
 // (FIRE já definido no catálogo PERICIAS acima)
 const PUSH  = { push: true };
+// cocids REAIS extraídos do compendium oficial do CoC7 (en-skills.yaml).
+// Com o id correto o sistema reconhece a perícia e não pede base/especialização.
 const SKILL_EXTRAS = {
   "Firearms (Submachine Gun)": extraSkill("Firearms (Handgun)", { name: "Firearms (Submachine Gun)", skillName: "Submachine Gun", spec: "Firearms", base: 15, cocid: "firearms-submachine-gun", props: FIRE }),
-  "Firearms (Heavy Weapons)":  extraSkill("Firearms (Handgun)", { name: "Firearms (Heavy Weapons)",  skillName: "Heavy Weapons",  spec: "Firearms", base: 10, cocid: null, props: FIRE }),
-  "Science (Biology)":         extraSkill("Accounting", { name: "Science (Biology)",   skillName: "Biology",   spec: "Science", base: 1, cocid: "science", props: PUSH }),
-  "Science (Chemistry)":       extraSkill("Accounting", { name: "Science (Chemistry)", skillName: "Chemistry", spec: "Science", base: 1, cocid: "science", props: PUSH }),
-  "Science (Physics)":         extraSkill("Accounting", { name: "Science (Physics)",   skillName: "Physics",   spec: "Science", base: 1, cocid: "science", props: PUSH }),
-  "Survival (Urban)":          extraSkill("Accounting", { name: "Survival (Urban)",    skillName: "Urban",     spec: "Survival", base: 10, cocid: "survival", props: PUSH }),
-  "Pilot (Drone)":             extraSkill("Accounting", { name: "Pilot (Drone)",       skillName: "Drone",     spec: "Pilot", base: 1, cocid: "pilot", props: PUSH }),
+  "Firearms (Heavy Weapons)":  extraSkill("Firearms (Handgun)", { name: "Firearms (Heavy Weapons)",  skillName: "Heavy Weapons",  spec: "Firearms", base: 10, cocid: "firearms-heavy-weapons", props: FIRE }),
+  "Science (Biology)":         extraSkill("Accounting", { name: "Science (Biology)",   skillName: "Biology",   spec: "Science", base: 1, cocid: "science-biology",   props: PUSH }),
+  "Science (Chemistry)":       extraSkill("Accounting", { name: "Science (Chemistry)", skillName: "Chemistry", spec: "Science", base: 1, cocid: "science-chemistry", props: PUSH }),
+  "Science (Physics)":         extraSkill("Accounting", { name: "Science (Physics)",   skillName: "Physics",   spec: "Science", base: 1, cocid: "science-physics",   props: PUSH }),
+  "Survival (Any)":            extraSkill("Accounting", { name: "Survival (Any)",      skillName: "Any",       spec: "Survival", base: 10, cocid: "survival-any", props: PUSH }),
+  "Pilot (Any)":               extraSkill("Accounting", { name: "Pilot (Any)",         skillName: "Any",       spec: "Pilot", base: 1, cocid: "pilot-any", props: PUSH }),
   "Demolitions":               extraSkill("Accounting", { name: "Demolitions",         skillName: "Demolitions", spec: "", base: 1, cocid: "demolitions", props: PUSH }),
-  "Language (English)":        extraSkill("Language (Portugues)", { name: "Language (English)", skillName: "English", spec: "Language", base: 1, cocid: "language-other", props: PUSH })
+  "Language (English)":        extraSkill("Language (Portugues)", { name: "Language (English)", skillName: "English", spec: "Language", base: 1, cocid: "language-english", props: PUSH })
 };
 
 // LISTA MESTRE: TODAS as perícias que cada operador terá na ficha —

@@ -3509,7 +3509,25 @@
           },
           "flags": {}
         },
-        "flags": {},
+        "flags": {
+          "CoC7": {
+            "cocidFlag": {
+              "id": "i.skill.firearms-heavy-weapons",
+              "lang": "en",
+              "priority": 5,
+              "eras": {
+                "standard": true,
+                "gasLight": true,
+                "gasLightPulp": true,
+                "downDarkerTrails": true,
+                "downDarkerTrailsPulp": true,
+                "modernPulp": true,
+                "modern": true,
+                "pulp": true
+              }
+            }
+          }
+        },
         "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/john-colburn/pistol-gun.svg",
         "effects": [],
         "_stats": {
@@ -3560,7 +3578,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-biology",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -3627,7 +3645,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-chemistry",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -3694,7 +3712,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-physics",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -3730,10 +3748,10 @@
         }
       },
       {
-        "name": "Survival (Urban)",
+        "name": "Survival (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Urban",
+          "skillName": "Any",
           "specialization": "Survival",
           "description": {
             "value": "",
@@ -3761,7 +3779,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.survival",
+              "id": "i.skill.survival-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -3797,10 +3815,10 @@
         }
       },
       {
-        "name": "Pilot (Drone)",
+        "name": "Pilot (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Drone",
+          "skillName": "Any",
           "specialization": "Pilot",
           "description": {
             "value": "",
@@ -3828,7 +3846,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.pilot",
+              "id": "i.skill.pilot-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -3962,7 +3980,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.language-other",
+              "id": "i.skill.language-english",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8417,7 +8435,25 @@
           },
           "flags": {}
         },
-        "flags": {},
+        "flags": {
+          "CoC7": {
+            "cocidFlag": {
+              "id": "i.skill.firearms-heavy-weapons",
+              "lang": "en",
+              "priority": 5,
+              "eras": {
+                "standard": true,
+                "gasLight": true,
+                "gasLightPulp": true,
+                "downDarkerTrails": true,
+                "downDarkerTrailsPulp": true,
+                "modernPulp": true,
+                "modern": true,
+                "pulp": true
+              }
+            }
+          }
+        },
         "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/john-colburn/pistol-gun.svg",
         "effects": [],
         "_stats": {
@@ -8468,7 +8504,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-biology",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8535,7 +8571,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-chemistry",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8602,7 +8638,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-physics",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8638,10 +8674,10 @@
         }
       },
       {
-        "name": "Survival (Urban)",
+        "name": "Survival (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Urban",
+          "skillName": "Any",
           "specialization": "Survival",
           "description": {
             "value": "",
@@ -8669,7 +8705,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.survival",
+              "id": "i.skill.survival-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8705,10 +8741,10 @@
         }
       },
       {
-        "name": "Pilot (Drone)",
+        "name": "Pilot (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Drone",
+          "skillName": "Any",
           "specialization": "Pilot",
           "description": {
             "value": "",
@@ -8736,7 +8772,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.pilot",
+              "id": "i.skill.pilot-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -8870,7 +8906,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.language-other",
+              "id": "i.skill.language-english",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13338,7 +13374,25 @@
           },
           "flags": {}
         },
-        "flags": {},
+        "flags": {
+          "CoC7": {
+            "cocidFlag": {
+              "id": "i.skill.firearms-heavy-weapons",
+              "lang": "en",
+              "priority": 5,
+              "eras": {
+                "standard": true,
+                "gasLight": true,
+                "gasLightPulp": true,
+                "downDarkerTrails": true,
+                "downDarkerTrailsPulp": true,
+                "modernPulp": true,
+                "modern": true,
+                "pulp": true
+              }
+            }
+          }
+        },
         "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/john-colburn/pistol-gun.svg",
         "effects": [],
         "_stats": {
@@ -13389,7 +13443,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-biology",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13456,7 +13510,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-chemistry",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13523,7 +13577,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-physics",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13559,10 +13613,10 @@
         }
       },
       {
-        "name": "Survival (Urban)",
+        "name": "Survival (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Urban",
+          "skillName": "Any",
           "specialization": "Survival",
           "description": {
             "value": "",
@@ -13590,7 +13644,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.survival",
+              "id": "i.skill.survival-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13626,10 +13680,10 @@
         }
       },
       {
-        "name": "Pilot (Drone)",
+        "name": "Pilot (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Drone",
+          "skillName": "Any",
           "specialization": "Pilot",
           "description": {
             "value": "",
@@ -13657,7 +13711,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.pilot",
+              "id": "i.skill.pilot-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -13791,7 +13845,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.language-other",
+              "id": "i.skill.language-english",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18295,7 +18349,25 @@
           },
           "flags": {}
         },
-        "flags": {},
+        "flags": {
+          "CoC7": {
+            "cocidFlag": {
+              "id": "i.skill.firearms-heavy-weapons",
+              "lang": "en",
+              "priority": 5,
+              "eras": {
+                "standard": true,
+                "gasLight": true,
+                "gasLightPulp": true,
+                "downDarkerTrails": true,
+                "downDarkerTrailsPulp": true,
+                "modernPulp": true,
+                "modern": true,
+                "pulp": true
+              }
+            }
+          }
+        },
         "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/john-colburn/pistol-gun.svg",
         "effects": [],
         "_stats": {
@@ -18346,7 +18418,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-biology",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18413,7 +18485,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-chemistry",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18480,7 +18552,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.science",
+              "id": "i.skill.science-physics",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18516,10 +18588,10 @@
         }
       },
       {
-        "name": "Survival (Urban)",
+        "name": "Survival (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Urban",
+          "skillName": "Any",
           "specialization": "Survival",
           "description": {
             "value": "",
@@ -18547,7 +18619,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.survival",
+              "id": "i.skill.survival-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18583,10 +18655,10 @@
         }
       },
       {
-        "name": "Pilot (Drone)",
+        "name": "Pilot (Any)",
         "type": "skill",
         "system": {
-          "skillName": "Drone",
+          "skillName": "Any",
           "specialization": "Pilot",
           "description": {
             "value": "",
@@ -18614,7 +18686,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.pilot",
+              "id": "i.skill.pilot-any",
               "lang": "en",
               "priority": 5,
               "eras": {
@@ -18748,7 +18820,7 @@
         "flags": {
           "CoC7": {
             "cocidFlag": {
-              "id": "i.skill.language-other",
+              "id": "i.skill.language-english",
               "lang": "en",
               "priority": 5,
               "eras": {
