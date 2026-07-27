@@ -1505,8 +1505,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -1578,8 +1577,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -1649,8 +1647,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -1717,8 +1714,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -2065,11 +2061,7 @@
           "value": null,
           "attributes": {},
           "properties": {
-            "push": true,
-            "requiresname": true,
-            "keepbasevalue": true,
-            "onlyone": true,
-            "special": true
+            "push": true
           },
           "flags": {}
         },
@@ -3446,8 +3438,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -3514,8 +3505,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -6391,8 +6381,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -6464,8 +6453,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -6535,8 +6523,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -6603,8 +6590,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -6951,11 +6937,7 @@
           "value": null,
           "attributes": {},
           "properties": {
-            "push": true,
-            "requiresname": true,
-            "keepbasevalue": true,
-            "onlyone": true,
-            "special": true
+            "push": true
           },
           "flags": {}
         },
@@ -8332,8 +8314,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -8400,8 +8381,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -11290,8 +11270,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -11363,8 +11342,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -11434,8 +11412,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -11502,8 +11479,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -11850,11 +11826,7 @@
           "value": null,
           "attributes": {},
           "properties": {
-            "push": true,
-            "requiresname": true,
-            "keepbasevalue": true,
-            "onlyone": true,
-            "special": true
+            "push": true
           },
           "flags": {}
         },
@@ -13231,8 +13203,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -13299,8 +13270,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -16225,8 +16195,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -16298,8 +16267,7 @@
           "attributes": {},
           "properties": {
             "fighting": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -16369,8 +16337,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -16437,8 +16404,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -16785,11 +16751,7 @@
           "value": null,
           "attributes": {},
           "properties": {
-            "push": true,
-            "requiresname": true,
-            "keepbasevalue": true,
-            "onlyone": true,
-            "special": true
+            "push": true
           },
           "flags": {}
         },
@@ -18166,8 +18128,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },
@@ -18234,8 +18195,7 @@
           "attributes": {},
           "properties": {
             "firearm": true,
-            "combat": true,
-            "special": true
+            "combat": true
           },
           "flags": {}
         },

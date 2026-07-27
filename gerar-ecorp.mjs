@@ -168,6 +168,11 @@ const SKILL_EXTRAS = {
 const MESTRE = [...Object.keys(CESAR_SKILLS)];
 for (const en of Object.keys(SKILL_EXTRAS)) if (!MESTRE.includes(en)) MESTRE.push(en);
 
+// Properties que fazem o CoC7 abrir um diálogo ao criar a perícia via
+// createEmbeddedDocuments ("Select base value" / "Select/create specialization").
+// Removê-las deixa a perícia entrar direto, com o valor já setado.
+const PROPS_INTERATIVAS = ["special", "requiresname", "picknameonly", "onlyone", "keepbasevalue"];
+
 // Cria a perícia final para um operador: base do molde (Dodge = DES/2),
 // valor treinado aplicado em personal (não treinada fica no base).
 function mkSkill(en, valor, chars) {
@@ -176,6 +181,10 @@ function mkSkill(en, valor, chars) {
   if (en === "Dodge") src.system.base = String(Math.floor(chars.dex / 2));
   const base = Number(src.system.base);
   if (valor != null && valor > base) src.system.adjustments.personal = valor - base;
+  // Remove as properties que disparam popups; mantém o resto (firearm, fighting, push…)
+  const p = { ...(src.system.properties ?? {}) };
+  for (const k of PROPS_INTERATIVAS) delete p[k];
+  src.system.properties = p;
   return src;
 }
 
