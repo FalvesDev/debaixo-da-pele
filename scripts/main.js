@@ -205,15 +205,30 @@ async function criarOperadorECorp(classe, nomeCustom, ownerId) {
   if (!base) { ui.notifications.error(`Operador da classe ${classe} não encontrado.`); return null; }
 
   const dados = foundry.utils.deepClone(base);
+  const owner = ownerId ?? game.user.id;
+
+  // Separa os items do documento do ator — o CoC7 espera que perícias/armas
+  // sejam adicionadas DEPOIS, via createEmbeddedDocuments (dispara os hooks
+  // create-item do sistema, que processam as skills corretamente).
+  const items = (dados.items ?? []).map(i => {
+    const it = foundry.utils.deepClone(i);
+    delete it._id;   // deixa o Foundry gerar IDs novos
+    return it;
+  });
+  delete dados.items;
   delete dados._id;
   if (nomeCustom) dados.name = nomeCustom;
-  const owner = ownerId ?? game.user.id;
   dados.ownership = { default: 0, [owner]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER };
 
   try {
+    // 1) Cria o ator SEM items (método oficial do CoC7 actor-importer)
     const ator = await Actor.create(dados);
+    // 2) Adiciona perícias, armas e equipamento como embedded documents
+    if (items.length) {
+      await ator.createEmbeddedDocuments("Item", items, { renderSheet: false });
+    }
     const nomeJogador = game.users.get(owner)?.name ?? "—";
-    ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador}.`);
+    ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador} (${items.length} itens).`);
     if (owner === game.user.id) ator.sheet.render(true);
     return ator;
   } catch (e) {

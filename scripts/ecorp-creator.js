@@ -100,23 +100,27 @@ export function abrirCriadorOperador() {
   }, { width: 520 }).render(true);
 }
 
-// ─── Botão fixo no cabeçalho da aba de Atores ───────────────
-Hooks.on("renderActorDirectory", (app, html) => {
-  // html pode ser jQuery (v11/v12) — normaliza para elemento nativo
-  const root = html[0] ?? html;
-  if (!root || root.querySelector?.(".ecorp-create-btn")) return;
+// ─── Botão fixo na aba de Atores (mesmo lugar do Investigator Wizard) ───
+// Em v11/v12 o 2º arg é jQuery; em v13 é HTMLElement. Tratamos ambos.
+Hooks.on("renderActorDirectory", (app, htmlOrEl) => {
+  const root = htmlOrEl?.[0] ?? htmlOrEl;
+  if (!root?.querySelector || root.querySelector(".ecorp-create-btn")) return;
 
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "ecorp-create-btn";
-  btn.style.cssText = "flex:0 0 auto; width:100%; margin:4px 0; padding:6px; background:#1e1e1e; color:#ddd; border:1px solid #444; border-radius:4px; cursor:pointer; font-weight:bold";
+  btn.style.cssText = "width:100%; margin-top:4px; padding:6px; font-weight:bold";
   btn.innerHTML = '<i class="fas fa-user-plus"></i> Criar Operador E CORP';
   btn.addEventListener("click", () => abrirCriadorOperador());
 
-  // Insere logo abaixo do cabeçalho (funciona em v11 e v12)
-  const header = root.querySelector(".directory-header") ?? root.querySelector(".header-actions");
-  if (header) header.after ? header.after(btn) : header.appendChild(btn);
-  else root.prepend?.(btn);
+  // O CoC7 coloca seus botões (Wizard / Import) no footer.directory-footer
+  const footer = root.querySelector("footer.directory-footer")
+              ?? root.querySelector(".directory-footer");
+  if (footer) footer.append(btn);
+  else {
+    const header = root.querySelector(".directory-header");
+    if (header?.after) header.after(btn); else root.prepend?.(btn);
+  }
 });
 
 // Expõe no namespace do módulo para uso por macro/console
