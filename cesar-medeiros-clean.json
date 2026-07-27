@@ -1,0 +1,4261 @@
+{
+  "type": "character",
+  "name": "Cesar Medeiros Nascimento",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "characteristics": {
+      "str": {
+        "value": 80,
+        "tempValue": null,
+        "short": "CHARAC.STR",
+        "label": "CHARAC.Strength",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "con": {
+        "value": 60,
+        "tempValue": null,
+        "short": "CHARAC.CON",
+        "label": "CHARAC.Constitution",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "siz": {
+        "value": 40,
+        "tempValue": null,
+        "short": "CHARAC.SIZ",
+        "label": "CHARAC.Size",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "dex": {
+        "value": 50,
+        "tempValue": null,
+        "short": "CHARAC.DEX",
+        "label": "CHARAC.Dexterity",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "app": {
+        "value": 20,
+        "tempValue": null,
+        "short": "CHARAC.APP",
+        "label": "CHARAC.Appearance",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "int": {
+        "value": 80,
+        "tempValue": null,
+        "short": "CHARAC.INT",
+        "label": "CHARAC.Intelligence",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "pow": {
+        "value": 50,
+        "tempValue": null,
+        "short": "CHARAC.POW",
+        "label": "CHARAC.Power",
+        "formula": null,
+        "bonusDice": 0
+      },
+      "edu": {
+        "value": 80,
+        "tempValue": null,
+        "short": "CHARAC.EDU",
+        "label": "CHARAC.Education",
+        "formula": null,
+        "bonusDice": 0
+      }
+    },
+    "attribs": {
+      "hp": {
+        "value": 20,
+        "max": 20,
+        "short": "HP",
+        "label": "Hit points",
+        "auto": true
+      },
+      "mp": {
+        "value": 10,
+        "max": 10,
+        "short": "HP",
+        "label": "Magic points",
+        "auto": true
+      },
+      "lck": {
+        "value": 84,
+        "short": "LCK",
+        "label": "Luck",
+        "max": 99,
+        "bonusDice": 0
+      },
+      "san": {
+        "value": 47,
+        "max": 99,
+        "short": "SAN",
+        "label": "Sanity",
+        "auto": true,
+        "dailyLoss": 3,
+        "oneFifthSanity": " / 0",
+        "bonusDice": 0,
+        "dailyLimit": 10
+      },
+      "mov": {
+        "value": null,
+        "max": null,
+        "short": "MOV",
+        "label": "Movement rate",
+        "auto": true,
+        "type": "walk"
+      },
+      "db": {
+        "value": null,
+        "short": "DB",
+        "label": "Damage bonus",
+        "auto": true
+      },
+      "build": {
+        "current": null,
+        "value": null,
+        "short": "BLD",
+        "label": "Build",
+        "auto": true
+      },
+      "armor": {
+        "value": "",
+        "localized": false,
+        "locations": [],
+        "auto": false
+      }
+    },
+    "conditions": {
+      "criticalWounds": {
+        "value": false
+      },
+      "unconscious": {
+        "value": false
+      },
+      "dying": {
+        "value": false
+      },
+      "dead": {
+        "value": false
+      },
+      "prone": {
+        "value": false
+      },
+      "tempoInsane": {
+        "value": false
+      },
+      "indefInsane": {
+        "value": false
+      }
+    },
+    "infos": {
+      "occupation": "",
+      "age": "27",
+      "sex": "",
+      "residence": "Cascavel",
+      "birthplace": "20/10/1983",
+      "archetype": "",
+      "organization": "",
+      "playername": ""
+    },
+    "flags": {
+      "locked": true,
+      "manualCredit": false
+    },
+    "monetary": {
+      "format": "decimalLeft",
+      "symbol": "$",
+      "values": [
+        {
+          "name": "Penniless",
+          "min": null,
+          "max": 0,
+          "cashType": "value",
+          "cashValue": 10,
+          "assetsType": "value",
+          "assetsValue": 0,
+          "spendingType": "value",
+          "spendingValue": 10
+        },
+        {
+          "name": "Poor",
+          "min": 1,
+          "max": 9,
+          "cashType": "multiplier",
+          "cashValue": 20,
+          "assetsType": "multiplier",
+          "assetsValue": 200,
+          "spendingType": "value",
+          "spendingValue": 40
+        },
+        {
+          "name": "Average",
+          "min": 10,
+          "max": 49,
+          "cashType": "multiplier",
+          "cashValue": 40,
+          "assetsType": "multiplier",
+          "assetsValue": 1000,
+          "spendingType": "value",
+          "spendingValue": 200
+        },
+        {
+          "name": "Wealthy",
+          "min": 50,
+          "max": 89,
+          "cashType": "multiplier",
+          "cashValue": 100,
+          "assetsType": "multiplier",
+          "assetsValue": 10000,
+          "spendingType": "value",
+          "spendingValue": 1000
+        },
+        {
+          "name": "Rich",
+          "min": 90,
+          "max": 98,
+          "cashType": "multiplier",
+          "cashValue": 400,
+          "assetsType": "multiplier",
+          "assetsValue": 40000,
+          "spendingType": "value",
+          "spendingValue": 5000
+        },
+        {
+          "name": "Super Rich",
+          "min": 99,
+          "max": null,
+          "cashType": "value",
+          "cashValue": 1000000,
+          "assetsType": "value",
+          "assetsValue": 100000000,
+          "spendingType": "value",
+          "spendingValue": 100000
+        }
+      ],
+      "spent": "",
+      "assetsDetails": "",
+      "spendingLevel": "",
+      "cash": "",
+      "assets": ""
+    },
+    "development": {
+      "personal": 160,
+      "occupation": 320,
+      "archetype": 100,
+      "experiencePackage": null
+    },
+    "biography": [
+      {
+        "title": "Personal Description",
+        "value": ""
+      },
+      {
+        "title": "Ideology and Beliefs",
+        "value": ""
+      },
+      {
+        "title": "Significant People",
+        "value": ""
+      },
+      {
+        "title": "Meaningful Locations",
+        "value": ""
+      },
+      {
+        "title": "Treasured Possessions",
+        "value": ""
+      },
+      {
+        "title": "Traits",
+        "value": "<p>Sensação de déjà vu constante</p>"
+      },
+      {
+        "title": "Injuries and Scars",
+        "value": ""
+      }
+    ],
+    "sanityLossEvents": [],
+    "backstory": "",
+    "indefiniteInsanityLevel": {
+      "value": 0,
+      "max": 0
+    },
+    "description": {
+      "keeper": ""
+    },
+    "notes": "",
+    "adjustments": {
+      "personal": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        50,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        50,
+        60,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "experience": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        9,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "archetype": [
+        null,
+        50,
+        20,
+        null,
+        30,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "occupation": [
+        40,
+        10,
+        50,
+        30,
+        50,
+        20,
+        20,
+        60,
+        40
+      ]
+    }
+  },
+  "prototypeToken": {
+    "name": "Cesar Medeiros Nascimento",
+    "actorLink": true,
+    "texture": {
+      "src": "tokenizer/pc-images/cesar_medeiros_nascimento.Token.webp?1774304257230",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "disposition": 1,
+    "sight": {
+      "enabled": true,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "displayName": 0,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "attribs.hp"
+    },
+    "bar2": {
+      "attribute": "attribs.san"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {},
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Accounting",
+      "type": "skill",
+      "system": {
+        "skillName": "Accounting",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 57</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 98</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.accounting",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "XRooGHAVh9N9oIwX",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/money-stack.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547360,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Anthropology",
+      "type": "skill",
+      "system": {
+        "skillName": "Anthropology",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 57</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 99</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 89</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.anthropology",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "b5IhDRIlxGSa8nPC",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/human-pyramid.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547463,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Appraise",
+      "type": "skill",
+      "system": {
+        "skillName": "Appraise",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 57</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 99</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 89</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 74</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.appraise",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "cr5riy2HNNI06glC",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/glass-ball.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547520,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Archaeology",
+      "type": "skill",
+      "system": {
+        "skillName": "Archaeology",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 58</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 100</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 89</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.archaeology",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "gNxx9Mh6W8jQwDwC",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/great-pyramid.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547572,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Charm",
+      "type": "skill",
+      "system": {
+        "skillName": "Charm",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 59</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 101</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 75</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "15",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.charm",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "E4DeXPYZ0ATMI3wi",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/charm.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547628,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Climb",
+      "type": "skill",
+      "system": {
+        "skillName": "Climb",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 59</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 102</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 75</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 40,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.climb",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "ms1JeqD7b8zoUGw1",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/mountain-road.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547681,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Computer Use",
+      "type": "skill",
+      "system": {
+        "skillName": "Computer Use",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 60</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 102</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.computer-use",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "modernPulp": true,
+              "modern": true
+            }
+          }
+        }
+      },
+      "_id": "vSMxUdVKkRuJevyh",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lord-berandas/computing.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547735,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Credit Rating",
+      "type": "skill",
+      "system": {
+        "skillName": "Credit Rating",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 61</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 103</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Regency Cthulhu\" page 33</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "0",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 10,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true,
+          "noxpgain": true
+        },
+        "flags": {
+          "occupation": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.credit-rating",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "evXlMsByI3i8bQTV",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/credits-currency.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547794,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Cthulhu Mythos",
+      "type": "skill",
+      "system": {
+        "skillName": "Cthulhu Mythos",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 61</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 103</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 75</p><p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 36</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "0",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "noxpgain": true,
+          "noadjustments": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.cthulhu-mythos",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "0Bj643rDD9sWVppe",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/fish-monster.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547860,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Disguise",
+      "type": "skill",
+      "system": {
+        "skillName": "Disguise",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 62</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 104</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.disguise",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "ppRNjZ1ynIjv8ceT",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/domino-mask.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547913,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Dodge",
+      "type": "skill",
+      "system": {
+        "skillName": "Dodge",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 63</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 104</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 75</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": 25,
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": 50,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {},
+        "flags": {
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.dodge",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "ADYMEXJ3kdOq1bmZ",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/dodging.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707547974,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Drive Auto",
+      "type": "skill",
+      "system": {
+        "skillName": "Drive Auto",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 63</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 105</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 50,
+          "archetype": 20,
+          "experiencePackage": null,
+          "experience": 9
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true,
+          "archetype": true,
+          "developement": false
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.drive-auto",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "XSfHibwhLIktt2kc",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/skoll/race-car.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1776131286749,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Electrical Repair",
+      "type": "skill",
+      "system": {
+        "skillName": "Electrical Repair",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 63</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 105</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": 50,
+          "occupation": 30,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true,
+          "archetype": true,
+          "developement": false
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.electrical-repair",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "IF2Fote0S3mxu2ZD",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/electrical-resistance.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1776131286808,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Electronics",
+      "type": "skill",
+      "system": {
+        "skillName": "Electronics",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 63</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 105</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 50,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.electronics",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "modernPulp": true,
+              "modern": true
+            }
+          }
+        }
+      },
+      "_id": "YIHfHk1La52Jayf4",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/musical-keyboard.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548149,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Fast Talk",
+      "type": "skill",
+      "system": {
+        "skillName": "Fast Talk",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 64</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 106</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 76</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.fast-talk",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "TsFpkjeYw9SGVeeD",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/back-forth.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548205,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Fighting (Brawl)",
+      "type": "skill",
+      "system": {
+        "skillName": "Brawl",
+        "specialization": "Fighting",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 64</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 106</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 90</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 76</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "25",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": 30,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "fighting": true,
+          "combat": true,
+          "special": true
+        },
+        "flags": {
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.fighting-brawl",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "PiWSYdo9FKqDTzT4",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/mailed-fist.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548268,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Fighting (Throw)",
+      "type": "skill",
+      "system": {
+        "skillName": "Throw",
+        "specialization": "Fighting",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 77</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 119</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 96</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "fighting": true,
+          "combat": true,
+          "special": true
+        },
+        "flags": {
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.fighting-throw",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "BeZ0gA3xFOjVJMxA",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/throwing-ball.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548329,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Firearms (Handgun)",
+      "type": "skill",
+      "system": {
+        "skillName": "Handgun",
+        "specialization": "Firearms",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 64</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 107</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "firearm": true,
+          "combat": true,
+          "special": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.firearms-handgun",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "SFhkRYY4cGRtv6em",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/john-colburn/pistol-gun.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548389,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Firearms (Rifle/Shotgun)",
+      "type": "skill",
+      "system": {
+        "skillName": "Rifle/Shotgun",
+        "specialization": "Firearms",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 65</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 107</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "25",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "firearm": true,
+          "combat": true,
+          "special": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.firearms-rifle-shotgun",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "z60LyzcgWL0jryRC",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/skoll/winchester-rifle.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548456,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "First Aid",
+      "type": "skill",
+      "system": {
+        "skillName": "First Aid",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 65</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 107</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 76</p><p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 37</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "30",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.first-aid",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "90ga95VA61KAQxn7",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/first-aid-kit.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548522,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "History",
+      "type": "skill",
+      "system": {
+        "skillName": "History",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 65</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 107</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.history",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "tzE4rZdSfXyIslsN",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/book-pile.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548620,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Intimidate",
+      "type": "skill",
+      "system": {
+        "skillName": "Intimidate",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 66</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 108</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 77</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "15",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.intimidate",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "rHR7RcsGTsCcxRgM",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/tired-eye.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548715,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Jump",
+      "type": "skill",
+      "system": {
+        "skillName": "Jump",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 66</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 108</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.jump",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "apjTjSNmhTPxWHsd",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/jump-across.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548798,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Language (Portugues)",
+      "type": "skill",
+      "system": {
+        "skillName": "Portugues",
+        "specialization": "Language",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 67</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 109</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 77</p><p>See the \"Down Darker Trails\" page 26</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "80",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true,
+          "requiresname": true,
+          "keepbasevalue": true,
+          "onlyone": true,
+          "special": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.language-own",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "JLTat3nWB6JjWmYy",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/skoll/talk.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548880,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Law",
+      "type": "skill",
+      "system": {
+        "skillName": "Law",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 67</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 109</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.law",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "PvJkgMS3aVJVnjzY",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/3d-hammer.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548937,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Library Use",
+      "type": "skill",
+      "system": {
+        "skillName": "Library Use",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 67</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 109</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.library-use",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "Mm9heRJ8Rm3jUAKx",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/archive-research.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707548996,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Listen",
+      "type": "skill",
+      "system": {
+        "skillName": "Listen",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 68</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 110</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": 4
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "developement": false
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.listen",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "cihxfjyco9FMiJPy",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/sound-on.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1776131287015,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Locksmith",
+      "type": "skill",
+      "system": {
+        "skillName": "Locksmith",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 68</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 110</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": 50,
+          "occupation": 20,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true,
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.locksmith",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "mOZEmWaGkFyQQo66",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/house-keys.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549113,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Mechanical Repair",
+      "type": "skill",
+      "system": {
+        "skillName": "Mechanical Repair",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 69</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 111</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": 60,
+          "occupation": 20,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true,
+          "archetype": true,
+          "developement": false
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.mechanical-repair",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "WaBNsyQK8rdesny9",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/mechanical-arm.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1776131287079,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Medicine",
+      "type": "skill",
+      "system": {
+        "skillName": "Medicine",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 69</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 111</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 77</p><p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 38</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.medicine",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "cYlU2PjWOvysetCZ",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/plague-doctor-profile.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549222,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Natural World",
+      "type": "skill",
+      "system": {
+        "skillName": "Natural World",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 69</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 111</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.natural-world",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "4gKjNQDla2NsFJLe",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/forest.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549275,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Navigate",
+      "type": "skill",
+      "system": {
+        "skillName": "Navigate",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 70</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 112</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 78</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.navigate",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "c09TRmv85B8ipM3k",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/earth-america.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549336,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Occult",
+      "type": "skill",
+      "system": {
+        "skillName": "Occult",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 70</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 112</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 91</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 78</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.occult",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "Fom1IAOCDoM49zcu",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/evil-book.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549394,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Persuade",
+      "type": "skill",
+      "system": {
+        "skillName": "Persuade",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 71</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 113</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.persuade",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "yCK4TY5XhpQBlZOS",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/conversation.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549507,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Psychoanalysis",
+      "type": "skill",
+      "system": {
+        "skillName": "Psychoanalysis",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 72</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 114</p><p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 38</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.psychoanalysis",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "FEfiwMWC5MIgJJ5F",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/psychic-waves.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549576,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Psychology",
+      "type": "skill",
+      "system": {
+        "skillName": "Psychology",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 72</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 115</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p><p>See the \"Down Darker Trails\" page 26</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.psychology",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "MrQIH4s9Tv3bWnpr",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/all-seeing-eye.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549637,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Ride",
+      "type": "skill",
+      "system": {
+        "skillName": "Ride",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 73</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 115</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "5",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.ride",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true
+            }
+          }
+        }
+      },
+      "_id": "p3HbNQ9wfYS83fvy",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/horse-head.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549702,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Sleight of Hand",
+      "type": "skill",
+      "system": {
+        "skillName": "Sleight of Hand",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 76</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 118</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.sleight-of-hand",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "ZIHfnBIQWweMomBF",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/hand.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549761,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Spot Hidden",
+      "type": "skill",
+      "system": {
+        "skillName": "Spot Hidden",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 76</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 118</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 80</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "25",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "archetype": true,
+          "developement": false
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.spot-hidden",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "HLDuMyaCpYGRXIOe",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/magnifying-glass.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1774317817767,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Stealth",
+      "type": "skill",
+      "system": {
+        "skillName": "Stealth",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 76</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 118</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 81</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.stealth",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "uezNEJtqEEJUq8j7",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/lorc/hidden.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549869,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Swim",
+      "type": "skill",
+      "system": {
+        "skillName": "Swim",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 77</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 119</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "20",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 40,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.swim",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "UdAmXnDQ7HQhw4nC",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/swimfins.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707549933,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Track",
+      "type": "skill",
+      "system": {
+        "skillName": "Track",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 78</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 121</p><p>See the \"Cthulhu Dark Ages - 3rd Edition\" page 96</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "10",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": null,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.track",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "darkAgesPulp": true,
+              "darkAges": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true,
+              "regencyPulp": true,
+              "regency": true,
+              "reignOfTerror": true
+            }
+          }
+        }
+      },
+      "_id": "ZcsNDNpAByPKEzxD",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/deer-track.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707550041,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Operate Heavy Machinery",
+      "type": "skill",
+      "system": {
+        "skillName": "Operate Heavy Machinery",
+        "specialization": "",
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu 7th Edition - Keeper's Rulebook\" page 71</p><p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 113</p><p>See the \"The Cthulhu by Gaslight Investigators Guide\" page 92</p>",
+          "opposingDifficulty": "",
+          "pushedFaillureConsequences": "",
+          "chat": "",
+          "keeper": ""
+        },
+        "base": "1",
+        "bonusDice": 0,
+        "adjustments": {
+          "personal": null,
+          "occupation": 60,
+          "archetype": null,
+          "experiencePackage": null,
+          "experience": null
+        },
+        "value": null,
+        "attributes": {},
+        "properties": {
+          "push": true
+        },
+        "flags": {
+          "occupation": true,
+          "archetype": true
+        }
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.skill.operate-heavy-machinery",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "gasLight": true,
+              "gasLightPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "modernPulp": true,
+              "modern": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "ko51hKL771NHonp5",
+      "img": "modules/call-of-cthulhu-foundryvtt-investigator-wizard/assets/game-icons/delapouite/melting-metal.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": 1773707550104,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "_id": "3elxAwnv7WCUNwng",
+      "name": "Punch",
+      "type": "weapon",
+      "img": "systems/CoC7/assets/icons/skills/fighting_brawl.svg",
+      "system": {
+        "description": {
+          "value": "",
+          "chat": "",
+          "special": "",
+          "keeper": ""
+        },
+        "wpnType": "",
+        "skill": {
+          "main": {
+            "name": "Brawl",
+            "id": "PiWSYdo9FKqDTzT4"
+          },
+          "alternativ": {
+            "name": "",
+            "id": ""
+          }
+        },
+        "range": {
+          "normal": {
+            "value": 0,
+            "units": "",
+            "damage": "1D3"
+          },
+          "long": {
+            "value": 0,
+            "units": "",
+            "damage": ""
+          },
+          "extreme": {
+            "value": 0,
+            "units": "",
+            "damage": ""
+          }
+        },
+        "usesPerRound": {
+          "normal": 1,
+          "max": "",
+          "burst": null
+        },
+        "bullets": "",
+        "ammo": 0,
+        "malfunction": "",
+        "blastRadius": null,
+        "properties": {
+          "melee": true,
+          "addb": true
+        },
+        "price": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.weapon.brawl",
+            "lang": "en",
+            "priority": 0
+          }
+        }
+      },
+      "sort": 5,
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "folder": null,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Grease Monkey",
+      "type": "archetype",
+      "system": {
+        "description": {
+          "value": "<p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 19</p>",
+          "keeper": ""
+        },
+        "source": null,
+        "type": {
+          "classic": false,
+          "lovecraftian": false,
+          "modern": false
+        },
+        "bonusPoints": 100,
+        "coreCharacteristics": {
+          "str": false,
+          "con": false,
+          "siz": false,
+          "dex": false,
+          "app": false,
+          "int": true,
+          "pow": false,
+          "edu": false
+        },
+        "coreCharacteristicsFormula": {
+          "enabled": true,
+          "value": "(1D6+13)*5"
+        },
+        "suggestedOccupations": "",
+        "suggestedTraits": "",
+        "talents": 2,
+        "skills": [
+          "i.skill.appraise",
+          "i.skill.art-craft-any",
+          "i.skill.drive-auto",
+          "i.skill.fighting-brawl",
+          "i.skill.fighting-throw",
+          "i.skill.electrical-repair",
+          "i.skill.locksmith",
+          "i.skill.mechanical-repair",
+          "i.skill.operate-heavy-machinery",
+          "i.skill.spot-hidden"
+        ],
+        "attributes": {},
+        "properties": {},
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.archetype.grease-monkey",
+            "lang": "en",
+            "priority": 5
+          }
+        }
+      },
+      "_id": "2DiFq6cbFnq2GSYp",
+      "img": "icons/svg/invisible.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Mechanic",
+      "type": "occupation",
+      "system": {
+        "description": {
+          "value": "<p>See the \"Call of Cthulhu Investigator Handbook 7th Edition\" page 83</p><p>See the \"Pulp Cthulhu (7th edition Call of Cthulhu)\" page 31</p>",
+          "keeper": ""
+        },
+        "source": null,
+        "type": {
+          "classic": false,
+          "lovecraftian": false,
+          "modern": false,
+          "pulp": true
+        },
+        "related": null,
+        "occupationSkillPoints": {
+          "str": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "con": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "siz": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "dex": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "app": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "int": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "pow": {
+            "multiplier": null,
+            "selected": false,
+            "optional": false,
+            "active": false
+          },
+          "edu": {
+            "multiplier": 4,
+            "selected": true,
+            "optional": false,
+            "active": false
+          }
+        },
+        "creditRating": {
+          "min": 9,
+          "max": 40
+        },
+        "suggestedContacts": "",
+        "skills": [
+          "i.skill.art-craft-any",
+          "i.skill.climb",
+          "i.skill.drive-auto",
+          "i.skill.electrical-repair",
+          "i.skill.mechanical-repair",
+          "i.skill.operate-heavy-machinery"
+        ],
+        "groups": [],
+        "personal": 2,
+        "personalText": "",
+        "attributes": {},
+        "properties": {},
+        "flags": {}
+      },
+      "flags": {
+        "CoC7": {
+          "cocidFlag": {
+            "id": "i.occupation.mechanic",
+            "lang": "en",
+            "priority": 5,
+            "eras": {
+              "standard": true,
+              "investigators": true,
+              "darkAges": true,
+              "darkAgesPulp": true,
+              "downDarkerTrails": true,
+              "downDarkerTrailsPulp": true,
+              "invictus": true,
+              "modern": true,
+              "modernPulp": true,
+              "pulp": true
+            }
+          }
+        }
+      },
+      "_id": "hwR8siKHeAfwsfv2",
+      "img": "icons/svg/ice-aura.svg",
+      "effects": [],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "kit da empresa",
+      "type": "item",
+      "system": {
+        "description": {
+          "value": "<p></p><p>| Item | Qtd |</p><p>|------|-----|</p><p>| Crachá Nova Lumière (acesso básico) | 1 |</p><p>| Prancheta + formulário de inventário | 1 |</p><p>| Caneta esferográfica | 2 |</p><p>| Lanterna de mão (pilhas novas) | 1 |</p><p>| Celular Nokia carregado | 1 |</p><p>| Garrafa de água 500ml | 1 |</p><p>| Barra de cereal | 2 |</p><p>| Mapa impresso da região (Cataguá) | 1 |</p><p>**Peso total:** ~1,5kg | **Custo:** R$ 0</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "_id": "t4z7Wv02zkrhT6aC",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "Dojul7DzGF3lF1xr": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1773708895717,
+        "modifiedTime": 1773708937851,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      }
+    },
+    {
+      "name": "kit tecnico",
+      "type": "item",
+      "system": {
+        "description": {
+          "value": "<p>| Item | Qtd | Peso |</p><p>|------|-----|------|</p><p>| Multitool (Leatherman) | 1 | 0,3kg |</p><p>| Fita isolante + silver tape | 1 cada | 0,2kg |</p><p>| Lanterna de cabeça (pilhas extras) | 1 | 0,2kg |</p><p>| Alicate universal | 1 | 0,2kg |</p><p>| Chave ajustável | 1 | 0,3kg |</p><p>| Luvas de couro grossas | 1 par | 0,2kg |</p><p>| Bloco de anotações técnicas | 1 | 0,1kg |</p><p>**Peso total:** ~1,5kg | **Custo:** R$ 180</p><p>**Bônus:** +10% em rolagens de Reparar Elétrica/Mecânica quando com o kit completo.</p><p></p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": null,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "_id": "C6Nstd4cIAC1SJd0",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "Dojul7DzGF3lF1xr": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1773708947366,
+        "modifiedTime": 1773709032727,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      }
+    },
+    {
+      "name": "Tesoura Corta Vergalhão (corta corrente fina) | Arame, correntes leves |",
+      "type": "item",
+      "system": {
+        "description": {
+          "value": "",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "_id": "We4b71woUBHoBHaf",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "Dojul7DzGF3lF1xr": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1773709551327,
+        "modifiedTime": 1773709585782,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      }
+    },
+    {
+      "_id": "qKZfASsp4ZNdpWAA",
+      "name": "Kit tecnico",
+      "type": "item",
+      "img": "modules/debaixo-da-pele/assets/icons/kit-pa-basico.svg",
+      "system": {
+        "description": {
+          "value": "<p><b>3 usos.</b><br>Sucesso em Primeiros Socorros → <b>1D3 PV</b><br>Sucesso extremo (≤1/5) → <b>1D6 PV</b><br>Use a macro <b>07 — Kit PA Básico</b> para rolar.</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "folder": null,
+      "sort": 0,
+      "effects": [],
+      "ownership": {
+        "default": 0,
+        "uM0GLMJOQKnsHgYN": 3
+      },
+      "flags": {
+        "debaixo-da-pele": {
+          "ddpItem": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774304719011,
+        "modifiedTime": 1774304742391,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      }
+    },
+    {
+      "_id": "32eNcqHiaQzn89EP",
+      "name": "Lanterna",
+      "type": "item",
+      "img": "modules/debaixo-da-pele/assets/icons/lanterna.svg",
+      "system": {
+        "description": {
+          "value": "<p>Essencial no complexo subterrâneo. ~8h de uso.<br>Luz direta: Refinados ficam atordoados 1 rodada.</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "folder": null,
+      "sort": 0,
+      "effects": [],
+      "ownership": {
+        "default": 0,
+        "uM0GLMJOQKnsHgYN": 3
+      },
+      "flags": {
+        "debaixo-da-pele": {
+          "ddpItem": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774304756005,
+        "modifiedTime": 1774304756005,
+        "lastModifiedBy": "uM0GLMJOQKnsHgYN"
+      }
+    },
+    {
+      "_id": "WrlnYmkBH6NSOZAS",
+      "name": "Kit Chave de Fenda",
+      "type": "item",
+      "img": "modules/debaixo-da-pele/assets/icons/chave-fenda.svg",
+      "system": {
+        "description": {
+          "value": "<p>Set de chaves de fenda (fenda + Phillips) em estojo. Abre painéis elétricos, tampas de duto, caixas de equipamento. +15% Elétrica/Reparar.</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "flags": {
+        "debaixo-da-pele": {
+          "gridW": 1,
+          "gridH": 2,
+          "slots": 1,
+          "categoria": "ferramenta",
+          "notas": "+15% Elétrica/Reparar em painéis. Pode travar/destravar fechaduras simples."
+        }
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "uM0GLMJOQKnsHgYN": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.debaixo-da-pele.items.Item.379beada19614659",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774911805697,
+        "modifiedTime": 1774911805697,
+        "lastModifiedBy": "uM0GLMJOQKnsHgYN"
+      },
+      "effects": []
+    },
+    {
+      "_id": "wIuGBmDKpOFma8H8",
+      "name": "Lanterna de Cabeça",
+      "type": "item",
+      "img": "modules/debaixo-da-pele/assets/icons/lanterna-cabeca.svg",
+      "system": {
+        "description": {
+          "value": "<p>Lanterna de cabeça por elástico. Mãos livres. 8m de iluminação. 10h com pilhas AA. 0 slots quando equipada na cabeça.</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "flags": {
+        "debaixo-da-pele": {
+          "gridW": 1,
+          "gridH": 2,
+          "slots": 1,
+          "categoria": "iluminacao",
+          "equipavel": true,
+          "slotEquipado": 0,
+          "notas": "Equipada: 0 slots. Mãos livres. 8m. 10h duração."
+        }
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "uM0GLMJOQKnsHgYN": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.debaixo-da-pele.items.Item.378b4b43cc4f417b",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774911817296,
+        "modifiedTime": 1774911817296,
+        "lastModifiedBy": "uM0GLMJOQKnsHgYN"
+      },
+      "effects": []
+    },
+    {
+      "_id": "dN7wMqMrfVMjhqsN",
+      "name": "Máscara de Gás Civil",
+      "type": "item",
+      "img": "modules/debaixo-da-pele/assets/icons/mascara-gas-civil.svg",
+      "system": {
+        "description": {
+          "value": "<p>Máscara de gás civil com filtro combinado. B2: zera Aurora. B3: +0,25/h. B4: +0,5/h. Filtro dura ~24h. −5% Percepção (visão lateral). 0 slots equipada.</p>",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "flags": {
+        "debaixo-da-pele": {
+          "gridW": 2,
+          "gridH": 2,
+          "slots": 2,
+          "categoria": "protecao",
+          "equipavel": true,
+          "slotEquipado": 0,
+          "reducaoAurora": 0.5,
+          "notas": "B2: 0 Aurora | B3: −75% | B4: −50%. Filtro 24h. −5% Percepção."
+        }
+      },
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "uM0GLMJOQKnsHgYN": 3
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.debaixo-da-pele.items.Item.2d89301167ab4d00",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774911825020,
+        "modifiedTime": 1774911825020,
+        "lastModifiedBy": "uM0GLMJOQKnsHgYN"
+      },
+      "effects": []
+    },
+    {
+      "name": "Frasco de Combustivel suspeito",
+      "type": "item",
+      "system": {
+        "description": {
+          "value": "",
+          "keeper": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": 0,
+        "attributes": {},
+        "notes": ""
+      },
+      "_id": "Cyz7SM3k6JML4woP",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "Dojul7DzGF3lF1xr": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "CoC7",
+        "systemVersion": "7.22",
+        "createdTime": 1774917375891,
+        "modifiedTime": 1774917397446,
+        "lastModifiedBy": "Dojul7DzGF3lF1xr"
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "n5w1HkVxM8LQ5AoX",
+  "flags": {
+    "CoC7": {
+      "skillListMode": false,
+      "skillShowUncommon": true
+    },
+    "debaixo-da-pele": {
+      "aurora_panel_collapsed": true,
+      "aurora": 0.5,
+      "inventario": {
+        "quick": {
+          "3elxAwnv7WCUNwng": {
+            "row": 0,
+            "col": 2,
+            "rotated": false
+          },
+          "WrlnYmkBH6NSOZAS": {
+            "row": 0,
+            "col": 0,
+            "rotated": false
+          }
+        },
+        "bag": {
+          "dN7wMqMrfVMjhqsN": {
+            "row": 0,
+            "col": 0,
+            "rotated": false
+          },
+          "wIuGBmDKpOFma8H8": {
+            "row": 0,
+            "col": 2,
+            "rotated": false
+          },
+          "qKZfASsp4ZNdpWAA": {
+            "row": 2,
+            "col": 1,
+            "rotated": false
+          },
+          "32eNcqHiaQzn89EP": {
+            "row": 0,
+            "col": 3,
+            "rotated": false
+          },
+          "We4b71woUBHoBHaf": {
+            "row": 2,
+            "col": 2,
+            "rotated": false
+          },
+          "Cyz7SM3k6JML4woP": {
+            "row": 0,
+            "col": 4,
+            "rotated": false
+          },
+          "C6Nstd4cIAC1SJd0": {
+            "row": 1,
+            "col": 4,
+            "rotated": false
+          },
+          "t4z7Wv02zkrhT6aC": {
+            "row": 2,
+            "col": 0,
+            "rotated": false
+          }
+        },
+        "equipped": {}
+      }
+    },
+    "exportSource": {
+      "world": "call-of-cthulhu",
+      "system": "CoC7",
+      "coreVersion": "12.331",
+      "systemVersion": "7.22"
+    }
+  },
+  "_stats": {
+    "coreVersion": "12.331",
+    "systemId": "CoC7",
+    "systemVersion": "7.22",
+    "createdTime": 1773707547141,
+    "modifiedTime": 1777936332509,
+    "lastModifiedBy": "Dojul7DzGF3lF1xr"
+  }
+}
