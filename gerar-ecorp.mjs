@@ -708,6 +708,33 @@ const EQUIPAMENTO = [
     desc: "<p>Dois instrumentos presos ao arnês peitoral. Confiáveis, calibrados, e completamente cegos para qualquer coisa que não seja química ou radiação conhecida.</p>"
   }),
 
+  // ── ITENS DIFERENCIAIS (assinatura exclusiva de cada classe) ──
+  equip({
+    classe: "RECON", name: "★ Designador de Alvos AN/PED-1 (E CORP)",
+    img: ico("binoculo.svg"), cat: "diferencial", grid: [1, 2], slots: 2, pesoKg: 1.1, usd: 22000,
+    notas: "EXCLUSIVO RECON. Marca um alvo com laser: todos os aliados ganham um nível de bônus para acertá-lo por 3 rodadas. 1 uso/rodada.",
+    desc: "<p><strong>Item-assinatura do RECON.</strong> Designador laser codificado que ilumina um alvo e transmite a posição ao HUD da equipe. Enquanto marcado, o alvo perde qualquer cobertura de escuridão contra a equipe e recebe um nível de bônus nos ataques contra ele. É o que transforma o olheiro em multiplicador de força — a Vesper não precisa atirar para matar; ela decide quem morre.</p>"
+  }),
+  equip({
+    classe: "ASSAULT", name: "★ Terminal de Comando de Esquadrão ITC-9",
+    img: ico("notebook.svg"), cat: "diferencial", grid: [1, 2], slots: 2, pesoKg: 0.9, usd: 18500,
+    notas: "EXCLUSIVO ASSAULT. Vê posição e sinais vitais de toda a equipe. 1×/cena: coordena um ataque conjunto — 2 aliados agem no mesmo turno.",
+    desc: "<p><strong>Item-assinatura do ASSAULT.</strong> Tablet reforçado que agrega o rastreamento GPS e biométrico de todos os operadores em campo. O Âncora vê quem está ferido, quem está isolado e onde. Uma vez por cena pode sincronizar um assalto: dois aliados coordenados atacam no mesmo instante. É a ferramenta que faz dele o líder — não a patente, o terminal.</p>"
+  }),
+  equip({
+    classe: "BREACHER", name: "★ Exo-Suporte de Carga E CORP Mk.II",
+    img: ico("colete-tatico.svg"), cat: "diferencial", grid: [2, 2], slots: 0, pesoKg: 6.0, usd: 41000,
+    notas: "EXCLUSIVO BREACHER. Vestível (não ocupa slot). Anula a penalidade de peso do escudo e da armadura pesada. +10 kg de capacidade de carga.",
+    desc: "<p><strong>Item-assinatura do BREACHER.</strong> Exoesqueleto passivo de assistência nos quadris e coluna — a mesma linha experimental que consertou a coluna do Aríete. Distribui o peso do escudo balístico e da armadura pesada direto para o solo, anulando a penalidade de carregá-los. Sob exposição prolongada a anomalias, o Guardião pode narrar que os servos 'travam' no pior momento.</p>"
+  }),
+  equip({
+    classe: "SPECIALIST", name: "★ Cápsula de Contenção Criogênica Aurora",
+    img: ico("aurora-amostra.svg"), cat: "diferencial", grid: [2, 3], slots: 4, pesoKg: 5.5, usd: 96000,
+    usos: 3,
+    notas: "EXCLUSIVO SPECIALIST. Contém e estabiliza amostra biológica anômala (Composto Aurora). 3 câmaras criogênicas seladas. Requer Ciência para operar.",
+    desc: "<p><strong>Item-assinatura do SPECIALIST.</strong> A razão de a missão existir. Cápsula de contenção de nível 4 com três câmaras criogênicas independentes, campo de supressão e selo bioperigoso da E CORP. É o único recipiente aprovado para transportar material Aurora vivo sem que ele 'edite' o que estiver por perto. A Íris carrega nas costas o objetivo de toda a operação — e o maior perigo dela.</p>"
+  }),
+
   // ── COMUM À EQUIPE ─────────────────────────────────────────
   equip({
     classe: "TODOS", name: "Rádio Thales AN/PRC-148 MBITR + Peltor ComTac II",

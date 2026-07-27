@@ -4163,6 +4163,38 @@
         }
       },
       {
+        "name": "★ Designador de Alvos AN/PED-1 (E CORP)",
+        "type": "item",
+        "img": "modules/debaixo-da-pele/assets/icons/binoculo.svg",
+        "system": {
+          "description": {
+            "value": "<p><strong>Item-assinatura do RECON.</strong> Designador laser codificado que ilumina um alvo e transmite a posição ao HUD da equipe. Enquanto marcado, o alvo perde qualquer cobertura de escuridão contra a equipe e recebe um nível de bônus nos ataques contra ele. É o que transforma o olheiro em multiplicador de força — a Vesper não precisa atirar para matar; ela decide quem morre.</p>",
+            "chat": "",
+            "keeper": ""
+          },
+          "quantity": 1,
+          "weight": 1.1,
+          "price": 0,
+          "notes": "",
+          "attributes": {}
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 1,
+            "gridH": 2,
+            "slots": 2,
+            "usos": 0,
+            "categoria": "diferencial",
+            "notas": "EXCLUSIVO RECON. Marca um alvo com laser: todos os aliados ganham um nível de bônus para acertá-lo por 3 rodadas. 1 uso/rodada.",
+            "preco": 38500,
+            "precoUSD": 22000,
+            "ecorp": {
+              "classe": "RECON"
+            }
+          }
+        }
+      },
+      {
         "name": "Rádio Thales AN/PRC-148 MBITR + Peltor ComTac II",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/radio-portatil.svg",
@@ -9052,6 +9084,38 @@
         }
       },
       {
+        "name": "★ Terminal de Comando de Esquadrão ITC-9",
+        "type": "item",
+        "img": "modules/debaixo-da-pele/assets/icons/notebook.svg",
+        "system": {
+          "description": {
+            "value": "<p><strong>Item-assinatura do ASSAULT.</strong> Tablet reforçado que agrega o rastreamento GPS e biométrico de todos os operadores em campo. O Âncora vê quem está ferido, quem está isolado e onde. Uma vez por cena pode sincronizar um assalto: dois aliados coordenados atacam no mesmo instante. É a ferramenta que faz dele o líder — não a patente, o terminal.</p>",
+            "chat": "",
+            "keeper": ""
+          },
+          "quantity": 1,
+          "weight": 0.9,
+          "price": 0,
+          "notes": "",
+          "attributes": {}
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 1,
+            "gridH": 2,
+            "slots": 2,
+            "usos": 0,
+            "categoria": "diferencial",
+            "notas": "EXCLUSIVO ASSAULT. Vê posição e sinais vitais de toda a equipe. 1×/cena: coordena um ataque conjunto — 2 aliados agem no mesmo turno.",
+            "preco": 32375,
+            "precoUSD": 18500,
+            "ecorp": {
+              "classe": "ASSAULT"
+            }
+          }
+        }
+      },
+      {
         "name": "Rádio Thales AN/PRC-148 MBITR + Peltor ComTac II",
         "type": "item",
         "img": "modules/debaixo-da-pele/assets/icons/radio-portatil.svg",
@@ -13889,6 +13953,38 @@
             "notas": "Também é arma improvisada: 1D8 + bônus de dano, Briga.",
             "preco": 315,
             "precoUSD": 180,
+            "ecorp": {
+              "classe": "BREACHER"
+            }
+          }
+        }
+      },
+      {
+        "name": "★ Exo-Suporte de Carga E CORP Mk.II",
+        "type": "item",
+        "img": "modules/debaixo-da-pele/assets/icons/colete-tatico.svg",
+        "system": {
+          "description": {
+            "value": "<p><strong>Item-assinatura do BREACHER.</strong> Exoesqueleto passivo de assistência nos quadris e coluna — a mesma linha experimental que consertou a coluna do Aríete. Distribui o peso do escudo balístico e da armadura pesada direto para o solo, anulando a penalidade de carregá-los. Sob exposição prolongada a anomalias, o Guardião pode narrar que os servos 'travam' no pior momento.</p>",
+            "chat": "",
+            "keeper": ""
+          },
+          "quantity": 1,
+          "weight": 6,
+          "price": 0,
+          "notes": "",
+          "attributes": {}
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 2,
+            "slots": 0,
+            "usos": 0,
+            "categoria": "diferencial",
+            "notas": "EXCLUSIVO BREACHER. Vestível (não ocupa slot). Anula a penalidade de peso do escudo e da armadura pesada. +10 kg de capacidade de carga.",
+            "preco": 71750,
+            "precoUSD": 41000,
             "ecorp": {
               "classe": "BREACHER"
             }
@@ -18814,6 +18910,38 @@
             "notas": "Alarme sonoro. Mede O₂, CO, H₂S, LEL e radiação ionizante. Não detecta nada anômalo — e é isso que assusta.",
             "preco": 5425,
             "precoUSD": 3100,
+            "ecorp": {
+              "classe": "SPECIALIST"
+            }
+          }
+        }
+      },
+      {
+        "name": "★ Cápsula de Contenção Criogênica Aurora",
+        "type": "item",
+        "img": "modules/debaixo-da-pele/assets/icons/aurora-amostra.svg",
+        "system": {
+          "description": {
+            "value": "<p><strong>Item-assinatura do SPECIALIST.</strong> A razão de a missão existir. Cápsula de contenção de nível 4 com três câmaras criogênicas independentes, campo de supressão e selo bioperigoso da E CORP. É o único recipiente aprovado para transportar material Aurora vivo sem que ele 'edite' o que estiver por perto. A Íris carrega nas costas o objetivo de toda a operação — e o maior perigo dela.</p>",
+            "chat": "",
+            "keeper": ""
+          },
+          "quantity": 1,
+          "weight": 5.5,
+          "price": 0,
+          "notes": "",
+          "attributes": {}
+        },
+        "flags": {
+          "debaixo-da-pele": {
+            "gridW": 2,
+            "gridH": 3,
+            "slots": 4,
+            "usos": 3,
+            "categoria": "diferencial",
+            "notas": "EXCLUSIVO SPECIALIST. Contém e estabiliza amostra biológica anômala (Composto Aurora). 3 câmaras criogênicas seladas. Requer Ciência para operar.",
+            "preco": 168000,
+            "precoUSD": 96000,
             "ecorp": {
               "classe": "SPECIALIST"
             }
