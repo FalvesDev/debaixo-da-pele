@@ -17,7 +17,7 @@ import { DDPVehicleSheet } from "./vehicle-sheet.js";
 import "./ecorp-creator.js";
 
 const MODULE_ID = "debaixo-da-pele";
-const VERSION   = "1.8.0";
+const VERSION   = "1.9.28";
 
 // ─── SETTINGS ───────────────────────────────────────────────
 Hooks.once("init", () => {
@@ -223,12 +223,34 @@ async function criarOperadorECorp(classe, nomeCustom, ownerId) {
   try {
     // 1) Cria o ator SEM items (método oficial do CoC7 actor-importer)
     const ator = await Actor.create(dados);
-    // 2) Adiciona perícias, armas e equipamento como embedded documents
+    console.log(`${MODULE_ID} | Ator "${ator.name}" criado. Adicionando ${items.length} itens…`);
+
+    // 2) Adiciona perícias, armas e equipamento como embedded documents.
+    //    Tenta em lote; se falhar, cai para item-a-item para não perder tudo
+    //    e registrar exatamente qual item o CoC7 rejeitou.
     if (items.length) {
-      await ator.createEmbeddedDocuments("Item", items, { renderSheet: false });
+      try {
+        await ator.createEmbeddedDocuments("Item", items, { renderSheet: false });
+      } catch (e1) {
+        console.warn(`${MODULE_ID} | Lote falhou (${e1.message}). Tentando item-a-item…`);
+        for (const it of items) {
+          try {
+            await ator.createEmbeddedDocuments("Item", [it], { renderSheet: false });
+          } catch (e2) {
+            console.error(`${MODULE_ID} | Item rejeitado: "${it.name}" (${it.type}) — ${e2.message}`, it);
+          }
+        }
+      }
     }
+
+    const criados = ator.items.size;
+    console.log(`${MODULE_ID} | "${ator.name}" agora tem ${criados}/${items.length} itens.`);
     const nomeJogador = game.users.get(owner)?.name ?? "—";
-    ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador} (${items.length} itens).`);
+    if (criados < items.length) {
+      ui.notifications.warn(`⚠️ ${ator.name}: ${criados}/${items.length} itens entraram. Veja o console (F12).`);
+    } else {
+      ui.notifications.info(`✅ ${ator.name} criado para ${nomeJogador} (${criados} itens).`);
+    }
     if (owner === game.user.id) ator.sheet.render(true);
     return ator;
   } catch (e) {
